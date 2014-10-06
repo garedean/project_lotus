@@ -1,8 +1,9 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Bluebird Salon + MINDBODY</title>
+
     <link rel="stylesheet" href="styles.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
@@ -17,8 +18,10 @@
 
           <li class='brand'>
             <a href='#' name='brand'>
-              <span class='name'>Bluebird</span>
-              <span class='icon nav-toggle'></span>
+              <span class='name'>Bluebird</span>  
+              <div class='nav-toggle-wrapper'>
+                <span class='icon nav-toggle'></span>
+              </div>
             </a>
           </li>
           <li class='nav-link'>
@@ -65,6 +68,11 @@
 
       <header id='top-bar'>   
 
+        <div class='nav-toggle-wrapper'>
+          <span class='nav-toggle'></span>
+        </div>
+
+
         <form id='search'>
           <div class="form-group">
             <input type="email" id="client-lookup" class="form-control" id="exampleInputEmail1" placeholder="Lookup a client" maxlength="40">
@@ -81,7 +89,8 @@
         <span class='distance-from-target'></span><br>
         <span class='next-event-ready'></span>
       </div>
-    </div>
+
+    </div>   
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type='text/javascript' src='scripts.js'></script>

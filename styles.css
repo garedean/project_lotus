@@ -54,6 +54,11 @@ PAGE STYLES
 ----------------------------------------------
 */
 
+html {
+	height: 100%;
+	width: 100%;
+}
+
 #page-wrapper {
 	position: relative;
 	width: 100%;
@@ -69,12 +74,13 @@ header#top-bar {
 	margin-left: 220px;
 	height: 50px;
 	background-color: #EEE;
-	transition: .3s;
+	transition: .35s;
 }
 
 header#top-bar.collapsed {
-	margin-left: 50px;
-	transition: .35s;
+	margin-left: 0px;
+	position: relative;
+	transition: .40s;
 }
 
 #brand {
@@ -102,7 +108,7 @@ VERTICAL-LEFT NAV MENU
   background-color: #FAFAFA;
   color: #00B4FF;
   font-family: 'Open Sans', sans-serif;
-  float: left;
+  position: fixed;
   border-right: 1px solid #EEE;
   box-sizing: border-box;
   transition: .35s;
@@ -161,6 +167,10 @@ NAV MENU LINKS
   padding-left: 50px;
   color: #76777b;
   display: block;
+}
+
+.brand > a {
+	padding-left: 5px;
 }
 
 .nav-link.active a {
@@ -276,11 +286,6 @@ ICONS
 ----------------------------------------------
 */
 
-.brand .icon.nav-toggle {
-	background-color: #CCC;
-	border-radius: 50%;
-}
-
 .nav-link .icon,
 .brand .icon
  {
@@ -333,7 +338,7 @@ ICONS
 	background-position: -49px -6px;
 }
 
-.nav-link.active .icon.reports.active {
+.nav-link.active .icon.reports {
 	background-position: -49px -260px;
 }
 
@@ -355,4 +360,41 @@ ICONS
 
 .nav-link.active .icon.room {
 	background-position: -49px -344px;
+}
+
+/*.brand .icon.nav-toggle {
+	background-color: #CCC;
+	border-radius: 50%;
+}*/
+
+.brand .icon.nav-toggle {
+	border-top: 11px double rgba(0, 0, 0, .3);
+	border-bottom: 4px solid rgba(0, 0, 0, .3);
+	height: 18px;
+	width: 21px;
+	top: 6px;
+	left: 14px;
+	cursor: pointer;
+}
+
+.nav-toggle-wrapper {
+	cursor: pointer;
+}
+
+#top-bar .nav-toggle-wrapper {
+	height: 50px;
+	width: 50px;
+	float: left;
+}
+
+.nav-toggle-wrapper .nav-toggle {
+	border-top: 11px double rgba(0, 0, 0, .2);
+	border-bottom: 4px solid rgba(0, 0, 0, .2);
+	height: 18px;
+	width: 21px;
+	top: 15px;
+	left: 14px;
+	cursor: pointer;
+	float: left;
+	position: relative;
 }
