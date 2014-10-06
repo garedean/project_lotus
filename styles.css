@@ -78,7 +78,7 @@ header#top-bar {
 }
 
 header#top-bar.collapsed {
-	margin-left: 0px;
+	margin-left: 14px;
 	position: relative;
 	transition: .40s;
 }
@@ -266,6 +266,7 @@ input.form-control {
 #link-list .brand .name {
 	position: relative;
 	top: 5px;
+	left: 10px;
 	color: #0EBFE9;	
 	font-size: 40px;
 	font-family: 'Great Vibes', cursive;
@@ -383,7 +384,7 @@ ICONS
 
 #top-bar .nav-toggle-wrapper {
 	height: 50px;
-	width: 50px;
+	width: 40px;
 	float: left;
 }
 
@@ -393,7 +394,7 @@ ICONS
 	height: 18px;
 	width: 21px;
 	top: 15px;
-	left: 14px;
+	left: 0px;
 	cursor: pointer;
 	float: left;
 	position: relative;
