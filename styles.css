@@ -71,16 +71,17 @@ TOP CONTENT NAV
 */
 
 header#top-bar {
+	position: relative;
 	margin-left: 220px;
 	height: 50px;
-	background-color: #EEE;
-	transition: .35s;
+	background-color: #E7E7E7;
+	transition: margin .33s;
 }
 
 header#top-bar.collapsed {
 	margin-left: 14px;
 	position: relative;
-	transition: .40s;
+	transition: margin .4s;
 }
 
 #brand {
@@ -105,13 +106,13 @@ VERTICAL-LEFT NAV MENU
 #nav-menu {
   width: 220px;
   height: 100%;
-  background-color: #FAFAFA;
+  background-color: #F7F7F7;
   color: #00B4FF;
   font-family: 'Open Sans', sans-serif;
   position: fixed;
-  border-right: 1px solid #EEE;
+  border-right: 1px solid #E7E7E7;
   box-sizing: border-box;
-  transition: .35s;
+  transition: .33s;
 }
 
 #nav-menu.collapsed {
@@ -140,18 +141,25 @@ NAV MENU LINKS
 }
 
 #nav-menu > li:hover {
-  background-color: #EEE;
+  background-color: #E7E7E7;
 }
 
 #nav-menu .nav-link:nth-child(n+2).active {
   color: #f78d1e;
   font-weight: 700;
-  border-top: 1px solid #EEE;
-  border-bottom: 1px solid #EEE;
+  border-top: 1px solid #E7E7E7;
+  border-bottom: 1px solid #E7E7E7;
   border-right: 2px solid white;
   background-color: white;
   transition: background-color .08s;
-  width: 102%;
+  transition: width .33s;
+  width: 220px;
+}
+
+#nav-menu.collapsed .nav-link:nth-child(n+2).active {
+	width: 50px;
+	transition: background-color .08s;
+	transition: width .4s;
 }
 
 #nav-menu .nav-link:nth-child(2).active {
@@ -207,7 +215,7 @@ DEBUGGING
 
 #search {
 	width: 300px;
-	padding: 6px 0 0 0px;
+	padding: 6px 0 0 36px;
 	float: left;
 }
 
@@ -234,7 +242,7 @@ DEBUGGING
 }
 
 #link-list > li.brand {
-	background-color: #EEE;
+	background-color: #E7E7E7;
 	border-top: 0;
 }
 
@@ -279,7 +287,7 @@ input.form-control {
 
 #client-lookup:focus {
 	box-shadow: none;
-	border-color: #EEE;
+	border-color: #E7E7E7;
 }
 
 /* 
@@ -363,11 +371,6 @@ ICONS
 	background-position: -49px -344px;
 }
 
-/*.brand .icon.nav-toggle {
-	background-color: #CCC;
-	border-radius: 50%;
-}*/
-
 .brand .icon.nav-toggle {
 	border-top: 11px double rgba(0, 0, 0, .3);
 	border-bottom: 4px solid rgba(0, 0, 0, .3);
@@ -378,14 +381,13 @@ ICONS
 	cursor: pointer;
 }
 
-.nav-toggle-wrapper {
-	cursor: pointer;
-}
-
 #top-bar .nav-toggle-wrapper {
+	position: absolute;
+	left: 0;
 	height: 50px;
 	width: 40px;
 	float: left;
+	cursor: pointer;
 }
 
 .nav-toggle-wrapper .nav-toggle {
