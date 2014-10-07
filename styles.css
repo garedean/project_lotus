@@ -129,6 +129,10 @@ NAV MENU LINKS
   border-bottom: 1px solid transparent;
 }
 
+/* .nav-link:first-child:active {
+	border-top: none;
+} */
+
 #nav-menu .nav-link,
 #nav-menu .brand
  {
@@ -150,12 +154,16 @@ NAV MENU LINKS
   border-right: 2px solid white;
   color: #f78d1e;
   font-weight: 700;
-  border-top: 1px solid #E7E7E7;
   border-bottom: 1px solid #E7E7E7;  
   background-color: white;
   transition: width .33s;
   width: 220px;
 }
+
+/* The top most item should not get a top border */
+#nav-menu .nav-link:nth-child(n+3).active {
+	border-top: 1px solid #E7E7E7;
+} 
 
 #nav-menu.collapsed .nav-link:nth-child(n+2).active {
 	width: 50px;
@@ -168,7 +176,7 @@ NAV MENU LINKS
 }
 
 
-#nav-menu .nav-link:nth-child(2).active {
+#nav-menu .nav-link:nth-child(3).active {
   border-top: 1px solid transparent;
 }
 
@@ -292,6 +300,7 @@ input.form-control {
 #client-lookup {
 	border: none;
 	height: 36px;
+	width: 300px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
@@ -415,4 +424,13 @@ ICONS
 	cursor: pointer;
 	float: left;
 	position: relative;
+}
+
+.nav-link.active .highlight {
+	height: 100%;
+	width: 4px;
+	position: absolute;
+	left: 0;
+	background-color: orange;
+	height: 100%;
 }
