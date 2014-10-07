@@ -35,7 +35,7 @@ $(document).ready(function() {
             pinNav = !pinNav;   
             $(this).toggleClass('selected');     
     });
-    $('.nav-toggle').on('click', function() {  
+    $('.nav-toggle-wrapper').on('click', function() {  
             navExpanded = !navExpanded;
             $('#nav-menu').toggleClass('collapsed');  
             $('header#top-bar').toggleClass('collapsed');  
