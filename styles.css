@@ -137,30 +137,36 @@ NAV MENU LINKS
   box-sizing: border-box;
   overflow: hidden;
   cursor: pointer;
-  width: 100%;
+  width: 220px;
+  transition: width .35s;
 }
 
-#nav-menu > li:hover {
-  background-color: #E7E7E7;
+#nav-menu li:hover {
+  background-color: #EEE;
 }
 
+/* Expanded sidebar, active link */
 #nav-menu .nav-link:nth-child(n+2).active {
+  border-right: 2px solid white;
   color: #f78d1e;
   font-weight: 700;
   border-top: 1px solid #E7E7E7;
-  border-bottom: 1px solid #E7E7E7;
-  border-right: 2px solid white;
+  border-bottom: 1px solid #E7E7E7;  
   background-color: white;
-  transition: background-color .08s;
   transition: width .33s;
   width: 220px;
 }
 
 #nav-menu.collapsed .nav-link:nth-child(n+2).active {
 	width: 50px;
-	transition: background-color .08s;
 	transition: width .4s;
 }
+
+#nav-menu.collapsed .nav-link:nth-child(n+2) {
+	width: 50px;
+	transition: width .4s;
+}
+
 
 #nav-menu .nav-link:nth-child(2).active {
   border-top: 1px solid transparent;
@@ -225,10 +231,17 @@ DEBUGGING
 	border-radius: 0;
 }
 
-#pin-nav {	
-}
+/* 
+Sidebar Toggle
+----------------------------------------------
+*/
 
-#pin-nav-v2 {
+/* 
+Sidebar Pin Button
+----------------------------------------------
+*/
+
+#nav-pin {
 	position: absolute;
 	bottom: 20px;
 	left: 0;
@@ -239,11 +252,12 @@ DEBUGGING
 	border-radius: 50%;
 }
 
-#pin-nav-v2.selected {
+#nav-pin.selected {
 	background-color: #3399FF;
 }
 
 #link-list > li.brand {
+	float: right;
 	background-color: #E7E7E7;
 	border-top: 0;
 }
@@ -264,14 +278,6 @@ DEBUGGING
 input.form-control {
 	width: 350px;
 }
-
-/*#link-list .icon {
-	position: absolute;
-	height: 20px;
-	width: 20px;
-	top: 17px;
-	left: 17px;
-}*/
 
 #link-list .brand .name {
 	float: right;
@@ -299,6 +305,10 @@ input.form-control {
 ICONS
 ----------------------------------------------
 */
+
+.nav-link a {
+	overflow: hidden;
+}
 
 .nav-link .icon,
 .brand .icon
