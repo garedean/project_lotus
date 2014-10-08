@@ -27,6 +27,18 @@ $(document).ready(function() {
         currentlySelectedLink = $(this).text();
     });
 
+    $('.nav-link').hover(function() {
+        if(!navExpanded) {
+            $(this).find('ul').toggle()
+        }
+    });
+
+    $('.nav-link').on('click', function() {
+        if(navExpanded) {
+            $(this).find('ul').toggle()
+        }        
+    });
+    
     $('#pin-nav').on('change', function() {      
             pinNav = !pinNav;        
     });

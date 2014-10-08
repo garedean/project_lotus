@@ -65,6 +65,10 @@ html {
 	height: 100%;
 }
 
+#nav-menu a,
+#top-bar a {
+	color: #666;
+}
 /* 
 TOP CONTENT NAV
 ----------------------------------------------
@@ -72,6 +76,7 @@ TOP CONTENT NAV
 
 header#top-bar {
 	position: relative;
+	font-size: 1.1em;
 	margin-left: 220px;
 	height: 50px;
 	background-color: #E7E7E7;
@@ -129,20 +134,17 @@ NAV MENU LINKS
   border-bottom: 1px solid transparent;
 }
 
-/* .nav-link:first-child:active {
-	border-top: none;
-} */
-
 #nav-menu .nav-link,
 #nav-menu .brand
  {
+  width: 220px;
   height: 50px;
+  position: relative;
   border-top: 1px solid transparent;
   box-sizing: border-box;
-  overflow: hidden;
-  cursor: pointer;
-  width: 220px;
+  cursor: pointer;  
   transition: width .35s;
+  white-space: nowrap;
 }
 
 #nav-menu li:hover {
@@ -151,7 +153,6 @@ NAV MENU LINKS
 
 /* Expanded sidebar, active link */
 #nav-menu .nav-link:nth-child(n+2).active {
-  border-right: 2px solid white;
   color: #f78d1e;
   font-weight: 700;
   border-bottom: 1px solid #E7E7E7;  
@@ -175,11 +176,6 @@ NAV MENU LINKS
 	transition: width .4s;
 }
 
-
-#nav-menu .nav-link:nth-child(3).active {
-  border-top: 1px solid transparent;
-}
-
 .nav-link > a,
 .brand > a {
   position: relative;
@@ -199,7 +195,8 @@ NAV MENU LINKS
   color: orange;
 }
 
-#nav-menu .nav-link a:hover {
+#nav-menu .nav-link a:hover,
+#top-bar a:hover {
 	text-decoration: none;
 }
 
@@ -211,41 +208,58 @@ NAV MENU LINKS
 	font-size: 1em;
 }
 
-/* 
-DEBUGGING
-----------------------------------------------
-*/
-
-.menu-debugging {
-	position: absolute;
-	right: 0; bottom: 0;
-	margin: auto;
-	height: 200px;
-	width: 300px;
-	font-weight: 900;
-	padding: 20px;
-	border: 1px solid #555;
+.nav-link a {
+	overflow: hidden;
 }
 
-#search {
-	width: 300px;
-	float: left;
-	margin-top: 7px;
+#nav-menu .nav-link:nth-child(2) {
+	border-top: 0 !important;
+}
+
+#link-list > li.brand {
+	background-color: #E7E7E7;
+	border-top: none;
+}
+
+#link-list .brand a:hover {
+	text-decoration: none;
+}
+
+#nav-menu .brand:hover {
+	cursor: default;
+}
+
+#nav-menu #link-list a:hover,
+#nav-menu #link-list span:hover {
+	cursor: inherit;
+}
+
+#link-list .brand .name {
+	float: right;
 	position: relative;
-	left: -14px;
+	top: 6px;
+	left: -56px;
+	color: #0EBFE9;	
+	font-size: 40px;
+	font-family: 'Great Vibes', cursive;
 }
 
-#search .form-control {
-	border-radius: 0;
+#link-list .line {
+	margin: 15px 20px;
+	border-top: 1px solid #E7E7E7;
+}
+
+.nav-link.active .highlight {
+	height: 100%;
+	width: 4px;
+	position: absolute;
+	left: 0;
+	background-color: orange;
+	height: 100%;
 }
 
 /* 
-Sidebar Toggle
-----------------------------------------------
-*/
-
-/* 
-Sidebar Pin Button
+SIDEBAR PIN NAV 
 ----------------------------------------------
 */
 
@@ -264,38 +278,27 @@ Sidebar Pin Button
 	background-color: #3399FF;
 }
 
-#link-list > li.brand {
-	float: right;
-	background-color: #E7E7E7;
-	border-top: 0;
+/* 
+HEADER CLIENT LOOKUP
+----------------------------------------------
+*/
+#search {
+	width: 300px;
+	float: left;
+	margin-top: 7px;
+	position: relative;
+	left: -14px;
 }
 
-#link-list .brand a:hover {
-	text-decoration: none;
+#search .form-control {
+	border-radius: 0;
 }
 
-#nav-menu .brand:hover {
-	cursor: default;
-}
-
-#nav-menu #link-list a:hover,
-#nav-menu #link-list span:hover {
-	cursor: inherit;
-}
 
 input.form-control {
 	width: 350px;
 }
 
-#link-list .brand .name {
-	float: right;
-	position: relative;
-	top: 6px;
-	left: -56px;
-	color: #0EBFE9;	
-	font-size: 40px;
-	font-family: 'Great Vibes', cursive;
-}
 
 #client-lookup {
 	border: none;
@@ -315,10 +318,6 @@ ICONS
 ----------------------------------------------
 */
 
-.nav-link a {
-	overflow: hidden;
-}
-
 .nav-link .icon,
 .brand .icon
  {
@@ -335,102 +334,152 @@ ICONS
 	left: 10px;
 }
 
-.nav-link .icon.home {
-	background-position: -7px -6px;
+.nav-link .icon.dashboard {
+	background-position: -8px -6px;
 }
 
 .nav-link .icon.reports {
-	background-position: -7px -260px;
+	background-position: -8px -260px;
 }
 
 .nav-link .icon.class {
-	background-position: -7px -49px;
+	background-position: -8px -49px;
 }
 
 .nav-link .icon.workshop {
-	background-position: -7px -90px;
+	background-position: -8px -90px;
 }
 
 .nav-link .icon.appointment {
-	background-position: -7px -133px;
+	background-position: -8px -133px;
 }
 
 .nav-link .icon.retail {
-	background-position: -7px -301px;
+	background-position: -8px -301px;
 }
 
 .nav-link .icon.room {
-	background-position: -7px -344px;
+	background-position: -8px -344px;
 }
 
 .nav-link .icon.home {
-	background-position: -7px -6px;
+	background-position: -8px -6px;
 }
 
 .nav-link.active .icon.home {
-	background-position: -49px -6px;
+	background-position: -50px -6px;
 }
 
 .nav-link.active .icon.reports {
-	background-position: -49px -260px;
+	background-position: -50px -260px;
 }
 
 .nav-link.active .icon.class {
-	background-position: -49px -49px;
+	background-position: -50px -49px;
 }
 
 .nav-link.active .icon.workshop {
-	background-position: -49px -90px;
+	background-position: -50px -90px;
 }
 
 .nav-link.active .icon.appointment {
-	background-position: -49px -133px;
+	background-position: -50px -133px;
 }
 
 .nav-link.active .icon.retail {
-	background-position: -49px -301px;
+	background-position: -50px -301px;
 }
 
 .nav-link.active .icon.room {
-	background-position: -49px -344px;
+	background-position: -50px -344px;
 }
 
-.brand .icon.nav-toggle {
-	border-top: 11px double rgba(0, 0, 0, .3);
-	border-bottom: 4px solid rgba(0, 0, 0, .3);
-	height: 18px;
-	width: 21px;
-	top: 6px;
-	left: 14px;
+/* 
+SIDEBAR TOGGLE BUTTON
+----------------------------------------------
+*/
+
+.nav-toggle {
+	padding: 5px 10px;
+	background-color: #E7E7E7;	
 	cursor: pointer;
+	border-radius: 2px;
 }
 
-#top-bar .nav-toggle-wrapper {
-	height: 50px;
-	width: 50px;
-	float: left;
+.nav-toggle-wrapper {
 	cursor: pointer;
-	position: relative;
-	left: -15px;
-}
-
-.nav-toggle-wrapper .nav-toggle {
-	border-top: 11px double rgba(0, 0, 0, .15);
-	border-bottom: 4px solid rgba(0, 0, 0, .15);
-	height: 18px;
-	width: 20px;
-	top: 16px;
-	left: 15px;
-	cursor: pointer;
-	float: left;
-	position: relative;
-}
-
-.nav-link.active .highlight {
-	height: 100%;
-	width: 4px;
 	position: absolute;
-	left: 0;
-	background-color: orange;
-	height: 100%;
+	bottom: 25px;
+	right: 12px;
+}
+
+/* 
+STAFF USER PANEL
+----------------------------------------------
+*/
+
+#user-panel {
+	float: right;
+	line-height: 50px;
+	padding-right: 45px;
+	text-decoration: none;
+}
+
+#current-user .name {
+	font-weight: 700;
+}
+
+/* 
+SIDEBAR HOVER MENUS
+----------------------------------------------
+*/
+
+.nav-link ul {
+	display: none;
+	width: 220px;	
+	background-color: #EEE;
+	line-height: 2em;
+	color: #666;
+}
+
+.nav-link ul li {
+	padding: 5px;
+}
+
+.nav-link ul li:hover {
+	background-color: #E7E7E7 !important;
+}
+
+.collapsed .nav-link ul {
+	display: none;
+	width: 220px;
+	position: absolute;
+	top: 0;
+	left: 50px;
+	background-color: #EEE;
+	line-height: 2em;
+}
+
+.collapsed  .nav-link ul li {
+	padding: 5px;
+}
+
+.collapsed  .nav-link ul li:hover {
+	background-color: #E7E7E7 !important;
+}
+
+/* 
+DEBUGGING
+----------------------------------------------
+*/
+
+.menu-debugging {
+	position: absolute;
+	right: 0; bottom: 0;
+	margin: auto;
+	height: 200px;
+	width: 300px;
+	font-weight: 900;
+	padding: 20px;
+	border: 1px solid #555;
 }
