@@ -193,8 +193,8 @@ SIDEBAR LINKS
 	padding-left: 5px;
 }
 
-.nav-link.active a {
-  color: orange;
+#nav-menu .nav-link.active a {
+  color: #f78d1e;
 }
 
 #nav-menu .nav-link a:hover,
@@ -256,7 +256,7 @@ SIDEBAR LINKS
 	width: 4px;
 	position: absolute;
 	left: 0;
-	background-color: orange;
+	background-color: #f78d1e;
 	height: 100%;
 }
 
@@ -494,6 +494,16 @@ ICONS
 .nav-link.active .icon.room {
 	background-position: -50px -344px;
 }
+
+.fa-shopping-cart {
+	margin: 10px 0 10px 0;
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	top: 0;
+	left: 10px;
+}
+
 
 /* 
 DEBUGGING
