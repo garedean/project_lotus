@@ -116,7 +116,7 @@ VERTICAL-LEFT NAV MENU
   color: #00B4FF;
   font-family: 'Open Sans', sans-serif;
   position: fixed;
-  border-right: 1px solid #E7E7E7; 
+  /*border-right: 1px solid #E7E7E7; */
   box-sizing: border-box;
   transition: .33s;
 }
@@ -148,7 +148,7 @@ SIDEBAR LINKS
   white-space: nowrap;
 }
 
-#nav-menu li:hover {
+#nav-menu > ul > li:hover {
   background-color: #EEE;
 }
 
@@ -156,7 +156,7 @@ SIDEBAR LINKS
 #nav-menu .nav-link.active {
   color: #f78d1e;
   font-weight: 700;
-  border-bottom: 1px solid #E7E7E7;  
+  /*border-bottom: 1px solid #E7E7E7; */ 
   background-color: white;
   -webkit-transition: width .33s, background-color .13s, border .13s;
   transition: width .33s, background-color .13s, border .13s;
@@ -165,7 +165,7 @@ SIDEBAR LINKS
 
 /* The top most item should not get a top border */
 #nav-menu .nav-link:nth-child(n+3).active {
-	border-top: 1px solid #E7E7E7;
+	/*border-top: 1px solid #E7E7E7;*/
 } 
 
 #nav-menu.collapsed .nav-link:nth-child(n+2).active {
@@ -229,6 +229,7 @@ SIDEBAR LINKS
 
 #nav-menu .brand:hover {
 	cursor: default;
+	background-color: #E7E7E7;
 }
 
 #nav-menu #link-list a:hover,
@@ -257,7 +258,6 @@ SIDEBAR LINKS
 	position: absolute;
 	left: 0;
 	background-color: #f78d1e;
-	height: 100%;
 }
 
 /* 
@@ -276,8 +276,9 @@ SIDEBAR SUBLINKS
 }
 
 .sub-links li.active {
-	background-color: #E7E7E7;
+	/*background-color: #E7E7E7;*/
 	font-weight: 600;
+	color: #555;
 }
 
 /* 
@@ -336,24 +337,6 @@ input.form-control {
 }
 
 /* 
-SIDEBAR TOGGLE BUTTON
-----------------------------------------------
-*/
-
-.nav-toggle {
-	display: block;
-	padding: 4px 9px;
-	cursor: pointer;
-	border-radius: 3px;
-	color: #999;
-	border: 1px solid #CCC;
-	cursor: pointer;
-	position: absolute;
-	bottom: 25px;
-	right: 12px;
-}
-
-/* 
 STAFF USER PANEL
 ----------------------------------------------
 */
@@ -387,8 +370,8 @@ SIDEBAR HOVER MENUS
 	font-size: .95em;
 }
 
-.nav-link ul li:hover {
-	background-color: #EEE !important;
+.nav-link > ul > li:hover {
+	font-weight: 800;
 }
 
 .collapsed .nav-link ul {
@@ -400,6 +383,7 @@ SIDEBAR HOVER MENUS
 	background-color: white;
 	line-height: 2em;
 	cursor: pointer;
+	border-radius: 0 3px 3px 0;
 	border-top: 1px solid #E7E7E7;
 	border-right: 1px solid #E7E7E7;
 	border-bottom: 1px solid #E7E7E7;
@@ -436,35 +420,35 @@ ICONS
 }
 
 .nav-link .icon.dashboard {
-	background-position: -8px -6px;
+	background-position: -7px -6px;
 }
 
 .nav-link .icon.reports {
-	background-position: -8px -260px;
+	background-position: -7px -260px;
 }
 
 .nav-link .icon.class {
-	background-position: -8px -49px;
+	background-position: -7px -49px;
 }
 
 .nav-link .icon.workshop {
-	background-position: -8px -90px;
+	background-position: -7px -90px;
 }
 
 .nav-link .icon.appointment {
-	background-position: -8px -133px;
+	background-position: -7px -133px;
 }
 
 .nav-link .icon.retail {
-	background-position: -8px -301px;
+	background-position: -7px -301px;
 }
 
 .nav-link .icon.room {
-	background-position: -8px -344px;
+	background-position: -7px -344px;
 }
 
 .nav-link .icon.home {
-	background-position: -8px -6px;
+	background-position: -7px -6px;
 }
 
 .nav-link.active .icon.home {
@@ -495,15 +479,36 @@ ICONS
 	background-position: -50px -344px;
 }
 
-.fa-shopping-cart {
+.fa {
 	margin: 10px 0 10px 0;
 	position: absolute;
 	height: 30px;
 	width: 30px;
 	top: 0;
 	left: 10px;
+	padding: 7px 0 0 5px;
+	font-size: 1.4em !important;
+
 }
 
+/* 
+SIDEBAR TOGGLE BUTTON
+----------------------------------------------
+*/
+
+#nav-menu .nav-toggle {
+	display: block;
+	padding: 4px 9px;
+	cursor: pointer;
+	border-radius: 3px;
+	color: #999;
+	cursor: pointer;
+	position: absolute;
+	top: auto;
+	bottom: 25px;
+	left: auto;
+	right: 12px;
+}
 
 /* 
 DEBUGGING
