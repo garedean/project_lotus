@@ -116,7 +116,7 @@ VERTICAL-LEFT NAV MENU
   color: #00B4FF;
   font-family: 'Open Sans', sans-serif;
   position: fixed;
-  border-right: 1px solid #E7E7E7;
+  border-right: 1px solid #E7E7E7; 
   box-sizing: border-box;
   transition: .33s;
 }
@@ -157,7 +157,8 @@ NAV MENU LINKS
   font-weight: 700;
   border-bottom: 1px solid #E7E7E7;  
   background-color: white;
-  transition: width .33s;
+  -webkit-transition: width .33s, background-color .15s, border .15s;
+  transition: width .33s, background-color .15s, border .15s;
   width: 220px;
 }
 

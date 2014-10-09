@@ -80,8 +80,11 @@ function openCloseNav() {
             nextEventReady = false;
             navExpanded = !navExpanded;
             $('#nav-menu').toggleClass('collapsed');
-            $('header#top-bar').toggleClass('collapsed');
+            $('header#top-bar').toggleClass('collapsed');            
             //$('#nav-menu').find('li:nth-child(n+2) .title').fadeToggle(300);
+
+            $('.nav-toggle').toggleClass('fa-angle-left')
+            .toggleClass('fa-angle-right');
         }
         if (!initialPage && distanceToTarget > 40) {
             nextEventReady = true;
