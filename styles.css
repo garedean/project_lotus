@@ -246,6 +246,10 @@ SIDEBAR LINKS
 	font-family: 'Great Vibes', serif;
 }
 
+#nav-menu.collapsed .brand {
+	width: 50px;
+}
+
 #link-list .line {
 	margin: 15px 20px;
 	border-top: 1px solid #E7E7E7;
@@ -503,6 +507,10 @@ ICONS
 .fa.fa-shopping-cart {
 	font-size: 1.7em;
 	padding: 6px 0 0 2px;
+}
+
+.fa.fa-tachometer {
+	padding: 4px 0 0 4px;
 }
 
 /* 
