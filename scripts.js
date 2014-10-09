@@ -1,9 +1,9 @@
-var navExpanded = true,
-    nextEventReady = true,
-    initialPage = true;
-	currentlySelectedLink = ''
-    pinNavCheckbox = $('#pin-nav'),
-    pinNav = true;
+var navExpanded             = true,
+    nextEventReady          = true,
+    initialPage             = true,
+    pinNav                  = true
+	currentlySelectedLink   = ''
+    pinNavCheckbox          = $('#pin-nav'); 
 
 $(document).ready(function() {
     
@@ -19,25 +19,32 @@ $(document).ready(function() {
         initialPage = false;
 
         $(this).addClass('active'); 
-        $('.nav-link').not(this).removeClass('active');           
 
-        nextEventReady = true;
-        updateDebugInfo();
-
-        currentlySelectedLink = $(this).text();
-    });
-
-    $('.nav-link').hover(function() {
-        if(!navExpanded) {
-            $(this).find('ul').toggle()
-        }
-    });
-
-    $('.nav-link').on('click', function() {
         if(navExpanded) {
-            $(this).find('ul').toggle();
-        }        
+            $(this).find('ul').show();
+            $('.nav-link').not(this).find('ul').hide();
+        }
+
+        $('.nav-link').not(this).removeClass('active');                 
+
+        nextEventReady = true; 
+        currentlySelectedLink = $(this).text();
+
+        updateDebugInfo();
     });
+
+    $('.nav-link').hover(
+        function() {
+            if(!navExpanded) {
+                $(this).find('ul').show();
+            }
+        },
+        function() {
+            if(!navExpanded) {
+                $(this).find('ul').hide();
+            } 
+        }
+    );
 
     $('#nav-pin').on('click', function() {      
             pinNav = !pinNav;   
