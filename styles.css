@@ -131,7 +131,7 @@ NAV MENU LINKS
 ----------------------------------------------
 */
 
-#nav-menu .nav-link:last-child {
+#nav-menu .nav-link {
   border-bottom: 1px solid transparent;
 }
 
