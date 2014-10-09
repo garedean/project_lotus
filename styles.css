@@ -65,11 +65,15 @@ html {
 	height: 100%;
 }
 
-#nav-menu a,
-#top-bar a {
+#nav-menu,
+#top-bar {
 	color: #666;
+}
+
+#nav-menu a {
 	height: 50px;
 }
+
 /* 
 TOP CONTENT NAV
 ----------------------------------------------
@@ -131,16 +135,11 @@ SIDEBAR LINKS
 ----------------------------------------------
 */
 
-#nav-menu .nav-link {
-  border-bottom: 1px solid transparent;
-}
-
 #nav-menu .nav-link,
 #nav-menu .brand
  {
   width: 220px;
   position: relative;
-  border-top: 1px solid transparent;
   box-sizing: border-box;
   cursor: pointer;  
   -webkit-transition: width .33s, background-color .13s, border .13s;
@@ -343,6 +342,7 @@ STAFF USER PANEL
 
 #user-panel {
 	float: right;
+	position: relative;
 	line-height: 50px;
 	padding-right: 45px;
 	text-decoration: none;
@@ -350,6 +350,11 @@ STAFF USER PANEL
 
 #current-user .name {
 	font-weight: 700;
+}
+
+#user-panel > div {
+	float: left;
+	margin-right: 15px;
 }
 
 /* 
@@ -452,43 +457,52 @@ ICONS
 }
 
 .nav-link.active .icon.home {
-	background-position: -50px -6px;
+	background-position: -49px -6px;
 }
 
 .nav-link.active .icon.reports {
-	background-position: -50px -260px;
+	background-position: -49px -260px;
 }
 
 .nav-link.active .icon.class {
-	background-position: -50px -49px;
+	background-position: -49px -49px;
 }
 
 .nav-link.active .icon.workshop {
-	background-position: -50px -90px;
+	background-position: -49px -90px;
 }
 
 .nav-link.active .icon.appointment {
-	background-position: -50px -133px;
+	background-position: -49px -133px;
 }
 
 .nav-link.active .icon.retail {
-	background-position: -50px -301px;
+	background-position: -49px -301px;
 }
 
 .nav-link.active .icon.room {
-	background-position: -50px -344px;
+	background-position: -49px -344px;
 }
 
-.fa {
+.nav-link .fa {
 	margin: 10px 0 10px 0;
 	position: absolute;
 	height: 30px;
 	width: 30px;
 	top: 0;
 	left: 10px;
-	padding: 7px 0 0 5px;
-	font-size: 1.4em !important;
+	padding: 6px 0 0 4px;
+	font-size: 1.4em;
+	color: #777;
+}
 
+.nav-link.active .fa {
+	color: #f78d1e;
+}
+
+.fa.fa-shopping-cart {
+	font-size: 1.7em;
+	padding: 6px 0 0 2px;
 }
 
 /* 
