@@ -127,7 +127,7 @@ VERTICAL-LEFT NAV MENU
 }
 
 /* 
-NAV MENU LINKS
+SIDEBAR LINKS
 ----------------------------------------------
 */
 
@@ -153,7 +153,7 @@ NAV MENU LINKS
 }
 
 /* Expanded sidebar, active link */
-#nav-menu .nav-link:nth-child(n+2).active {
+#nav-menu .nav-link.active {
   color: #f78d1e;
   font-weight: 700;
   border-bottom: 1px solid #E7E7E7;  
@@ -261,6 +261,26 @@ NAV MENU LINKS
 }
 
 /* 
+SIDEBAR SUBLINKS
+----------------------------------------------
+*/
+
+#nav-menu .nav-link.has-sub.active {
+	background-color: white;
+}
+
+.sub-links li {
+	font-weight: 500;
+	border-top: 1px solid #EDEDED;
+	box-sizing: border-box;
+}
+
+.sub-links li.active {
+	background-color: #E7E7E7;
+	font-weight: 600;
+}
+
+/* 
 SIDEBAR PIN NAV 
 ----------------------------------------------
 */
@@ -313,6 +333,85 @@ input.form-control {
 #client-lookup:focus {
 	box-shadow: none;
 	border-color: #E7E7E7;
+}
+
+/* 
+SIDEBAR TOGGLE BUTTON
+----------------------------------------------
+*/
+
+.nav-toggle {
+	display: block;
+	padding: 4px 9px;
+	cursor: pointer;
+	border-radius: 3px;
+	color: #999;
+	border: 1px solid #CCC;
+	cursor: pointer;
+	position: absolute;
+	bottom: 25px;
+	right: 12px;
+}
+
+/* 
+STAFF USER PANEL
+----------------------------------------------
+*/
+
+#user-panel {
+	float: right;
+	line-height: 50px;
+	padding-right: 45px;
+	text-decoration: none;
+}
+
+#current-user .name {
+	font-weight: 700;
+}
+
+/* 
+SIDEBAR HOVER MENUS
+----------------------------------------------
+*/
+
+.nav-link ul {
+	display: none;
+	width: 220px;	
+	line-height: 2em;
+	color: #666;
+	transition: all .2s;
+}
+
+.nav-link > ul > li {
+	padding: 5px 0 5px 50px;
+	font-size: .95em;
+}
+
+.nav-link ul li:hover {
+	background-color: #EEE !important;
+}
+
+.collapsed .nav-link ul {
+	display: none;
+	width: 220px;
+	position: absolute;
+	top: -1px;
+	left: 50px;
+	background-color: white;
+	line-height: 2em;
+	cursor: pointer;
+	border-top: 1px solid #E7E7E7;
+	border-right: 1px solid #E7E7E7;
+	border-bottom: 1px solid #E7E7E7;
+}
+
+.collapsed .nav-link ul li {
+	padding: 5px;
+	padding-left: 10px;
+}
+
+.collapsed .nav-link ul li:first-child {
+	border-top: 0;
 }
 
 /* 
@@ -397,81 +496,6 @@ ICONS
 }
 
 /* 
-SIDEBAR TOGGLE BUTTON
-----------------------------------------------
-*/
-
-.nav-toggle {
-	display: block;
-	padding: 4px 9px;
-	cursor: pointer;
-	border-radius: 3px;
-	color: #999;
-	border: 1px solid #CCC;
-	cursor: pointer;
-	position: absolute;
-	bottom: 25px;
-	right: 12px;
-}
-
-/* 
-STAFF USER PANEL
-----------------------------------------------
-*/
-
-#user-panel {
-	float: right;
-	line-height: 50px;
-	padding-right: 45px;
-	text-decoration: none;
-}
-
-#current-user .name {
-	font-weight: 700;
-}
-
-/* 
-SIDEBAR HOVER MENUS
-----------------------------------------------
-*/
-
-.nav-link ul {
-	display: none;
-	width: 220px;	
-	background-color: #EEE;
-	line-height: 2em;
-	color: #666;
-	transition: all .2s;
-}
-
-.nav-link > ul > li {
-	padding: 5px 0 5px 15px;
-}
-
-.nav-link ul li:hover {
-	background-color: #E7E7E7 !important;
-}
-
-.collapsed .nav-link ul {
-	display: none;
-	width: 220px;
-	position: absolute;
-	top: 0;
-	left: 50px;
-	background-color: #EEE;
-	line-height: 2em;
-	cursor: pointer;
-}
-
-.collapsed  .nav-link ul li {
-	padding: 5px;
-}
-
-.collapsed  .nav-link ul li:hover {
-	background-color: #E7E7E7 !important;
-}
-
-/* 
 DEBUGGING
 ----------------------------------------------
 */
@@ -486,3 +510,4 @@ DEBUGGING
 	padding: 20px;
 	border: 1px solid #555;
 }
+
