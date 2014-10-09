@@ -147,7 +147,7 @@ SIDEBAR LINKS
   white-space: nowrap;
 }
 
-#nav-menu > ul > li:hover {
+#nav-menu .nav-li:hover {
   background-color: #EEE;
 }
 
@@ -220,6 +220,7 @@ SIDEBAR LINKS
 #link-list > li.brand {
 	background-color: #E7E7E7;
 	border-top: none;
+	height: 50px;
 }
 
 #link-list .brand a:hover {
@@ -228,7 +229,6 @@ SIDEBAR LINKS
 
 #nav-menu .brand:hover {
 	cursor: default;
-	background-color: #E7E7E7;
 }
 
 #nav-menu #link-list a:hover,
