@@ -68,6 +68,7 @@ html {
 #nav-menu a,
 #top-bar a {
 	color: #666;
+	height: 50px;
 }
 /* 
 TOP CONTENT NAV
@@ -84,7 +85,7 @@ header#top-bar {
 }
 
 header#top-bar.collapsed {
-	margin-left: 14px;
+	margin-left: 4px;
 	position: relative;
 	transition: margin .4s;
 }
@@ -138,7 +139,6 @@ NAV MENU LINKS
 #nav-menu .brand
  {
   width: 220px;
-  height: 50px;
   position: relative;
   border-top: 1px solid transparent;
   box-sizing: border-box;
@@ -265,11 +265,11 @@ SIDEBAR PIN NAV
 
 #nav-pin {
 	position: absolute;
-	bottom: 20px;
+	bottom: 0;
 	left: 0;
 	margin: 2px;
-	height: 12px;
-	width: 12px;
+	height: 11px;
+	width: 11px;
 	border: 1px solid #3399FF;
 	border-radius: 50%;
 }
@@ -287,7 +287,6 @@ HEADER CLIENT LOOKUP
 	float: left;
 	margin-top: 7px;
 	position: relative;
-	left: -14px;
 }
 
 #search .form-control {
@@ -400,13 +399,12 @@ SIDEBAR TOGGLE BUTTON
 */
 
 .nav-toggle {
-	padding: 5px 10px;
-	background-color: #E7E7E7;	
+	display: block;
+	padding: 4px 9px;
 	cursor: pointer;
-	border-radius: 2px;
-}
-
-.nav-toggle-wrapper {
+	border-radius: 3px;
+	color: #999;
+	border: 1px solid #CCC;
 	cursor: pointer;
 	position: absolute;
 	bottom: 25px;
@@ -442,8 +440,8 @@ SIDEBAR HOVER MENUS
 	color: #666;
 }
 
-.nav-link ul li {
-	padding: 5px;
+.nav-link > ul > li {
+	padding: 5px 0 5px 15px;
 }
 
 .nav-link ul li:hover {

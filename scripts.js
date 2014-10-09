@@ -35,22 +35,22 @@ $(document).ready(function() {
 
     $('.nav-link').on('click', function() {
         if(navExpanded) {
-            $(this).find('ul').toggle()
+            $(this).find('ul').toggle();
         }        
-    });
-    
-    $('#pin-nav').on('change', function() {      
-            pinNav = !pinNav;        
     });
 
     $('#nav-pin').on('click', function() {      
             pinNav = !pinNav;   
-            $(this).toggleClass('selected');     
+            $(this).toggleClass('selected'); 
+            $('.nav-toggle').toggle();   
     });
-    $('.nav-toggle-wrapper').on('click', function() {  
+
+    $('.nav-toggle').on('click', function() {  
             navExpanded = !navExpanded;
             $('#nav-menu').toggleClass('collapsed');  
-            $('header#top-bar').toggleClass('collapsed');  
+            $('header#top-bar').toggleClass('collapsed');
+            $(this).toggleClass('fa-angle-left')
+            .toggleClass('fa-angle-right');
     });
 });
 
