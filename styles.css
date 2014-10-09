@@ -285,7 +285,7 @@ HEADER CLIENT LOOKUP
 #search {
 	width: 300px;
 	float: left;
-	margin-top: 7px;
+	margin-top: 6px;
 	position: relative;
 }
 
@@ -301,10 +301,11 @@ input.form-control {
 
 #client-lookup {
 	border: none;
-	height: 36px;
+	height: 37px;
 	width: 300px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
+	font-size: 15px;
 }
 
 #client-lookup:focus {
