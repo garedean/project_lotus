@@ -25,12 +25,18 @@ $(document).ready(function() {
             $('.nav-link').not(this).find('ul').hide();
         }
 
-        $('.nav-link').not(this).removeClass('active');   
+        $('.nav-link').not(this).removeClass('active')
+        .removeClass('expanded');   
+
         $('.nav-link').not(this).find('.sub-links')
         .find('li.active').removeClass('active');               
 
         nextEventReady = true; 
         currentlySelectedLink = $(this).text();
+
+        if( $(this).hasClass('has-sub') ) {
+            $(this).addClass('expanded');
+        }
 
         updateDebugInfo();
     });
