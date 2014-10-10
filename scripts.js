@@ -16,8 +16,6 @@ $(document).ready(function() {
 
     $('.nav-link').on('click', function() {
 
-
-
         $(this).addClass('active'); 
 
         if(navExpanded) {
@@ -71,17 +69,17 @@ $(document).ready(function() {
     $('.nav-toggle').on('click', function() {  
             navExpanded = !navExpanded;
             $('#nav-menu').toggleClass('collapsed');  
-            $('header#top-bar').toggleClass('collapsed');
             $(this).toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
             $('.nav-link.has-sub.active').find('ul').show();
             $('.collapsed .sub-links:visible').hide();
+            $('#main-content').toggleClass('expanded')
             
     });
 });
 
 // Calculates x-axis distance to the #nav-menu sidebar. When the cursor
-// gets within 40 pixels of the sidebar right-side, the navbar opens or 
+// gets within 50 pixels of the sidebar right-side, the navbar opens or 
 // closes. Purpose: anticipate desired action for ease of use 
 function openCloseNav() {
     var mX, mY, distanceToTarget,
@@ -96,21 +94,20 @@ function openCloseNav() {
         mX = e.pageX;
 
         distanceToTarget = calculatedistanceToTarget($element, mX);
-        if (distanceToTarget < 40 && nextEventReady && !pinNav) {
+        if (distanceToTarget < 50 && nextEventReady && !pinNav) {
             nextEventReady = false;
             navExpanded = !navExpanded;
-            $('#nav-menu').toggleClass('collapsed');
-            $('header#top-bar').toggleClass('collapsed');            
+            $('#nav-menu').toggleClass('collapsed');           
 
             $('.nav-toggle').toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
 
             $('.nav-link.has-sub.active').find('ul').show();
             $('.collapsed .sub-links:visible').hide();
-
+            $('#main-content').toggleClass('expanded')
         }
 
-        if (distanceToTarget > 40) {
+        if (distanceToTarget > 50) {
             nextEventReady = true;
         }
         updateDebugInfo()

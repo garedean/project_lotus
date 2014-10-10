@@ -59,10 +59,13 @@ html {
 	width: 100%;
 }
 
-#page-wrapper {
-	position: relative;
+#main-wrap {
 	width: 100%;
-	height: 100%;
+	position: absolute;	
+	top:50px;
+	right: 0;	
+	bottom: 0;
+	left: 0;
 }
 
 #nav-menu,
@@ -79,24 +82,31 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 
+#main-content {
+	padding: 15px;
+	margin-left: 240px;
+	background-color: pink;
+	transition: .33s;
+}
+
+#main-content.expanded {
+	margin-left: 50px;
+	transition: .33s;
+}
+
 /* 
 TOP CONTENT NAV
 ----------------------------------------------
 */
 
 header#top-bar {
-	position: relative;
-	font-size: 1.1em;
-	margin-left: 240px;
+	position: fixed;
 	height: 50px;
+	width: 100%;
+	top: 0;
+	font-size: 1.1em;
 	background-color: #E7E7E7;
 	transition: margin .33s;
-}
-
-header#top-bar.collapsed {
-	margin-left: 4px;
-	position: relative;
-	transition: margin .4s;
 }
 
 #brand {
@@ -119,20 +129,22 @@ VERTICAL-LEFT NAV MENU
 */
 
 #nav-menu {
+  position: absolute;
+  height: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
   width: 240px;
-  height: 100%;
-  background-color: rgba(235, 238, 240, 1); /*#ebeef0;*/
+  background-color: rgba(235, 238, 240, 1);
   color: #00B4FF;
   font-family: 'Open Sans', sans-serif;
-  position: fixed;
-  /*border-right: 1px solid #E7E7E7; */
   box-sizing: border-box;
   transition: .33s;
 }
 
 #nav-menu.collapsed {
 	width: 50px;
-	transition: all .4s;
+	transition: all .33s;
 }
 
 /* 
@@ -140,8 +152,7 @@ SIDEBAR LINKS
 ----------------------------------------------
 */
 
-#nav-menu .nav-link,
-#nav-menu .brand
+#nav-menu .nav-link
  {
   width: 240px;
   position: relative;
@@ -170,16 +181,15 @@ SIDEBAR LINKS
 
 #nav-menu.collapsed .nav-link:nth-child(n+2).active {
 	width: 50px;
-	transition: width .4s;
+	transition: width .33s;
 }
 
-#nav-menu.collapsed .nav-link:nth-child(n+2) {
+#nav-menu.collapsed .nav-link {
 	width: 50px;
-	transition: width .4s;
+	transition: width .33s;
 }
 
-.nav-link > a,
-.brand > a {
+.nav-link > a {
   position: relative;
   text-decoration: none;
   display: inline;
@@ -189,10 +199,6 @@ SIDEBAR LINKS
   display: block;
 }
 
-.brand > a {
-	padding-left: 5px;
-}
-
 #nav-menu .nav-link.active a {
   color: #08C;
 }
@@ -200,10 +206,6 @@ SIDEBAR LINKS
 #nav-menu .nav-link a:hover,
 #top-bar a:hover {
 	text-decoration: none;
-}
-
-#nav-menu .nav-link:first-child.active {
-  border-top: 1px solid white;
 }
 
 #nav-menu .nav-link span {
@@ -218,37 +220,22 @@ SIDEBAR LINKS
 	border-top: 0 !important;
 }
 
-#link-list > li.brand {
-	background-color: #E7E7E7;
-	border-top: none;
+header .brand {
+	width: 250px;
 	height: 50px;
+	float: left;
 }
 
-#link-list .brand a:hover {
-	text-decoration: none;
-}
-
-#nav-menu .brand:hover {
-	cursor: default;
-}
-
-#nav-menu #link-list a:hover,
-#nav-menu #link-list span:hover {
-	cursor: inherit;
-}
-
-#link-list .brand .name {
-	float: right;
-	position: relative;
-	top: 6px;
-	left: -56px;
+header .brand .name {
+	padding: 20px 0 0 5px;
 	color: #0EBFE9;	
 	font-size: 40px;
 	font-family: 'Great Vibes', serif;
 }
 
-#nav-menu.collapsed .brand {
-	width: 50px;
+#nav-menu #link-list a:hover,
+#nav-menu #link-list span:hover {
+	cursor: inherit;
 }
 
 #link-list .line {
@@ -418,9 +405,7 @@ ICONS
 ----------------------------------------------
 */
 
-.nav-link .icon,
-.brand .icon
- {
+.nav-link .icon {
 	background-image: url("assets/spriteGrid2.png");
 	background-repeat: no-repeat;
 	background-color: transparent;
@@ -570,6 +555,7 @@ SIDEBAR TOGGLE BUTTON
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
+
 
 /* 
 DEBUGGING
