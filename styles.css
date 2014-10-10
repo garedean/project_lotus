@@ -74,6 +74,11 @@ html {
 	height: 50px;
 }
 
+a:hover, a:focus {
+	color: #555;
+	text-decoration: none;
+}
+
 /* 
 TOP CONTENT NAV
 ----------------------------------------------
@@ -147,15 +152,14 @@ SIDEBAR LINKS
   white-space: nowrap;
 }
 
-#nav-menu .nav-li:hover {
+#nav-menu .nav-link:hover {
   background-color: #EEE;
 }
 
 /* Expanded sidebar, active link */
 #nav-menu .nav-link.active {
   color: #f78d1e;
-  font-weight: 700;
-  /*border-bottom: 1px solid #E7E7E7; */ 
+  font-weight: 600;
   background-color: white;
   -webkit-transition: width .33s, background-color .13s, border .13s;
   transition: width .33s, background-color .13s, border .13s;
@@ -193,7 +197,7 @@ SIDEBAR LINKS
 }
 
 #nav-menu .nav-link.active a {
-  color: #f78d1e;
+  color: #08C;
 }
 
 #nav-menu .nav-link a:hover,
@@ -273,7 +277,7 @@ SIDEBAR SUBLINKS
 }
 
 .sub-links li {
-	font-weight: 500;
+	font-weight: 400;
 	border-top: 1px solid #EDEDED;
 	box-sizing: border-box;
 }
@@ -376,11 +380,11 @@ SIDEBAR HOVER MENUS
 
 .nav-link > ul > li {
 	padding: 5px 0 5px 50px;
-	font-size: .95em;
+	font-size: 14px;
 }
 
 .nav-link > ul > li:hover {
-	font-weight: 800;
+	font-weight: 600;
 }
 
 .collapsed .nav-link ul {
@@ -497,11 +501,11 @@ ICONS
 	left: 10px;
 	padding: 6px 0 0 4px;
 	font-size: 1.4em;
-	color: #777;
+	color: rgba(0,0,0,0.5);
 }
 
 .nav-link.active .fa {
-	color: #f78d1e;
+	color: rgba(0,0,0,0.7);
 }
 
 .fa.fa-shopping-cart {
