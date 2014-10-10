@@ -147,7 +147,7 @@ SIDEBAR LINKS
   white-space: nowrap;
 }
 
-#nav-menu .nav-li:hover {
+#nav-menu .nav-link:hover {
   background-color: #EEE;
 }
 
