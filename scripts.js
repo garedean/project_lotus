@@ -75,11 +75,14 @@ $(document).ready(function() {
             $(this).toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
             $('.nav-link.has-sub.active').find('ul').show();
+            $('.collapsed .sub-links:visible').hide();
+            
     });
 });
 
-// Returns proximity to a 'target_element' so that user
-// actions can be anticipated before reaching actual target
+// Calculates x-axis distance to the #nav-menu sidebar. When the cursor
+// gets within 40 pixels of the sidebar right-side, the navbar opens or 
+// closes. Purpose: anticipate desired action for ease of use 
 function openCloseNav() {
     var mX, mY, distanceToTarget,
         $distanceToTarget = $('.menu-debugging .distance-from-target'),
@@ -98,12 +101,13 @@ function openCloseNav() {
             navExpanded = !navExpanded;
             $('#nav-menu').toggleClass('collapsed');
             $('header#top-bar').toggleClass('collapsed');            
-            //$('#nav-menu').find('li:nth-child(n+2) .title').fadeToggle(300);
 
             $('.nav-toggle').toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
 
-            $('.nav-link.has-sub.active').find('ul').show(); 
+            $('.nav-link.has-sub.active').find('ul').show();
+            $('.collapsed .sub-links:visible').hide();
+
         }
 
         if (!initialPage && distanceToTarget > 40) {

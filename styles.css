@@ -150,11 +150,12 @@ SIDEBAR LINKS
   -webkit-transition: width .33s, background-color .13s, border .13s;
   transition: width .33s, background-color .13s, border .13s;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 #nav-menu .nav-link:hover {
   background-color: #e3e3e3;
-  transition: none;
+  overflow: visible;
 }
 
 /* Expanded sidebar, active link */
@@ -166,11 +167,6 @@ SIDEBAR LINKS
   transition: width .33s, background-color .13s, border .13s;
   width: 240px;
 }
-
-/* The top most item should not get a top border */
-#nav-menu .nav-link:nth-child(n+3).active {
-	/*border-top: 1px solid #E7E7E7;*/
-} 
 
 #nav-menu.collapsed .nav-link:nth-child(n+2).active {
 	width: 50px;
@@ -391,7 +387,6 @@ SIDEBAR HOVER MENUS
 
 .nav-link > ul > li:hover {
 	background-color: #FBFBFB;
-	/*font-weight: 600;*/
 }
 
 .collapsed .nav-link ul {
