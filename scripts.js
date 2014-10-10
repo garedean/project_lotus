@@ -1,6 +1,6 @@
 var navExpanded             = true,
     nextEventReady          = true,
-    initialPage             = true,
+
     pinNav                  = true
 	currentlySelectedLink   = ''
     pinNavCheckbox          = $('#pin-nav'); 
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     $('.nav-link').on('click', function() {
 
-        initialPage = false;
+
 
         $(this).addClass('active'); 
 
@@ -96,7 +96,7 @@ function openCloseNav() {
         mX = e.pageX;
 
         distanceToTarget = calculatedistanceToTarget($element, mX);
-        if (!initialPage && distanceToTarget < 40 && nextEventReady && !pinNav) {
+        if (distanceToTarget < 40 && nextEventReady && !pinNav) {
             nextEventReady = false;
             navExpanded = !navExpanded;
             $('#nav-menu').toggleClass('collapsed');
@@ -110,7 +110,7 @@ function openCloseNav() {
 
         }
 
-        if (!initialPage && distanceToTarget > 40) {
+        if (distanceToTarget > 40) {
             nextEventReady = true;
         }
         updateDebugInfo()
@@ -118,8 +118,7 @@ function openCloseNav() {
     });
 };
 
-function updateDebugInfo() {
-        $('.initial-page-load').html('Initial page load: ' + initialPage.toString().toUpperCase());
+function updateDebugInfo() {     
         $('.nav-menu-state').html('Nav-Menu Open? ' + navExpanded.toString().toUpperCase());
         $('.currently-selected-link').html('Current Page: ' + currentlySelectedLink);
         $('.next-event-ready').html('Next event ready: ' + nextEventReady.toString().toUpperCase());
