@@ -74,6 +74,11 @@ html {
 	height: 50px;
 }
 
+a:hover, a:focus {
+	color: #555;
+	text-decoration: none;
+}
+
 /* 
 TOP CONTENT NAV
 ----------------------------------------------
