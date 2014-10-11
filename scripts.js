@@ -71,26 +71,20 @@ $(document).ready(function() {
 
     $('.nav-toggle').on('click', function() {  
             navExpanded = !navExpanded;
-            updateDebugInfo();
+
+            $('#nav-menu').toggleClass('collapsed');
 
             if(!navExpanded) {
-                $('.nav-link.has-sub.active').find('ul').slideUp(155, function() {
-                    $('.nav-link ul').toggleClass('peek'); 
-                });
+                $('.nav-link.has-sub.active').find('ul').hide();
             }
             if(navExpanded) {
-                $('.nav-link ul').toggleClass('peek');
-                $('.nav-link.has-sub.active').find('ul').slideDown(210);
-            }
-            
-            $('#nav-menu').toggleClass('collapsed'); 
+                $('.nav-link.has-sub.active').find('ul').show();
+            }          
              
             $(this).toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
             
-            // The line below is causing issues, but commenting
-            // it out causes other issues. Life is hard
-            //$('.collapsed .sub-links:visible').hide();
+            $('.collapsed .sub-links:visible').hide();
             $('#main-content').toggleClass('expanded');
             
     });

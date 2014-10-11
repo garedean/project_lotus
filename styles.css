@@ -324,7 +324,7 @@ SIDEBAR HOVER MENUS
 	background-color: #FBFBFB;
 }
 
-.nav-link ul.peek {
+.collapsed .nav-link ul {
 	display: none; 
 	width: 240px;
 	position: absolute; 
@@ -339,7 +339,7 @@ SIDEBAR HOVER MENUS
 	border-bottom: 1px solid #E7E7E7;
 }
 
-.collapsed .nav-link ul.peek li {
+.collapsed .nav-link ul li {
 	padding: 5px;
 	padding-left: 10px;
 }
