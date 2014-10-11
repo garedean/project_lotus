@@ -152,8 +152,7 @@ SIDEBAR LINKS
 ----------------------------------------------
 */
 
-#nav-menu .nav-link
- {
+#nav-menu .nav-link {
   width: 240px;
   position: relative;
   box-sizing: border-box;
@@ -177,11 +176,6 @@ SIDEBAR LINKS
   -webkit-transition: width .33s, background-color .13s, border .13s;
   transition: width .33s, background-color .13s, border .13s;
   width: 240px;
-}
-
-#nav-menu.collapsed .nav-link:nth-child(n+2).active {
-	width: 50px;
-	transition: width .33s;
 }
 
 #nav-menu.collapsed .nav-link {
@@ -375,10 +369,10 @@ SIDEBAR HOVER MENUS
 	background-color: #FBFBFB;
 }
 
-.collapsed .nav-link ul {
-	display: none;
+.nav-link ul.peek {
+	display: none; 
 	width: 240px;
-	position: absolute;
+	position: absolute; 
 	top: -1px;
 	left: 50px;
 	background-color: white;
@@ -390,13 +384,9 @@ SIDEBAR HOVER MENUS
 	border-bottom: 1px solid #E7E7E7;
 }
 
-.collapsed .nav-link ul li {
+.collapsed .nav-link ul.peek li {
 	padding: 5px;
 	padding-left: 10px;
-}
-
-.collapsed .nav-link ul li:first-child {
-	border-top: 0;
 }
 
 /* 

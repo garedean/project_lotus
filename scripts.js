@@ -1,3 +1,6 @@
+var d = new Date();
+var n = d.getMilliseconds();
+
 var navExpanded             = true,
     nextEventReady          = true,
     pinNav                  = true,
@@ -34,6 +37,7 @@ $(document).ready(function() {
         if( $(this).hasClass('has-sub') ) {
             $(this).addClass('down-arrow');
         }
+        $('.nav-link').not(this).removeClass('down-arrow');
 
         updateDebugInfo();
     });
@@ -67,19 +71,26 @@ $(document).ready(function() {
 
     $('.nav-toggle').on('click', function() {  
             navExpanded = !navExpanded;
+            updateDebugInfo();
+
             if(!navExpanded) {
-                $('.nav-link.has-sub.active').find('ul').slideUp(245);
+                $('.nav-link.has-sub.active').find('ul').slideUp(155, function() {
+                    $('.nav-link ul').toggleClass('peek'); 
+                });
             }
             if(navExpanded) {
-                $('.nav-link.has-sub.active').find('ul').slideDown(245);
+                $('.nav-link ul').toggleClass('peek');
+                $('.nav-link.has-sub.active').find('ul').slideDown(210);
             }
-         
+            
             $('#nav-menu').toggleClass('collapsed'); 
              
             $(this).toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
             
-            $('.collapsed .sub-links:visible').hide();
+            // The line below is causing issues, but commenting
+            // it out causes other issues. Life is hard
+            //$('.collapsed .sub-links:visible').hide();
             $('#main-content').toggleClass('expanded');
             
     });
@@ -109,7 +120,8 @@ function openCloseNav() {
             $('.nav-toggle').toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
 
-            $('.nav-link.has-sub.active').find('ul').slideUp(1500);
+            $('.nav-link.has-sub.active').find('ul').show();
+
             $('.collapsed .sub-links:visible').hide();
             $('#main-content').toggleClass('expanded')
         }
@@ -117,7 +129,7 @@ function openCloseNav() {
         if (distanceToTarget > 50) {
             nextEventReady = true;
         }
-        updateDebugInfo()
+        updateDebugInfo();
         $distanceToTarget.text("Distance to nav: " + distanceToTarget);
     });
 };
