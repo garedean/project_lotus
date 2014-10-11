@@ -1,8 +1,7 @@
 var navExpanded             = true,
     nextEventReady          = true,
-
-    pinNav                  = true
-	currentlySelectedLink   = ''
+    pinNav                  = true,
+	currentlySelectedLink   = '',
     pinNavCheckbox          = $('#pin-nav'); 
 
 $(document).ready(function() {
@@ -19,8 +18,8 @@ $(document).ready(function() {
         $(this).addClass('active'); 
 
         if(navExpanded) {
-            $(this).find('ul').show();
-            $('.nav-link').not(this).find('ul').hide();
+            $('.nav-link.has-sub.active').find('ul').slideDown(80);
+            $('.nav-link').not(this).find('ul').slideUp(80);
         }
 
         $('.nav-link').not(this).removeClass('active')
@@ -68,10 +67,17 @@ $(document).ready(function() {
 
     $('.nav-toggle').on('click', function() {  
             navExpanded = !navExpanded;
+            if(!navExpanded) {
+                $('.nav-link.has-sub.active').find('ul').slideUp(245);
+            }
+            if(navExpanded) {
+                $('.nav-link.has-sub.active').find('ul').slideDown(245);
+            }
+         
             $('#nav-menu').toggleClass('collapsed');  
             $(this).toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
-            $('.nav-link.has-sub.active').find('ul').show();
+            
             $('.collapsed .sub-links:visible').hide();
             $('#main-content').toggleClass('expanded')
             
@@ -102,7 +108,7 @@ function openCloseNav() {
             $('.nav-toggle').toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
 
-            $('.nav-link.has-sub.active').find('ul').show();
+            $('.nav-link.has-sub.active').find('ul').slideUp(1500);
             $('.collapsed .sub-links:visible').hide();
             $('#main-content').toggleClass('expanded')
         }
