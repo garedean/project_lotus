@@ -32,7 +32,7 @@ $(document).ready(function() {
         currentlySelectedLink = $(this).text();
 
         if( $(this).hasClass('has-sub') ) {
-            $(this).addClass('expanded');
+            $(this).addClass('down-arrow');
         }
 
         updateDebugInfo();
@@ -74,12 +74,13 @@ $(document).ready(function() {
                 $('.nav-link.has-sub.active').find('ul').slideDown(245);
             }
          
-            $('#nav-menu').toggleClass('collapsed');  
+            $('#nav-menu').toggleClass('collapsed'); 
+             
             $(this).toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
             
             $('.collapsed .sub-links:visible').hide();
-            $('#main-content').toggleClass('expanded')
+            $('#main-content').toggleClass('expanded');
             
     });
 });

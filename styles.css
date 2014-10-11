@@ -547,7 +547,7 @@ SIDEBAR TOGGLE BUTTON
 	transition: all 100ms ease-in-out;
 }
 
-.has-sub.expanded:after {
+.has-sub.down-arrow:after {
 	-webkit-transform: rotate(90deg);
 	-moz-transform: rotate(90deg);
 	-o-transform: rotate(90deg);
