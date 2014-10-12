@@ -213,7 +213,7 @@ SIDEBAR LINKS
 }
 
 #nav-menu .nav-link:hover {
-  background-color: #c9c9c9;
+  background-color: #d1d1d1;
   overflow: visible;
 }
 
@@ -304,7 +304,7 @@ COLLAPSED SIDEBAR SUBMENUS
 
 .nav-link ul {
 	display: none;
-	width: 240px;	
+	width: 150px;	
 	line-height: 2em;
 	color: #666;
 }
@@ -318,7 +318,7 @@ COLLAPSED SIDEBAR SUBMENUS
 	background-color: #eee;
 }
 
-.collapsed .nav-link.has-sub:hover ul {
+.collapsed .nav-link:hover ul {
 	display: block
 }
 
@@ -326,20 +326,24 @@ COLLAPSED SIDEBAR SUBMENUS
 	display: none;
 	width: 240px;
 	position: absolute; 
-	top: -1px;
-	margin-left: 1px;
+	top: 0;
 	left: 50px;
-	background-color: #e3e3e3;
+	background-color: #eee;
 	line-height: 2em;
 	cursor: pointer;
-	border-radius: 4px;
-	border: 1px solid #ccc;
+	border-radius: 0 5px 5px 0;
 	z-index: 1000;
+}
+
+.collapsed .nav-link.has-sub ul {
+	border-right: 2px solid #ccc;
+	border-bottom: 2px solid #ccc;
 }
 
 .collapsed .nav-link ul li {
 	padding: 5px;
 	padding-left: 10px;
+	height: 45px;
 }
 
 /* 
@@ -523,4 +527,24 @@ BOX CONTENT
 
 #nav-menu .nav-icon {
 	margin-right: 13px;
+}
+
+.collapsed .sub-links li:first-child {
+	/* background-color: #c9c9c9; */
+	color: #08c;
+	font-size: 1.1em;
+	/* border-bottom: 1px solid #AAA; */
+}
+
+.collapsed .sub-links li:first-child {
+	background-color: #d1d1d1;
+	color: #08c;
+	font-size: 1.1em;
+	padding: 8px;
+	/* border-bottom: 1px solid #dedede; */
+}
+
+.collapsed .nav-link.active .sub-links li:first-child {
+	font-weight: 600;
+	background-color: #f1f2f7;
 }
