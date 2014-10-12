@@ -39,7 +39,7 @@ body {
 }
 
 #nav-menu a {
-	height: 50px;
+	padding: 12px 15px;
 }
 
 a:hover, a:focus {
@@ -218,7 +218,6 @@ SIDEBAR LINKS
 }
 
 #nav-menu .nav-link.active {
-  color: #f78d1e;
   font-weight: 600;
   background-color: #F1F2F7;
   -webkit-transition: width .33s, background-color .13s, border .13s;
@@ -235,7 +234,6 @@ SIDEBAR LINKS
   position: relative;
   text-decoration: none;
   display: inline;
-  line-height: 50px;
   padding-left: 50px;
   color: #666;
   display: block;
@@ -243,6 +241,9 @@ SIDEBAR LINKS
 
 #nav-menu .nav-link.active a {
   color: #08C;
+  border-left: 5px solid orange;
+  padding-left: 10px;
+  box-sizing: border-box;
 }
 
 #nav-menu .nav-link a:hover,
@@ -421,28 +422,12 @@ ICONS
 }
 
 .nav-link .fa {
-	margin: 10px 0 10px 0;
-	position: absolute;
-	height: 30px;
-	width: 30px;
-	top: 0;
-	left: 10px;
-	padding: 6px 0 0 4px;
 	font-size: 1.4em;
 	color: rgba(0,0,0,0.5);
-}
+} 
 
 .nav-link.active .fa {
 	color: rgba(0,0,0,0.7);
-}
-
-.fa.fa-shopping-cart {
-	font-size: 1.7em;
-	padding: 6px 0 0 2px;
-}
-
-.fa.fa-tachometer {
-	padding: 4px 0 0 4px;
 }
 
 /* 
@@ -536,3 +521,6 @@ BOX CONTENT
 	margin-bottom: 12px;
 }
 
+#nav-menu .nav-icon {
+	margin-right: 13px;
+}
