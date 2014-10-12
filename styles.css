@@ -1,4 +1,20 @@
 /* 
+DEBUGGING
+----------------------------------------------
+*/
+
+.menu-debugging {
+	position: absolute;
+	right: 0; bottom: 0;
+	margin: auto;
+	height: 200px;
+	width: 300px;
+	font-weight: 900;
+	padding: 20px;
+	border: 1px solid #555;
+}
+
+/* 
 PAGE STYLES
 ----------------------------------------------
 */
@@ -8,6 +24,11 @@ html {
 	width: 100%;
 }
 
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #F1F2F7;
+}
+
 #main-wrap {
 	width: 100%;
 	position: absolute;	
@@ -15,11 +36,6 @@ html {
 	right: 0;	
 	bottom: 0;
 	left: 0;
-}
-
-#nav-menu,
-#top-bar {
-	color: #666;
 }
 
 #nav-menu a {
@@ -34,7 +50,6 @@ a:hover, a:focus {
 #main-content {
 	padding: 15px;
 	margin-left: 240px;
-	background-color: pink;
 	transition: .33s;
 }
 
@@ -43,15 +58,37 @@ a:hover, a:focus {
 	transition: .33s;
 }
 
-#nav-menu ul {
+#main-content .page-title {
+	text-transform: capitalize;
+	font-size: 1.8em;
+	font-weight: 300;
+}
+
+.content-top {
+	height: 60px;
+}
+
+ul {
 	padding: 0; 
 	list-style-type: none;
 }
 
 /* 
-TOP CONTENT NAV
+HEADER
 ----------------------------------------------
 */
+
+header a,
+header i {
+	color: white;
+	cursor: pointer;
+}
+
+header a:hover,
+header i: hover {
+	color: white;
+	cursor: pointer;
+}
 
 header#top-bar {
 	position: fixed;
@@ -59,113 +96,8 @@ header#top-bar {
 	width: 100%;
 	top: 0;
 	font-size: 1.1em;
-	background-color: #08c;
+	background-color: #428bca;
 	transition: margin .33s;
-}
-
-#brand {
-	width: 240px;
-	float: left;
-	text-align: center;
-}
-
-#brand h1 {
-	line-height: 50px;
-	padding-left: 10px;
-	font-size: 20px;
-	margin: 0;
-	padding: 0;
-}
-
-/* 
-VERTICAL-LEFT NAV MENU
-----------------------------------------------
-*/
-
-#nav-menu {
-  position: absolute;
-  height: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 240px;
-  background-color: rgba(235, 238, 240, 1);
-  color: #00B4FF;
-  font-family: 'Open Sans', sans-serif;
-  box-sizing: border-box;
-  transition: .33s;
-}
-
-#nav-menu.collapsed {
-	width: 50px;
-	transition: all .33s;
-}
-
-/* 
-SIDEBAR LINKS
-----------------------------------------------
-*/
-
-#nav-menu .nav-link {
-  width: 240px;
-  position: relative;
-  box-sizing: border-box;
-  cursor: pointer;  
-  -webkit-transition: width .33s, background-color .13s, border .13s;
-  transition: width .33s, background-color .13s, border .13s;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-#nav-menu .nav-link:hover {
-  background-color: #e3e3e3;
-  overflow: visible;
-}
-
-/* Expanded sidebar, active link */
-#nav-menu .nav-link.active {
-  color: #f78d1e;
-  font-weight: 600;
-  background-color: white;
-  -webkit-transition: width .33s, background-color .13s, border .13s;
-  transition: width .33s, background-color .13s, border .13s;
-  width: 240px;
-}
-
-#nav-menu.collapsed .nav-link {
-	width: 50px;
-	transition: width .33s;
-}
-
-.nav-link > a {
-  position: relative;
-  text-decoration: none;
-  display: inline;
-  line-height: 50px;
-  padding-left: 50px;
-  color: #666;
-  display: block;
-}
-
-#nav-menu .nav-link.active a {
-  color: #08C;
-}
-
-#nav-menu .nav-link a:hover,
-#top-bar a:hover {
-	text-decoration: none;
-}
-
-#nav-menu .nav-link span {
-	font-size: 1em;
-}
-
-.nav-link a {
-	overflow: hidden;
-}
-
-#nav-menu .nav-link:nth-child(2) {
-	border-top: 0 !important;
 }
 
 header .brand {
@@ -182,74 +114,12 @@ header .brand .name {
 	font-family: 'Great Vibes', serif;
 }
 
-#nav-menu #link-list a:hover,
-#nav-menu #link-list span:hover {
-	cursor: inherit;
-}
-
-#link-list .line {
-	margin: 15px 20px;
-	border-top: 1px solid #E7E7E7;
-}
-
-.nav-link.active .highlight {
-	height: 100%;
-	width: 4px;
-	position: absolute;
-	left: 0;
-	background-color: #f78d1e;
-}
-
-.nav-link .title {
-	text-transform: uppercase;
-}
-
-/* 
-SIDEBAR SUBLINKS
-----------------------------------------------
-*/
-
-#nav-menu .nav-link.has-sub.active {
-	background-color: white;
-}
-
-.sub-links li {
-	font-weight: 400;
-	border-top: 1px solid #EDEDED;
-	box-sizing: border-box;
-}
-
-.sub-links li.active {
-	/*background-color: #E7E7E7;*/
-	font-weight: 600;
-	color: #555;
-}
-
-/* 
-SIDEBAR PIN NAV 
-----------------------------------------------
-*/
-
-#nav-pin {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	margin: 2px;
-	height: 11px;
-	width: 11px;
-	border: 1px solid #3399FF;
-	border-radius: 50%;
-}
-
-#nav-pin.selected {
-	background-color: #3399FF;
-}
-
 /* 
 HEADER CLIENT LOOKUP
 ----------------------------------------------
 */
 #search {
+	display: none;
 	width: 300px;
 	float: left;
 	margin-top: 6px;
@@ -259,7 +129,6 @@ HEADER CLIENT LOOKUP
 #search .form-control {
 	border-radius: 0;
 }
-
 
 input.form-control {
 	width: 350px;
@@ -304,7 +173,131 @@ STAFF USER PANEL
 }
 
 /* 
-SIDEBAR HOVER MENUS
+LEFT SIDEBAR
+----------------------------------------------
+*/
+
+#nav-menu {
+  position: absolute;
+  height: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  background-color: #dedede;
+  color: #00B4FF;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  transition: .33s;
+}
+
+#nav-menu.collapsed {
+	width: 50px;
+	transition: all .33s;
+}
+
+/* 
+SIDEBAR LINKS
+----------------------------------------------
+*/
+
+#nav-menu .nav-link {
+  width: 240px;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;  
+  -webkit-transition: width .33s, background-color .13s, border .13s;
+  transition: width .33s, background-color .13s, border .13s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#nav-menu .nav-link:hover {
+  background-color: #c9c9c9;
+  overflow: visible;
+}
+
+#nav-menu .nav-link.active {
+  color: #f78d1e;
+  font-weight: 600;
+  background-color: #F1F2F7;
+  -webkit-transition: width .33s, background-color .13s, border .13s;
+  transition: width .33s, background-color .13s, border .13s;
+  width: 240px;
+}
+
+#nav-menu.collapsed .nav-link {
+	width: 50px;
+	transition: width .33s;
+}
+
+.nav-link > a {
+  position: relative;
+  text-decoration: none;
+  display: inline;
+  line-height: 50px;
+  padding-left: 50px;
+  color: #666;
+  display: block;
+}
+
+#nav-menu .nav-link.active a {
+  color: #08C;
+}
+
+#nav-menu .nav-link a:hover,
+#top-bar a:hover {
+	text-decoration: none;
+}
+
+#nav-menu .nav-link span {
+	font-size: 1em;
+}
+
+.nav-link a {
+	overflow: hidden;
+}
+
+#nav-menu #link-list a:hover,
+#nav-menu #link-list span:hover {
+	cursor: inherit;
+}
+
+#link-list .line {
+	margin: 15px 20px;
+	border-top: 1px solid #ccc;
+}
+
+.nav-link.active .highlight {
+	height: 100%;
+	width: 4px;
+	position: absolute;
+	left: 0;
+	background-color: #f78d1e;
+}
+
+.nav-link .title {
+	text-transform: uppercase;
+}
+
+/* 
+SIDEBAR SUBLINKS
+----------------------------------------------
+*/
+
+.sub-links li {
+	font-weight: 400;
+	box-sizing: border-box;
+}
+
+.sub-links li.active {
+	/*background-color: #E7E7E7;*/
+	font-weight: 600;
+	color: #555;
+}
+
+/* 
+COLLAPSED SIDEBAR SUBMENUS
 ----------------------------------------------
 */
 
@@ -321,22 +314,26 @@ SIDEBAR HOVER MENUS
 }
 
 .nav-link > ul > li:hover {
-	background-color: #FBFBFB;
+	background-color: #eee;
+}
+
+.collapsed .nav-link.has-sub:hover ul {
+	display: block
 }
 
 .collapsed .nav-link ul {
-	display: none; 
+	display: none;
 	width: 240px;
 	position: absolute; 
 	top: -1px;
+	margin-left: 1px;
 	left: 50px;
-	background-color: white;
+	background-color: #e3e3e3;
 	line-height: 2em;
 	cursor: pointer;
-	border-radius: 0 3px 3px 0;
-	border-top: 1px solid #E7E7E7;
-	border-right: 1px solid #E7E7E7;
-	border-bottom: 1px solid #E7E7E7;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	z-index: 1000;
 }
 
 .collapsed .nav-link ul li {
@@ -449,6 +446,26 @@ ICONS
 }
 
 /* 
+SIDEBAR PIN NAV (AUTO SIDEBAR TOGGLE)
+----------------------------------------------
+*/
+
+#nav-pin {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 2px;
+	height: 11px;
+	width: 11px;
+	border: 1px solid #3399FF;
+	border-radius: 50%;
+}
+
+#nav-pin.selected {
+	background-color: #3399FF;
+}
+
+/* 
 SIDEBAR TOGGLE BUTTON
 ----------------------------------------------
 */
@@ -500,20 +517,22 @@ SIDEBAR TOGGLE BUTTON
 	transform: rotate(90deg);
 }
 
-
 /* 
-DEBUGGING
-----------------------------------------------
+BOX CONTENT
+---------------------------------------------
 */
 
-.menu-debugging {
-	position: absolute;
-	right: 0; bottom: 0;
-	margin: auto;
-	height: 200px;
-	width: 300px;
-	font-weight: 900;
-	padding: 20px;
-	border: 1px solid #555;
+.box-content {
+	background-color: white;
+	padding: 15px;
+}
+
+.box-content h4 {
+	margin: 0;
+}
+
+.box-content hr {
+	margin-top: 12px;
+	margin-bottom: 12px;
 }
 
