@@ -21,8 +21,8 @@ $(document).ready(function() {
         $(this).addClass('active'); 
 
         if(navExpanded) {
-            $('.nav-link.has-sub.active').find('ul').slideDown(75);
-            $('.nav-link').not(this).find('ul').slideUp(75);
+            $('.nav-link.has-sub.active').find('ul').slideDown(90);
+            $('.nav-link').not(this).find('ul').slideUp(90);
         }
 
         $('.nav-link').not(this).removeClass('active')
@@ -49,19 +49,6 @@ $(document).ready(function() {
         $('.sub-links').find('li').not(this).removeClass('active');               
 
     });
-
-/*    $('.nav-link').hover(
-        function() {
-            if(!navExpanded) {
-                $(this).find('ul').show();
-            }
-        },
-        function() {
-            if(!navExpanded) {
-                $(this).find('ul').hide();
-            } 
-        }
-    );*/
 
     $('#nav-pin').on('click', function() {      
             pinNav = !pinNav;   

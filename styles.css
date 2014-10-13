@@ -253,9 +253,13 @@ SIDEBAR LINKS
   box-sizing: border-box;
 }
 
+#nav-menu .nav-link.active i {
+	color: #08C;
+}
+
 #nav-menu .nav-link:hover {
   background-color: #d1d1d1;
-  overflow: visible;
+  /* overflow: visible; */
   text-decoration: none;
 }
 
@@ -322,7 +326,7 @@ COLLAPSED SIDEBAR SUBMENUS
 
 .nav-link ul {
 	display: none;
-	width: 150px;	
+	width: 240px;	
 	line-height: 2em;
 	color: #666;
 }
@@ -336,8 +340,8 @@ COLLAPSED SIDEBAR SUBMENUS
 	background-color: #eee;
 }
 
-.collapsed .nav-link:hover ul {
-	display: block !important;
+#nav-menu.collapsed .nav-link {
+	overflow: visible;
 }
 
 .collapsed .nav-link ul {
@@ -353,6 +357,10 @@ COLLAPSED SIDEBAR SUBMENUS
 	z-index: 1000;
 }
 
+.collapsed .nav-link:hover ul {
+	display: block;
+}
+
 .collapsed .nav-link.has-sub ul {
 	border-right: 2px solid #ccc;
 	border-bottom: 2px solid #ccc;
@@ -361,7 +369,8 @@ COLLAPSED SIDEBAR SUBMENUS
 .collapsed .nav-link ul li {
 	padding: 5px;
 	padding-left: 10px;
-	height: 45px;
+	height: 44px;
+	text-transform: capitalize;
 }
 
 /* 
