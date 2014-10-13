@@ -16,6 +16,10 @@ $(document).ready(function() {
     openCloseNav();
     updateDebugInfo();
 
+    $('.cart').on('click', function() {
+        $('#cart-slider').toggle('slide', {direction: 'right'}, 200)
+    });
+
     $('.nav-link').on('click', function() {
 
         $(this).addClass('active'); 
@@ -61,12 +65,12 @@ $(document).ready(function() {
 
             $('#nav-menu').toggleClass('collapsed');
 
-            if(!navExpanded) {
+       /*     if(!navExpanded) {
                 $('.nav-link.has-sub.active').find('ul').hide();
             }
             if(navExpanded) {
                 $('.nav-link.has-sub.active').find('ul').show();
-            }          
+            }   */       
              
             $(this).toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
