@@ -1,3 +1,13 @@
+/*
+
+MINDBODY Brand Colors:
+
+gray: 696c74
+orange: f68f1e
+
+*/
+
+
 /* 
 DEBUGGING
 ----------------------------------------------
@@ -26,7 +36,7 @@ html {
 
 body {
 	font-family: 'Open Sans', sans-serif;
-	background-color: #F1F2F7;
+	background-color: #f7f8fa;
 }
 
 #main-wrap {
@@ -80,7 +90,7 @@ HEADER
 
 header a,
 header i {
-	color: white;
+	color: #08c;
 	cursor: pointer;
 }
 
@@ -96,7 +106,9 @@ header#top-bar {
 	width: 100%;
 	top: 0;
 	font-size: 1.1em;
-	background-color: #428bca;
+	background-color: white;
+	border-bottom: 2px solid #ddd;
+	/* background-color: #368ee0; */
 	transition: margin .33s;
 }
 
@@ -109,7 +121,7 @@ header .brand {
 header .brand .name {
 	display: block;
 	padding: 4px 0 0 10px;
-	color: white;	
+	color: #08c;	
 	font-size: 40px;
 	font-family: 'Great Vibes', serif;
 }
@@ -184,7 +196,7 @@ LEFT SIDEBAR
   left: 0;
   bottom: 0;
   width: 240px;
-  background-color: #dedede;
+  background-color: #e6e7e8;
   color: #00B4FF;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
@@ -212,14 +224,9 @@ SIDEBAR LINKS
   overflow: hidden;
 }
 
-#nav-menu .nav-link:hover {
-  background-color: #d1d1d1;
-  overflow: visible;
-}
-
 #nav-menu .nav-link.active {
-  font-weight: 600;
-  background-color: #F1F2F7;
+  font-weight: 700;
+  background-color: #f7f8fa;
   -webkit-transition: width .33s, background-color .13s, border .13s;
   transition: width .33s, background-color .13s, border .13s;
   width: 240px;
@@ -241,21 +248,27 @@ SIDEBAR LINKS
 
 #nav-menu .nav-link.active a {
   color: #08C;
-  border-left: 5px solid orange;
+  border-left: 5px solid #f68f1e;
   padding-left: 10px;
   box-sizing: border-box;
 }
 
-#nav-menu .nav-link a:hover,
-#top-bar a:hover {
-	text-decoration: none;
+#nav-menu .nav-link:hover {
+  background-color: #d1d1d1;
+  overflow: visible;
+  text-decoration: none;
+}
+
+#nav-menu .nav-link.active:hover {
+  background-color: #f7f8fa;
 }
 
 #nav-menu .nav-link span {
 	font-size: 1em;
 }
 
-.nav-link a {
+.nav-link > a {
+	line-height: 20px;
 	overflow: hidden;
 }
 
@@ -266,6 +279,11 @@ SIDEBAR LINKS
 
 #link-list .line {
 	margin: 15px 20px;
+	border-top: 1px solid #ccc;
+}
+
+#link-list .line.search {
+	margin: 0 20px 15px;
 	border-top: 1px solid #ccc;
 }
 
@@ -319,7 +337,7 @@ COLLAPSED SIDEBAR SUBMENUS
 }
 
 .collapsed .nav-link:hover ul {
-	display: block
+	display: block !important;
 }
 
 .collapsed .nav-link ul {
@@ -485,7 +503,7 @@ SIDEBAR TOGGLE BUTTON
 	font-family: FontAwesome;
 	font-weight: 500;
 	color: #08c;
-	content: "\f105";
+	content: "\f104";
 	display: block;
 	position: absolute;
 	right: 12px;
@@ -499,11 +517,11 @@ SIDEBAR TOGGLE BUTTON
 }
 
 .has-sub.down-arrow:after {
-	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
 }
 
 /* 
@@ -513,6 +531,7 @@ BOX CONTENT
 
 .box-content {
 	background-color: white;
+	border: 1px solid #ddd;
 	padding: 15px;
 }
 
@@ -547,4 +566,26 @@ BOX CONTENT
 .collapsed .nav-link.active .sub-links li:first-child {
 	font-weight: 600;
 	background-color: #f1f2f7;
+}
+
+.nav-link i {
+	font-size: 16px;
+}
+
+.search {
+
+}
+
+.sidebar-search input {
+	border-radius: 0;
+	border: 0;
+	background-color: transparent;
+	box-shadow: none;
+	width: 100%;
+}
+
+.sidebar-search input:focus {
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
