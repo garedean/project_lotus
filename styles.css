@@ -61,9 +61,13 @@ body {
 	transition: .4s;
 }
 
-#lower-wrapper.shift-left {
+#lower-wrapper.cart-expanded {
 	left: -240px;
 	transition: .4s;
+}
+
+#lower-wrapper.nav-collapsed.cart-expanded {
+	left: 0;
 }
 
 #nav-menu a {

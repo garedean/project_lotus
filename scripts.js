@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     $('.cart').on('click', function() {
         $('#cart-slider').toggleClass('expanded');
-        $('#lower-wrapper').toggleClass('shift-left');
+        $('#lower-wrapper').toggleClass('cart-expanded');
         $('#body-wrapper').toggleClass('cart-open');
     });
 
@@ -79,6 +79,7 @@ $(document).ready(function() {
             
             $('.collapsed .sub-links:visible').hide();
             $('#main-content').toggleClass('expanded');
+            $('#lower-wrapper').toggleClass('nav-collapsed');
             
     });
 });
