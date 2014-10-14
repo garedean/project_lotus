@@ -58,7 +58,6 @@ body {
 	right: 0;	
 	bottom: 0;
 	left: 0;
-	width: 100%;
 	transition: .4s;
 }
 
@@ -194,7 +193,7 @@ STAFF USER PANEL
 #user-panel {
 	float: right;
 	position: relative;
-	padding-right: 25px;
+	padding-right: 60px;
 	text-decoration: none;
 }
 
@@ -208,14 +207,18 @@ STAFF USER PANEL
 }
 
 .cart {
-	float: right;
-	position: relative;
-	margin-right: 20px;
+	position: absolute;
+	top: 0;
+	right: 0;
 	height: 50px;	
+	z-index: 1000;
+	padding: 0 20px 0 14px;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 }
 
 .cart-wrapper {
-	top: 8px;
+	top: 10px;
 	position: relative;
 }
 
