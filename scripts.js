@@ -18,7 +18,7 @@ $(document).ready(function() {
     openCloseNav();
     updateDebugInfo();
 
-    $('.cart').on('click', function() {
+    $('.cart-icon').on('click', function() {
         $('#cart-slider').toggleClass('expanded');
         $('#lower-wrapper').toggleClass('cart-expanded');
         $('#body-wrapper').toggleClass('cart-open');

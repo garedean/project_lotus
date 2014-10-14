@@ -61,17 +61,8 @@ body {
 	transition: .4s;
 }
 
-/*#lower-wrapper.cart-expanded {
-	left: -240px;
-	transition: .4s;
-}*/
-
 #lower-wrapper.nav-collapsed.cart-expanded {
 	left: 0;
-}
-
-#nav-menu a {
-	padding: 12px 15px;
 }
 
 a:hover, a:focus {
@@ -210,8 +201,9 @@ STAFF USER PANEL
 	margin-right: 15px;
 }
 
-.cart {
+.cart-icon {
 	position: absolute;
+	overflow: hidden;
 	top: 0;
 	right: 0;
 	height: 50px;	
@@ -244,6 +236,10 @@ STAFF USER PANEL
 	width: 400px;
 	transition: .4s;
 }
+
+/*#cart-slider.expanded .cart-icon {
+	display: none;
+}*/
 
 /* 
 LEFT SIDEBAR
@@ -302,28 +298,28 @@ SIDEBAR LINKS
   position: relative;
   text-decoration: none;
   display: inline;
-  padding-left: 50px;
   color: #666;
   display: block;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  padding: 8px 15px;
+  font-size: .97em;
+  line-height: 20px;
+  overflow: hidden;
 }
 
 #nav-menu .nav-link.active a {
-  color: #08C;
-  background-color: #f7f8fa;
-  border-left: 5px solid #f68f1e;
-  padding-left: 10px;
+  color: white;
+  background-color: #0896FE;
   box-sizing: border-box;
+  border-top: 4px solid #f7f8fa;
+  border-bottom: 4px solid #f7f8fa;
 }
 
 #nav-menu.collapsed .nav-link.active a {
   color: #fff;
-  background-color: #08c;
-  border-left: 5px solid transparent;
+  background-color: #0896FE;
 }
-
-/*#nav-menu .nav-link.active i {
-	color: #08C;
-}*/
 
 #nav-menu .nav-link:hover {
   background-color: #ddd;
@@ -336,11 +332,6 @@ SIDEBAR LINKS
 
 #nav-menu .nav-link span {
 	font-size: 1em;
-}
-
-.nav-link > a {
-	line-height: 20px;
-	overflow: hidden;
 }
 
 #nav-menu #link-list a:hover,
@@ -432,7 +423,7 @@ COLLAPSED SIDEBAR SUBMENUS
 .collapsed .nav-link.has-sub ul {
 	border-right: 3px solid #ccc;
 	border-bottom: 3px solid #ccc;
-	border-left: 1px solid #ccc;
+	border-left: 1px solid #f7f8fa;
 }
 
 .collapsed .nav-link ul li {
@@ -525,10 +516,6 @@ ICONS
 	font-size: 1.4em;
 	/*color: rgba(0,0,0,0.5);*/
 } 
-
-/*.nav-link.active .fa {
-	color: #08c;
-}*/
 
 /* 
 SIDEBAR PIN NAV (AUTO SIDEBAR TOGGLE)
@@ -628,14 +615,14 @@ BOX CONTENT
 
 .collapsed .sub-links li:first-child {
 	background-color: #ddd;
-	color: #08c;
+	color: #0896FE;
 	font-size: 1.1em;
 	font-weight: 600;
 }
 
 .collapsed .sub-links li:first-child {
 	background-color: #ddd;
-	color: #08c;
+	color: #0896FE;
 	font-size: 1.1em;
 	padding: 8px;
 	/* border-bottom: 1px solid #dedede; */
@@ -643,8 +630,9 @@ BOX CONTENT
 
 .collapsed .nav-link.active .sub-links li:first-child {
 	font-weight: 600;
-	background-color: #08c;
+	background-color: #0896FE;
 	color: white;
+	margin: 4px 0;
 }
 
 .nav-link i {
@@ -667,4 +655,9 @@ BOX CONTENT
 	border: 0;
 	-webkit-box-shadow: none;
 	box-shadow: none;
+}
+
+#cart-slider h2 {
+	text-align: center;
+	color: #666;
 }
