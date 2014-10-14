@@ -61,10 +61,10 @@ body {
 	transition: .4s;
 }
 
-#lower-wrapper.cart-expanded {
+/*#lower-wrapper.cart-expanded {
 	left: -240px;
 	transition: .4s;
-}
+}*/
 
 #lower-wrapper.nav-collapsed.cart-expanded {
 	left: 0;
@@ -405,7 +405,7 @@ COLLAPSED SIDEBAR SUBMENUS
 }
 
 .nav-link > ul > li:hover {
-	background-color: #eee;
+	background-color: #ddd;
 }
 
 #nav-menu.collapsed .nav-link {
