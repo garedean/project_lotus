@@ -17,8 +17,9 @@ $(document).ready(function() {
     updateDebugInfo();
 
     $('.cart').on('click', function() {
-        $('#cart-slider').toggle('slide', {direction: 'right'}, 200);
-        $('#body-wrapper').css('margin-right', '400px');
+        $('#cart-slider').toggleClass('expanded');
+        $('#lower-wrapper').toggleClass('shift-left');
+        $('#body-wrapper').toggleClass('cart-open');
     });
 
     $('.nav-link').on('click', function() {
