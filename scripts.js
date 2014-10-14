@@ -17,7 +17,8 @@ $(document).ready(function() {
     updateDebugInfo();
 
     $('.cart').on('click', function() {
-        $('#cart-slider').toggle('slide', {direction: 'right'}, 200)
+        $('#cart-slider').toggle('slide', {direction: 'right'}, 200);
+        $('#body-wrapper').css('margin-right', '400px');
     });
 
     $('.nav-link').on('click', function() {

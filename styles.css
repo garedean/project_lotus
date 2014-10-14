@@ -41,13 +41,18 @@ body {
 	background-color: #f7f8fa;
 }
 
-#main-wrap {
-	width: 100%;
-	position: absolute;	
-	top:50px;
+#body-wrapper {
+	position: relative;
+	height: 100%;
+}
+
+#lower-wrapper {
+	position: absolute;
+	top: 50px;
 	right: 0;	
 	bottom: 0;
 	left: 0;
+	width: 100%;
 }
 
 #nav-menu a {
@@ -103,7 +108,7 @@ header i: hover {
 }
 
 header#top-bar {
-	position: fixed;
+	position: absolute;
 	height: 50px;
 	width: 100%;
 	top: 0;
