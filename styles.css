@@ -104,7 +104,7 @@ HEADER
 
 header a,
 header i {
-	color: #08c;
+	color: #4683ea;
 	cursor: pointer;
 }
 
@@ -135,7 +135,7 @@ header .brand {
 header .brand .name {
 	display: block;
 	padding: 4px 0 0 10px;
-	color: #08c;	
+	color: #4683ea;	
 	font-size: 40px;
 	font-family: 'Great Vibes', serif;
 }
@@ -212,6 +212,7 @@ STAFF USER PANEL
 	padding: 0 20px 0 14px;
 	border-left: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
+	z-index: 999;
 }
 
 .cart-wrapper {
@@ -230,17 +231,14 @@ STAFF USER PANEL
 	background-color: rgba(255, 255, 255, .9);
 	border-left: 2px solid #ccc;
 	transition:  .4s;
-	z-index: 1000;
+	overflow: hidden;
+	z-index: 998;
 }
 
 #cart-slider.expanded {
 	width: 400px;
 	transition: .4s;
 }
-
-/*#cart-slider.expanded .cart-icon {
-	display: none;
-}*/
 
 /* 
 LEFT SIDEBAR
@@ -410,15 +408,10 @@ COLLAPSED SIDEBAR SUBMENUS
 	position: absolute;
 	top: 0; 
 	left: 50px;
-	background-color: #e6e7e8;
 	line-height: 2em;
 	cursor: pointer;
-	border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 8px 0;
 	z-index: 1000;
-}
-
-.collapsed .nav-link.active ul {
-	top: 4px;
 }
 
 .collapsed .nav-link:hover ul {
@@ -429,6 +422,7 @@ COLLAPSED SIDEBAR SUBMENUS
 	border-right: 3px solid #ccc;
 	border-bottom: 3px solid #ccc;
 	border-left: 1px solid #f7f8fa;
+	background-color: rgba(247, 248, 250, 0.93);
 }
 
 .collapsed .nav-link ul li {
@@ -571,7 +565,7 @@ SIDEBAR TOGGLE BUTTON
 .has-sub:after {
 	font-family: FontAwesome;
 	font-weight: 500;
-	color: #08c;
+	color: #4683ea;
 	content: "\f104";
 	display: block;
 	position: absolute;
@@ -583,6 +577,10 @@ SIDEBAR TOGGLE BUTTON
 	-moz-transition: all 100ms ease-in-out;
 	-o-transition: all 100ms ease-in-out;
 	transition: all 100ms ease-in-out;
+}
+
+.has-sub.active:after {
+	color: white;
 }
 
 .has-sub.down-arrow:after {
@@ -617,18 +615,20 @@ BOX CONTENT
 	margin-right: 14px;
 }
 
-.collapsed .sub-links li:first-child {
-	background-color: #ddd;
-	color: #0173c5;
-	font-size: 1.1em;
-	font-weight: 600;
+.sub-links li:first-child {
+	display: none;
 }
 
 .collapsed .sub-links li:first-child {
+	display: block;
 	background-color: #ddd;
 	color: #0173c5;
 	font-size: 1.1em;
-	padding: 4px 4px 0 10px;
+	line-height: 26px;
+	border-top: 4px solid #ddd;
+	border-bottom: 4px solid #ddd;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
 }
 
 .collapsed .nav-link.active .sub-links li:first-child {
@@ -636,8 +636,9 @@ BOX CONTENT
 	background: -webkit-linear-gradient(top,#4387fd,#4683ea);
 	color: white;
 	border-top-right-radius: 3px;
-	border-bottom: 4px solid white;
-	height: 40px;
+	border-bottom-right-radius: 0;
+	margin: 4px 0;
+	border: 0;
 }
 
 .nav-link i {
