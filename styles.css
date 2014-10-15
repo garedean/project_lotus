@@ -24,7 +24,6 @@ DEBUGGING
 	border: 1px solid #555;
 }
 
-0173c5
 /* 
 PAGE STYLES
 ----------------------------------------------
@@ -72,7 +71,6 @@ a:hover, a:focus {
 }
 
 #main-content {
-	padding: 15px;
 	margin-left: 240px;
 	transition: .33s;
 }
@@ -83,9 +81,13 @@ a:hover, a:focus {
 }
 
 #main-content .page-title {
+	color: #666;
 	text-transform: capitalize;
 	font-size: 1.8em;
 	font-weight: 300;
+	margin: 0 0 0 15px;
+	float: left;
+	line-height: 50px;
 }
 
 .content-top {
@@ -115,14 +117,11 @@ header i: hover {
 }
 
 header#top-bar {
-	position: absolute;
 	height: 50px;
 	width: 100%;
 	top: 0;
 	font-size: 1.1em;
 	background-color: white;
-	border-bottom: 2px solid #ddd;
-	/* background-color: #368ee0; */
 	transition: margin .33s;
 }
 
@@ -210,8 +209,6 @@ STAFF USER PANEL
 	height: 50px;	
 	z-index: 1000;
 	padding: 0 20px 0 14px;
-	border-left: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
 	z-index: 999;
 }
 
@@ -645,10 +642,6 @@ BOX CONTENT
 	font-size: 16px;
 }
 
-.search {
-
-}
-
 .sidebar-search input {
 	border-radius: 0;
 	border: 0;
@@ -666,4 +659,9 @@ BOX CONTENT
 #cart-slider h2 {
 	text-align: center;
 	color: #666;
+}
+
+.brand-tile {
+	height: 50px;
+	background-color: #efefef;
 }
