@@ -8,7 +8,6 @@ var navExpanded             = true,
     pinNavCheckbox          = $('#pin-nav'),
     keepNavDocked           = false;
 
-
 $(document).ready(function() {
     
     if(pinNav) {

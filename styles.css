@@ -24,6 +24,7 @@ DEBUGGING
 	border: 1px solid #555;
 }
 
+0173c5
 /* 
 PAGE STYLES
 ----------------------------------------------
@@ -310,7 +311,7 @@ SIDEBAR LINKS
 
 #nav-menu .nav-link.active a {
   color: white;
-  background-color: #0896FE;
+  background: -webkit-linear-gradient(top,#4387fd,#4683ea);
   box-sizing: border-box;
   border-top: 4px solid #f7f8fa;
   border-bottom: 4px solid #f7f8fa;
@@ -318,7 +319,7 @@ SIDEBAR LINKS
 
 #nav-menu.collapsed .nav-link.active a {
   color: #fff;
-  background-color: #0896FE;
+  background: -webkit-linear-gradient(top,#4387fd,#4683ea);
 }
 
 #nav-menu .nav-link:hover {
@@ -391,7 +392,7 @@ COLLAPSED SIDEBAR SUBMENUS
 }
 
 .nav-link > ul > li {
-	padding: 5px 0 5px 50px;
+	padding: 5px 0 5px 51px;
 	font-size: 14px;
 }
 
@@ -406,14 +407,18 @@ COLLAPSED SIDEBAR SUBMENUS
 .collapsed .nav-link ul {
 	display: none;
 	width: 240px;
-	position: absolute; 
-	top: 0;
+	position: absolute;
+	top: 0; 
 	left: 50px;
 	background-color: #e6e7e8;
 	line-height: 2em;
 	cursor: pointer;
 	border-radius: 0 5px 5px 0;
 	z-index: 1000;
+}
+
+.collapsed .nav-link.active ul {
+	top: 4px;
 }
 
 .collapsed .nav-link:hover ul {
@@ -429,7 +434,6 @@ COLLAPSED SIDEBAR SUBMENUS
 .collapsed .nav-link ul li {
 	padding: 5px;
 	padding-left: 10px;
-	height: 44px;
 	text-transform: capitalize;
 }
 
@@ -610,29 +614,30 @@ BOX CONTENT
 }
 
 #nav-menu .nav-icon {
-	margin-right: 13px;
+	margin-right: 14px;
 }
 
 .collapsed .sub-links li:first-child {
 	background-color: #ddd;
-	color: #0896FE;
+	color: #0173c5;
 	font-size: 1.1em;
 	font-weight: 600;
 }
 
 .collapsed .sub-links li:first-child {
 	background-color: #ddd;
-	color: #0896FE;
+	color: #0173c5;
 	font-size: 1.1em;
-	padding: 8px;
-	/* border-bottom: 1px solid #dedede; */
+	padding: 4px 4px 0 10px;
 }
 
 .collapsed .nav-link.active .sub-links li:first-child {
 	font-weight: 600;
-	background-color: #0896FE;
+	background: -webkit-linear-gradient(top,#4387fd,#4683ea);
 	color: white;
-	margin: 4px 0;
+	border-top-right-radius: 3px;
+	border-bottom: 4px solid white;
+	height: 40px;
 }
 
 .nav-link i {
