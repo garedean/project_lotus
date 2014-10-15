@@ -123,6 +123,7 @@ header#top-bar {
 	font-size: 1.1em;
 	background-color: white;
 	transition: margin .33s;
+	margin-bottom: 20px;
 }
 
 header .brand {
@@ -226,7 +227,7 @@ STAFF USER PANEL
 	right: 0;
 	bottom: 0;
 	background-color: rgba(255, 255, 255, .9);
-	border-left: 2px solid #ccc;
+	border-left: 2px solid #f1f1f1;
 	transition:  .4s;
 	overflow: hidden;
 	z-index: 998;
@@ -250,7 +251,6 @@ LEFT SIDEBAR
   bottom: 0;
   width: 240px;
   background-color: #e6e7e8;
-  color: #00B4FF;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
   transition: .33s;
@@ -368,9 +368,8 @@ SIDEBAR SUBLINKS
 }
 
 .sub-links li.active {
-	/*background-color: #E7E7E7;*/
 	font-weight: 600;
-	color: #555;
+	color: #000;
 }
 
 /* 
@@ -663,5 +662,23 @@ BOX CONTENT
 
 .brand-tile {
 	height: 50px;
+	padding: 5px 0 0 10px;
 	background-color: #efefef;
+	overflow: hidden;
+}
+
+.brand-tile > span {
+	display: block;
+	white-space: nowrap;
+}
+
+.brand-tile .brand-name {
+	color: #0e6ead;
+	font-size: 1.1em;
+	font-weight: 600;
+}
+
+.brand-tile .staff-name {
+	color: #666;
+	cursor: pointer;
 }
