@@ -238,12 +238,15 @@ STAFF USER PANEL
 .cart-icon {
 	position: absolute;
 	overflow: hidden;
-	top: 0;
-	right: 0;
-	height: 50px;	
-	z-index: 1000;
-	padding: 0 20px 0 14px;
+	top: 5px;
+	right: 20px;	
+	line-height: 50px;
+	vertical-align: midde;
 	z-index: 999;
+}
+
+.cart-icon .fa-shopping-cart {
+	font-size: 2em;
 }
 
 .cart-wrapper {
@@ -336,6 +339,10 @@ SIDEBAR LINKS
   line-height: 20px;
   overflow: hidden;
 }
+
+/* #nav-menu .nav-link:nth-child(2) a {
+	border-top: 4px solid #f7f8fa;
+} */
 
 #nav-menu .nav-link.active a {
   color: white;
@@ -626,9 +633,9 @@ BOX CONTENT
 */
 
 .box-content {
+	padding: 15px;
 	background-color: white;
 	border: 1px solid #ddd;
-	padding: 15px;
 }
 
 .box-content h4 {
@@ -661,12 +668,12 @@ BOX CONTENT
 }
 
 .collapsed .nav-link.active .sub-links li:first-child {
-	font-weight: 600;
-	background: -webkit-linear-gradient(top,#4387fd,#4683ea);
+	margin: 4px 0;
 	color: white;
+	background: -webkit-linear-gradient(top,#4387fd,#4683ea);
+	font-weight: 600;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 0;
-	margin: 4px 0;
 	border: 0;
 }
 
@@ -675,11 +682,11 @@ BOX CONTENT
 }
 
 .sidebar-search input {
-	border-radius: 0;
+	width: 100%;
 	border: 0;
 	background-color: transparent;
 	box-shadow: none;
-	width: 100%;
+	border-radius: 0;
 }
 
 .sidebar-search input:focus {
@@ -689,27 +696,25 @@ BOX CONTENT
 }
 
 #cart-slider h2 {
-	text-align: center;
 	color: #666;
+	text-align: center;
 }
 
 .brand-tile {
 	position: relative;
+	overflow: hidden;
 	height: 50px;
 	background-color: #efefef;
-	overflow: hidden;
 }
 
-.brand-tile > span {
-	display: block;
+#brand-content-wrapper > span {
 	white-space: nowrap;
 }
 
 #staff-initials {
-	display: none;
-}
-
-.collapsed #staff-initials {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	margin: auto;
 	display: block;
 	color: #0e6ead;
 	font-size: 1.8em;
@@ -717,8 +722,19 @@ BOX CONTENT
 	line-height: 50px;
 	vertical-align: middle;
 	text-align: center;
+	opacity: 0;
 }
 
+.collapsed #staff-initials {
+	opacity: 1;
+	transition: opacity .5s;
+}
+
+#brand-name,
+#staff-name {
+	display: block;
+	padding-left: 9px;
+}
 #brand-name {
 	color: #0e6ead;
 	font-size: 1.1em;
@@ -730,7 +746,15 @@ BOX CONTENT
 	cursor: pointer;
 }
 
-.collapsed #brand-name,
-.collapsed #staff-name {
-	display: none;
+#brand-content-wrapper {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 1;
+	transition: opacity .5s;
+}
+
+.collapsed #brand-content-wrapper {
+	opacity: 0;
+	transition: opacity 0s;
 }

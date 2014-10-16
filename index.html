@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <!-- 
 
+Note, do this: http://codepen.io/anon/pen/jlfdG
+
 Hand-crafted quality by
    ______                     __  __     ____  __               
   / ____/___ ______________  / /_/ /_   / __ \/ /________  ____ 
@@ -28,7 +30,8 @@ Hand-crafted quality by
         <header id='top-bar'>  
 
           <h2 class='page-title'>Dashboard</h2>
-          <div id='user-panel'>          
+
+          <!-- <div id='user-panel'>          
             <div id='notifications'>
               <i class='fa fa-bell'></i>
             </div>
@@ -42,7 +45,8 @@ Hand-crafted quality by
               <li></li>    
               </ul>
             </div>
-          </div>
+          </div> -->
+
         </header>
 
         <div class='container-fluid'>
@@ -79,9 +83,11 @@ Hand-crafted quality by
         <ul id='link-list'>
 
           <li class='brand-tile'>
-            <span id='brand-name'>LLUMINAIRE Salon</span>
-            <span id='staff-name'>Tony Stark</span>
-            <span id='staff-initials'>TS</span>
+          	<div id='brand-content-wrapper'>
+	            <span id='brand-name'>LLUMINAIRE Salon</span>
+	            <span id='staff-name'>Tony Stark</span>	            
+	        </div>
+	        <span id='staff-initials'>TS</span>
           </li>
 
           <!--
@@ -222,15 +228,11 @@ Hand-crafted quality by
         <span class='currently-selected-link'></span><br>
         <span class='distance-from-target'></span><br>
         <span class='next-event-ready'></span>
-      </div> -->
-  
-    <div class='cart-icon'>
-	      <div class='cart-wrapper'>
-	        <a href='#' name='cart'>
-	          <i class='fa fa-shopping-cart fa-2x'></i>    
-	        </a>
-	      </div>
-    </div>
+      </div> -->  
+
+	<a href='#' name='cart' class='cart-icon'>
+	  <i class='fa fa-shopping-cart fa-2x'></i>    
+	</a>
 
     <div id='cart-slider'> 
     	<h2>Checkout</h2>
