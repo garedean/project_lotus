@@ -114,7 +114,7 @@ a:hover, a:focus {
 }
 
 .page-title {
-	color: #666;
+	color: #444;
 	text-transform: capitalize;
 	font-size: 1.8em;
 	font-weight: 300;
@@ -157,6 +157,7 @@ header#top-bar {
 	background-color: white;
 	transition: margin .33s;
 	margin-bottom: 20px;
+	border-bottom: 2px solid #eee;
 }
 
 header .brand {
@@ -262,7 +263,7 @@ STAFF USER PANEL
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #f1f1f1;
+	background-color: #2a2a2a;;
 	transition:  .4s;
 	overflow: hidden;
 	z-index: 998;
@@ -329,7 +330,7 @@ SIDEBAR LINKS
   position: relative;
   text-decoration: none;
   display: inline;
-  color: #666;
+  color: #444;
   display: block;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
@@ -423,7 +424,7 @@ SIDEBAR SUBLINKS
 
 .sub-links li.active {
 	font-weight: 600;
-	color: #000;
+	color: #222;
 }
 
 /* 
@@ -723,6 +724,7 @@ BOX CONTENT
 	overflow: hidden;
 	height: 50px;
 	background-color: #f0f0f0;
+	border-bottom: 2px solid #ddd;
 }
 
 #brand-content-wrapper > span {
@@ -785,12 +787,12 @@ BOX CONTENT
 #cart-slider h2 {
 	margin: 0;
 	padding-left: 15px;
-	color: #666;
-	background-color: #f7f7f7;
+	color: white;
+	background-color: #222222;
 	text-transform: capitalize;
 	font-size: 1.8em;
 	font-weight: 300;
-	line-height: 50px;
-	line-height: 50px;
+	line-height: 48px;
+	border-bottom: 2px solid #1F1C1C;
 }
 
