@@ -262,7 +262,7 @@ STAFF USER PANEL
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #e6e7e8;
+	background-color: #f1f1f1;
 	transition:  .4s;
 	overflow: hidden;
 	z-index: 998;
@@ -331,9 +331,9 @@ SIDEBAR LINKS
   display: inline;
   color: #666;
   display: block;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  padding: 8px 15px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  padding: 7px 15px;
   font-size: .97em;
   line-height: 20px;
   overflow: hidden;
@@ -345,15 +345,30 @@ SIDEBAR LINKS
 
 #nav-menu .nav-link.active a {
   color: white;
-  background: -webkit-linear-gradient(top,#4387fd,#4683ea);
   box-sizing: border-box;
-  border-top: 4px solid #f7f8fa;
-  border-bottom: 4px solid #f7f8fa;
+  border-top: 5px solid #f7f8fa;
+  border-bottom: 5px solid #f7f8fa;
+  background: #107fc9; /* Old browsers */
+  background: -moz-linear-gradient(top,  #107fc9 1%, #0066b0 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#107fc9), color-stop(100%,#0066b0)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #107fc9 1%,#0066b0 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #107fc9 1%,#0066b0 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #107fc9 1%,#0066b0 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #107fc9 1%,#0066b0 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107fc9', endColorstr='#0066b0',GradientType=0 ); /* IE6-9 */
 }
 
 #nav-menu.collapsed .nav-link.active a {
   color: #fff;
-  background: -webkit-linear-gradient(top,#4387fd,#4683ea);
+  background: #107fc9; /* Old browsers */
+  background: -moz-linear-gradient(top,  #107fc9 1%, #0066b0 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#107fc9), color-stop(100%,#0066b0)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #107fc9 1%,#0066b0 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #107fc9 1%,#0066b0 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #107fc9 1%,#0066b0 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #107fc9 1%,#0066b0 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107fc9', endColorstr='#0066b0',GradientType=0 ); /* IE6-9 */
+
 }
 
 #nav-menu .nav-link:hover {
@@ -462,7 +477,7 @@ COLLAPSED SIDEBAR SUBMENUS
 
 .collapsed .nav-link ul li {
 	padding: 5px;
-	padding-left: 10px;
+	padding-left: 14px;
 	text-transform: capitalize;
 }
 
@@ -660,21 +675,29 @@ BOX CONTENT
 	color: #0173c5;
 	font-weight: 600;
 	font-size: 1.1em;
-	line-height: 26px;
-	border-top: 4px solid #ddd;
-	border-bottom: 4px solid #ddd;
+	line-height: 24px;
+	border-top: 5px solid #ddd;
+	border-bottom: 5px solid #ddd;
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 }
 
 .collapsed .nav-link.active .sub-links li:first-child {
-	margin: 4px 0;
+	margin: 5px 0;
 	color: white;
-	background: -webkit-linear-gradient(top,#4387fd,#4683ea);
 	font-weight: 600;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 0;
 	border: 0;
+	background: #107fc9; /* Old browsers */
+    background: -moz-linear-gradient(top,  #107fc9 1%, #0066b0 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#107fc9), color-stop(100%,#0066b0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #107fc9 1%,#0066b0 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #107fc9 1%,#0066b0 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #107fc9 1%,#0066b0 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #107fc9 1%,#0066b0 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107fc9', endColorstr='#0066b0',GradientType=0 ); /* IE6-9 */
+
 }
 
 .nav-link i {
@@ -763,7 +786,7 @@ BOX CONTENT
 	margin: 0;
 	padding-left: 15px;
 	color: #666;
-	background-color: #f0f0f0;
+	background-color: #f7f7f7;
 	text-transform: capitalize;
 	font-size: 1.8em;
 	font-weight: 300;
