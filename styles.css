@@ -113,7 +113,7 @@ a:hover, a:focus {
 	transition: .33s;
 }
 
-#main-content .page-title {
+.page-title {
 	color: #666;
 	text-transform: capitalize;
 	font-size: 1.8em;
@@ -262,8 +262,7 @@ STAFF USER PANEL
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(255, 255, 255, .9);
-	border-left: 2px solid #f1f1f1;
+	background-color: #e6e7e8;
 	transition:  .4s;
 	overflow: hidden;
 	z-index: 998;
@@ -659,6 +658,7 @@ BOX CONTENT
 	display: block;
 	background-color: #ddd;
 	color: #0173c5;
+	font-weight: 600;
 	font-size: 1.1em;
 	line-height: 26px;
 	border-top: 4px solid #ddd;
@@ -695,11 +695,6 @@ BOX CONTENT
 	box-shadow: none;
 }
 
-#cart-slider h2 {
-	color: #666;
-	text-align: center;
-}
-
 .brand-tile {
 	position: relative;
 	overflow: hidden;
@@ -717,7 +712,7 @@ BOX CONTENT
 	margin: auto;
 	display: block;
 	color: #0e6ead;
-	font-size: 1.8em;
+	font-size: 1.5em;
 	font-weight: 600;
 	line-height: 50px;
 	vertical-align: middle;
@@ -762,5 +757,17 @@ BOX CONTENT
 #main-content.cart-expanded {
 	margin-right: 400px;
 	transition: .4s;
+}
+
+#cart-slider h2 {
+	margin: 0;
+	padding-left: 15px;
+	color: #666;
+	background-color: #f0f0f0;
+	text-transform: capitalize;
+	font-size: 1.8em;
+	font-weight: 300;
+	line-height: 50px;
+	line-height: 50px;
 }
 

@@ -18,9 +18,6 @@ $(document).ready(function() {
     updateDebugInfo();
 
     $('.cart-icon').on('click', function() {
-        /*$('#cart-slider').toggleClass('expanded');
-        $('#lower-wrapper').toggleClass('cart-expanded');
-        $('#body-wrapper').toggleClass('cart-open');*/
 
         $('#cart-slider').toggleClass('expanded');
         $('#main-content').toggleClass('cart-expanded');     
