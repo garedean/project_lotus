@@ -17,6 +17,10 @@ $(document).ready(function() {
     openCloseNav();
     updateDebugInfo();
 
+    $('.client-lookup-icon').on('click', function() {
+        $(this).hide();
+    });
+
     $('.cart-icon').on('click', function() {
 
         $('#cart-slider').toggleClass('expanded');

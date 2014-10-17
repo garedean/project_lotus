@@ -152,6 +152,7 @@ header i: hover {
 header#top-bar {
 	height: 50px;
 	width: 100%;
+	padding-right: 60px;
 	top: 0;
 	font-size: 1.1em;
 	background-color: white;
@@ -172,42 +173,6 @@ header .brand .name {
 	color: #4683ea;	
 	font-size: 40px;
 	font-family: 'Great Vibes', serif;
-}
-
-/* 
-HEADER CLIENT LOOKUP
-----------------------------------------------
-*/
-#search {
-	display: none;
-	width: 300px;
-	float: left;
-	margin-top: 6px;
-	position: relative;
-}
-
-#search .form-control {
-	border-radius: 0;
-}
-
-input.form-control {
-	width: 350px;
-}
-
-
-#client-lookup {
-	border: none;
-	height: 37px;
-	width: 300px;
-	background-color: #F7F7F7;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	font-size: 15px;
-}
-
-#client-lookup:focus {
-	box-shadow: none;
-	border-color: #E7E7E7;
 }
 
 /* 
@@ -723,8 +688,8 @@ BOX CONTENT
 	position: relative;
 	overflow: hidden;
 	height: 50px;
-	background-color: #f0f0f0;
-	border-bottom: 2px solid #ddd;
+	background-color: #f7f8fa;
+	border-bottom: 2px solid #dcdcdc;
 }
 
 #brand-content-wrapper > span {
@@ -794,5 +759,44 @@ BOX CONTENT
 	font-weight: 300;
 	line-height: 48px;
 	border-bottom: 2px solid #1F1C1C;
+}
+
+.client-lookup-icon .fa {
+	padding-right: 20px;
+	border-right: 1px solid #eee;
+	float: right;
+	line-height: 50px;
+	cursor: pointer;
+}
+
+.client-lookup-field {
+	float: right;
+	height: 38px;
+	margin: 5px 0;
+}
+
+.client-lookup-field input {
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	background-color: #f3f3f3;
+}
+
+.client-lookup-field .form-control {
+	height: 38px;
+}
+
+.client-lookup-field .form-control:focus {
+	box-shadow: none;
+	border: 0;
+}
+
+/* 
+HEADER CLIENT LOOKUP
+----------------------------------------------
+*/
+
+input.form-control {
+	width: 275px;
 }
 
