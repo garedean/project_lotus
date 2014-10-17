@@ -21,7 +21,8 @@ $(document).ready(function() {
     // Clicking the client lookup icon causes lookup
     // field to fade in
     $('.client-lookup-icon').on('click', function() {
-        $('.client-lookup-wrapper input').fadeIn(100);
+        $('.client-lookup-wrapper input').fadeIn(100).focus();
+
         clientLookupExpanded = !clientLookupExpanded;
     });  
 
@@ -33,12 +34,14 @@ $(document).ready(function() {
       }
     });
 
-    $('header').on('click', function(event) {
-        if(!$())
-      if (!$(event.target).closest('.client-lookup-wrapper').length) {
-        $('.client-lookup').fadeOut(100);
-      }
-    });
+    // Clicking in the header when the lookup is closed
+    // causes it to open
+/*    $('header').on('click', function(event) {
+        if(!clientLookupExpanded && !$(event.target).closest('.cart-icon').length) {
+            $('.client-lookup-wrapper input').fadeIn(100);
+            clientLookupExpanded = !clientLookupExpanded;
+        }
+    });*/
 
     $('.cart-icon').on('click', function() {
 
