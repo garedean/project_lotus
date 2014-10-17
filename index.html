@@ -30,13 +30,14 @@ Hand-crafted quality by
         <header id='top-bar'>  
           <h2 class='page-title'>Dashboard</h2>
 
-          <form class="client-lookup-field" role="search">
+          <form class="client-lookup-wrapper" role="search">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
+              <button class='client-lookup-icon'>
+                <i class="fa fa-search fa-lg"></i>
+              </button> 
+              <input type="text" class="form-control client-lookup" placeholder="Search" maxlength="35">            
             </div>  
-            <button class='client-lookup-icon'>
-              <i class="fa fa-search fa-lg"></i>
-            </button>          
+                     
           </form>
 
         </header>

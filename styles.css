@@ -761,32 +761,56 @@ BOX CONTENT
 	border-bottom: 2px solid #1F1C1C;
 }
 
+.client-lookup-icon {
+	float: right;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	z-index: 2;
+}
+
+.client-lookup-icon:focus {
+	border: 0;
+	box-shadow: 0;
+	outline: none;
+}
+
 .client-lookup-icon .fa {
-	padding-right: 20px;
-	border-right: 1px solid #eee;
 	float: right;
 	line-height: 50px;
 	cursor: pointer;
 }
 
-.client-lookup-field {
+.client-lookup-wrapper {
 	float: right;
-	height: 38px;
-	margin: 5px 0;
+	height: 48px;
+	padding-right: 20px;
 }
 
-.client-lookup-field input {
+.client-lookup-wrapper input {
+	position: relative;
+	right: -35px;
+	display: none;
+	float: right;
 	border: 0;
 	border-radius: 0;
 	box-shadow: none;
 	background-color: #f3f3f3;
+	z-index: 1;
 }
 
-.client-lookup-field .form-control {
+.form-group {
+	height: 100%;
+}
+
+.client-lookup-wrapper .form-control {
 	height: 38px;
+	margin: 5px 0;
 }
 
-.client-lookup-field .form-control:focus {
+.client-lookup-wrapper .form-control:focus {
 	box-shadow: none;
 	border: 0;
 }
@@ -797,6 +821,19 @@ HEADER CLIENT LOOKUP
 */
 
 input.form-control {
-	width: 275px;
+	width: 300px;
 }
+
+/* .nav-link.active > a:after {
+width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 9px 9px 9px 0;
+border-color: transparent #f7f8fa transparent transparent;
+content: "";
+position: absolute;
+top: 50%;
+margin-top: -9px;
+right: 0px;
+ */
 

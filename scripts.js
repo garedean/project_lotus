@@ -6,7 +6,8 @@ var navExpanded             = true,
     pinNav                  = true,
 	currentlySelectedLink   = '',
     pinNavCheckbox          = $('#pin-nav'),
-    keepNavDocked           = false;
+    keepNavDocked           = false,
+    clientLookupExpanded    = false;
 
 $(document).ready(function() {
     
@@ -17,8 +18,26 @@ $(document).ready(function() {
     openCloseNav();
     updateDebugInfo();
 
+    // Clicking the client lookup icon causes lookup
+    // field to fade in
     $('.client-lookup-icon').on('click', function() {
-        $(this).hide();
+        $('.client-lookup-wrapper input').fadeIn(100);
+        clientLookupExpanded = !clientLookupExpanded;
+    });  
+
+    // Clicking outside of the lookup field wrapper
+    // closes the input field
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('.client-lookup-wrapper').length) {
+        $('.client-lookup').fadeOut(100);
+      }
+    });
+
+    $('header').on('click', function(event) {
+        if(!$())
+      if (!$(event.target).closest('.client-lookup-wrapper').length) {
+        $('.client-lookup').fadeOut(100);
+      }
     });
 
     $('.cart-icon').on('click', function() {
@@ -110,8 +129,7 @@ $(document).ready(function() {
             
             $('.collapsed .sub-links:visible').hide();
             $('#main-content').toggleClass('expanded');
-            $('#lower-wrapper').toggleClass('nav-collapsed');
-            
+            $('#lower-wrapper').toggleClass('nav-collapsed');            
     });
 });
 
