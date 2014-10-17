@@ -18,6 +18,11 @@ $(document).ready(function() {
     openCloseNav();
     updateDebugInfo();
 
+    $('#staff-name, #staff-initials').on('click', function() {
+        alert($(this).closest('.brand-tile').find('.dropdown').length);
+        $('#staff-initials').closest('.brand-tile').find('.dropdown').show();
+    });  
+
     // Clicking the client lookup icon causes lookup
     // field to fade in
     $('.client-lookup-icon').on('click', function() {
@@ -26,11 +31,16 @@ $(document).ready(function() {
         clientLookupExpanded = !clientLookupExpanded;
     });  
 
-    // Clicking outside of the lookup field wrapper
-    // closes the input field
+    // Clicking outside of a targeted element closes that element
     $(document).on('click', function(event) {
+      // Client lookup field
       if (!$(event.target).closest('.client-lookup-wrapper').length) {
         $('.client-lookup').fadeOut(100);
+      }
+      // Staff member dropdown
+      if (!$(event.target).closest('#staff-name').length &&
+          !$(event.target).closest('.brand-tile .dropdown').length) {
+            $('.brand-tile .dropdown').hide();
       }
     });
 
