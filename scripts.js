@@ -19,11 +19,12 @@ $(document).ready(function() {
     openCloseNav();
     updateDebugInfo();
 
-    $('#staff-name, #staff-initials').on('click', function() {
-        //alert($(this).closest('.brand-tile').find('.dropdown').length);
-        $(this).closest('.brand-tile').find('.dropdown').show();
-        //alert($(this).closest('.brand-tile').find('.dropdown').length);
-    });  
+    $('#staff-name, #staff-initials').hover(
+        function() {
+        $(this).closest('.brand-tile').find('.dropdown').fadeIn(200);
+        }, function() {
+        $(this).closest('.brand-tile').find('.dropdown').fadeOut(200);}
+    );  
 
     // Clicking the client lookup icon causes lookup
     // field to fade in

@@ -61,8 +61,12 @@ a:hover, a:focus {
 }
 
 #main-content {
+ 	position: relative; 
+	height: 100%;
 	margin-left: 240px;
 	transition: .33s;
+	background-color: inherit;
+	z-index: 1000;
 }
 
 #main-content.expanded {
@@ -162,14 +166,14 @@ STAFF USER PANEL
 	position: absolute;
 	overflow: hidden;
 	top: 5px;
-	right: 20px;	
+	right: 25px;	
 	line-height: 50px;
 	vertical-align: midde;
 	z-index: 999;
 }
 
 .cart-icon .fa-shopping-cart {
-	font-size: 2em;
+	font-size: 1.8em;
 }
 
 .cart-wrapper {
@@ -179,8 +183,8 @@ STAFF USER PANEL
 
 #cart-slider {
 	display: block;
+	width: 400px;
 	height: 100%;
-	width: 0px;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -191,10 +195,10 @@ STAFF USER PANEL
 	z-index: 998;
 }
 
-#cart-slider.expanded {
+/* #cart-slider.expanded {
 	width: 400px;
 	transition: .4s;
-}
+} */
 
 /* 
 LEFT SIDEBAR
@@ -817,7 +821,8 @@ right: 0px;
 	position: absolute;
 	min-width: 240px;
 	background: white;
-	top: 48px;
+	margin-top: 10px;
+	top: 38px;
 	border: 1px solid #999;
 	border-radius: 2px;
 	z-index: 1001;
@@ -826,13 +831,13 @@ right: 0px;
 .brand-tile .dropdown:before {
 	content: "";
 	position: absolute;
-	top: -10px;
-	left: 30px;
+	top: -8px;
+	left: 15px;
 	height: 0;
 	width: 0;
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-bottom: 10px solid black;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #0066b0 ;
 }
 
 .dropdown li a {
