@@ -1,6 +1,3 @@
-var d = new Date();
-var n = d.getMilliseconds();
-
 var navExpanded             = true,
     nextEventReady          = true,
     pinNav                  = true,
@@ -11,16 +8,21 @@ var navExpanded             = true,
 
 $(document).ready(function() {
     
+    // Default sidebar upon load is set to 'pinned'
     if(pinNav) {
         $('#nav-pin').toggleClass('selected'); 
     }
 
+    // Initiate method that determines whether the cursor
+    // is withing 50 pixels of the sidebar menu, and if so,
+    // opens or closes sidebar. Action only when pinNav = false
     openCloseNav();
     updateDebugInfo();
 
     $('#staff-name, #staff-initials').on('click', function() {
-        alert($(this).closest('.brand-tile').find('.dropdown').length);
-        $('#staff-initials').closest('.brand-tile').find('.dropdown').show();
+        //alert($(this).closest('.brand-tile').find('.dropdown').length);
+        $(this).closest('.brand-tile').find('.dropdown').show();
+        //alert($(this).closest('.brand-tile').find('.dropdown').length);
     });  
 
     // Clicking the client lookup icon causes lookup
@@ -38,7 +40,7 @@ $(document).ready(function() {
         $('.client-lookup').fadeOut(100);
       }
       // Staff member dropdown
-      if (!$(event.target).closest('#staff-name').length &&
+      if (!$(event.target).closest('#staff-name, #staff-initials').length &&
           !$(event.target).closest('.brand-tile .dropdown').length) {
             $('.brand-tile .dropdown').hide();
       }
