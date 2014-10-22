@@ -28,7 +28,7 @@ body {
 	height: 100%;
 	width: 100%;
 	font-family: 'Open Sans', sans-serif;
-	background-color: #f7f8fa;
+	background-color: #f1f2f7;
 }
 
 #body-wrapper {
@@ -193,7 +193,7 @@ STAFF USER PANEL
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #e6e7e8;
+	background-color: #dadfe1;
 	transition:  .4s;
 	overflow: hidden;
 	z-index: 998;
@@ -216,7 +216,7 @@ LEFT SIDEBAR
   left: 0;
   bottom: 0;
   width: 240px;
-  background-color: #e6e7e8;
+  background-color: #dadfe1;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
   transition: .33s;
@@ -279,7 +279,7 @@ SIDEBAR LINKS
 }
 
 #nav-menu .nav-link > a:hover {
-  background-color: #ddd;
+  background-color: #D0D5D7;
   text-decoration: none;
 }
 
@@ -341,7 +341,7 @@ COLLAPSED SIDEBAR SUBMENUS
 .nav-link ul {
 	display: none;
 	width: 240px;	
-	background-color: #f7f8fa;
+	background-color: #f1f2f7;
 	line-height: 2em;
 	color: #666;
 }
@@ -352,7 +352,7 @@ COLLAPSED SIDEBAR SUBMENUS
 }
 
 .nav-link > ul > li:hover {
-	background-color: #ddd;
+	background-color: #D0D5D7;
 }
 
 #nav-menu.collapsed .nav-link {
@@ -527,7 +527,7 @@ SIDEBAR TOGGLE BUTTON
 	display: block;
 	position: absolute;
 	right: 12px;
-	top: 11px;
+	top: 10px;
 	opacity: 1;
 	transform: rotate(0deg);
 	-webkit-transition: all 100ms ease-in-out;
@@ -556,7 +556,6 @@ BOX CONTENT
 .box-content {
 	padding: 15px;
 	background-color: white;
-	border: 1px solid #ddd;
 }
 
 .box-content h4 {
@@ -578,7 +577,7 @@ BOX CONTENT
 
 .collapsed .sub-links li:first-child {
 	display: block;
-	background-color: #ddd;
+	background-color: #D0D5D7;
 	color: #0173c5;
 	font-weight: 600;
 	font-size: 1.1em;
@@ -616,7 +615,7 @@ BOX CONTENT
 .brand-tile {
 	position: relative;
 	height: 50px;
-	background-color: #f7f8fa;
+	background-color: #f1f2f7;
 	border-bottom: 2px solid #dfdfdf;
 	white-space: nowrap;
 	overflow: visible;
@@ -647,7 +646,7 @@ BOX CONTENT
 	margin: 0;
 	padding-left: 15px;
 	color: #333;
-	background-color: #f7f8fa;
+	background-color: #f1f2f7;
 	text-transform: capitalize;
 	font-size: 1.8em;
 	font-weight: 300;
