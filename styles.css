@@ -278,13 +278,13 @@ SIDEBAR LINKS
   background: #2980B9;
 }
 
-#nav-menu .nav-link:hover {
+#nav-menu .nav-link > a:hover {
   background-color: #ddd;
   text-decoration: none;
 }
 
-#nav-menu .nav-link.active:hover {
-  background-color: #f7f8fa;
+#nav-menu .nav-link.active > a:hover {
+  background-color: #2980B9;
 }
 
 #nav-menu .nav-link span {
@@ -629,40 +629,6 @@ BOX CONTENT
 	white-space: nowrap;
 }
 
-#staff-initials {
-	visibility: hidden;
-	position: absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
-	margin: auto;
-	color: #0e6ead;
-	font-size: 1.5em;
-	font-weight: 600;
-	line-height: 50px;
-	vertical-align: middle;
-	text-align: center;
-	opacity: 0;
-}
-
-.collapsed #staff-initials {
-	visibility: visible;
-	opacity: 1;
-	transition: opacity .5s;
-}
-
-.collapsed #staff-initials:hover {
-	cursor: pointer !important;
-}
-
-#staff-name-wrapper {
-	position: absolute;
-}
-
-#staff-name-wrapper {
-	position: absolute;
-	top: 24px;
-	left: 9px;
-}
-
 #brand-name {
 	position: relative;
 	top: 5px;
@@ -673,16 +639,6 @@ BOX CONTENT
 	color: #0e6ead;
 	font-size: 1.1em;
 	font-weight: 600;
-}
-
-#staff-name {
-	color: #666;
-	cursor: pointer !important;
-}
-
-.collapsed #brand-content-wrapper {
-	opacity: 0;
-	transition: opacity 0s;
 }
 
 #main-content.cart-expanded {
@@ -765,18 +721,42 @@ input.form-control {
 	width: 300px;
 }
 
-/* .nav-link.active > a:after {
-width: 0px;
-height: 0px;
-border-style: solid;
-border-width: 9px 9px 9px 0;
-border-color: transparent #f7f8fa transparent transparent;
-content: "";
-position: absolute;
-top: 50%;
-margin-top: -9px;
-right: 0px;
- */
+/* 
+STAFF MEMBER NAMED + DROPDOWN
+---------------------------------------------
+*/
+
+#staff-name-wrapper {
+	position: absolute;
+	top: 24px;
+	left: 9px;
+	height: 30px;
+	color: #666;
+	cursor: pointer !important;
+	z-index: 1000;
+}
+
+.collapsed #staff-name-wrapper {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+#staff-name-wrapper > .dropdown {
+	display: none;
+}
+
+#staff-name-wrapper:hover > .dropdown {
+	display: block;
+	min-width: 240px;
+	top: 10px;
+	left: -9px;
+	background: white;
+	border: 1px solid #999;
+	border-radius: 2px;
+	z-index: 1001;
+}
 
 #staff-name:after {
 	font-family: FontAwesome;
@@ -786,26 +766,45 @@ right: 0px;
 	padding-left: 4px;
 }
 
-#staff-name-wrapper > .dropdown {
-	display: none;
-	left: -9px;
+#staff-initials {
+	visibility: hidden;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 13px;
+	margin: auto;
+	color: #0e6ead;
+	font-size: 1.5em;
+	font-weight: 600;
+	line-height: 50px;
+	vertical-align: middle;
+	opacity: 0;
 }
 
-#staff-name-wrapper.open > .dropdown {
-	display: block;
-	min-width: 240px;
-	background: white;
-	margin-top: 10px;
-	border: 1px solid #999;
-	border-radius: 2px;
-	z-index: 1001;
+.collapsed #staff-initials {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity .5s;
+}
+
+.collapsed #brand-name,
+ .collapsed #staff-name {
+	opacity: 0;
+	transition: opacity 0s;
+}
+
+.collapsed #staff-initials:hover {
+	cursor: pointer !important;
+}
+
+.collapsed #staff-name-wrapper:hover > .dropdown {
+	top: 28px;
+	left: 0;
 }
 
 .brand-tile .dropdown:before {
 	content: "";
 	position: absolute;
 	top: -8px;
-	left: 15px;
+	left: 16px;
 	height: 0;
 	width: 0;
 	border-left: 8px solid transparent;
@@ -834,5 +833,3 @@ right: 0px;
 	padding: 0;
 	margin: 0;
 }
-
-

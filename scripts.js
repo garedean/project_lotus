@@ -19,20 +19,6 @@ $(document).ready(function() {
     openCloseNav();
     updateDebugInfo();
 
-    $('#staff-name-wrapper').hover(
-        function() {
-            $('#staff-name-wrapper').addClass('open');
-        }, 
-        function() {  
-            setTimeout(function() {
-                if( !$('#staff-name-wrapper>.dropdown').is(':hover') &&
-                    !$('#staff-name-wrapper').is(':hover') ) {
-                        $('#staff-name-wrapper').removeClass('open');
-                }
-            }, 100);           
-         }           
-    );  
-
     // Clicking the client lookup icon causes lookup
     // field to fade in
     $('.client-lookup-icon').on('click', function() {
