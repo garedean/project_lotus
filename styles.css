@@ -257,19 +257,15 @@ SIDEBAR LINKS
   display: inline;
   color: #444;
   display: block;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
   padding: 7px 15px;
-  font-size: .97em;
-  line-height: 20px;
+  font-size: .96em;
+  line-height: 25px;
   overflow: hidden;
 }
 
 #nav-menu .nav-link.active a {
   color: white;
   box-sizing: border-box;
-  border-top: 5px solid #f7f8fa;
-  border-bottom: 5px solid #f7f8fa;
   background: #2980B9;
 }
 
@@ -582,19 +578,15 @@ BOX CONTENT
 	color: #0173c5;
 	font-weight: 600;
 	font-size: 1.1em;
-	line-height: 24px;
-	border-top: 5px solid #ddd;
-	border-bottom: 5px solid #ddd;
+	height: 39px;
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 }
 
 .collapsed .nav-link.active .sub-links li:first-child {
-	margin: 5px 0;
+/*	width: 239px;*/
 	color: white;
 	font-weight: 600;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 0;
 	border: 0;
 	background: #2980B9;
 }
@@ -622,10 +614,11 @@ BOX CONTENT
 	height: 50px;
 	background-color: #f7f8fa;
 	border-bottom: 2px solid #dfdfdf;
+	white-space: nowrap;
 	overflow: visible;
 }
 
-#brand-content-wrapper > span {
+#brand-content-wrapper {
 	white-space: nowrap;
 }
 
@@ -730,7 +723,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	position: absolute;
 	top: 24px;
 	left: 9px;
-	height: 30px;
+	height: 34px;
 	color: #666;
 	cursor: pointer !important;
 	z-index: 1000;
@@ -738,6 +731,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 .collapsed #staff-name-wrapper {
 	position: absolute;
+	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
@@ -750,7 +744,7 @@ STAFF MEMBER NAMED + DROPDOWN
 #staff-name-wrapper:hover > .dropdown {
 	display: block;
 	min-width: 240px;
-	top: 10px;
+	top: 4px;
 	left: -9px;
 	background: white;
 	border: 1px solid #999;
@@ -782,13 +776,19 @@ STAFF MEMBER NAMED + DROPDOWN
 .collapsed #staff-initials {
 	visibility: visible;
 	opacity: 1;
-	transition: opacity .5s;
+	transition: opacity .8s;
 }
 
 .collapsed #brand-name,
  .collapsed #staff-name {
 	opacity: 0;
 	transition: opacity 0s;
+}
+
+#brand-name,
+#staff-name {
+	opacity: 1;
+	transition: opacity .8s;
 }
 
 .collapsed #staff-initials:hover {
@@ -803,13 +803,13 @@ STAFF MEMBER NAMED + DROPDOWN
 .brand-tile .dropdown:before {
 	content: "";
 	position: absolute;
-	top: -8px;
-	left: 16px;
+	top: -7px;
+	left: 18px;
 	height: 0;
 	width: 0;
-	border-left: 8px solid transparent;
-	border-right: 8px solid transparent;
-	border-bottom: 8px solid #0066b0 ;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #0066b0 ;
 }
 
 .dropdown li a {
