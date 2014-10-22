@@ -3,7 +3,7 @@ var navExpanded             = true,
     pinNav                  = true,
 	currentlySelectedLink   = '',
     pinNavCheckbox          = $('#pin-nav'),
-    keepNavDocked           = false,
+    keepNavClosed           = false,
     clientLookupExpanded    = false;
 
 $(document).ready(function() {
@@ -50,10 +50,11 @@ $(document).ready(function() {
         $('#cart-slider').toggleClass('expanded');
         $('#main-content').toggleClass('cart-expanded');     
 
-        if(!keepNavDocked) {
+        if(!keepNavClosed) {
+            navExpanded = !navExpanded;
             $('#nav-menu').toggleClass('collapsed');
-            $('.collapsed .sub-links:visible').hide();
             $('#main-content').toggleClass('expanded');
+            $('.collapsed .sub-links:visible').hide();
 
             $('.nav-toggle').toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
@@ -61,7 +62,7 @@ $(document).ready(function() {
             if(!navExpanded) {
                 $('.nav-link.has-sub.active').find('ul').hide();
             }
-            if(navExpanded) {
+            else {
                 $('.nav-link.has-sub.active').find('ul').show();
             }   
 
@@ -112,7 +113,13 @@ $(document).ready(function() {
 
     $('.nav-toggle').on('click', function() {  
             navExpanded = !navExpanded;
-            keepNavDocked = !keepNavDocked;
+
+            if( !$('#nav-menu').hasClass('collapsed')) {
+                keepNavClosed = true;
+            }
+            else {
+                keepNavClosed = false;
+            }
 
             if($('#nav-menu').hasClass('collapsed') && $('#cart-slider').hasClass('expanded')) {
                 $('#cart-slider').toggleClass('expanded');
