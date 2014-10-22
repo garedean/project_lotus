@@ -42,14 +42,10 @@ $(document).ready(function() {
 
     // Clicking outside of a targeted element closes that element
     $(document).on('click', function(event) {
+        
       // Client lookup field
       if (!$(event.target).closest('.client-lookup-wrapper').length) {
         $('.client-lookup').fadeOut(100);
-      }
-      // Staff member dropdown
-      if (!$(event.target).closest('#staff-name, #staff-initials').length &&
-          !$(event.target).closest('.brand-tile .dropdown').length) {
-            $('.brand-tile .dropdown').hide();
       }
     });
 
