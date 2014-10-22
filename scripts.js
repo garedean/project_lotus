@@ -19,14 +19,15 @@ $(document).ready(function() {
     openCloseNav();
     updateDebugInfo();
 
-    $('#staff-name-wrapper, #staff-name-wrapper>.dropdown').hover(
+    $('#staff-name-wrapper').hover(
         function() {
-            $(this).addClass('open');
+            $('#staff-name-wrapper').addClass('open');
         }, 
         function() {  
             setTimeout(function() {
-                if( !$('#staff-name-wrapper>.dropdown').is(':hover') ) {
-                    $('#staff-name-wrapper').removeClass('open');
+                if( !$('#staff-name-wrapper>.dropdown').is(':hover') &&
+                    !$('#staff-name-wrapper').is(':hover') ) {
+                        $('#staff-name-wrapper').removeClass('open');
                 }
             }, 100);           
          }           
