@@ -8,19 +8,18 @@ var navExpanded             = true,
 
 $(document).ready(function() {
     
-    // Default sidebar upon load is set to 'pinned'
+    // Sidebar loads as pinned. No action unless user
+    // manually opens or close the sidebar
     if(pinNav) {
         $('#nav-pin').toggleClass('selected'); 
     }
 
-    // Initiate method that determines whether the cursor
-    // is withing 50 pixels of the sidebar menu, and if so,
-    // opens or closes sidebar. Action only when pinNav = false
+    // If pinNav is false, opens/closes sidebar when cursor
+    // is within 50 pixels of the sidebar leading edge
     openCloseNav();
-    updateDebugInfo();
 
-    // Clicking the client lookup icon causes lookup
-    // field to fade in
+    // Clicking the client lookup icon causes the input
+    // field to fade in, ready for user input
     $('.client-lookup-icon').on('click', function() {
         $('.client-lookup-wrapper input').fadeIn(100).focus();
 
@@ -36,22 +35,17 @@ $(document).ready(function() {
       }
     });
 
-    // Clicking in the header when the lookup is closed
-    // causes it to open
-/*    $('header').on('click', function(event) {
-        if(!clientLookupExpanded && !$(event.target).closest('.cart-icon').length) {
-            $('.client-lookup-wrapper input').fadeIn(100);
-            clientLookupExpanded = !clientLookupExpanded;
-        }
-    });*/
-
+    // Clicking on the cart icon causes the checkout panel to show/hide
     $('.cart-icon').on('click', function() {
 
         $('#cart-slider').toggleClass('expanded');
         $('#main-content').toggleClass('cart-expanded');     
 
+        // keepNavClosed is true when the user closes the 
+        // sidebar from an expanded state
         if(!keepNavClosed) {
             navExpanded = !navExpanded;
+
             $('#nav-menu').toggleClass('collapsed');
             $('#main-content').toggleClass('expanded');
             $('.collapsed .sub-links:visible').hide();
@@ -59,6 +53,8 @@ $(document).ready(function() {
             $('.nav-toggle').toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
 
+            // Hides/collapses active sidebar menus going from open to closed
+            // Shows/expands active sidebar menus going from closed to open
             if(!navExpanded) {
                 $('.nav-link.has-sub.active').find('ul').hide();
             }
@@ -66,11 +62,12 @@ $(document).ready(function() {
                 $('.nav-link.has-sub.active').find('ul').show();
             }   
 
-            $('.collapsed .sub-links:visible').hide();
+            //$('.collapsed .sub-links:visible').hide();
         }
        
     });
-
+    
+    // Controls vertical nav sidebar links and expanding submenus
     $('.nav-link').on('click', function() {
 
         $(this).addClass('active'); 
@@ -97,6 +94,7 @@ $(document).ready(function() {
         updateDebugInfo();
     });
 
+    // Clicking on a sublink item assigns it an 'active' class
     $('.sub-links').find('li').on('click', function() {
 
         $(this).addClass('active'); 
@@ -105,12 +103,14 @@ $(document).ready(function() {
 
     });
 
+    // Sidebar enters 'auto open/close' mode
     $('#nav-pin').on('click', function() {      
             pinNav = !pinNav;   
             $(this).toggleClass('selected'); 
             $('.nav-toggle').toggle();   
     });
 
+    // Sidebar open + close functionality
     $('.nav-toggle').on('click', function() {  
             navExpanded = !navExpanded;
 
@@ -124,7 +124,6 @@ $(document).ready(function() {
             if($('#nav-menu').hasClass('collapsed') && $('#cart-slider').hasClass('expanded')) {
                 $('#cart-slider').toggleClass('expanded');
                 $('#main-content').toggleClass('cart-expanded');  
-                //$('#body-wrapper').toggleClass('cart-open');
             }
 
             $('#nav-menu').toggleClass('collapsed');
@@ -132,22 +131,26 @@ $(document).ready(function() {
             if(!navExpanded) {
                 $('.nav-link.has-sub.active').find('ul').hide();
             }
-            if(navExpanded) {
+            else {
                 $('.nav-link.has-sub.active').find('ul').show();
             }          
-             
+            
+            // Font awesome arrow orientation
             $(this).toggleClass('fa-angle-left')
             .toggleClass('fa-angle-right');
             
+            // If a nav menu item is currently expanded, revealing
+            // its submenu contents, hide it going from open to close
             $('.collapsed .sub-links:visible').hide();
-            $('#main-content').toggleClass('expanded');
-            $('#lower-wrapper').toggleClass('nav-collapsed');            
+
+            // Main content expands or collapses along with sidebar
+            $('#main-content').toggleClass('expanded');        
     });
 });
 
 // Calculates x-axis distance to the #nav-menu sidebar. When the cursor
 // gets within 50 pixels of the sidebar right-side, the navbar opens or 
-// closes. Purpose: anticipate desired action for ease of use 
+// closes. The goal is to anticipate the user's action
 function openCloseNav() {
     var mX, mY, distanceToTarget,
         $distanceToTarget = $('.menu-debugging .distance-from-target'),

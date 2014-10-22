@@ -527,7 +527,7 @@ SIDEBAR TOGGLE BUTTON
 	display: block;
 	position: absolute;
 	right: 12px;
-	top: 14px;
+	top: 11px;
 	opacity: 1;
 	transform: rotate(0deg);
 	-webkit-transition: all 100ms ease-in-out;
@@ -640,7 +640,7 @@ BOX CONTENT
 
 #main-content.cart-expanded {
 	margin-right: 400px;
-	transition: .4s;
+	transition: .33s;
 }
 
 #cart-slider h2 {
