@@ -619,7 +619,6 @@ BOX CONTENT
 
 .brand-tile {
 	position: relative;
-	overflow: hidden;
 	height: 50px;
 	background-color: #f7f8fa;
 	border-bottom: 2px solid #dfdfdf;
@@ -654,11 +653,22 @@ BOX CONTENT
 	cursor: pointer !important;
 }
 
-#brand-name,
-#staff-name {
-	display: block;
-	padding-left: 9px;
+#staff-name-wrapper {
+	position: absolute;
 }
+
+#staff-name-wrapper {
+	position: absolute;
+	top: 24px;
+	left: 9px;
+}
+
+#brand-name {
+	position: relative;
+	top: 5px;
+	left: 9px;
+}
+
 #brand-name {
 	color: #0e6ead;
 	font-size: 1.1em;
@@ -668,18 +678,6 @@ BOX CONTENT
 #staff-name {
 	color: #666;
 	cursor: pointer !important;
-}
-
-#nav-menu #staff-name:hover {
-	color: #555;
-}
-
-#brand-content-wrapper {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	opacity: 1;
-	transition: opacity .5s;
 }
 
 .collapsed #brand-content-wrapper {
@@ -788,13 +786,16 @@ right: 0px;
 	padding-left: 4px;
 }
 
-.brand-tile .dropdown {
+#staff-name-wrapper > .dropdown {
 	display: none;
-	position: absolute;
+	left: -9px;
+}
+
+#staff-name-wrapper.open > .dropdown {
+	display: block;
 	min-width: 240px;
 	background: white;
 	margin-top: 10px;
-	top: 38px;
 	border: 1px solid #999;
 	border-radius: 2px;
 	z-index: 1001;
@@ -833,4 +834,5 @@ right: 0px;
 	padding: 0;
 	margin: 0;
 }
+
 

@@ -19,11 +19,17 @@ $(document).ready(function() {
     openCloseNav();
     updateDebugInfo();
 
-    $('#staff-name, #staff-initials').hover(
+    $('#staff-name-wrapper, #staff-name-wrapper>.dropdown').hover(
         function() {
-        $(this).closest('.brand-tile').find('.dropdown').fadeIn(200);
-        }, function() {
-        $(this).closest('.brand-tile').find('.dropdown').fadeOut(200);}
+            $(this).addClass('open');
+        }, 
+        function() {  
+            setTimeout(function() {
+                if( !$('#staff-name-wrapper>.dropdown').is(':hover') ) {
+                    $('#staff-name-wrapper').removeClass('open');
+                }
+            }, 100);           
+         }           
     );  
 
     // Clicking the client lookup icon causes lookup
@@ -86,8 +92,8 @@ $(document).ready(function() {
         $(this).addClass('active'); 
 
         if(navExpanded) {
-            $('.nav-link.has-sub.active').find('ul').slideDown(90);
-            $('.nav-link').not(this).find('ul').slideUp(90);
+            $('.nav-link.has-sub.active').find('ul').slideDown(300);
+            $('.nav-link').not(this).find('ul').slideUp(300);
         }
 
         $('.nav-link').not(this).removeClass('active')
