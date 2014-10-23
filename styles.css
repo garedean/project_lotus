@@ -123,7 +123,6 @@ header#top-bar {
 	background-color: white;
 	transition: margin .33s;
 	margin-bottom: 20px;
-	border-bottom: 2px solid #eee;
 }
 
 header .brand {
@@ -352,7 +351,7 @@ COLLAPSED SIDEBAR SUBMENUS
 }
 
 .nav-link > ul > li:hover {
-	background-color: #D0D5D7;
+	background-color: #E4E5EA;
 }
 
 #nav-menu.collapsed .nav-link {
@@ -616,7 +615,6 @@ BOX CONTENT
 	position: relative;
 	height: 50px;
 	background-color: #f1f2f7;
-	border-bottom: 2px solid #dfdfdf;
 	white-space: nowrap;
 	overflow: visible;
 }
@@ -650,8 +648,7 @@ BOX CONTENT
 	text-transform: capitalize;
 	font-size: 1.8em;
 	font-weight: 300;
-	line-height: 48px;
-	border-bottom: 2px solid #dfdfdf;
+	line-height: 50px;
 }
 
 .client-lookup-icon {
