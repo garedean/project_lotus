@@ -1,0 +1,480 @@
+[33mcommit 19e2736fb832a544e479e42a4c6134886562b28f[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 23 12:44:38 2014 -0700
+
+    Delete a bunch of unneded files
+
+[33mcommit e7c4203abbfe5a1a5322cd167a1856065bd53449[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 23 12:44:02 2014 -0700
+
+    App is now a Ruby on Rails app allowing for easy templating and navigation
+
+[33mcommit d799b226f9ac06b85cf20f735264a8c230f7bea6[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 23 11:37:50 2014 -0700
+
+    Add Google calendar iFrame  to content page
+
+[33mcommit 46183d00088a17c8a03d5469f8ebf8c23560381f[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 23 09:03:15 2014 -0700
+
+    Add 'to do list' and 'notepad' widget to the dashboard
+
+[33mcommit f4cf6e50c468dba7142acd3364dfcea7b1de96e0[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 22 20:15:00 2014 -0700
+
+    A bunch of small styling changes
+
+[33mcommit 8c6e6e4550105b5f2ece72daadd41d0b9bb9850d[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Wed Oct 22 16:54:36 2014 -0700
+
+    Added widgets to main content, changed color scheme
+
+[33mcommit a5f7cdb21cda9b0044e6dc5734178f957515861c[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Wed Oct 22 15:32:20 2014 -0700
+
+    Refactor javascript
+
+[33mcommit eadbce1942940560c3c95a5750286513f683e3b0[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Wed Oct 22 14:42:16 2014 -0700
+
+    Fix bug with vertical nav not syncing with open and close of cart slider
+
+[33mcommit fc4ea1123c320f318314730624c6650913da9172[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Wed Oct 22 12:54:40 2014 -0700
+
+    Removed sidebar top and bottom borders
+
+[33mcommit aa5a84096235f524dcda40c1025b3789233fe0f3[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Tue Oct 21 19:15:37 2014 -0700
+
+    Staff dropdown uses CSS to display, not jQuery
+
+[33mcommit 59c33d3cd0494368f0ef49fc06b6846fb7b59ce7[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Tue Oct 21 18:30:18 2014 -0700
+
+    Staff dropdown doesn't disappear when hovering back on staff member's name
+
+[33mcommit 2ef5074b7c42ffd11dbe1dd0c806e8ea9ea1ddff[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Tue Oct 21 17:30:22 2014 -0700
+
+    Fix bug preventing staff member dropdown from appearing
+
+[33mcommit 9e5d0febe9ecac7384a14aa8bb75b98b058eb4fe[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Tue Oct 21 17:26:16 2014 -0700
+
+    Add delay for staff member dropdown so it remains visible when moving to it
+
+[33mcommit e6c1ba1436ecbd4119cfbf37cefd21f21f6a464f[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Tue Oct 21 15:26:08 2014 -0700
+
+    Cart panel gets standard gray color scheme
+
+[33mcommit 40501f51f0ec68183d0d718f467796563715c8e9[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Mon Oct 20 20:04:57 2014 -0700
+
+    Cart slider gets revealed rather than pushed into view
+
+[33mcommit a764cb6872617d0ddf7f7964d974ec09c613a773[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Mon Oct 20 17:56:03 2014 -0700
+
+    Fix bug: clicking staff initials does not open staff member dropdown
+
+[33mcommit b47697a4f03afbf4ae915d8cb5cd1b6118d4234d[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Fri Oct 17 12:43:13 2014 -0700
+
+    User menu dropdown gets styling and jquery
+
+[33mcommit 1811ab76586e131e3565ca6af273d574ad1eb5c7[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Thu Oct 16 21:10:11 2014 -0700
+
+    Add currently commented out jquery to open client lookup when user clicks inside header
+
+[33mcommit dbc2ca432cd040eb5f9f189e910b924df7be299c[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Thu Oct 16 20:55:50 2014 -0700
+
+    Client lookup field fades in when lookup icon is clicked)
+
+[33mcommit 96865eb2cd348ebd94ce4487558d2c1bd2573866[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 16 17:03:23 2014 -0700
+
+    Add search field in header
+
+[33mcommit c83c03b8a1c68f38f138653f2674ed8ecb621194[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 15 23:42:23 2014 -0700
+
+    Add dark colors for cart slider
+
+[33mcommit acd54b3cf97616bb1d87364e769f08ce4965e7e5[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 15 23:23:39 2014 -0700
+
+    Changed color palette for cart sliding panel
+
+[33mcommit 8e7222ff87953205e5d6221f2c12e4d69635f250[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 15 22:08:10 2014 -0700
+
+    Removed mention of MB from sidebar
+
+[33mcommit 0ed18068f43ad04d687de18e8c795c5b596976e9[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 15 21:57:58 2014 -0700
+
+    Restyled cart panel header
+
+[33mcommit d644825c6ea24d11e70fb5f9e08cc9bcc005c467[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 15 20:39:54 2014 -0700
+
+    Cart sliding panel works with new layout
+
+[33mcommit 7c3dc1cb1fac273b612731826ac5d7cb53eeeb99[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 15 18:55:46 2014 -0700
+
+    Improve brand styles and checkout icon in top right
+
+[33mcommit 47abde7eae42dac9443f6334eacce8f0e205986b[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 15 18:07:14 2014 -0700
+
+    Add staff initials to brand tile of sidebar
+
+[33mcommit caf01fb69cf1cef25b24970deb1b8ca83eb0568e[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Wed Oct 15 16:51:27 2014 -0700
+
+    Add brand tile content
+
+[33mcommit faa89ebd6e045af5e50179289b640ddccd8b321b[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Wed Oct 15 16:26:53 2014 -0700
+
+    Nav sidebar goes from top to bottom
+
+[33mcommit bb08f576733ec3bf7fa0f0aa43920bc0ce014ad9[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Tue Oct 14 23:11:02 2014 -0700
+
+    Styling for collapsed submenus
+
+[33mcommit 64e165af3b7902799da443f1ee49918ea98d3ed6[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Tue Oct 14 21:59:28 2014 -0700
+
+    Change sidebar color scheme to blue
+
+[33mcommit 2d8d1413eca0f5588e81dccba7160f4bf5106951[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Tue Oct 14 16:32:20 2014 -0700
+
+    Sidebar blue highlighting when active, better readability
+
+[33mcommit 9a55bc17fe7bd25b01db33c8f65eae3c2865c385[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Tue Oct 14 12:51:53 2014 -0700
+
+    Add logic for sidebar toggling when cart panel opens and closes
+
+[33mcommit 6ed143e9a09cf9374b94d9d9cdfb601b1db454ec[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Tue Oct 14 08:52:39 2014 -0700
+
+    Collapsed sidebar doesn't slide left when cart opens
+
+[33mcommit 6e08e4200500422408bd7645505d53dc60bec5c2[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Tue Oct 14 08:33:48 2014 -0700
+
+    Fix bug with lower wrapper when cart is open, absolutely position cart icon
+
+[33mcommit 935122cc626f4f08ef878a423e1ca111381e5a50[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Mon Oct 13 17:15:12 2014 -0700
+
+    Nav-menu gets pushed off page when cart is open
+
+[33mcommit 4276640e19e6f4c4561b30bb5c2c3cd426feabe8[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Mon Oct 13 17:02:14 2014 -0700
+
+    Modify cart slider so it pushes body over
+
+[33mcommit fe8f5d859ad2c40b8c829c664c55fce9c9dcc3ae[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Mon Oct 13 16:38:26 2014 -0700
+
+    Add shopping cart icon and slide panel
+
+[33mcommit 6df4a5f70b2eac74bbea609b3be74467acf37412[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Sun Oct 12 19:00:09 2014 -0700
+
+    Add blue hover over style to collapsed sidebar submenus
+
+[33mcommit bd712cb4e83bd7a7c33b191f499e8e794cc9e39c[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Sun Oct 12 18:50:25 2014 -0700
+
+    Fix bug for submenus appearing with collapsed sidebar
+
+[33mcommit 10c6dc90f3be1ebe4e352cf01bcee92509d8a603[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Sun Oct 12 18:10:23 2014 -0700
+
+    Change color scheme
+
+[33mcommit 4a5af59f0a18a714c9a335502dcffba2f0bf2b46[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Sat Oct 11 21:01:04 2014 -0700
+
+    Styling for collapsed sidebar hover views
+
+[33mcommit 623ac967d1eba4e4f5588decf961a2c90a1e29c9[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Sat Oct 11 20:12:52 2014 -0700
+
+    Refactored sidebar links
+
+[33mcommit 0377383ac41c0d11a207ddc0915c6eadc749e9f6[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Sat Oct 11 17:14:18 2014 -0700
+
+    Add bootstrap content and styles
+
+[33mcommit 1d558e8c1b9f0fd99c8e18b79d47cff5fa98b37e[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Sat Oct 11 14:57:30 2014 -0700
+
+    Remove nav toggle auto sliding, was not good UX
+
+[33mcommit 9eac56072471c9013a8c490dc1313d89177ecbd5[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Sat Oct 11 14:37:57 2014 -0700
+
+    Remove reset css since Bootstrap has included normalize.css
+
+[33mcommit ac238368dc7bde221b7175f3b94808b305fa6cae[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Fri Oct 10 23:33:20 2014 -0700
+
+    Sidebar submenus slide up and down after toggling sidebar
+
+[33mcommit 95efba0f9f65640645f1901fbe717c2d09ba8fe8[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Fri Oct 10 17:35:51 2014 -0700
+
+    Sidebar menus expand up after opening sidebar with toggle
+
+[33mcommit 1aa69f1cbf731c83eddddc1469638b50eed7a769[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Fri Oct 10 17:16:41 2014 -0700
+
+    Sidebar items with submenus slide up and down
+
+[33mcommit 509f83aed424766da1b6881ba09c9ae2f5dba827[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Fri Oct 10 16:25:38 2014 -0700
+
+    Major refactor, main-content ready for bootstrap
+
+[33mcommit 72d1873273db1b1c79f78bab2c01f025ef68bdb5[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Fri Oct 10 15:08:40 2014 -0700
+
+    Removed unneeded initial page javascript
+
+[33mcommit 933f0e8bd7c17f04527b49cb08419b692b099092[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Fri Oct 10 15:04:46 2014 -0700
+
+    Bug fix for sidebar opening, style improvements
+
+[33mcommit 9ed7a5b8a63eaf0306d2aa8ad93ab3d48f6e1137[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Fri Oct 10 14:11:50 2014 -0700
+
+    Add arrows to sidebar links with submenus
+
+[33mcommit 04e2436825fcd2d50beb016358a6ede4c2e0f4cf[m
+Merge: 6095e72 fc3057c
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Fri Oct 10 09:05:44 2014 -0700
+
+    Merge branch 'master' of https://github.com/garrettolson/MB-V3
+
+[33mcommit 6095e72e6967fc7c0489a3374567323bb2dec63f[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Fri Oct 10 09:05:40 2014 -0700
+
+    Added personal ascii signature to index
+
+[33mcommit fc3057cca36e66c29c2f4ca8895d038839140316[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Thu Oct 9 23:23:34 2014 -0700
+
+    Small styling changes
+
+[33mcommit 45327c33a96d32c3b0be6b4b938449c94cbbe051[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Thu Oct 9 23:17:23 2014 -0700
+
+    Sidebar main link text turns blue for readability
+
+[33mcommit e77f911bb41f2122c741102dc0c008285d613957[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Thu Oct 9 22:41:28 2014 -0700
+
+    Fix missing sidebar link hover background
+
+[33mcommit 5c39572d5042abc6e194cdc7a880007c20a6a473[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 9 15:59:50 2014 -0700
+
+    Commit before merge
+
+[33mcommit afcf54578b30cbc02c020e5261f8916edfd2f265[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 9 15:51:06 2014 -0700
+
+    Commit before new branch
+
+[33mcommit 29076d5eeb682f872484e6fd3d1043af3993bddb[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 9 15:14:55 2014 -0700
+
+    Use font awesome icons for most sidebar links
+
+[33mcommit 628ba237e79aba5676b2277bcd2f6f7c363d43a6[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 9 14:37:16 2014 -0700
+
+    Remove border from sidebar, flatter design. Make things look pretty
+
+[33mcommit ab98526f6a0b4ac9e31e23b85406ebdfb8a45ab8[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 9 12:37:41 2014 -0700
+
+    Fix css over riding of active sidebar links, color is now orange for active
+
+[33mcommit 815354cdcc3381d273cb1b717c9c9ced8c858243[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Thu Oct 9 12:14:00 2014 -0700
+
+    Update sidebar submenu styling and jquery
+
+[33mcommit 7f7c218a938fc52beea9649f4cc2c410b9e90d71[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 8 20:27:15 2014 -0700
+
+    Active sidebar link transition now snappier, fade out when becoming inactive
+
+[33mcommit ded8471152a501925009d6e7534f08c8733375f2[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 8 20:24:24 2014 -0700
+
+    Sidebar link backgrounds and border fade in when they become active
+
+[33mcommit 2ed965ff28d7c5f9e381d4cded4c29b9d9a3e16a[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 8 20:00:55 2014 -0700
+
+    Fix 1px jump when sidebar links become active
+
+[33mcommit fb2b6e2ffd5fb4625357b64093ccef17e1624753[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 8 19:55:39 2014 -0700
+
+    Client lookup field increases in height and font size
+
+[33mcommit 0729525b36f73bf539877bb5640f98b472d40364[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 8 19:47:19 2014 -0700
+
+    Nested menus work for sidebar links open and closed
+
+[33mcommit 79c477ca772c3921ef98663f844ba548d1a19c5f[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Wed Oct 8 18:24:15 2014 -0700
+
+    Sidebar now supports children clickables
+
+[33mcommit 6eec9c7b738b78dbc49d5b43609137a9ba2c6fd6[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Tue Oct 7 17:17:22 2014 -0700
+
+    Toggle sidebar moved to bottom of sidebar, many style changes
+
+[33mcommit eac7a393445fc0e9973db125346d8235a3e7f6fe[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Tue Oct 7 00:12:13 2014 -0700
+
+    So late, delirious. Committing a bunch of small changes
+
+[33mcommit ff4f6b021784b46630ad819c873bde29f27bb059[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Mon Oct 6 22:28:42 2014 -0700
+
+    Sidebar links get slightly darker, more readable
+
+[33mcommit 94325ddc5981ab32a3f3bff0a47f413dafee70dc[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Mon Oct 6 20:22:30 2014 -0700
+
+    A bunch of little fixes for the sidebar
+
+[33mcommit fb4a6b61309f1a0cd2d10da8ee8616a3ed021348[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Mon Oct 6 19:40:50 2014 -0700
+
+    Brand logo flies out of view rather than covered
+
+[33mcommit 0ac11875b0f969ded8a9608d42af5f7a042094ce[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Mon Oct 6 19:31:20 2014 -0700
+
+    Move client search closer to sidebar toggle
+
+[33mcommit 77f2c91edf907affccb2ae89d810592d77195b18[m
+Author: Garrett Olson <garrettdolson@gmail.com>
+Date:   Mon Oct 6 19:07:47 2014 -0700
+
+    Active sidebar links no longer have top and bottom border overlap content frame
+
+[33mcommit 9bc9e03f52dcd73170d73bd9857b61a8e971d56c[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Mon Oct 6 16:37:14 2014 -0700
+
+    Toggle sidebar button gets positioning, sits flush against sidebar edge
+
+[33mcommit 3d0ebd452f2182fe9e478f37227e1d71acde08ac[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Mon Oct 6 16:22:03 2014 -0700
+
+    Added button in header to toggle nav
+
+[33mcommit 4fba1a73e034cbc148d4a10674efcd9e3b34ad2d[m
+Author: Garrett <garrettdolson@gmail.com>
+Date:   Mon Oct 6 14:55:55 2014 -0700
+
+    first commit
