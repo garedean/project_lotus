@@ -122,7 +122,7 @@ header#top-bar {
 	font-size: 1.1em;
 	background-color: white;
 	transition: margin .33s;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 header .brand {
@@ -243,7 +243,7 @@ SIDEBAR LINKS
 }
 
 #nav-menu .nav-link.active {
-  font-weight: 700;
+font-weight: 700;
   -webkit-transition: width .33s, background-color .13s, border .13s;
   transition: width .33s, background-color .13s, border .13s;
   width: 240px;
@@ -834,3 +834,34 @@ STAFF MEMBER NAMED + DROPDOWN
 	margin: 0;
 }
 
+.turquoise {
+	color: #1abc9c;
+}
+
+.green {
+	color: #2ecc71;
+}
+
+.blue {
+	color: #3498db;
+}
+
+.violet {
+	color: #9b59b6;
+}
+
+.midnight {
+	color: #34495e;
+}
+
+.carrot {
+	color: #e67e22;
+}
+
+.brick {
+	color: #e74c3c;
+}
+
+.orange {
+	color: #f1c40f;
+}
