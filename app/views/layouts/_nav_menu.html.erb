@@ -31,20 +31,20 @@
         </li>
 
         <li class='nav-link'>
-          <a href='#' name='dashboard'>  
-            <i class='fa fa-tachometer nav-icon fa-lg'></i>            
-            <span class='title'>dashboard</span>            
-          </a>
+          <%= link_to dashboard_path do %>
+            <i class='fa fa-calendar fa-lg nav-icon'></i>
+            <span class='title'>dashboard</span>
+          <% end %>
           <ul class='sub-links dashboard'>  
             <li>dashboard</li>
           </ul>
         </li>
 
         <li class='nav-link has-sub'>
-          <a href='#' name='appointments'>
+          <%= link_to appointments_path do %>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
             <span class='title'>appointments</span>
-          </a>
+          <% end %>
           <ul class='sub-links appointments'>  
             <li>Appointments</li>
             <li>SLO Location</li>
@@ -54,36 +54,30 @@
         </li>
 
         <li class='nav-link'>
-
-        <%= link_to classes_path do %>
-          <i class='fa fa-calendar fa-lg nav-icon'></i>
-          <span class='title'>classes</span>
-        <% end %>
-
-          <!-- <a href='#' name=''>
+          <%= link_to classes_path do %>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
             <span class='title'>classes</span>
-          </a> -->
+          <% end %>
           <ul class='sub-links classes'>  
             <li>classes</li>
           </ul>
         </li>    
 
         <li class='nav-link'>
-          <a href='#' name='workshops'>
+          <%= link_to workshops_path do %>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
             <span class='title'>workshops</span>
-          </a>
+          <% end %>
           <ul class='sub-links workshops'>  
             <li>workshops</li>
           </ul>
         </li>   
 
        <li class='nav-link'>
-          <a href='#' name='classes'>
+          <%= link_to clients_path do %>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
             <span class='title'>clients</span>
-          </a>
+          <% end %>
           <ul class='sub-links clients'>  
             <li>clients</li>
           </ul>
@@ -94,40 +88,40 @@
         <!--<span>SETTINGS</span>-->
 
         <li class='nav-link'>
-          <a href='#' name='retail'>
+          <%= link_to staff_path do %>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
             <span class='title'>staff</span>
-          </a>
+          <% end %>
           <ul class='sub-links staff'>  
             <li>staff</li>
           </ul>
         </li> 
 
         <li class='nav-link'>
-          <a href='#' name='retail'>
+          <%= link_to services_path do %>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>services</span>              
-          </a>
+            <span class='title'>services</span>
+          <% end %>
           <ul class='sub-links services'>  
             <li>services</li>
           </ul>
         </li>
 
         <li class='nav-link'>
-          <a href='#' name='retail'>
+          <%= link_to products_path do %>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>products</span>              
-          </a>
+            <span class='title'>products</span>
+          <% end %>
           <ul class='sub-links products'>  
             <li>products</li>
           </ul>
         </li>
 
         <li class='nav-link has-sub business'>         
-          <a href='#' name='business'>
+          <%= link_to business_path do %>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>my business</span>              
-          </a>
+            <span class='title'>my business</span>
+          <% end %>
           <ul class='sub-links'>
             <li>My Business</li>
             <li>Reports</li>
@@ -140,10 +134,10 @@
         <li class='line'></li>
 
         <li class='nav-link has-sub business'>       
-          <a href='#' name='business'>
+          <%= link_to admin_path do %>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>MB Admin Only</span>              
-          </a>
+            <span class='title'>MB Admin Only</span>
+          <% end %>
           <ul class='sub-links'>
             <li>Site Settings</li>
             <li>MAP Settings</li>            
