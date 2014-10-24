@@ -345,13 +345,9 @@ COLLAPSED SIDEBAR SUBMENUS
 	background-color: rgba(247, 248, 250, 0.93);
 }
 
-.collapsed .nav-link ul li {
+.collapsed .nav-link ul > li a {
 	padding-left: 14px;
 	text-transform: capitalize;
-}
-
-.collapsed .nav-link ul li > a {
-	padding-left: 0px;
 }
 
 /* 
@@ -550,14 +546,25 @@ BOX CONTENT
 	line-height: 39px;
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
+} 
+
+.collapsed .sub-links li:first-child > a {
+	display: block;
+	background-color: #D0D5D7;
+	color: #0173c5;
+	font-weight: 600;
+	font-size: 1.1em;
+	line-height: 39px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
 }
 
-.collapsed .nav-link.active .sub-links li:first-child {
-/*	width: 239px;*/
+.collapsed .nav-link.active .sub-links li:first-child a {
 	color: white;
 	font-weight: 600;
 	border: 0;
 	background: #2980B9;
+	font-size: 1em;
 }
 
 .nav-link i {

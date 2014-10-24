@@ -46,7 +46,7 @@
             <span class='title'>appointments</span>
           </div>
           <ul class='sub-links appointments'>
-            <li>My Business</li>
+            <li><%= link_to "my business", business_path %></li>
             <li><%= link_to("SLO Location", slo_path) %></li>
             <li><%= link_to("Atascadero Location", atascadero_path) %></li>
             <li><%= link_to("Paso Location", paso_path) %></li>    
@@ -59,7 +59,9 @@
             <span class='title'>classes</span>
           <% end %>
           <ul class='sub-links classes'>  
-            <li>classes</li>
+            <li>
+              <%= link_to "classes", classes_path %>
+            </li>
           </ul>
         </li>    
 
@@ -123,7 +125,7 @@
             <span class='title'>my business</span>
           </div>       
           <ul class='sub-links'>
-            <li>My Business</li>
+            <li><%= link_to "my business", business_path %></li>
             <li><%= link_to("Reports", reports_path) %></li>
             <li><%= link_to("Automated SMS", sms_path) %></li>
             <li><%= link_to("Automated Emails", email_path) %></li>
