@@ -31,30 +31,6 @@ body {
 	background-color: #f1f2f7;
 }
 
-#body-wrapper {
-	position: absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
-	transition: .4s;
-}
-
-#body-wrapper.cart-open {
-	right: 400px;
-	transition: .4s;
-}
-
-#lower-wrapper {
-	position: absolute;
-	top: 50px;
-	right: 0;	
-	bottom: 0;
-	left: 0;
-	transition: .4s;
-}
-
-#lower-wrapper.nav-collapsed.cart-expanded {
-	left: 0;
-}
-
 a:hover, a:focus {
 	color: #555;
 	text-decoration: none;
@@ -64,14 +40,16 @@ a:hover, a:focus {
  	position: relative; 
 	height: 100%;
 	margin-left: 240px;
-	transition: .33s;
 	background-color: inherit;
 	z-index: 1000;
+	-webkit-transition: margin .33s ease-out;
+	transition: margin .33s ease-out;
 }
 
 #main-content.expanded {
 	margin-left: 50px;
-	transition: .33s;
+	-webkit-transition: margin .33s ease-out;
+	transition: margin .33s ease-out;
 }
 
 .page-title {
@@ -193,15 +171,9 @@ STAFF USER PANEL
 	right: 0;
 	bottom: 0;
 	background-color: #dadfe1;
-	transition:  .4s;
 	overflow: hidden;
 	z-index: 998;
 }
-
-/* #cart-slider.expanded {
-	width: 400px;
-	transition: .4s;
-} */
 
 /* 
 LEFT SIDEBAR
@@ -218,12 +190,14 @@ LEFT SIDEBAR
   background-color: #dadfe1;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
-  transition: .33s;
+  -webkit-transition: all .33s ease-out;
+  transition: all .33s ease-out;
 }
 
 #nav-menu.collapsed {
 	width: 50px;
-	transition: all .33s;
+	-webkit-transition: all .33s ease-out;
+	transition: all .33s ease-out;
 }
 
 /* 
@@ -236,17 +210,17 @@ SIDEBAR LINKS
   position: relative;
   box-sizing: border-box;
   cursor: pointer;  
-  -webkit-transition: width .33s, background-color .13s, border .13s;
-  transition: width .33s, background-color .13s, border .13s;
   white-space: nowrap;
   overflow: hidden;
+  -webkit-transition: width .33s, background-color .13s, border .13s;
+  transition: width .33s, background-color .13s, border .13s;
 }
 
 #nav-menu .nav-link.active {
-font-weight: 700;
+  font-weight: 700;
+  width: 240px;
   -webkit-transition: width .33s, background-color .13s, border .13s;
   transition: width .33s, background-color .13s, border .13s;
-  width: 240px;
 }
 
 #nav-menu.collapsed .nav-link {
@@ -344,6 +318,10 @@ COLLAPSED SIDEBAR SUBMENUS
 	line-height: 2em;
 	color: #666;
 }
+
+/* .nav-link.active ul {
+	display: block;
+} */
 
 .nav-link > ul > li {
 	padding: 5px 0 5px 51px;
