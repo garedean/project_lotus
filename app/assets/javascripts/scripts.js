@@ -7,7 +7,9 @@ var navExpanded             = true,
     clientLookupExpanded    = false;
 
 $(document).ready(function() {
-    
+
+    setNavigation();
+
     // Sidebar loads as pinned. No action unless user
     // manually opens or close the sidebar
     if(pinNav) {
@@ -190,4 +192,17 @@ function updateDebugInfo() {
         $('.nav-menu-state').html('Nav-Menu Open? ' + navExpanded.toString().toUpperCase());
         $('.currently-selected-link').html('Current Page: ' + currentlySelectedLink);
         $('.next-event-ready').html('Next event ready: ' + nextEventReady.toString().toUpperCase());
+}
+
+function setNavigation() {
+    var path = window.location.pathname;
+    path = path.replace(/\/$/, "");
+    path = decodeURIComponent(path);
+
+    $(".nav-link > a").each(function () {
+        var href = $(this).attr('href');
+        if (path.substring(0, href.length) === href) {
+            $(this).closest('.nav-link').addClass('active');
+        }
+    });
 }

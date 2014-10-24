@@ -30,7 +30,7 @@
           </div>             
         </li>
 
-        <li class='nav-link active'>
+        <li class='nav-link'>
           <a href='#' name='dashboard'>  
             <i class='fa fa-tachometer nav-icon fa-lg'></i>            
             <span class='title'>dashboard</span>            
@@ -54,10 +54,16 @@
         </li>
 
         <li class='nav-link'>
-          <a href='#' name=''>
+
+        <%= link_to classes_path do %>
+          <i class='fa fa-calendar fa-lg nav-icon'></i>
+          <span class='title'>classes</span>
+        <% end %>
+
+          <!-- <a href='#' name=''>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
             <span class='title'>classes</span>
-          </a>
+          </a> -->
           <ul class='sub-links classes'>  
             <li>classes</li>
           </ul>
