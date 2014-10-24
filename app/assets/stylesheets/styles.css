@@ -253,11 +253,6 @@ SIDEBAR LINKS
   background: #2980B9;
 }
 
-#nav-menu.collapsed .nav-link.active a {
-  color: #fff;
-  background: #2980B9;
-}
-
 #nav-menu .nav-link > a:hover {
   background-color: #D0D5D7;
   text-decoration: none;
@@ -326,12 +321,10 @@ COLLAPSED SIDEBAR SUBMENUS
 	color: #666;
 }
 
-/* .nav-link.active ul {
+.nav-link > ul > li > a {
 	display: block;
-} */
-
-.nav-link > ul > li {
-	padding: 5px 0 5px 51px;
+	padding-left: 51px;
+	line-height: 35px;
 	font-size: 14px;
 }
 
@@ -367,9 +360,12 @@ COLLAPSED SIDEBAR SUBMENUS
 }
 
 .collapsed .nav-link ul li {
-	padding: 5px;
 	padding-left: 14px;
 	text-transform: capitalize;
+}
+
+.collapsed .nav-link ul li > a {
+	padding-left: 0px;
 }
 
 /* 
@@ -565,7 +561,7 @@ BOX CONTENT
 	color: #0173c5;
 	font-weight: 600;
 	font-size: 1.1em;
-	height: 39px;
+	line-height: 39px;
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 }

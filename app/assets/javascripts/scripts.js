@@ -202,7 +202,8 @@ function setNavigation() {
     $(".nav-link a").each(function () {
         var href = $(this).attr('href');
         if (path.substring(0, href.length) === href) {
-            $(this).closest('.nav-link').addClass('active')
+            $(this).closest('li').addClass('active')
+            .closest('.nav-link').addClass('active')
             .find('ul').show();                   
         }
     });

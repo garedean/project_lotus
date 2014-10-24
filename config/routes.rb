@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   match 'products',     to: 'products#index',       via: [:get]
   match 'services',     to: 'services#index',       via: [:get]
   match 'staff',        to: 'staff#index',          via: [:get]
+
+  match 'slo',          to: 'appointments#slo',         via: [:get]
+  match 'atascadero',   to: 'appointments#atascadero',  via: [:get]
+  match 'paso',         to: 'appointments#paso',        via: [:get]
   
   match 'business',     to: 'business#index',       via: [:get]
   match 'reports',      to: 'business#reports',     via: [:get]
