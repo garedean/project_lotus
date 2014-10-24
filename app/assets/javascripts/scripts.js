@@ -5,7 +5,8 @@ var navExpanded             = true,
     pinNavCheckbox          = $('#pin-nav'),
     keepNavClosed           = false,
     clientLookupExpanded    = false,
-    navClosed = false;
+    navClosed               = false,
+    collapsedMenuOpen       = false;
 
 $(document).ready(function() {
 
@@ -94,7 +95,7 @@ $(document).ready(function() {
         }
         $('.nav-link').not(this).removeClass('down-arrow');
 
-        updateDebugInfo();
+        //updateDebugInfo();
     });
 
     // Clicking on a sublink item assigns it an 'active' class
@@ -132,6 +133,9 @@ $(document).ready(function() {
 
             $('#nav-menu').toggleClass('collapsed');
 
+            // Main content expands or collapses along with sidebar
+            $('#main-content').toggleClass('expanded');
+
             if(!navExpanded) {
                 $('.nav-link.has-sub.active').find('ul').hide();
             }
@@ -145,10 +149,7 @@ $(document).ready(function() {
             
             // If a nav menu item is currently expanded, revealing
             // its submenu contents, hide it going from open to close
-            $('.collapsed .sub-links:visible').hide();
-
-            // Main content expands or collapses along with sidebar
-            $('#main-content').toggleClass('expanded');        
+            $('.collapsed .sub-links:visible').hide();        
     });
 });
 
@@ -185,16 +186,12 @@ function openCloseNav() {
         if (distanceToTarget > 50) {
             nextEventReady = true;
         }
-        updateDebugInfo();
+
         $distanceToTarget.text("Distance to nav: " + distanceToTarget);
+        
+        updateDebugInfo();
     });
 };
-
-function updateDebugInfo() {     
-        $('.nav-menu-state').html('Nav-Menu Open? ' + navExpanded.toString().toUpperCase());
-        $('.currently-selected-link').html('Current Page: ' + currentlySelectedLink);
-        $('.next-event-ready').html('Next event ready: ' + nextEventReady.toString().toUpperCase());
-}
 
 function setNavigation() {
     var path = window.location.pathname;
@@ -204,13 +201,26 @@ function setNavigation() {
     $(".nav-link a").each(function () {
         var href = $(this).attr('href');
         if (path.substring(0, href.length) === href) {
-            $(this).closest('li').addClass('active')
-            .closest('.nav-link').addClass('active')
-            .find('ul').show();                   
+            $(this).closest('li').addClass('active');
+            $(this).closest(".nav-link").addClass('active')
+
+            if(!navClosed) {
+                $(this).closest(".nav-link").find('ul').show();  
+            }                 
         }
     });
 
-    /*if(navClosed) {
+    // If nav-menu is closed, retain closed state on page load
+    if(navClosed) {
         $('#nav-menu').addClass('collapsed');
-    }*/
+        $('#main-content').toggleClass('expanded');
+        $('#nav-menu .nav-toggle').removeClass('fa-angle-left')
+            .addClass('fa-angle-right');
+    }
+}
+
+function updateDebugInfo() {     
+        $('.nav-menu-state').html('Nav-Menu Open? ' + navExpanded.toString().toUpperCase());
+        $('.currently-selected-link').html('Current Page: ' + currentlySelectedLink);
+        $('.next-event-ready').html('Next event ready: ' + nextEventReady.toString().toUpperCase());
 }
