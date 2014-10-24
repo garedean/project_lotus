@@ -199,10 +199,11 @@ function setNavigation() {
     path = path.replace(/\/$/, "");
     path = decodeURIComponent(path);
 
-    $(".nav-link > a").each(function () {
+    $(".nav-link a").each(function () {
         var href = $(this).attr('href');
         if (path.substring(0, href.length) === href) {
-            $(this).closest('.nav-link').addClass('active');
+            $(this).closest('.nav-link').addClass('active')
+            .find('ul').show();                   
         }
     });
 }

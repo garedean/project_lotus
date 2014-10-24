@@ -614,8 +614,8 @@ BOX CONTENT
 	left: 9px;
 }
 
-#brand-name {
-	color: #0e6ead;
+#brand-name a {
+	color: #2980B9;
 	font-size: 1.1em;
 	font-weight: 600;
 }
