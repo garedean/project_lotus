@@ -253,7 +253,7 @@ SIDEBAR LINKS
   background: #2980B9;
 }
 
-#nav-menu .nav-link > a:hover {
+#nav-menu .nav-link:hover {
   background-color: #D0D5D7;
   text-decoration: none;
 }

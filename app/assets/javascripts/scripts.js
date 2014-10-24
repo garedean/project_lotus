@@ -4,7 +4,8 @@ var navExpanded             = true,
 	currentlySelectedLink   = '',
     pinNavCheckbox          = $('#pin-nav'),
     keepNavClosed           = false,
-    clientLookupExpanded    = false;
+    clientLookupExpanded    = false,
+    navClosed = false;
 
 $(document).ready(function() {
 
@@ -114,6 +115,7 @@ $(document).ready(function() {
 
     // Sidebar open + close functionality
     $('.nav-toggle').on('click', function() {  
+            navClosed = !navClosed;
             navExpanded = !navExpanded;
 
             if( !$('#nav-menu').hasClass('collapsed')) {
@@ -177,7 +179,7 @@ function openCloseNav() {
             $('.nav-link.has-sub.active').find('ul').show();
 
             $('.collapsed .sub-links:visible').hide();
-            $('#main-content').toggleClass('expanded')
+            $('#main-content').toggleClass('expanded');
         }
 
         if (distanceToTarget > 50) {
@@ -207,4 +209,8 @@ function setNavigation() {
             .find('ul').show();                   
         }
     });
+
+    /*if(navClosed) {
+        $('#nav-menu').addClass('collapsed');
+    }*/
 }
