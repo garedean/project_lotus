@@ -31,6 +31,10 @@ body {
 	background-color: #f1f2f7;
 }
 
+a, span, div {
+	color: #666;
+}
+
 a:hover, a:focus {
 	color: #555;
 	text-decoration: none;
@@ -228,7 +232,8 @@ SIDEBAR LINKS
 	transition: width .33s;
 }
 
-.nav-link > a {
+.nav-link > a,
+.nav-link > .menu-link {
   position: relative;
   text-decoration: none;
   display: inline;
@@ -240,7 +245,9 @@ SIDEBAR LINKS
   overflow: hidden;
 }
 
-#nav-menu .nav-link.active a {
+#nav-menu .nav-link.active > a,
+#nav-menu .nav-link.active span,
+#nav-menu .nav-link.active .menu-link {
   color: white;
   box-sizing: border-box;
   background: #2980B9;

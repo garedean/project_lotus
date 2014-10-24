@@ -41,10 +41,10 @@
         </li>
 
         <li class='nav-link has-sub'>
-          <%= link_to appointments_path do %>
+          <div class='menu-link'>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
             <span class='title'>appointments</span>
-          <% end %>
+          </div>
           <ul class='sub-links appointments'>  
             <li>Appointments</li>
             <li>SLO Location</li>
@@ -117,27 +117,27 @@
           </ul>
         </li>
 
-        <li class='nav-link has-sub business'>         
-          <%= link_to business_path do %>
+        <li class='nav-link has-sub business'>  
+          <div class='menu-link'>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
             <span class='title'>my business</span>
-          <% end %>
+          </div>       
           <ul class='sub-links'>
             <li>My Business</li>
-            <li>Reports</li>
-            <li>Automated SMS</li>
-            <li>Automated Emails</li>              
-            <li>Advanced Settings</li>        
+            <li><%= link_to("Reports", reports_path) %></li>
+            <li><%= link_to("Automated SMS", sms_path) %></li>
+            <li><%= link_to("Automated Emails", email_path) %></li>
+            <li><%= link_to("Advanced Settings", settings_path) %></li>      
           </ul>
         </li>
         
         <li class='line'></li>
 
         <li class='nav-link has-sub business'>       
-          <%= link_to admin_path do %>
+          <div class='menu-link'>
             <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>MB Admin Only</span>
-          <% end %>
+            <span class='title'>mb admin</span>
+          </div>
           <ul class='sub-links'>
             <li>Site Settings</li>
             <li>MAP Settings</li>            
