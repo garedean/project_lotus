@@ -1,16 +1,29 @@
 var navExpanded             = true,
     nextEventReady          = true,
     pinNav                  = true,
-	currentlySelectedLink   = '',
-    pinNavCheckbox          = $('#pin-nav'),
     keepNavClosed           = false,
     clientLookupExpanded    = false,
     navClosed               = false,
-    collapsedMenuOpen       = false;
+    collapsedMenuOpen       = false,
+    currentlySelectedLink   = '',
+    pinNavCheckbox          = $('#pin-nav'),
+    currentPageTitle        = 'Dashboard';
 
 $(document).ready(function() {
 
     setNavigation();
+
+    // Staff Notes
+    var staffNotes = $('#staff-notes');
+
+    staffNotes.blur(function() {
+        localStorage.setItem('staff-notes', this.innerHTML);
+    });
+
+    // when the page loads
+    if(localStorage.getItem('staff-notes')) {
+        staffNotes.html(localStorage.getItem('staff-notes'));
+    }
 
     // Sidebar loads as pinned. No action unless user
     // manually opens or close the sidebar
@@ -70,11 +83,21 @@ $(document).ready(function() {
         }
        
     });
+
+    $('.nav-link a').on('click', function() {
+        // page title changes instaneously on click 
+        $('.page-title').text(
+            currentPageTitle = $(this).attr('data-display-title')
+        );
+    });
+
+    $('.page-title').text(currentPageTitle);
     
     // Controls vertical nav sidebar links and expanding submenus
     $('.nav-link').on('click', function() {
 
-        $(this).addClass('active'); 
+        // li gets active class
+        $(this).addClass('active');
 
         if(navExpanded) {
             $('.nav-link.has-sub.active').find('ul').slideDown(300);
@@ -223,4 +246,13 @@ function updateDebugInfo() {
         $('.nav-menu-state').html('Nav-Menu Open? ' + navExpanded.toString().toUpperCase());
         $('.currently-selected-link').html('Current Page: ' + currentlySelectedLink);
         $('.next-event-ready').html('Next event ready: ' + nextEventReady.toString().toUpperCase());
+}
+
+var SetStaffNotes = function(e) {
+    //localStorage.setItem('staff-notes', e.innerHTML);
+    alert("TEST");
+}
+
+var hello = function() {
+    alert('HELLO!');
 }
