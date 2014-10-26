@@ -13,14 +13,14 @@ $(document).ready(function() {
 
     setNavigation();
 
-    // Staff Notes
     var staffNotes = $('#staff-notes');
 
+    // When user clicks out of staff notes, set localstorage variable
     staffNotes.blur(function() {
         localStorage.setItem('staff-notes', this.innerHTML);
     });
 
-    // when the page loads
+    // When the page loads
     if(localStorage.getItem('staff-notes')) {
         staffNotes.html(localStorage.getItem('staff-notes'));
     }
@@ -85,9 +85,9 @@ $(document).ready(function() {
     });
 
     $('.nav-link a').on('click', function() {
-        // page title changes instaneously on click 
+        // Page title changes instaneously on user click
         $('.page-title').text(
-            currentPageTitle = $(this).attr('data-display-title')
+            currentPageTitle = $(this).data('display-title')
         );
     });
 
