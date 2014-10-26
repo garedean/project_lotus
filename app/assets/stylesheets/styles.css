@@ -46,9 +46,9 @@ a:hover, a:focus {
 	z-index: 1000;
 }
 
-#main-content.expanded {
+/* #main-content.expanded {
 	margin-left: 50px;
-}
+} */
 
 .page-title {
 	color: #444;
@@ -454,8 +454,7 @@ STAFF USER PANEL
 	position: absolute;
 	top: auto;
 	bottom: 25px;
-	left: auto;
-	right: 12px;
+	left: 12px;
 }
 
 .collapsed .has-sub:after {
@@ -594,9 +593,9 @@ BOX CONTENT
 	font-weight: 600;
 }
 
-#main-content.cart-expanded {
+/* #main-content.cart-expanded {
 	margin-right: 400px;
-}
+} */
 
 #cart-slider h2 {
 	margin: 0;
@@ -845,4 +844,19 @@ STAFF MEMBER NAMED + DROPDOWN
 	position: absolute;
 	top: 70px;
 	bottom: 20px;
+}
+
+#main-content.shift-left {
+	margin-left: 50px;
+    margin-right: 400px;
+}
+
+#main-content.shift-right {
+	margin-left: 240px;
+    margin-right: 0px;
+}
+
+#main-content.maximized {
+	margin-left: 50px;
+    margin-right: 0px;
 }

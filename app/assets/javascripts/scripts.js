@@ -1,25 +1,26 @@
-var navExpanded             = true,
+var navClosed               = false,
+    cartClosed              = true,
     nextEventReady          = true,
     pinNav                  = true,
     keepNavClosed           = false,
     clientLookupExpanded    = false,
-    collapsedMenuOpen       = false,
+    sectionTransitionSpeed  = 500,
     currentlySelectedLink   = '',
     pinNavCheckbox          = $('#pin-nav'),
     currentPageTitle        = 'Dashboard';
 
 $(document).ready(function() {
 
+    // Set nav menu link states and highlighting
     setNavigation();
 
     var staffNotes = $('#staff-notes');
 
-    // When user clicks out of staff notes, set localstorage variable
+    // Dashboard: when user clicks out of staff notes, set localstorage variable
     staffNotes.blur(function() {
         localStorage.setItem('staff-notes', this.innerHTML);
     });
-
-    // When the page loads
+    // Dashboard: when the page loads
     if(localStorage.getItem('staff-notes')) {
         staffNotes.html(localStorage.getItem('staff-notes'));
     }
@@ -30,10 +31,6 @@ $(document).ready(function() {
         $('#nav-pin').toggleClass('selected'); 
     }
 
-    // If pinNav is false, opens/closes sidebar when cursor
-    // is within 50 pixels of the sidebar leading edge
-    openCloseNav();
-
     // Clicking the client lookup icon causes the input
     // field to fade in, ready for user input
     $('.client-lookup-icon').on('click', function() {
@@ -42,27 +39,36 @@ $(document).ready(function() {
         clientLookupExpanded = !clientLookupExpanded;
     });  
 
-    // Clicking outside of a targeted element closes that element
-    $(document).on('click', function(event) {
-        
-      // Client lookup field
-      if (!$(event.target).closest('.client-lookup-wrapper').length) {
-        $('.client-lookup').fadeOut(100);
-      }
-    });
-
-    // Clicking on the cart icon causes the checkout panel to show/hide
+    // Clicking on the cart icon causes nav 
+    // and cart panels to show or hide 
     $('.cart-icon').on('click', function() {
 
-        $('#cart-slider').toggleClass('expanded');
-        $('#main-content').toggleClass('cart-expanded');     
-
-        // keepNavClosed is true when the user closes the 
-        // sidebar from an expanded state
-        if(!keepNavClosed) {
-            toggleNavMenu($('.nav-toggle'));
+        // Nav shown, cart closed
+        if(!navClosed && cartClosed) {
+            slideMainContentLeft();
+            navClosed = true;
         }
-       
+        // Nav shown, cart shown
+        else if(!navClosed && !cartClosed) {
+            slideMainContentRight();
+            navClosed = false;
+        }
+        // Nav closed, cart closed
+        else if(navClosed && cartClosed) {
+            slideMainContentLeft();
+            navClosed = true;
+        }
+         // Nav closed, cart open
+        else if(navClosed && !cartClosed) {
+            if(keepNavClosed) {
+                maximizeMainContent();
+                navClosed = false;
+            }
+            else {
+                slideMainContentRight();
+                navClosed = false;            
+            }
+        }
     });
 
     $('.nav-link a').on('click', function() {
@@ -80,7 +86,7 @@ $(document).ready(function() {
         // li gets active class
         $(this).addClass('active');
 
-        if(navExpanded) {
+        if(navClosed) {
             $('.nav-link.has-sub.active').find('ul').slideDown(300);
             $('.nav-link').not(this).find('ul').slideUp(300);
         }
@@ -119,18 +125,36 @@ $(document).ready(function() {
     });
 
     // Sidebar open + close functionality
-    $('.nav-toggle').on('click', function() {  
-        toggleNavMenu($(this));    
+    $('.nav-toggle').on('click', function() { 
 
-        // Docks the nav bar in collapsed position so that
-        // it doesn't open when the cart becomes visible
-        if( $('#nav-menu').hasClass('collapsed')) {
+        // Nav shown, cart closed
+        if(!navClosed && cartClosed) {
+            maximizeMainContent();
             keepNavClosed = true;
         }
-        else {
+        // Nav shown, cart shown
+        else if(!navClosed && !cartClosed) {
+            slideMainContentLeft();
+            keepNavClosed = true;
+        }
+        // Nav closed, cart closed
+        else if(navClosed && cartClosed) {
+            slideMainContentRight();
             keepNavClosed = false;
-        }        
+        }
+         // Nav closed, cart open
+        else if(navClosed && !cartClosed) {
+            slideMainContentRight();
+            keepNavClosed = false;
+        }
+
+        navClosed = !navClosed;
+
     });
+
+    // If pinNav is false, opens/closes sidebar when cursor
+    // is within 50 pixels of the sidebar leading edge
+    openCloseNav();
 });
 
 // Calculates x-axis distance to the #nav-menu sidebar. When the cursor
@@ -151,7 +175,7 @@ function openCloseNav() {
         distanceToTarget = calculatedistanceToTarget($element, mX);
         if (distanceToTarget < 50 && nextEventReady && !pinNav) {
             nextEventReady = false;
-            navExpanded = !navExpanded;
+            navClosed = !navClosed;
             $('#nav-menu').toggleClass('collapsed');           
 
             $('.nav-toggle').toggleClass('fa-angle-left')
@@ -184,14 +208,14 @@ function setNavigation() {
             $(this).closest('li').addClass('active');
             $(this).closest(".nav-link").addClass('active')
 
-            if(navExpanded) {
+            if(navClosed) {
                 $(this).closest(".nav-link").find('ul').show();  
             }                 
         }
     });
 
     // If nav-menu is closed, retain closed state on page load
-    if(!navExpanded) {
+    if(navClosed) {
         $('#nav-menu').addClass('collapsed');
         $('#main-content').toggleClass('expanded');
         $('#nav-menu .nav-toggle').removeClass('fa-angle-left')
@@ -200,24 +224,41 @@ function setNavigation() {
 }
 
 function updateDebugInfo() {     
-        $('.nav-menu-state').html('Nav-Menu Open? ' + navExpanded.toString().toUpperCase());
+        $('.nav-menu-state').html('Nav-Menu Open? ' + navClosed.toString().toUpperCase());
         $('.currently-selected-link').html('Current Page: ' + currentlySelectedLink);
         $('.next-event-ready').html('Next event ready: ' + nextEventReady.toString().toUpperCase());
 }
 
-var SetStaffNotes = function(e) {
-    //localStorage.setItem('staff-notes', e.innerHTML);
-    alert("TEST");
-}
-
-var hello = function() {
-    alert('HELLO!');
-}
-
 function toggleNavMenu(thisObj) {
-    navExpanded = !navExpanded;
+    navClosed = !navClosed;
 
-    // Nav menu pushes cart closed to maximize 
+    // Nav shown, cart closed
+    if(!navClosed && cartClosed) {
+        alert('1');
+        maximizeMainContent;
+        keepNavClosed = true;
+    }
+    // Nav shown, cart shown
+    else if(!navClosed && !cartClosed) {
+        alert('2');
+        slideMainContentLeft;
+        keepNavClosed = true;
+    }
+    // Nav closed, cart closed
+    else if(navClosed && cartClosed) {
+        alert('3');
+        slideMainContentRight;
+        keepNavClosed = false;
+    }
+     // Nav closed, cart open
+    else if(navClosed && !cartClosed) {
+        alert('4');
+        slideMainContentRight;
+        keepNavClosed = false;
+    }
+
+
+    /*// Nav menu pushes cart closed to maximize 
     // main content area
     if($('#nav-menu').hasClass('collapsed') && 
        $('#cart-slider').hasClass('expanded')) {
@@ -234,7 +275,7 @@ function toggleNavMenu(thisObj) {
     // If the nav menu shows an expanded menu, collapse the menu
     // going from expanded to collapsed. Expand the menu if the state
     // is going from collapsed to expanded
-    if(!navExpanded) {
+    if(!navClosed) {
         $('.nav-link.has-sub.active').find('ul').hide();
     }
     else {
@@ -248,5 +289,45 @@ function toggleNavMenu(thisObj) {
     
     // If a nav menu item is currently expanded, revealing
     // its submenu contents, hide it going from open to close
-    $('.collapsed .sub-links:visible').hide();
+    $('.collapsed .sub-links:visible').hide();*/
+}
+
+
+function slideMainContentLeft() {      
+    $('#main-content').animate({
+        marginLeft: '50px',
+        marginRight: '400px'
+    }, sectionTransitionSpeed, function() {
+        cartClosed  = false;
+        navClosed   = true;
+
+        $(this).removeClass()
+            .toggleClass('.shift-left');
+    });
+}
+
+function slideMainContentRight() {
+    $('#main-content').animate({
+        marginLeft: '240px',
+        marginRight: '0'
+    }, sectionTransitionSpeed, function() {
+        cartClosed  = true;
+        navClosed   = false;
+
+        $(this).removeClass()
+            .toggleClass('.shift-right');
+    });    
+}
+
+function maximizeMainContent() {
+    $('#main-content').animate({
+        marginLeft: '50px',
+        marginRight: '0'
+    }, sectionTransitionSpeed, function() {
+        cartClosed  = true;
+        navClosed   = true;
+
+        $(this).removeClass()
+            .toggleClass('.maximized');
+    });    
 }

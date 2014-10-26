@@ -1,158 +1,155 @@
 <div id='nav-menu' class=''>
-      <ul id='link-list'>
+  <ul id='link-list'>
 
-        <li class='brand-tile'>
-          <div id='brand-name'>
-            <a href='http://www.bluebirdsalon.com/' target='_blank'>LLUMINAIRE Salon</a>
-          </div>
+    <li class='brand-tile'>
+      <div id='brand-name'>
+        <a href='http://www.bluebirdsalon.com/' target='_blank'>LLUMINAIRE Salon</a>
+      </div>
 
-          <div id='staff-name-wrapper' class=''>
-            <span id='staff-name'>Tony Stark</span>   
-            <span id='staff-initials'>TS</span>
+      <div id='staff-name-wrapper' class=''>
+        <span id='staff-name'>Tony Stark</span>   
+        <span id='staff-initials'>TS</span>
 
-            <div class='dropdown'>
-              <ul>
-                <li>
-                  <a>Edit Account</a>
-                </li>
-                <li>
-                  <a>My Calendar</a>
-                </li>  
-                <li>
-                  <a>Help Suite</a>
-                </li>              
-                <hr>
-                <li>
-                  <a>Log Out</a>
-                </li>
-              </ul>
-            </div>
-          </div>             
-        </li>
-
-        <li class='nav-link'>
-          <%= link_to dashboard_path, data:{'display-title'=>'Dashboard'}  do %>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>dashboard</span>
-          <% end %>
-          <ul class='sub-links dashboard'>  
-            <li>dashboard</li>
-          </ul>
-        </li>
-
-        <li class='nav-link has-sub'>
-          <div class='menu-link'>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>appointments</span>
-          </div>
-          <ul class='sub-links appointments'>
-            <li><%= link_to "Appointments", business_path %></li>
-            <li><%= link_to("SLO Location", slo_path, data:{'display-title'=>'Appointments > SLO'}) %></li>
-            <li><%= link_to("Atascadero Location", atascadero_path, data:{'display-title'=>'Appointments > Atascadero'}) %></li>
-            <li><%= link_to("Paso Location", paso_path, data:{'display-title'=>'Appointments > Paso'}) %></li>    
-          </ul>
-        </li>
-
-        <li class='nav-link'>
-          <%= link_to classes_path, data:{'display-title'=>'Class Schedule'} do %>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>classes</span>
-          <% end %>
-          <ul class='sub-links classes'>  
+        <div class='dropdown'>
+          <ul>
             <li>
-              <%= link_to "classes", classes_path %>
+              <a>Edit Account</a>
+            </li>
+            <li>
+              <a>My Calendar</a>
+            </li>  
+            <li>
+              <a>Help Suite</a>
+            </li>              
+            <hr>
+            <li>
+              <a>Log Out</a>
             </li>
           </ul>
-        </li>    
+        </div>
+      </div>             
+    </li>
 
-        <li class='nav-link'>
-          <%= link_to workshops_path, data:{'display-title'=>'Workshops'}  do %>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>workshops</span>
-          <% end %>
-          <ul class='sub-links workshops'>  
-            <li>workshops</li>
-          </ul>
-        </li>   
+    <li class='nav-link'>
+      <%= link_to dashboard_path, data:{'display-title'=>'Dashboard'}  do %>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>dashboard</span>
+      <% end %>
+      <ul class='sub-links dashboard'>  
+        <li>dashboard</li>
+      </ul>
+    </li>
 
-       <li class='nav-link'>
-          <%= link_to clients_path, data:{'display-title'=>'Clients'}  do %>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>clients</span>
-          <% end %>
-          <ul class='sub-links clients'>  
-            <li>clients</li>
-          </ul>
-        </li>               
-                  
-        <li class='line'></li>
+    <li class='nav-link has-sub'>
+      <div class='menu-link'>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>appointments</span>
+      </div>
+      <ul class='sub-links appointments'>
+        <li><%= link_to "Appointments", business_path %></li>
+        <li><%= link_to("SLO Location", slo_path, data:{'display-title'=>'Appointments > SLO'}) %></li>
+        <li><%= link_to("Atascadero Location", atascadero_path, data:{'display-title'=>'Appointments > Atascadero'}) %></li>
+        <li><%= link_to("Paso Location", paso_path, data:{'display-title'=>'Appointments > Paso'}) %></li>    
+      </ul>
+    </li>
 
-        <!--<span>SETTINGS</span>-->
-
-        <li class='nav-link'>
-          <%= link_to staff_path, data:{'display-title'=>'Staff'}  do %>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>staff</span>
-          <% end %>
-          <ul class='sub-links staff'>  
-            <li>staff</li>
-          </ul>
-        </li> 
-
-        <li class='nav-link'>
-          <%= link_to services_path, data:{'display-title'=>'Services'}  do %>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>services</span>
-          <% end %>
-          <ul class='sub-links services'>  
-            <li>services</li>
-          </ul>
+    <li class='nav-link'>
+      <%= link_to classes_path, data:{'display-title'=>'Class Schedule'} do %>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>classes</span>
+      <% end %>
+      <ul class='sub-links classes'>  
+        <li>
+          <%= link_to "classes", classes_path %>
         </li>
+      </ul>
+    </li>    
 
-        <li class='nav-link'>
-          <%= link_to products_path, data:{'display-title'=>'Products'}  do %>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>products</span>
-          <% end %>
-          <ul class='sub-links products'>  
-            <li>products</li>
-          </ul>
-        </li>
+    <li class='nav-link'>
+      <%= link_to workshops_path, data:{'display-title'=>'Workshops'}  do %>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>workshops</span>
+      <% end %>
+      <ul class='sub-links workshops'>  
+        <li>workshops</li>
+      </ul>
+    </li>   
 
-        <li class='nav-link has-sub business'>  
-          <div class='menu-link'>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>my business</span>
-          </div>       
-          <ul class='sub-links'>
-            <li><%= link_to "my business", business_path %></li>
-            <li><%= link_to("Reports", reports_path, data:{'display-title'=>'Reports'} ) %></li>
-            <li><%= link_to("Automated SMS", sms_path, data:{'display-title'=>'Automated SMS'} ) %></li>
-            <li><%= link_to("Automated Emails", email_path, data:{'display-title'=>'Automated Emails'} ) %></li>
-            <li><%= link_to("Advanced Settings", settings_path, data:{'display-title'=>'Advanced Settings'} ) %></li>    
-          </ul>
-        </li>
-        
-        <li class='line'></li>
+   <li class='nav-link'>
+      <%= link_to clients_path, data:{'display-title'=>'Clients'}  do %>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>clients</span>
+      <% end %>
+      <ul class='sub-links clients'>  
+        <li>clients</li>
+      </ul>
+    </li>               
+              
+    <li class='line'></li>
 
-        <li class='nav-link has-sub business'>       
-          <div class='menu-link'>
-            <i class='fa fa-calendar fa-lg nav-icon'></i>
-            <span class='title'>mb admin</span>
-          </div>
-          <ul class='sub-links'>
-            <li>Site Settings</li>
-            <li>MAP Settings</li>            
-            <li>UX Design Library</li>      
-          </ul>
-        </li>
+    <!--<span>SETTINGS</span>-->
 
-      </ul>        
+    <li class='nav-link'>
+      <%= link_to staff_path, data:{'display-title'=>'Staff'}  do %>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>staff</span>
+      <% end %>
+      <ul class='sub-links staff'>  
+        <li>staff</li>
+      </ul>
+    </li> 
 
-      <span id='nav-pin' name='nav-pin'></span>  
-      <i class='nav-toggle fa fa-angle-left fa-lg nav-icon'></i>  
-    </div>
+    <li class='nav-link'>
+      <%= link_to services_path, data:{'display-title'=>'Services'}  do %>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>services</span>
+      <% end %>
+      <ul class='sub-links services'>  
+        <li>services</li>
+      </ul>
+    </li>
 
-    <div id='cart-slider'> 
-    	<h2>Checkout</h2>
-    </div> 
+    <li class='nav-link'>
+      <%= link_to products_path, data:{'display-title'=>'Products'}  do %>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>products</span>
+      <% end %>
+      <ul class='sub-links products'>  
+        <li>products</li>
+      </ul>
+    </li>
+
+    <li class='nav-link has-sub business'>  
+      <div class='menu-link'>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>my business</span>
+      </div>       
+      <ul class='sub-links'>
+        <li><%= link_to "my business", business_path %></li>
+        <li><%= link_to("Reports", reports_path, data:{'display-title'=>'Reports'} ) %></li>
+        <li><%= link_to("Automated SMS", sms_path, data:{'display-title'=>'Automated SMS'} ) %></li>
+        <li><%= link_to("Automated Emails", email_path, data:{'display-title'=>'Automated Emails'} ) %></li>
+        <li><%= link_to("Advanced Settings", settings_path, data:{'display-title'=>'Advanced Settings'} ) %></li>    
+      </ul>
+    </li>
+    
+    <li class='line'></li>
+
+    <li class='nav-link has-sub business'>       
+      <div class='menu-link'>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>mb admin</span>
+      </div>
+      <ul class='sub-links'>
+        <li>Site Settings</li>
+        <li>MAP Settings</li>            
+        <li>UX Design Library</li>      
+      </ul>
+    </li>
+
+  </ul>        
+
+  <span id='nav-pin' name='nav-pin'></span>  
+  <i class='nav-toggle fa fa-angle-left fa-lg nav-icon'></i>  
+</div>
+
