@@ -3,7 +3,6 @@ var navExpanded             = true,
     pinNav                  = true,
     keepNavClosed           = false,
     clientLookupExpanded    = false,
-    navClosed               = false,
     collapsedMenuOpen       = false,
     currentlySelectedLink   = '',
     pinNavCheckbox          = $('#pin-nav'),
@@ -61,25 +60,7 @@ $(document).ready(function() {
         // keepNavClosed is true when the user closes the 
         // sidebar from an expanded state
         if(!keepNavClosed) {
-            navExpanded = !navExpanded;
-
-            $('#nav-menu').toggleClass('collapsed');
-            $('#main-content').toggleClass('expanded');
-            $('.collapsed .sub-links:visible').hide();
-
-            $('.nav-toggle').toggleClass('fa-angle-left')
-            .toggleClass('fa-angle-right');
-
-            // Hides/collapses active sidebar menus going from open to closed
-            // Shows/expands active sidebar menus going from closed to open
-            if(!navExpanded) {
-                $('.nav-link.has-sub.active').find('ul').hide();
-            }
-            else {
-                $('.nav-link.has-sub.active').find('ul').show();
-            }   
-
-            //$('.collapsed .sub-links:visible').hide();
+            toggleNavMenu($('.nav-toggle'));
         }
        
     });
@@ -139,40 +120,16 @@ $(document).ready(function() {
 
     // Sidebar open + close functionality
     $('.nav-toggle').on('click', function() {  
-            navClosed = !navClosed;
-            navExpanded = !navExpanded;
+        toggleNavMenu($(this));    
 
-            if( !$('#nav-menu').hasClass('collapsed')) {
-                keepNavClosed = true;
-            }
-            else {
-                keepNavClosed = false;
-            }
-
-            if($('#nav-menu').hasClass('collapsed') && $('#cart-slider').hasClass('expanded')) {
-                $('#cart-slider').toggleClass('expanded');
-                $('#main-content').toggleClass('cart-expanded');  
-            }
-
-            $('#nav-menu').toggleClass('collapsed');
-
-            // Main content expands or collapses along with sidebar
-            $('#main-content').toggleClass('expanded');
-
-            if(!navExpanded) {
-                $('.nav-link.has-sub.active').find('ul').hide();
-            }
-            else {
-                $('.nav-link.has-sub.active').find('ul').show();
-            }          
-            
-            // Font awesome arrow orientation
-            $(this).toggleClass('fa-angle-left')
-            .toggleClass('fa-angle-right');
-            
-            // If a nav menu item is currently expanded, revealing
-            // its submenu contents, hide it going from open to close
-            $('.collapsed .sub-links:visible').hide();        
+        // Docks the nav bar in collapsed position so that
+        // it doesn't open when the cart becomes visible
+        if( $('#nav-menu').hasClass('collapsed')) {
+            keepNavClosed = true;
+        }
+        else {
+            keepNavClosed = false;
+        }        
     });
 });
 
@@ -227,14 +184,14 @@ function setNavigation() {
             $(this).closest('li').addClass('active');
             $(this).closest(".nav-link").addClass('active')
 
-            if(!navClosed) {
+            if(navExpanded) {
                 $(this).closest(".nav-link").find('ul').show();  
             }                 
         }
     });
 
     // If nav-menu is closed, retain closed state on page load
-    if(navClosed) {
+    if(!navExpanded) {
         $('#nav-menu').addClass('collapsed');
         $('#main-content').toggleClass('expanded');
         $('#nav-menu .nav-toggle').removeClass('fa-angle-left')
@@ -255,4 +212,41 @@ var SetStaffNotes = function(e) {
 
 var hello = function() {
     alert('HELLO!');
+}
+
+function toggleNavMenu(thisObj) {
+    navExpanded = !navExpanded;
+
+    // Nav menu pushes cart closed to maximize 
+    // main content area
+    if($('#nav-menu').hasClass('collapsed') && 
+       $('#cart-slider').hasClass('expanded')) {
+            $('#cart-slider').toggleClass('expanded');
+            $('#main-content').toggleClass('cart-expanded');  
+    }
+
+    // Nav menu expands/collapses
+    $('#nav-menu').toggleClass('collapsed');
+
+    // Main content expands/collapses
+    $('#main-content').toggleClass('expanded');
+
+    // If the nav menu shows an expanded menu, collapse the menu
+    // going from expanded to collapsed. Expand the menu if the state
+    // is going from collapsed to expanded
+    if(!navExpanded) {
+        $('.nav-link.has-sub.active').find('ul').hide();
+    }
+    else {
+        $('.nav-link.has-sub.active').find('ul').show();
+    }          
+    
+    // Nav expanded, nav-toggle arrow points left
+    // Nav eollapsed, nav-arrow points right
+    thisObj.toggleClass('fa-angle-left')
+    .toggleClass('fa-angle-right');
+    
+    // If a nav menu item is currently expanded, revealing
+    // its submenu contents, hide it going from open to close
+    $('.collapsed .sub-links:visible').hide();
 }
