@@ -4,12 +4,22 @@ var navClosed               = false,
     pinNav                  = true,
     keepNavClosed           = false,
     clientLookupExpanded    = false,
-    sectionTransitionSpeed  = 500,
+    sectionTransitionSpeed  = 100,
     currentlySelectedLink   = '',
+    pageState               = '',
     pinNavCheckbox          = $('#pin-nav'),
     currentPageTitle        = 'Dashboard';
 
 $(document).ready(function() {
+
+    // Retrieve last page state from local storage. If first page load, 
+    // value is null: page will open with default 'nav open' layout
+    pageState = localStorage.getItem('page-state');
+
+    if(pageState) {
+        // Set newly loaded page to the previous panel layout
+        $('#main-content').removeClass().addClass(pageState);
+    }
 
     // Set nav menu link states and highlighting
     setNavigation();
@@ -30,14 +40,6 @@ $(document).ready(function() {
     if(pinNav) {
         $('#nav-pin').toggleClass('selected'); 
     }
-
-    // Clicking the client lookup icon causes the input
-    // field to fade in, ready for user input
-    $('.client-lookup-icon').on('click', function() {
-        $('.client-lookup-wrapper input').fadeIn(100).focus();
-
-        clientLookupExpanded = !clientLookupExpanded;
-    });  
 
     // Clicking on the cart icon causes nav 
     // and cart panels to show or hide 
@@ -72,10 +74,14 @@ $(document).ready(function() {
     });
 
     $('.nav-link a').on('click', function() {
+
         // Page title changes instaneously on user click
         $('.page-title').text(
             currentPageTitle = $(this).data('display-title')
         );
+
+        // Local storage sets page user was one before refresh
+        //localStorage.setItem('page-state', $('#main-content').attr('class'));
     });
 
     $('.page-title').text(currentPageTitle);
@@ -83,28 +89,31 @@ $(document).ready(function() {
     // Controls vertical nav sidebar links and expanding submenus
     $('.nav-link').on('click', function() {
 
-        // li gets active class
+        // .nav-link li gets 'active' class 
         $(this).addClass('active');
 
-        if(navClosed) {
+        if(!navClosed) {
             $('.nav-link.has-sub.active').find('ul').slideDown(300);
             $('.nav-link').not(this).find('ul').slideUp(300);
         }
 
+        // Clicking on a different nav link removes all active
+        // classes from that element or submenu li element
         $('.nav-link').not(this).removeClass('active')
-        .removeClass('expanded');   
+        .find('.sub-links li.active').removeClass('active');               
 
-        $('.nav-link').not(this).find('.sub-links')
-        .find('li.active').removeClass('active');               
-
-        nextEventReady = true; 
-        currentlySelectedLink = $(this).text();
-
+        // If nav link with sub is clicked, change left 
+        // arrow to a down arrow
         if( $(this).hasClass('has-sub') ) {
             $(this).addClass('down-arrow');
         }
+
+        // Change sub down arrow back to left arrow when user
+        // clicks a different link
         $('.nav-link').not(this).removeClass('down-arrow');
 
+        //nextEventReady = true; 
+        //currentlySelectedLink = $(this).text();
         //updateDebugInfo();
     });
 
@@ -148,6 +157,7 @@ $(document).ready(function() {
             keepNavClosed = false;
         }
 
+        localStorage.setItem('page-state', $('#main-content').attr('class'));
         navClosed = !navClosed;
 
     });
@@ -214,13 +224,13 @@ function setNavigation() {
         }
     });
 
-    // If nav-menu is closed, retain closed state on page load
+    /*// If nav-menu is closed, retain closed state on page load
     if(navClosed) {
         $('#nav-menu').addClass('collapsed');
         $('#main-content').toggleClass('expanded');
         $('#nav-menu .nav-toggle').removeClass('fa-angle-left')
             .addClass('fa-angle-right');
-    }
+    }*/
 }
 
 function updateDebugInfo() {     
@@ -302,7 +312,9 @@ function slideMainContentLeft() {
         navClosed   = true;
 
         $(this).removeClass()
-            .toggleClass('.shift-left');
+            .addClass('shift-left');
+
+        localStorage.setItem('page-state', 'shift-left');
     });
 }
 
@@ -315,8 +327,9 @@ function slideMainContentRight() {
         navClosed   = false;
 
         $(this).removeClass()
-            .toggleClass('.shift-right');
-    });    
+            .addClass('shift-right');
+        localStorage.setItem('page-state', 'shift-right');
+    });   
 }
 
 function maximizeMainContent() {
@@ -328,6 +341,8 @@ function maximizeMainContent() {
         navClosed   = true;
 
         $(this).removeClass()
-            .toggleClass('.maximized');
-    });    
+            .addClass('maximized');
+
+        localStorage.setItem('page-state', 'maximized');
+    });   
 }
