@@ -39,11 +39,16 @@ a:hover, a:focus {
 }
 
 #main-content {
- 	position: relative; 
+ 	position: absolute; 
+ 	top: 0;
+ 	bottom: 0;
+ 	left: 0;
+ 	right: 0;
+ 	right
 	height: 100%;
 	margin-left: 240px;
 	background-color: inherit;
-	z-index: 1000;
+	z-index: 2;
 }
 
 /* #main-content.expanded {
@@ -168,7 +173,7 @@ STAFF USER PANEL
 	bottom: 0;
 	background-color: #dadfe1;
 	overflow: hidden;
-	z-index: 998;
+	z-index: 1;
 }
 
 /* ==========================================================================
@@ -176,21 +181,19 @@ STAFF USER PANEL
    ========================================================================== */
 
 #nav-menu {
-  position: absolute;
-  height: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  float: left;
+  height: 100%;
   width: 240px;
   background-color: #dadfe1;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
+  z-index: 1;
 }
 
-#nav-menu.collapsed {
+/* #nav-menu.collapsed {
 	width: 50px;
 }
-
+ */
 /* Links
    ========================================================================== */
 
@@ -209,9 +212,9 @@ STAFF USER PANEL
   width: 240px;
 }
 
-#nav-menu.collapsed .nav-link {
+/* #nav-menu.collapsed .nav-link {
 	width: 50px;
-}
+} */
 
 .nav-link > a,
 .nav-link > .menu-link {
@@ -322,7 +325,7 @@ STAFF USER PANEL
 	line-height: 2em;
 	cursor: pointer;
 	border-radius: 0 5px 8px 0;
-	z-index: 1000;
+	z-index: 3;
 }
 
 .collapsed .nav-link:hover ul {
@@ -592,10 +595,6 @@ BOX CONTENT
 	font-size: 1.1em;
 	font-weight: 600;
 }
-
-/* #main-content.cart-expanded {
-	margin-right: 400px;
-} */
 
 #cart-slider h2 {
 	margin: 0;

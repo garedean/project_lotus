@@ -3,8 +3,7 @@ var navClosed               = false,
     nextEventReady          = true,
     pinNav                  = true,
     keepNavClosed           = false,
-    clientLookupExpanded    = false,
-    sectionTransitionSpeed  = 100,
+    sectionTransitionSpeed  = 200,
     currentlySelectedLink   = '',
     pageState               = '',
     pinNavCheckbox          = $('#pin-nav'),
@@ -19,6 +18,11 @@ $(document).ready(function() {
     if(pageState) {
         // Set newly loaded page to the previous panel layout
         $('#main-content').removeClass().addClass(pageState);
+
+        // On page load, assign nav  menu collapsed class
+        if(pageState == 'shift-left' || pageState == 'maximized') {
+            $('#nav-menu').addClass('collapsed');
+        }
     }
 
     // Set nav menu link states and highlighting
@@ -79,9 +83,6 @@ $(document).ready(function() {
         $('.page-title').text(
             currentPageTitle = $(this).data('display-title')
         );
-
-        // Local storage sets page user was one before refresh
-        //localStorage.setItem('page-state', $('#main-content').attr('class'));
     });
 
     $('.page-title').text(currentPageTitle);
@@ -159,7 +160,6 @@ $(document).ready(function() {
 
         localStorage.setItem('page-state', $('#main-content').attr('class'));
         navClosed = !navClosed;
-
     });
 
     // If pinNav is false, opens/closes sidebar when cursor
@@ -216,21 +216,19 @@ function setNavigation() {
         var href = $(this).attr('href');
         if (path.substring(0, href.length) === href) {
             $(this).closest('li').addClass('active');
-            $(this).closest(".nav-link").addClass('active')
+            $(this).closest(".nav-link").addClass('active');
+
+            // If a nav submenu is currently visible when a submenu link is
+            // clicked, open it when the page reloads
+            if($(this).closest(".nav-link").hasClass('has-sub')) {
+                $(this).closest('ul.sub-links').show();
+            }  
 
             if(navClosed) {
                 $(this).closest(".nav-link").find('ul').show();  
             }                 
         }
     });
-
-    /*// If nav-menu is closed, retain closed state on page load
-    if(navClosed) {
-        $('#nav-menu').addClass('collapsed');
-        $('#main-content').toggleClass('expanded');
-        $('#nav-menu .nav-toggle').removeClass('fa-angle-left')
-            .addClass('fa-angle-right');
-    }*/
 }
 
 function updateDebugInfo() {     
@@ -238,70 +236,6 @@ function updateDebugInfo() {
         $('.currently-selected-link').html('Current Page: ' + currentlySelectedLink);
         $('.next-event-ready').html('Next event ready: ' + nextEventReady.toString().toUpperCase());
 }
-
-function toggleNavMenu(thisObj) {
-    navClosed = !navClosed;
-
-    // Nav shown, cart closed
-    if(!navClosed && cartClosed) {
-        alert('1');
-        maximizeMainContent;
-        keepNavClosed = true;
-    }
-    // Nav shown, cart shown
-    else if(!navClosed && !cartClosed) {
-        alert('2');
-        slideMainContentLeft;
-        keepNavClosed = true;
-    }
-    // Nav closed, cart closed
-    else if(navClosed && cartClosed) {
-        alert('3');
-        slideMainContentRight;
-        keepNavClosed = false;
-    }
-     // Nav closed, cart open
-    else if(navClosed && !cartClosed) {
-        alert('4');
-        slideMainContentRight;
-        keepNavClosed = false;
-    }
-
-
-    /*// Nav menu pushes cart closed to maximize 
-    // main content area
-    if($('#nav-menu').hasClass('collapsed') && 
-       $('#cart-slider').hasClass('expanded')) {
-            $('#cart-slider').toggleClass('expanded');
-            $('#main-content').toggleClass('cart-expanded');  
-    }
-
-    // Nav menu expands/collapses
-    $('#nav-menu').toggleClass('collapsed');
-
-    // Main content expands/collapses
-    $('#main-content').toggleClass('expanded');
-
-    // If the nav menu shows an expanded menu, collapse the menu
-    // going from expanded to collapsed. Expand the menu if the state
-    // is going from collapsed to expanded
-    if(!navClosed) {
-        $('.nav-link.has-sub.active').find('ul').hide();
-    }
-    else {
-        $('.nav-link.has-sub.active').find('ul').show();
-    }          
-    
-    // Nav expanded, nav-toggle arrow points left
-    // Nav eollapsed, nav-arrow points right
-    thisObj.toggleClass('fa-angle-left')
-    .toggleClass('fa-angle-right');
-    
-    // If a nav menu item is currently expanded, revealing
-    // its submenu contents, hide it going from open to close
-    $('.collapsed .sub-links:visible').hide();*/
-}
-
 
 function slideMainContentLeft() {      
     $('#main-content').animate({
@@ -316,6 +250,12 @@ function slideMainContentLeft() {
 
         localStorage.setItem('page-state', 'shift-left');
     });
+
+    $('#nav-menu .nav-toggle').removeClass('fa-angle-left')
+        .addClass('fa-angle-right');
+
+    // Used for displaying hover over nav menu items when nav is collapsed
+    $('#nav-menu').addClass('collapsed');
 }
 
 function slideMainContentRight() {
@@ -328,8 +268,14 @@ function slideMainContentRight() {
 
         $(this).removeClass()
             .addClass('shift-right');
+
         localStorage.setItem('page-state', 'shift-right');
-    });   
+    });
+
+    $('#nav-menu .nav-toggle').removeClass('fa-angle-right')
+        .addClass('fa-angle-left');   
+    // Used for displaying hover over nav menu items when nav is collapsed
+    $('#nav-menu').removeClass('collapsed');
 }
 
 function maximizeMainContent() {
@@ -345,4 +291,8 @@ function maximizeMainContent() {
 
         localStorage.setItem('page-state', 'maximized');
     });   
+    $('#nav-menu .nav-toggle').removeClass('fa-angle-left')
+        .addClass('fa-angle-right');
+    // Used for displaying hover over nav menu items when nav is collapsed
+    $('#nav-menu').addClass('collapsed');
 }
