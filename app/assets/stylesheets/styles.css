@@ -39,12 +39,12 @@ a:hover, a:focus {
 }
 
 #main-content {
- 	position: absolute; 
- 	top: 0;
- 	bottom: 0;
- 	left: 0;
- 	right: 0;
- 	right
+	position: absolute; 
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	right
 	height: 100%;
 	margin-left: 240px;
 	background-color: inherit;
@@ -447,7 +447,7 @@ STAFF USER PANEL
 /* Toggle Sidebar Open / Closed
    ========================================================================== */
 
-#nav-menu .nav-toggle {
+/* #nav-menu .nav-toggle {
 	display: block;
 	padding: 4px 9px;
 	cursor: pointer;
@@ -459,7 +459,7 @@ STAFF USER PANEL
 	bottom: 25px;
 	left: 12px;
 }
-
+ */
 .collapsed .has-sub:after {
 	opacity: 0;
 	-webkit-transition: all 100ms ease-in-out;
@@ -682,7 +682,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	height: 25px;
 	color: #666;
 	cursor: pointer !important;
-	z-index: 1000;
+	z-index: 1;
 }
 
 .collapsed #staff-name-wrapper {
@@ -849,15 +849,68 @@ STAFF MEMBER NAMED + DROPDOWN
 
 #main-content.shift-left {
 	margin-left: 50px;
-    margin-right: 400px;
+	margin-right: 400px;
 }
 
 #main-content.shift-right {
 	margin-left: 240px;
-    margin-right: 0px;
+	margin-right: 0px;
 }
 
 #main-content.maximized {
 	margin-left: 50px;
-    margin-right: 0px;
+	margin-right: 0px;
+}
+
+
+/* ==========================================================================
+   NAV TOGGLED
+   ========================================================================== */ 
+
+.nav-toggle,
+.nav-toggle * {
+	transition: all .2s linear;
+}
+.nav-toggle {
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	bottom: 25px;
+	left: -28px;
+	margin: auto; 
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.line1,
+.line2 {
+	display: block;
+	margin-left: 25%;
+	height: 50%;
+	width: 6%;
+	background-color: #999;
+}
+
+.line1 {
+  	position: relative;
+  	top: 2%;
+  	transform: rotate(45deg);
+  	transform-origin: 50% 100%;
+  	border-radius: 2px;
+}
+
+.line2 {
+  	position: relative;
+  	top: -2%;
+  	transform: rotate(-45deg);
+  	transform-origin: 50% 0%;
+  	border-radius: 2px;
+}
+
+.top-move-left {
+  	transform: rotate(-45deg); 
+}
+
+.bottom-move-left {
+  	transform: rotate(45deg);
 }

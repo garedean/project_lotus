@@ -157,6 +157,11 @@ $(document).ready(function() {
             slideMainContent('right');
             keepNavClosed = false;
         }
+
+        // Toggles the angles of the two lines that make up the toggle
+        // arrow
+        $('.line1').toggleClass('top-move-left');
+        $('.line2').toggleClass('bottom-move-left');
     });
 
     // If pinNav is false, opens/closes sidebar when cursor
@@ -240,6 +245,7 @@ function slideMainContent(orientation) {
         orientationClass;
 
     switch(orientation) {
+
         case 'left':
             orientationClass    = 'shift-left';
             marginLeftVal       = '50px';
@@ -247,8 +253,8 @@ function slideMainContent(orientation) {
             cartClosed          = false;
             navClosed           = true;
             $('#nav-menu').addClass('collapsed');
-            localStorage.setItem('page-state', $('#main-content').attr('class'));
             break;
+
         case 'right':
             orientationClass    = 'shift-right';
             marginLeftVal       = '240px';
@@ -257,6 +263,7 @@ function slideMainContent(orientation) {
             navClosed           = false;
             $('#nav-menu').removeClass('collapsed');
             break;
+
         case 'maximized':
             orientationClass    = 'maximized';
             marginLeftVal       = '50px';
@@ -264,10 +271,7 @@ function slideMainContent(orientation) {
             cartClosed          = true;
             navClosed           = true;
             $('#nav-menu').addClass('collapsed');
-            break;
     }
-
-    localStorage.setItem('page-state', orientationClass);
 
     $('#main-content').animate(
         {
@@ -276,9 +280,10 @@ function slideMainContent(orientation) {
         }, 
 
         sectionTransitionSpeed, function() {
-
+            // Remove previous class on MainContent, add new class
             $(this).removeClass().addClass(orientationClass);
 
+            // Set orientation in local storage for use on page loads
             localStorage.setItem('page-state', orientationClass);
         });
 }
