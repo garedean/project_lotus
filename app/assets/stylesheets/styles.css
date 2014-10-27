@@ -677,9 +677,9 @@ STAFF MEMBER NAMED + DROPDOWN
 
 #staff-name-wrapper {
 	position: absolute;
-	top: 24px;
+	top: 25px;
 	left: 9px;
-	height: 26px;
+	height: 25px;
 	color: #666;
 	cursor: pointer !important;
 	z-index: 1000;

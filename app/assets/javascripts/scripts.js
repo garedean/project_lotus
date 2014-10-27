@@ -51,27 +51,27 @@ $(document).ready(function() {
 
         // Nav shown, cart closed
         if(!navClosed && cartClosed) {
-            slideMainContentLeft();
+            slideMainContent('left');
             navClosed = true;
         }
         // Nav shown, cart shown
         else if(!navClosed && !cartClosed) {
-            slideMainContentRight();
+            slideMainContent('right');
             navClosed = false;
         }
         // Nav closed, cart closed
         else if(navClosed && cartClosed) {
-            slideMainContentLeft();
+            slideMainContent('left');
             navClosed = true;
         }
          // Nav closed, cart open
         else if(navClosed && !cartClosed) {
             if(keepNavClosed) {
-                maximizeMainContent();
-                navClosed = false;
+                slideMainContent('maximized');
+                navClosed = true;
             }
             else {
-                slideMainContentRight();
+                slideMainContent('right');
                 navClosed = false;            
             }
         }
@@ -139,27 +139,24 @@ $(document).ready(function() {
 
         // Nav shown, cart closed
         if(!navClosed && cartClosed) {
-            maximizeMainContent();
+            slideMainContent('maximized');
             keepNavClosed = true;
         }
         // Nav shown, cart shown
         else if(!navClosed && !cartClosed) {
-            slideMainContentLeft();
+            slideMainContent('left');
             keepNavClosed = true;
         }
         // Nav closed, cart closed
         else if(navClosed && cartClosed) {
-            slideMainContentRight();
+            slideMainContent('right');
             keepNavClosed = false;
         }
          // Nav closed, cart open
         else if(navClosed && !cartClosed) {
-            slideMainContentRight();
+            slideMainContent('right');
             keepNavClosed = false;
         }
-
-        localStorage.setItem('page-state', $('#main-content').attr('class'));
-        navClosed = !navClosed;
     });
 
     // If pinNav is false, opens/closes sidebar when cursor
@@ -237,6 +234,57 @@ function updateDebugInfo() {
         $('.next-event-ready').html('Next event ready: ' + nextEventReady.toString().toUpperCase());
 }
 
+function slideMainContent(orientation) {  
+    var marginLeftVal, 
+        marginRightVal,
+        orientationClass;
+
+    switch(orientation) {
+        case 'left':
+            orientationClass    = 'shift-left';
+            marginLeftVal       = '50px';
+            marginRightVal      = '400px';
+            cartClosed          = false;
+            navClosed           = true;
+            $('#nav-menu').addClass('collapsed');
+            localStorage.setItem('page-state', $('#main-content').attr('class'));
+            break;
+        case 'right':
+            orientationClass    = 'shift-right';
+            marginLeftVal       = '240px';
+            marginRightVal      = '0';
+            cartClosed          = true;
+            navClosed           = false;
+            $('#nav-menu').removeClass('collapsed');
+            break;
+        case 'maximized':
+            orientationClass    = 'maximized';
+            marginLeftVal       = '50px';
+            marginRightVal      = '0';
+            cartClosed          = true;
+            navClosed           = true;
+            $('#nav-menu').addClass('collapsed');
+            break;
+    }
+
+    localStorage.setItem('page-state', orientationClass);
+
+    $('#main-content').animate(
+        {
+            marginLeft:     marginLeftVal,
+            marginRight:    marginRightVal 
+        }, 
+
+        sectionTransitionSpeed, function() {
+
+            $(this).removeClass().addClass(orientationClass);
+
+            localStorage.setItem('page-state', orientationClass);
+        });
+}
+
+
+/*
 function slideMainContentLeft() {      
     $('#main-content').animate({
         marginLeft: '50px',
@@ -296,3 +344,4 @@ function maximizeMainContent() {
     // Used for displaying hover over nav menu items when nav is collapsed
     $('#nav-menu').addClass('collapsed');
 }
+*/
