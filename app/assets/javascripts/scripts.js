@@ -53,11 +53,13 @@ $(document).ready(function() {
         if(!navClosed && cartClosed) {
             slideMainContent('left');
             navClosed = true;
+            flipNavToggleIcon();
         }
         // Nav shown, cart shown
         else if(!navClosed && !cartClosed) {
             slideMainContent('right');
             navClosed = false;
+            flipNavToggleIcon();
         }
         // Nav closed, cart closed
         else if(navClosed && cartClosed) {
@@ -72,9 +74,12 @@ $(document).ready(function() {
             }
             else {
                 slideMainContent('right');
-                navClosed = false;            
+                navClosed = false;   
+                flipNavToggleIcon();         
             }
         }
+
+
     });
 
     $('.nav-link a').on('click', function() {
@@ -160,8 +165,7 @@ $(document).ready(function() {
 
         // Toggles the angles of the two lines that make up the toggle
         // arrow
-        $('.line1').toggleClass('top-move-left');
-        $('.line2').toggleClass('bottom-move-left');
+        flipNavToggleIcon();
     });
 
     // If pinNav is false, opens/closes sidebar when cursor
@@ -286,6 +290,11 @@ function slideMainContent(orientation) {
             // Set orientation in local storage for use on page loads
             localStorage.setItem('page-state', orientationClass);
         });
+}
+
+function flipNavToggleIcon() {
+    $('.line1').toggleClass('top-move-left');
+    $('.line2').toggleClass('bottom-move-left');
 }
 
 
