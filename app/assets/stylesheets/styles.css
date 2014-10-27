@@ -843,6 +843,8 @@ STAFF MEMBER NAMED + DROPDOWN
 	position: absolute;
 	top: 70px;
 	bottom: 20px;
+	left: 0;
+	right: 0;
 }
 
 #main-content.shift-left {
