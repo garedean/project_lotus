@@ -869,7 +869,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 .nav-toggle,
 .nav-toggle * {
-	transition: all .2s linear;
+	transition: all 100ms linear;
 }
 .nav-toggle {
 	position: absolute;
@@ -880,6 +880,18 @@ STAFF MEMBER NAMED + DROPDOWN
 	margin: auto; 
 	cursor: pointer;
 	border-radius: 4px;
+}
+
+#main-content.maximized .line1,
+#main-content.shift-left .line1 {
+	transform: rotate(-45deg); 
+	transition: 0;
+}
+
+#main-content.maximized .line2,
+#main-content.shift-left .line2 {
+	transform: rotate(45deg); 
+	transition: 0;
 }
 
 .line1,

@@ -255,8 +255,11 @@ function slideMainContent(orientation) {
             marginLeftVal       = '50px';
             marginRightVal      = '400px';
             cartClosed          = false;
-            navClosed           = true;
+            navClosed           = true;            
             $('#nav-menu').addClass('collapsed');
+
+            $('.line1').toggleClass('top-move-left');
+            $('.line2').toggleClass('bottom-move-left');
             break;
 
         case 'right':
@@ -266,6 +269,9 @@ function slideMainContent(orientation) {
             cartClosed          = true;
             navClosed           = false;
             $('#nav-menu').removeClass('collapsed');
+
+            $('.line1').removeClass('top-move-left');
+            $('.line2').removeClass('bottom-move-left');
             break;
 
         case 'maximized':
@@ -275,6 +281,8 @@ function slideMainContent(orientation) {
             cartClosed          = true;
             navClosed           = true;
             $('#nav-menu').addClass('collapsed');
+            $('.line1').toggleClass('top-move-left');
+            $('.line2').toggleClass('bottom-move-left');
     }
 
     $('#main-content').animate(
@@ -293,8 +301,8 @@ function slideMainContent(orientation) {
 }
 
 function flipNavToggleIcon() {
-    $('.line1').toggleClass('top-move-left');
-    $('.line2').toggleClass('bottom-move-left');
+    //$('.line1').toggleClass('top-move-left');
+    //$('.line2').toggleClass('bottom-move-left');
 }
 
 
