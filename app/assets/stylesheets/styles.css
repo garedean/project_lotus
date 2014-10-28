@@ -869,7 +869,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 .nav-toggle,
 .nav-toggle * {
-	transition: all 200ms linear;
+	transition: all 400ms linear;
 }
 .nav-toggle {
 	position: absolute;

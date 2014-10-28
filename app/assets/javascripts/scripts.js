@@ -3,7 +3,7 @@ var navClosed               = false,
     nextEventReady          = true,
     pinNav                  = true,
     keepNavClosed           = false,
-    sectionTransitionSpeed  = 200,
+    sectionTransitionSpeed  = 400,
     currentlySelectedLink   = '',
     pageState               = '',
     pinNavCheckbox          = $('#pin-nav'),
@@ -248,12 +248,10 @@ function slideMainContent(orientation) {
             marginLeftVal       = '50px';
             marginRightVal      = '400px';
             cartClosed          = false;
-            navClosed           = true;            
-            $('#nav-menu').addClass('collapsed');
+            navClosed           = true;    
 
-            // Nav toggle icon changes to point right
-            $('.line1').toggleClass('top-move-left');
-            $('.line2').toggleClass('bottom-move-left');
+            $('#nav-menu').addClass('collapsed');
+            pointNavToggleIcon('right');
             break;
 
         case 'right':
@@ -262,11 +260,9 @@ function slideMainContent(orientation) {
             marginRightVal      = '0';
             cartClosed          = true;
             navClosed           = false;
-            $('#nav-menu').removeClass('collapsed');
 
-            // Nav toggle icon changes to point left
-            $('.line1').removeClass('top-move-left');
-            $('.line2').removeClass('bottom-move-left');
+            $('#nav-menu').removeClass('collapsed');
+            pointNavToggleIcon('left');
             break;
 
         case 'maximized':
@@ -275,11 +271,10 @@ function slideMainContent(orientation) {
             marginRightVal      = '0';
             cartClosed          = true;
             navClosed           = true;
-            $('#nav-menu').addClass('collapsed');
 
-            // Nav toggle icon changes to point right
-            $('.line1').toggleClass('top-move-left');
-            $('.line2').toggleClass('bottom-move-left');
+            $('#nav-menu').addClass('collapsed');
+            pointNavToggleIcon('right');
+            break;
     }
 
     $('#main-content').animate(
@@ -289,72 +284,28 @@ function slideMainContent(orientation) {
         }, 
 
         sectionTransitionSpeed, function() {
-            // Remove previous class on MainContent, add new class
-            $(this).removeClass().addClass(orientationClass);
-
             // Set orientation in local storage for use on page loads
             localStorage.setItem('page-state', orientationClass);
+
+            // Before adding a new class to #main-content, 
+            // remove the current class assignment
+            $('#main-content').removeClass();
+
+            // When the animation is comlete, add new class assignment to main content
+            $('#main-content').addClass(orientationClass);
         });
 }
 
-/*
-function slideMainContentLeft() {      
-    $('#main-content').animate({
-        marginLeft: '50px',
-        marginRight: '400px'
-    }, sectionTransitionSpeed, function() {
-        cartClosed  = false;
-        navClosed   = true;
-
-        $(this).removeClass()
-            .addClass('shift-left');
-
-        localStorage.setItem('page-state', 'shift-left');
-    });
-
-    $('#nav-menu .nav-toggle').removeClass('fa-angle-left')
-        .addClass('fa-angle-right');
-
-    // Used for displaying hover over nav menu items when nav is collapsed
-    $('#nav-menu').addClass('collapsed');
+function pointNavToggleIcon(direction) {
+    switch(direction) {
+        case 'left':
+            $('.line1').removeClass('top-move-left');
+            $('.line2').removeClass('bottom-move-left');
+            break;
+        case 'right':
+            $('.line1').toggleClass('top-move-left');
+            $('.line2').toggleClass('bottom-move-left');
+            break;
+    }
 }
 
-function slideMainContentRight() {
-    $('#main-content').animate({
-        marginLeft: '240px',
-        marginRight: '0'
-    }, sectionTransitionSpeed, function() {
-        cartClosed  = true;
-        navClosed   = false;
-
-        $(this).removeClass()
-            .addClass('shift-right');
-
-        localStorage.setItem('page-state', 'shift-right');
-    });
-
-    $('#nav-menu .nav-toggle').removeClass('fa-angle-right')
-        .addClass('fa-angle-left');   
-    // Used for displaying hover over nav menu items when nav is collapsed
-    $('#nav-menu').removeClass('collapsed');
-}
-
-function maximizeMainContent() {
-    $('#main-content').animate({
-        marginLeft: '50px',
-        marginRight: '0'
-    }, sectionTransitionSpeed, function() {
-        cartClosed  = true;
-        navClosed   = true;
-
-        $(this).removeClass()
-            .addClass('maximized');
-
-        localStorage.setItem('page-state', 'maximized');
-    });   
-    $('#nav-menu .nav-toggle').removeClass('fa-angle-left')
-        .addClass('fa-angle-right');
-    // Used for displaying hover over nav menu items when nav is collapsed
-    $('#nav-menu').addClass('collapsed');
-}
-*/
