@@ -53,13 +53,11 @@ $(document).ready(function() {
         if(!navClosed && cartClosed) {
             slideMainContent('left');
             navClosed = true;
-            flipNavToggleIcon();
         }
         // Nav shown, cart shown
         else if(!navClosed && !cartClosed) {
             slideMainContent('right');
             navClosed = false;
-            flipNavToggleIcon();
         }
         // Nav closed, cart closed
         else if(navClosed && cartClosed) {
@@ -74,8 +72,7 @@ $(document).ready(function() {
             }
             else {
                 slideMainContent('right');
-                navClosed = false;   
-                flipNavToggleIcon();         
+                navClosed = false;       
             }
         }
 
@@ -162,10 +159,6 @@ $(document).ready(function() {
             slideMainContent('right');
             keepNavClosed = false;
         }
-
-        // Toggles the angles of the two lines that make up the toggle
-        // arrow
-        flipNavToggleIcon();
     });
 
     // If pinNav is false, opens/closes sidebar when cursor
@@ -258,6 +251,7 @@ function slideMainContent(orientation) {
             navClosed           = true;            
             $('#nav-menu').addClass('collapsed');
 
+            // Nav toggle icon changes to point right
             $('.line1').toggleClass('top-move-left');
             $('.line2').toggleClass('bottom-move-left');
             break;
@@ -270,6 +264,7 @@ function slideMainContent(orientation) {
             navClosed           = false;
             $('#nav-menu').removeClass('collapsed');
 
+            // Nav toggle icon changes to point left
             $('.line1').removeClass('top-move-left');
             $('.line2').removeClass('bottom-move-left');
             break;
@@ -281,6 +276,8 @@ function slideMainContent(orientation) {
             cartClosed          = true;
             navClosed           = true;
             $('#nav-menu').addClass('collapsed');
+
+            // Nav toggle icon changes to point right
             $('.line1').toggleClass('top-move-left');
             $('.line2').toggleClass('bottom-move-left');
     }
@@ -299,12 +296,6 @@ function slideMainContent(orientation) {
             localStorage.setItem('page-state', orientationClass);
         });
 }
-
-function flipNavToggleIcon() {
-    //$('.line1').toggleClass('top-move-left');
-    //$('.line2').toggleClass('bottom-move-left');
-}
-
 
 /*
 function slideMainContentLeft() {      
