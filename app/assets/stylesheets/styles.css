@@ -150,7 +150,7 @@ STAFF USER PANEL
 	top: 5px;
 	right: 25px;	
 	line-height: 50px;
-	vertical-align: midde;
+	vertical-align: middle;
 	z-index: 999;
 }
 
@@ -505,6 +505,8 @@ BOX CONTENT
 .box-content {
 	padding: 15px;
 	background-color: white;
+	border-bottom: 2px solid #e5e5e5;
+	border-right: 2px solid #e5e5e5;
 }
 
 .box-content h4 {
@@ -584,16 +586,12 @@ BOX CONTENT
 	white-space: nowrap;
 }
 
-#brand-name {
-	position: relative;
-	top: 5px;
-	left: 9px;
-}
-
 #brand-name a {
 	color: #2980B9;
 	font-size: 1.1em;
+	line-height: 50px;
 	font-weight: 600;
+	padding-left: 10px;
 }
 
 #cart-slider h2 {
@@ -677,9 +675,9 @@ STAFF MEMBER NAMED + DROPDOWN
 
 #staff-name-wrapper {
 	position: absolute;
-	top: 25px;
-	left: 9px;
+	right: 74px;
 	height: 25px;
+	line-height: 50px;
 	color: #666;
 	cursor: pointer !important;
 	z-index: 1;
@@ -875,14 +873,14 @@ STAFF MEMBER NAMED + DROPDOWN
 	position: absolute;
 	height: 25px;
 	width: 25px;
-	bottom: 25px;
+	top: 13px;
 	left: -28px;
 	margin: auto; 
 	cursor: pointer;
 	border-radius: 4px;
 }
 
-#main-content.maximized .line1,
+/* #main-content.maximized .line1,
 #main-content.shift-left .line1 {
 	transform: rotate(-45deg); 
 	transition: all 0s;
@@ -892,7 +890,7 @@ STAFF MEMBER NAMED + DROPDOWN
 #main-content.shift-left .line2 {
 	transform: rotate(45deg); 
 	transition: all 0s;
-} 
+}  */
 
 .line1,
 .line2 {

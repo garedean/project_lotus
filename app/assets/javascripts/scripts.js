@@ -303,8 +303,8 @@ function pointNavToggleIcon(direction) {
             $('.line2').removeClass('bottom-move-left');
             break;
         case 'right':
-            $('.line1').toggleClass('top-move-left');
-            $('.line2').toggleClass('bottom-move-left');
+            $('.line1').addClass('top-move-left');
+            $('.line2').addClass('bottom-move-left');
             break;
     }
 }
