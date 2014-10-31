@@ -147,11 +147,17 @@ STAFF USER PANEL
 .cart-icon {
 	position: absolute;
 	overflow: hidden;
-	top: 5px;
-	right: 25px;	
+	height: 50px;
+	width: 60px;
+	right: 0;
+	padding: 5px 0 0 15px;
 	line-height: 50px;
 	vertical-align: middle;
 	z-index: 999;
+}
+
+.cart-icon:hover {
+	background-color: #f8f8f8;
 }
 
 .cart-icon .fa-shopping-cart {
@@ -339,7 +345,8 @@ STAFF USER PANEL
 	background-color: rgba(247, 248, 250, 0.93);
 }
 
-.collapsed .nav-link ul > li a {
+.collapsed .nav-link ul > li a,
+.collapsed .nav-link ul > li span {
 	padding-left: 14px;
 	text-transform: capitalize;
 }
@@ -471,7 +478,7 @@ STAFF USER PANEL
 .has-sub:after {
 	font-family: FontAwesome;
 	font-weight: 500;
-	color: #4683ea;
+	color: #666;
 	content: "\f104";
 	display: block;
 	position: absolute;
@@ -507,6 +514,7 @@ BOX CONTENT
 	background-color: white;
 	border-bottom: 2px solid #e5e5e5;
 	border-right: 2px solid #e5e5e5;
+	height: 100%;
 }
 
 .box-content h4 {
@@ -537,23 +545,24 @@ BOX CONTENT
 	border-bottom-right-radius: 2px;
 } 
 
-.collapsed .sub-links li:first-child > a {
+.collapsed .sub-links li:first-child > a,
+.collapsed .sub-links li:first-child > span {
 	display: block;
 	background-color: #D0D5D7;
 	color: #0173c5;
 	font-weight: 600;
-	font-size: 1.1em;
+	font-size: 1em;
 	line-height: 39px;
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 }
 
-.collapsed .nav-link.active .sub-links li:first-child a {
+.collapsed .nav-link.active .sub-links li:first-child a,
+.collapsed .nav-link.active .sub-links li:first-child span {
 	color: white;
 	font-weight: 600;
 	border: 0;
 	background: #2980B9;
-	font-size: 1em;
 }
 
 .nav-link i {
@@ -873,7 +882,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	position: absolute;
 	height: 50px;
 	width: 50px;
-	padding: 10px 0px 10px 25px;
+	padding: 12px 0px 12px 22px;
 	top: 0px;
 	left: -50px;
 	margin: auto; 
@@ -899,7 +908,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	margin-left: 25%;
 	height: 50%;
 	width: 6%;
-	background-color: #999;
+	background-color: #aaa;
 }
 
 .line1 {
@@ -924,4 +933,8 @@ STAFF MEMBER NAMED + DROPDOWN
 
 .bottom-move-left {
   	transform: rotate(45deg);
+}
+
+#main-content .container-fluid {
+
 }

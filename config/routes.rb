@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   match 'settings',       to: 'business#settings',        via: [:get]
   
   match 'admin',          to: 'admin#index',              via: [:get]
+  match 'admin/payment_processing',          to: 'payment_processing#index',              via: [:get]
+  match 'admin/design_library',              to: 'design_library#index',                  via: [:get]
 
 end

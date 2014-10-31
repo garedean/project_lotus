@@ -13,7 +13,9 @@
         <span class='title'>dashboard</span>
       <% end %>
       <ul class='sub-links dashboard'>  
-        <li>dashboard</li>
+        <li>
+          <%= link_to "dashboard", dashboard_path %>
+        </li>
       </ul>
     </li>
 
@@ -23,10 +25,18 @@
         <span class='title'>appointments</span>
       </div>
       <ul class='sub-links appointments'>
-        <li><%= link_to "Appointments", business_path %></li>
-        <li><%= link_to("SLO Location", slo_path, data:{'display-title'=>'Appointments > SLO'}) %></li>
-        <li><%= link_to("Atascadero Location", atascadero_path, data:{'display-title'=>'Appointments > Atascadero'}) %></li>
-        <li><%= link_to("Paso Location", paso_path, data:{'display-title'=>'Appointments > Paso'}) %></li>    
+        <li>
+          <span class="title">appointments</span>
+        </li>
+        <li>
+          <%= link_to("SLO Location", slo_path, data:{'display-title'=>'Appointments > SLO'}) %>
+        </li>
+        <li>
+          <%= link_to("Atascadero Location", atascadero_path, data:{'display-title'=>'Appointments > Atascadero'}) %>
+        </li>
+        <li>
+          <%= link_to("Paso Location", paso_path, data:{'display-title'=>'Appointments > Paso'}) %>
+        </li>    
       </ul>
     </li>
 
@@ -48,7 +58,9 @@
         <span class='title'>workshops</span>
       <% end %>
       <ul class='sub-links workshops'>  
-        <li>workshops</li>
+        <li>
+          <%= link_to "workshops", workshops_path %>
+        </li>
       </ul>
     </li>   
 
@@ -58,7 +70,9 @@
         <span class='title'>clients</span>
       <% end %>
       <ul class='sub-links clients'>  
-        <li>clients</li>
+        <li>
+          <%= link_to "Clients", clients_path %>
+        </li>
       </ul>
     </li>               
               
@@ -72,7 +86,9 @@
         <span class='title'>staff</span>
       <% end %>
       <ul class='sub-links staff'>  
-        <li>staff</li>
+        <li>
+          <%= link_to "staff", staff_path %>
+        </li>
       </ul>
     </li> 
 
@@ -82,7 +98,9 @@
         <span class='title'>services</span>
       <% end %>
       <ul class='sub-links services'>  
-        <li>services</li>
+        <li>
+          <%= link_to "Service", services_path %>
+        </li>
       </ul>
     </li>
 
@@ -92,7 +110,9 @@
         <span class='title'>products</span>
       <% end %>
       <ul class='sub-links products'>  
-        <li>products</li>
+        <li>
+          <%= link_to "products", products_path %>
+        </li>
       </ul>
     </li>
 
@@ -102,11 +122,21 @@
         <span class='title'>my business</span>
       </div>       
       <ul class='sub-links'>
-        <li><%= link_to "my business", business_path %></li>
-        <li><%= link_to("Reports", reports_path, data:{'display-title'=>'Reports'} ) %></li>
-        <li><%= link_to("Automated SMS", sms_path, data:{'display-title'=>'Automated SMS'} ) %></li>
-        <li><%= link_to("Automated Emails", email_path, data:{'display-title'=>'Automated Emails'} ) %></li>
-        <li><%= link_to("Advanced Settings", settings_path, data:{'display-title'=>'Advanced Settings'} ) %></li>    
+        <li>
+          <span class="title">my business</span>
+        </li>
+        <li>
+          <%= link_to("Reports", reports_path, data:{'display-title'=>'Reports'} ) %>
+        </li>
+        <li>
+          <%= link_to("Automated SMS", sms_path, data:{'display-title'=>'Automated SMS'} ) %>
+        </li>
+        <li>
+          <%= link_to("Automated Emails", email_path, data:{'display-title'=>'Automated Emails'} ) %>
+        </li>
+        <li>
+          <%= link_to("Advanced Settings", settings_path, data:{'display-title'=>'Advanced Settings'} ) %>
+        </li>    
       </ul>
     </li>
     
@@ -118,9 +148,16 @@
         <span class='title'>mb admin</span>
       </div>
       <ul class='sub-links'>
-        <li>Site Settings</li>
-        <li>MAP Settings</li>            
-        <li>UX Design Library</li>      
+        <li>
+          <span class="title">MB admin</span>
+        </li>
+        <li>
+          <%= link_to("Payment Processing", admin_payment_processing_path, 
+              data:{'display-title'=>'Payment Processing'}) %>
+        </li>
+        <li>
+          <%= link_to("UX Design Library", admin_design_library_path, data:{'display-title'=>'UX Design Library'}) %>
+        </li>   
       </ul>
     </li>
 
