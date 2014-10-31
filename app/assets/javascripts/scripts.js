@@ -48,6 +48,10 @@ $(document).ready(function() {
         $('#nav-pin').toggleClass('selected'); 
     }
 
+    $('#staff-name-wrapper').click('click', function() {
+        $(this).find('.dropdown').toggle();
+    });
+
     // Clicking on the cart icon causes nav 
     // and cart panels to show or hide 
     $('.cart-icon').on('click', function() {
