@@ -3,7 +3,7 @@ var navClosed               = false,
     nextEventReady          = true,
     pinNav                  = true,
     keepNavClosed           = false,
-    sectionTransitionSpeed  = 400,
+    sectionTransitionSpeed  = 250,
     currentlySelectedLink   = '',
     pageState               = '',
     pinNavCheckbox          = $('#pin-nav'),
@@ -22,6 +22,8 @@ $(document).ready(function() {
         // On page load, assign nav  menu collapsed class
         if(pageState == 'shift-left' || pageState == 'maximized') {
             $('#nav-menu').addClass('collapsed');
+            pointNavToggleIcon('right');
+            navClosed = true;
         }
     }
 
@@ -219,12 +221,12 @@ function setNavigation() {
 
             // If a nav submenu is currently visible when a submenu link is
             // clicked, open it when the page reloads
-            if($(this).closest(".nav-link").hasClass('has-sub')) {
+            if($(this).closest(".nav-link").hasClass('has-sub') && !navClosed) {
                 $(this).closest('ul.sub-links').show();
             }  
 
             if(navClosed) {
-                $(this).closest(".nav-link").find('ul').show();  
+                //$(this).closest(".nav-link").find('ul').hide();  
             }                 
         }
     });
@@ -250,8 +252,10 @@ function slideMainContent(orientation) {
             cartClosed          = false;
             navClosed           = true;    
 
-            $('#nav-menu').addClass('collapsed');
+            //$('#nav-menu').addClass('collapsed');
             pointNavToggleIcon('right');
+            collapseNavMenus();
+
             break;
 
         case 'right':
@@ -263,6 +267,8 @@ function slideMainContent(orientation) {
 
             $('#nav-menu').removeClass('collapsed');
             pointNavToggleIcon('left');
+            expandNavMenus();
+
             break;
 
         case 'maximized':
@@ -272,8 +278,10 @@ function slideMainContent(orientation) {
             cartClosed          = true;
             navClosed           = true;
 
-            $('#nav-menu').addClass('collapsed');
+            //$('#nav-menu').addClass('collapsed');
             pointNavToggleIcon('right');
+            collapseNavMenus();
+
             break;
     }
 
@@ -293,6 +301,10 @@ function slideMainContent(orientation) {
 
             // When the animation is comlete, add new class assignment to main content
             $('#main-content').addClass(orientationClass);
+
+            if(orientation == 'left' || orientation == 'maximized') {
+                $('#nav-menu').addClass('collapsed');
+            }
         });
 }
 
@@ -307,5 +319,13 @@ function pointNavToggleIcon(direction) {
             $('.line2').addClass('bottom-move-left');
             break;
     }
+}
+
+function collapseNavMenus() {
+    $('#nav-menu .nav-link.has-sub.active').find('ul').slideUp(sectionTransitionSpeed);
+}
+
+function expandNavMenus() {
+    $('#nav-menu .nav-link.has-sub.active').find('ul').slideDown(sectionTransitionSpeed);
 }
 
