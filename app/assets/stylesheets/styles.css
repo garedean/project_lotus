@@ -925,3 +925,7 @@ STAFF MEMBER NAMED + DROPDOWN
 #main-content .container-fluid {
 
 }
+
+#nav-menu.collapsed .nav-link .sub-links.hover {
+	display: block;
+}

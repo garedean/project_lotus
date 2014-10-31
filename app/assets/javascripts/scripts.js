@@ -7,7 +7,8 @@ var navClosed               = false,
     currentlySelectedLink   = '',
     pageState               = '',
     pinNavCheckbox          = $('#pin-nav'),
-    currentPageTitle        = 'Dashboard';
+    currentPageTitle        = 'Dashboard',
+    openSubmenuOnLoad       = false;
 
 $(document).ready(function() {
 
@@ -77,8 +78,15 @@ $(document).ready(function() {
                 navClosed = false;       
             }
         }
+    });
 
+    $('#nav-menu.collapsed .sub-links a').on('click', function() {
+        openSubmenuOnLoad = true;   
+    });
 
+     $('#nav-menu.collapsed .nav-link.active .sub-links').on('mouseleave', function() {
+        $(this).removeClass('hover');
+        openSubmenuOnLoad = false;
     });
 
     $('.nav-link a').on('click', function() {
@@ -230,6 +238,10 @@ function setNavigation() {
             }                 
         }
     });
+
+    if(navClosed && openSubmenuOnLoad) {
+        $('#nav-menu.collapsed .nav-link.active .sub-links').addClass('hover');     
+    }
 }
 
 function updateDebugInfo() {     
