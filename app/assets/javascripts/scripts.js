@@ -3,7 +3,7 @@ var navClosed               = false,
     nextEventReady          = true,
     pinNav                  = true,
     keepNavClosed           = false,
-    sectionTransitionSpeed  = 250,
+    sectionTransitionSpeed  = 350,
     currentlySelectedLink   = '',
     pageState               = '',
     pinNavCheckbox          = $('#pin-nav'),
@@ -172,6 +172,20 @@ $(document).ready(function() {
         else if(navClosed && !cartClosed) {
             slideMainContent('right');
             keepNavClosed = false;
+        }
+    });
+
+    $('#multi-tabs li').on('click', function() {
+        $('#multi-tabs li').not(this).removeClass('selected');
+        $(this).addClass('selected');
+          
+        if($(this).hasClass('schedule-tab')) {
+            $('#multi-content-wrapper .schedule').addClass('active');
+            $('#multi-content-wrapper .checkout').removeClass('active');
+        }
+        else {
+            $('#multi-content-wrapper .checkout').addClass('active');
+            $('#multi-content-wrapper .schedule').removeClass('active');
         }
     });
 

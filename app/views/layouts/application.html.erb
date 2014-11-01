@@ -54,18 +54,16 @@
 			<%= yield %>
 		</div>
 
-		<!--The nav toggle icon appears in the nav menu, but it is
-		   placed in relation to the left side of the main-content div 
+		<!--The nav toggle icon appears positionally in the nav menu, but 
+				the code is placed in the main-content HTML so that it slides 
+				to and from position when the nav is opened and closed
 		-->
 		<div class='nav-toggle'>
-			<span class='line1'>
-			</span>
-			<span class='line2'>
-			</span>
+			<i class="fa fa-bars fa-lg"></i>
 		</div>
 	</div>
 
-	<%= render "layouts/cart_slider" %>
+	<%= render "layouts/multi_menu" %>
 	
 	</body>
 </html>
