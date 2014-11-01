@@ -1,79 +1,13 @@
-<div class="row full-height">
-  <div class="col-xs-12 col-md-4 schedule-at-a-glance full-height">
-    <div class='box-content full-height'>       
-      <h4>Schedule at a glance</h4>       
-      <hr>     
-      <ul>
-        <li>
-          <ul>
-            <li class='time-date'>test</li>
-            <li class='details'>test</li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li class='time-date'>test</li>
-            <li class='details'>test</li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li class='time-date'>test</li>
-            <li class='details'>test</li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li class='time-date'>test</li>
-            <li class='details'>test</li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li class='time-date'>test</li>
-            <li class='details'>test</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- <div class="col-xs-12 col-md-2">
-    <div class='box-content'>       
-      <h4 class='turquoise'>Clients served</h4>       
-      <hr>     
-      205
-    </div>
-  </div>
+<div class="row">
   
-  <div class="col-xs-12 col-md-2">
-    <div class='box-content'>       
-      <h4 class='brick'>Yesterday Revenue</h4>       
-      <hr>     
-      10500
-    </div>
-  </div>
-  
-  <div class="col-xs-12 col-md-2">
-    <div class='box-content'>       
-      <h4 class='violet'>New Clients</h4>       
-      <hr>     
-      205
-    </div>
-  </div>
-  
-  <div class="col-xs-12 col-md-2">
-    <div class='box-content'>       
-      <h4 class='violet'>New Clients</h4>       
-      <hr>     
-      205
-    </div>
-  </div>      -->
+  <%= render "widgets" %>
 
   <div class="col-xs-12 col-md-4">
     <div class='box-content'>       
-      <h4>To do list</h4>       
-      <hr>
+      <div class='box-content-title turquoise'>     
+        <h4>To do list</h4>
+      </div>       
+      
       <form>  
         <textarea class="" id="to-do-add" name="" placeholder="Start typing a to do item here..." 
         style="overflow: hidden; word-wrap: break-word; resize: none; height: 30px; width:100%; border: 0"></textarea>
@@ -85,8 +19,10 @@
 
   <div class="col-xs-12 col-md-4">
     <div class='box-content'>       
-      <h4>Staff Message Board</h4>       
-      <hr> 
+      <div class='box-content-title red'>     
+        <h4>Staff message board</h4>
+      </div>        
+       
       <ul>
         <li>Donna: anyone want to switch a shift with me, next Saturday? #hotdate</li>
         <li>Jackie: I can! Let's talk later </li>
@@ -96,8 +32,10 @@
       
   <div class="col-xs-12 col-md-4">
     <div class='box-content'>  
-      <h4>My Notes</h4>       
-      <hr> 
+      <div class='box-content-title blue'>     
+        <h4>Notepad</h4>
+      </div>         
+       
       <div id='staff-notes' contenteditable="true">    
         One free puppy available upon request<br>
         Mini pigs are also available to those who ask<br>
@@ -108,8 +46,10 @@
 
   <div class="col-xs-12 col-md-4">
     <div class='box-content'>  
-      <h4>Notifications</h4>       
-      <hr> 
+      <div class='box-content-title red'>     
+        <h4>Notifications</h4>
+      </div>       
+       
       MINDBODY Announcement
     </div>
   </div>

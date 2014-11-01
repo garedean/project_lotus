@@ -100,7 +100,8 @@ header#top-bar {
 	top: 0;
 	font-size: 1.1em;
 	background-color: white;
-	margin-bottom: 10px;
+	border-bottom: 1px solid #f1f2f7;
+	box-sizing: content-box;
 }
 
 header .brand {
@@ -186,7 +187,6 @@ STAFF USER PANEL
    ========================================================================== */
 
 #nav-menu {
-  float: left;
   height: 100%;
   width: 240px;
   background-color: #dadfe1;
@@ -496,7 +496,6 @@ BOX CONTENT
 */
 
 .box-content {
-	padding: 15px;
 	background-color: white;
 	border-bottom: 2px solid #e5e5e5;
 	border-right: 2px solid #e5e5e5;
@@ -767,36 +766,17 @@ STAFF MEMBER NAMED + DROPDOWN
 }
 
 .turquoise {
-	color: #1abc9c;
+	background-color: #6ccac9;
 }
 
-.green {
-	color: #2ecc71;
+.red {
+	background-color: #ff6c60;
 }
 
 .blue {
-	color: #3498db;
+	background-color: #57c8f2;
 }
 
-.violet {
-	color: #9b59b6;
-}
-
-.midnight {
-	color: #34495e;
-}
-
-.carrot {
-	color: #e67e22;
-}
-
-.brick {
-	color: #e74c3c;
-}
-
-.orange {
-	color: #f1c40f;
-}
 
 /* ==========================================================================
    DASHBOARD PAGE
@@ -805,6 +785,11 @@ STAFF MEMBER NAMED + DROPDOWN
 
 /* Notes Widget
    ========================================================================== */
+
+#staff-notes {
+	font-size: 1.1em;
+	line-height: 30px;
+}
 
 #staff-notes:hover,
 #staff-notes:focus {
@@ -817,7 +802,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 .to-bottom {
 	position: absolute;
-	top: 70px;
+	top: 51px;
 	bottom: 20px;
 	left: 0;
 	right: 0;
@@ -845,8 +830,9 @@ STAFF MEMBER NAMED + DROPDOWN
 
 .nav-toggle,
 .nav-toggle * {
-	transition: all 250ms linear;
+	transition: rotate 250ms linear;
 }
+
 .nav-toggle {
 	position: absolute;
 	height: 50px;
@@ -857,19 +843,13 @@ STAFF MEMBER NAMED + DROPDOWN
 	margin: auto; 
 	cursor: pointer;
 	border-radius: 4px;
+	background-color: #f1f2f7;
 }
 
-/* #main-content.maximized .line1,
-#main-content.shift-left .line1 {
-	transform: rotate(-45deg); 
-	transition: all 0s;
+.nav-toggle:hover span {
+	background-color: #777;
+	transition: background-color 0ms;
 }
-
-#main-content.maximized .line2,
-#main-content.shift-left .line2 {
-	transform: rotate(45deg); 
-	transition: all 0s;
-}  */
 
 .line1,
 .line2 {
@@ -905,7 +885,8 @@ STAFF MEMBER NAMED + DROPDOWN
 }
 
 #main-content .container-fluid {
-
+	padding-top: 19px;
+	overflow-y: scroll;
 }
 
 #nav-menu.collapsed .nav-link .sub-links.hover {
@@ -919,4 +900,69 @@ STAFF MEMBER NAMED + DROPDOWN
 	height: 30px;
 	width: 1px;
 	background-color: #ccc;
+}
+
+.schedule-glance {
+	height: 800px;
+}
+
+.schedule-glance .schedule-row * {
+	color: #777;
+}
+
+.box-content .box-content-title {
+	height: 40px;
+	line-height: 30px;
+	color: white;
+}
+
+.box-content h4 {
+	line-height: 40px;
+	padding-left: 10px;
+	font-weight: 300;
+} 
+
+.box-content .content {
+	height: 100%;
+	padding: 0 10px;
+}
+
+.date-row,
+.schedule-row {
+	border-bottom: 1px solid #bbb;
+}
+
+.schedule-row {
+	height: 55px;
+	padding: 5px 0;
+}
+
+.schedule-row .time-range {
+	float: left;
+	width: 20%;
+	text-align: center;
+	border-right: 1px solid #bbb;
+}
+
+.time-range > span {
+	display: block;
+}
+
+.time-range .time-divider {
+	position: relative;
+	top: -2px;
+	line-height: 5px;
+}
+
+.schedule-row .details {
+	float: left;
+	padding-left: 15px;
+}
+
+.date-row {
+	line-height: 25px;
+	color: #666;
+	background-color: #f1f1f1;
+	font-size: 1.2em;
+	text-align: center;
 }
