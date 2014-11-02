@@ -144,26 +144,27 @@ STAFF USER PANEL
 	margin-right: 15px;
 }
 
-.cart-icon {
+.multi-menu-icon-wrapper {
 	float: right;
 	overflow: hidden;
 	height: 50px;
 	width: 70px;
-	right: 0;
-	padding: 5px 5px 0 20px;
+	padding-left: 26px;
 	border-left: 1px solid transparent;
 	line-height: 50px;
 	vertical-align: middle;
 	z-index: 999;
 }
 
-.cart-icon:hover {
+.multi-menu-icon-wrapper:hover {
 	background-color: #f8f8f8;
 	border-left: 1px solid #ccc;
 }
 
-.cart-icon .fa-shopping-cart {
-	font-size: 1.8em;
+.multi-menu-icon-wrapper i {
+	color: #999;
+	vertical-align: 0;
+	line-height: 50px;
 }
 
 .cart-wrapper {
@@ -219,10 +220,6 @@ STAFF USER PANEL
   width: 240px;
 }
 
-/* #nav-menu.collapsed .nav-link {
-	width: 50px;
-} */
-
 .nav-link > a,
 .nav-link > .menu-link {
   position: relative;
@@ -244,12 +241,13 @@ STAFF USER PANEL
   background: #2980B9;
 }
 
-#nav-menu .nav-link:hover {
+#nav-menu .nav-link:hover,
+#nav-menu .nav-link.has-sub.open {
   background-color: #D0D5D7;
   text-decoration: none;
 }
 
-#nav-menu .nav-link.active > a:hover {
+#nav-menu .nav-link.active > a:hover  {
   background-color: #2980B9;
 }
 
@@ -839,7 +837,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	position: absolute;
 	height: 50px;
 	width: 50px;
-	padding: 14px 16px;
+	padding: 15px 17px;
 	top: 0px;
 	left: -50px;
 	margin: auto; 
@@ -857,7 +855,7 @@ STAFF MEMBER NAMED + DROPDOWN
 }
 
 .nav-toggle i {
-	color: #aaa;
+	color: #999;
 }
 
 #main-content .container-fluid {
@@ -899,24 +897,21 @@ STAFF MEMBER NAMED + DROPDOWN
 	font-weight: 300;
 } 
 
-.date-row,
 .schedule-row {
-	border-bottom: 1px solid #bbb;
-}
-
-.schedule-row {
-	height: 55px;
+	height: 50px;
 	padding: 5px 0 5px 5px;
+	border-bottom: 1px solid #ccc;
 }
 
 .schedule-row .time-range {
 	float: left;
-	width: 20%;
+	width: 85px;
 	text-align: center;
 	border-right: 1px solid #bbb;
 }
 
 .time-range > span {
+	line-height: 18px;
 	display: block;
 }
 
@@ -932,11 +927,10 @@ STAFF MEMBER NAMED + DROPDOWN
 }
 
 .date-row {
-	line-height: 25px;
-	color: #666;
-	background-color: #d9d9d9;
+	line-height: 40px;
+	color: #555;
 	font-size: 1.2em;
-	text-align: center;
+	padding: 0 0 0 12px;
 }
 
 #staff-notes {
@@ -955,7 +949,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	width: 50%;
 	height: 50px;
 	float: left;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	line-height: 50px;
 	font-weight: 600;
 	text-align: center;

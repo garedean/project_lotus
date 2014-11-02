@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     // Clicking on the cart icon causes nav 
     // and cart panels to show or hide 
-    $('.cart-icon').on('click', function() {
+    $('.multi-menu-icon-wrapper').on('click', function() {
 
         // Nav shown, cart closed
         if(!navClosed && cartClosed) {
@@ -93,17 +93,45 @@ $(document).ready(function() {
         openSubmenuOnLoad = false;
     });
 
-    $('.nav-link a').on('click', function() {
+     $('.nav-link a').on('click', function() {
 
         // Page title changes instaneously on user click
         $('.page-title').text(
             currentPageTitle = $(this).data('display-title')
         );
-    });
+
+        $('.nav-link.active').removeClass('active');
+        $(this).closest('.nav-link').addClass('active');
+
+     });
 
     $('.page-title').text(currentPageTitle);
+
+    $('.nav-link').on('click', function() {
+        
+        if($(this).hasClass('has-sub')) {
+            $(this).addClass('open');
+
+            if(!navClosed) {
+                $(this).find('ul').slideDown(sectionTransitionSpeed);
+            }
+        }
+        else {
+            if(!navClosed) {
+                $('.nav-link').not(this).find('ul').slideUp(sectionTransitionSpeed);
+            }
+        }
+
+
+
+        // Clicking on a different nav link removes all active
+        // classes from that element or submenu li element
+        //$('.nav-link a').not(this).closest('.nav-link').removeClass('active')
+        //.find('.sub-links li.active').removeClass('active'); 
+
+    });
     
-    // Controls vertical nav sidebar links and expanding submenus
+/*    // Controls vertical nav sidebar links and expanding submenus
     $('.nav-link').on('click', function() {
 
         // .nav-link li gets 'active' class 
@@ -132,7 +160,7 @@ $(document).ready(function() {
         //nextEventReady = true; 
         //currentlySelectedLink = $(this).text();
         //updateDebugInfo();
-    });
+    });*/
 
     // Clicking on a sublink item assigns it an 'active' class
     $('.sub-links').find('li').on('click', function() {
