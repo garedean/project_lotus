@@ -23,7 +23,7 @@ $(document).ready(function() {
         // On page load, assign nav  menu collapsed class
         if(pageState == 'shift-left' || pageState == 'maximized') {
             $('#nav-menu').addClass('collapsed');
-            multiMenuIconDirection('left');
+            multiMenuIconDirection('right');
             navClosed = true;
         }
     }

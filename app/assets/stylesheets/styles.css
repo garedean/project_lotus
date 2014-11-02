@@ -27,6 +27,7 @@ body {
 	width: 100%;
 	font-family: 'Open Sans', sans-serif;
 	background-color: #f1f2f7;
+	overflow: hidden;
 }
 
 a, span, div {
@@ -46,14 +47,11 @@ a:hover, a:focus {
 	right: 0;
 	right
 	height: 100%;
+	min-width: 400px;
 	margin-left: 240px;
 	background-color: inherit;
 	z-index: 2;
 }
-
-/* #main-content.expanded {
-	margin-left: 50px;
-} */
 
 .page-title {
 	color: #444;
@@ -174,7 +172,7 @@ STAFF USER PANEL
 
 #multi-menu {
 	display: block;
-	width: 400px;
+	width: 300px;
 	height: 100%;
 	position: absolute;
 	top: 0;
@@ -229,7 +227,7 @@ STAFF USER PANEL
   display: block;
   padding: 7px 15px;
   font-size: .96em;
-  line-height: 25px;
+  line-height: 36px;
   overflow: hidden;
 }
 
@@ -557,6 +555,7 @@ BOX CONTENT
 }
 
 .brand-tile {
+	display: none;
 	position: relative;
 	height: 50px;
 	background-color: #f1f2f7;
@@ -822,6 +821,7 @@ STAFF MEMBER NAMED + DROPDOWN
 }
 
 .nav-toggle {
+	display: none;
 	position: absolute;
 	height: 50px;
 	width: 50px;
@@ -848,7 +848,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 #main-content .container-fluid {
 	padding-top: 19px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 #nav-menu.collapsed .nav-link .sub-links.hover {
@@ -973,4 +973,35 @@ STAFF MEMBER NAMED + DROPDOWN
 
 .content .checkout {
 	
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+	#multi-menu {
+		width: 350px;
+	}
+
+	.brand-tile, 
+	.nav-toggle {
+		display: block;
+	}
+
+	.nav-link > a,
+	.nav-link > .menu-link {
+		line-height: 25px;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	#multi-menu {
+		width: 400px;
+	}
 }
