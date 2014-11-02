@@ -453,14 +453,6 @@ STAFF USER PANEL
 /* Toggle Sidebar Open / Closed
    ========================================================================== */
 
-.collapsed .has-sub:after {
-	opacity: 0;
-	-webkit-transition: all 100ms ease-in-out;
-	-moz-transition: all 100ms ease-in-out;
-	-o-transition: all 100ms ease-in-out;
-	transition: all 100ms ease-in-out;
-}
-
 .has-sub:after {
 	font-family: FontAwesome;
 	font-weight: 500;
@@ -472,10 +464,6 @@ STAFF USER PANEL
 	top: 10px;
 	opacity: 1;
 	transform: rotate(0deg);
-	-webkit-transition: all 100ms ease-in-out;
-	-moz-transition: all 100ms ease-in-out;
-	-o-transition: all 100ms ease-in-out;
-	transition: all 100ms ease-in-out;
 }
 
 .has-sub.active:after {
@@ -949,7 +937,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	width: 50%;
 	height: 50px;
 	float: left;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	line-height: 50px;
 	font-weight: 600;
 	text-align: center;

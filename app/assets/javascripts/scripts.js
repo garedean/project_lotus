@@ -31,6 +31,10 @@ $(document).ready(function() {
     // Set nav menu link states and highlighting
     setNavigation();
 
+    // Nav links with submenus get a downward pointing arrow
+    // on page load since their menus are open
+    $('.nav-link.has-sub.active').addClass('down-arrow');
+
     var staffNotes = $('#staff-notes');
 
     // Dashboard: when user clicks out of staff notes, set localstorage variable
@@ -103,6 +107,8 @@ $(document).ready(function() {
         $('.nav-link.active').removeClass('active');
         $(this).closest('.nav-link').addClass('active');
 
+        $('.nav-link.has-sub').removeClass('down-arrow');
+
      });
 
     $('.page-title').text(currentPageTitle);
@@ -115,52 +121,19 @@ $(document).ready(function() {
             if(!navClosed) {
                 $(this).find('ul').slideDown(sectionTransitionSpeed);
             }
+
+            // If nav link with sub is clicked, change left 
+            // arrow to a down arrow
+            if( $(this).hasClass('has-sub') ) {
+                $(this).addClass('down-arrow');
+            }
         }
         else {
             if(!navClosed) {
                 $('.nav-link').not(this).find('ul').slideUp(sectionTransitionSpeed);
             }
         }
-
-
-
-        // Clicking on a different nav link removes all active
-        // classes from that element or submenu li element
-        //$('.nav-link a').not(this).closest('.nav-link').removeClass('active')
-        //.find('.sub-links li.active').removeClass('active'); 
-
     });
-    
-/*    // Controls vertical nav sidebar links and expanding submenus
-    $('.nav-link').on('click', function() {
-
-        // .nav-link li gets 'active' class 
-        $(this).addClass('active');
-
-        if(!navClosed) {
-            $('.nav-link.has-sub.active').find('ul').slideDown(300);
-            $('.nav-link').not(this).find('ul').slideUp(300);
-        }
-
-        // Clicking on a different nav link removes all active
-        // classes from that element or submenu li element
-        $('.nav-link').not(this).removeClass('active')
-        .find('.sub-links li.active').removeClass('active');               
-
-        // If nav link with sub is clicked, change left 
-        // arrow to a down arrow
-        if( $(this).hasClass('has-sub') ) {
-            $(this).addClass('down-arrow');
-        }
-
-        // Change sub down arrow back to left arrow when user
-        // clicks a different link
-        $('.nav-link').not(this).removeClass('down-arrow');
-
-        //nextEventReady = true; 
-        //currentlySelectedLink = $(this).text();
-        //updateDebugInfo();
-    });*/
 
     // Clicking on a sublink item assigns it an 'active' class
     $('.sub-links').find('li').on('click', function() {
