@@ -1,5 +1,5 @@
 var navClosed               = false,
-    cartClosed              = true,
+    multiMenuClosed         = true,
     nextEventReady          = true,
     pinNav                  = true,
     keepNavClosed           = false,
@@ -26,14 +26,14 @@ $(document).ready(function() {
             multiMenuIconDirection('right');
             navClosed = true;
         }
+        if(pageState == 'shift-left') {
+            //$('#multi-menu').addClass('open');
+            multiMenuClosed= false;
+        }
     }
 
     // Set nav menu link states and highlighting
     setNavigation();
-
-    // Nav links with submenus get a downward pointing arrow
-    // on page load since their menus are open
-    $('.nav-link.has-sub.active').addClass('down-arrow');
 
     var staffNotes = $('#staff-notes');
 
@@ -61,29 +61,29 @@ $(document).ready(function() {
     $('.multi-menu-icon-wrapper').on('click', function() {
 
         // Nav shown, cart closed
-        if(!navClosed && cartClosed) {
+        if(!navClosed && multiMenuClosed) {
             slideMainContent('left');
             navClosed = true;
         }
         // Nav shown, cart shown
-        else if(!navClosed && !cartClosed) {
+        else if(!navClosed && !multiMenuClosed) {
             slideMainContent('right');
             navClosed = false;
         }
         // Nav closed, cart closed
-        else if(navClosed && cartClosed) {
+        else if(navClosed && multiMenuClosed) {
             slideMainContent('left');
             navClosed = true;
         }
          // Nav closed, cart open
-        else if(navClosed && !cartClosed) {
+        else if(navClosed && !multiMenuClosed) {
             if(keepNavClosed) {
                 slideMainContent('maximized');
                 navClosed = true;
             }
             else {
                 slideMainContent('right');
-                navClosed = false;       
+                navClosed = false;      
             }
         }
     });
@@ -113,12 +113,13 @@ $(document).ready(function() {
 
     $('.page-title').text(currentPageTitle);
 
-    $('.nav-link').on('click', function() {
-        
+    $('.nav-link').on('click', function() {      
+
         if($(this).hasClass('has-sub')) {
             $(this).addClass('open');
 
             if(!navClosed) {
+                $('.nav-link.has-sub').not(this).find('ul').slideUp(sectionTransitionSpeed);
                 $(this).find('ul').slideDown(sectionTransitionSpeed);
             }
 
@@ -130,7 +131,7 @@ $(document).ready(function() {
         }
         else {
             if(!navClosed) {
-                $('.nav-link').not(this).find('ul').slideUp(sectionTransitionSpeed);
+                 $('.nav-link.has-sub.open').find('ul').slideUp(sectionTransitionSpeed);
             }
         }
     });
@@ -155,22 +156,22 @@ $(document).ready(function() {
     $('.nav-toggle').on('click', function() { 
 
         // Nav shown, cart closed
-        if(!navClosed && cartClosed) {
+        if(!navClosed && multiMenuClosed) {
             slideMainContent('maximized');
             keepNavClosed = true;
         }
         // Nav shown, cart shown
-        else if(!navClosed && !cartClosed) {
+        else if(!navClosed && !multiMenuClosed) {
             slideMainContent('left');
             keepNavClosed = true;
         }
         // Nav closed, cart closed
-        else if(navClosed && cartClosed) {
+        else if(navClosed && multiMenuClosed) {
             slideMainContent('right');
             keepNavClosed = false;
         }
          // Nav closed, cart open
-        else if(navClosed && !cartClosed) {
+        else if(navClosed && !multiMenuClosed) {
             slideMainContent('right');
             keepNavClosed = false;
         }
@@ -250,6 +251,8 @@ function setNavigation() {
             // clicked, open it when the page reloads
             if($(this).closest(".nav-link").hasClass('has-sub') && !navClosed) {
                 $(this).closest('ul.sub-links').show();
+
+                $('.nav-link.has-sub.active').addClass('open down-arrow');
             }  
 
             if(navClosed) {
@@ -280,7 +283,7 @@ function slideMainContent(orientation) {
             orientationClass    = 'shift-left';
             marginLeftVal       = '50px';
             marginRightVal      = '400px';
-            cartClosed          = false;
+            multiMenuClosed         = false;
             navClosed           = true;    
 
             //$('#nav-menu').addClass('collapsed');
@@ -293,7 +296,7 @@ function slideMainContent(orientation) {
             orientationClass    = 'shift-right';
             marginLeftVal       = '240px';
             marginRightVal      = '0';
-            cartClosed          = true;
+            multiMenuClosed         = true;
             navClosed           = false;
 
             $('#nav-menu').removeClass('collapsed');
@@ -306,7 +309,7 @@ function slideMainContent(orientation) {
             orientationClass    = 'maximized';
             marginLeftVal       = '50px';
             marginRightVal      = '0';
-            cartClosed          = true;
+            multiMenuClosed         = true;
             navClosed           = true;
 
             //$('#nav-menu').addClass('collapsed');
