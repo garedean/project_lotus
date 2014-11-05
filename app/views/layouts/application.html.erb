@@ -15,52 +15,54 @@
 
 	</head>
 	<body>
-	
-	<%= render "layouts/nav_menu" %>
 
-	<div id='main-content' class='shift-right'>
-		<header id='top-bar'>  
-			<h2 class='page-title'></h2>         
+	<div id='main-wrapper'>
+		<%= render "layouts/nav_menu" %>
 
-			<a href='#' class='multi-menu-icon-wrapper'>
-	    	<i class="fa fa-angle-left fa-2x"></i>
-	    </a>
+		<div id='main-content' class='shift-right'>
+			<header id='top-bar'>  
+				<h2 class='page-title'></h2>         
 
-	    <div class='vertical-divider'>
-      </div> 
+				<a href='#' class='multi-menu-icon-wrapper'>
+		    		<i class="fa fa-angle-left fa-2x"></i>
+		    	</a>
 
-      <div id='staff-name-wrapper' class=''>
-	        <span id='staff-name'>Tony Stark</span>   
-	        <div class='dropdown'>
-	          <ul>
-	            <li>
-	              <a>Edit Account</a>
-	            </li>
-	            <li>
-	              <a>My Calendar</a>
-	            </li>  
-	            <li>
-	              <a>Help Suite</a>
-	            </li>              
-	            <hr>
-	            <li>
-	              <a>Log Out</a>
-	            </li>
-	          </ul>
-        </div>
-      </div>  
-		</header>
+		    	<div class='vertical-divider'></div> 
 
-		<div class='container-fluid to-bottom'>
-			<%= yield %>
-		</div>
+			      <div id='staff-name-wrapper' class=''>
+				        <span id='staff-name'>Tony Stark</span>   
 
-		<!--The nav toggle icon appears positionally in the nav menu, but 
-				the code is placed in the main-content HTML so that it slides 
-				to and from position when the nav is opened and closed
-		-->
-		<div class='nav-toggle'>
-			<i class="fa fa-bars fa-lg"></i>
+				        <div class='dropdown'>
+							<ul>
+								<li>
+								  <a>Edit Account</a>
+								</li>
+								<li>
+								  <a>My Calendar</a>
+								</li>  
+								<li>
+								  <a>Help Suite</a>
+								</li>              
+								<hr>
+								<li>
+								  <a>Log Out</a>
+								</li>
+							</ul>
+			        	</div>
+	      			</div>  
+			</header>
+
+			<div class='container-fluid to-bottom'>
+				<%= yield %>
+			</div>
+
+			<!--The nav toggle icon appears positionally in the nav menu, but 
+					the code is placed in the main-content HTML so that it slides 
+					to and from position when the nav is opened and closed
+			-->
+			<div class='nav-toggle'>
+				<i class="fa fa-bars fa-lg"></i>
+			</div>
 		</div>
 	</div>
 

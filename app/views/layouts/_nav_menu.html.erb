@@ -7,12 +7,12 @@
       </div>           
     </li>
 
-<!--     <li class='nav-link'>
-  <%= link_to 'test', data:{'display-title'=>'Dashboard'}  do %>
-    <i class='fa fa-calendar fa-lg nav-icon'></i>
-    <span class='title'>Upcoming Services</span><br>
-  <% end %>
-</li> -->
+    <!--     <li class='nav-link'>
+      <%= link_to 'test', data:{'display-title'=>'Dashboard'}  do %>
+        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <span class='title'>Upcoming Services</span><br>
+      <% end %>
+    </li> -->
 
     <li class='nav-link'>
       <%= link_to dashboard_path, data:{'display-title'=>'Dashboard'}  do %>
@@ -149,7 +149,7 @@
     
     <li class='line'></li>
 
-    <li class='nav-link has-sub business'>       
+    <!-- <li class='nav-link has-sub business'>       
       <div class='menu-link'>
         <i class='fa fa-calendar fa-lg nav-icon'></i>
         <span class='title'>mb admin</span>
@@ -166,8 +166,18 @@
           <%= link_to("UX Design Library", admin_design_library_path, data:{'display-title'=>'UX Design Library'}) %>
         </li>   
       </ul>
-    </li>
-
+    </li> -->
+    
+    <ul id='schedule-at-a-glance'>
+      <li class='heading'>Schedule at a Glance</li>
+      <ul>
+        <li>
+          <span class='time'>8am, </span>
+          <span class='staff'>Linds1ay Culver</span>
+        </li>
+        <li>Cut and Color with Carly Client</li>
+      </ul>
+    </ul>
   </ul>        
 
   <!-- <span id='nav-pin' name='nav-pin'></span>   -->          

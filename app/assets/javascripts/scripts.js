@@ -3,7 +3,9 @@ var navClosed               = false,
     nextEventReady          = true,
     pinNav                  = true,
     keepNavClosed           = false,
-    sectionTransitionSpeed  = 350,
+    expandSpeed             = 350,
+    collapseSpeed           = 350,
+    easingFunction          = 'easeOutCirc',
     currentlySelectedLink   = '',
     pageState               = '',
     pinNavCheckbox          = $('#pin-nav'),
@@ -119,8 +121,12 @@ $(document).ready(function() {
             $(this).addClass('open');
 
             if(!navClosed) {
-                $('.nav-link.has-sub').not(this).find('ul').slideUp(sectionTransitionSpeed);
-                $(this).find('ul').slideDown(sectionTransitionSpeed);
+                $('.nav-link.has-sub').not(this).removeClass('open')
+                    .find('ul').slideUp({duration:collapseSpeed, 
+                        easing:easingFunction});
+
+                $(this).find('ul').slideDown({duration:expandSpeed, 
+                    easing:easingFunction});
             }
 
             // If nav link with sub is clicked, change left 
@@ -131,7 +137,9 @@ $(document).ready(function() {
         }
         else {
             if(!navClosed) {
-                 $('.nav-link.has-sub.open').find('ul').slideUp(sectionTransitionSpeed);
+                 $('.nav-link.has-sub.open').removeClass('open')
+                    .find('ul').slideUp({duration:collapseSpeed, 
+                        easing:easingFunction});
             }
         }
     });
@@ -322,10 +330,10 @@ function slideMainContent(orientation) {
     $('#main-content').animate(
         {
             marginLeft:     marginLeftVal,
-            marginRight:    marginRightVal 
+            marginRight:    marginRightVal
         }, 
 
-        sectionTransitionSpeed, function() {
+        expandSpeed, easingFunction, function() {
             // Set orientation in local storage for use on page loads
             localStorage.setItem('page-state', orientationClass);
 
@@ -358,10 +366,12 @@ function multiMenuIconDirection(direction) {
 }
 
 function collapseNavMenus() {
-    $('#nav-menu .nav-link.has-sub.active').find('ul').slideUp(sectionTransitionSpeed);
+    $('#nav-menu .nav-link.has-sub.active').find('ul').slideUp(
+        {duration:collapseSpeed, easing:easingFunction});
 }
 
 function expandNavMenus() {
-    $('#nav-menu .nav-link.has-sub.active').find('ul').slideDown(sectionTransitionSpeed);
+    $('#nav-menu .nav-link.has-sub.active').find('ul').slideDown(
+        {duration:expandSpeed, easing:easingFunction});
 }
 
