@@ -25,8 +25,8 @@ html {
 body {
 	height: 100%;
 	width: 100%;
-	/* font-family: 'Open Sans', sans-serif; */
-	font-family: 'Lato', Calibri, Arial, sans-serif;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
 	background-color: #f1f2f7;
 	overflow: hidden;
 }
@@ -114,7 +114,6 @@ header .brand .name {
 	padding: 4px 0 0 10px;
 	color: #4683ea;	
 	font-size: 40px;
-	font-family: 'Great Vibes', serif;
 }
 
 /* 
@@ -331,7 +330,7 @@ STAFF USER PANEL
 	z-index: 3;
 }
 
-.collapsed .nav-link:hover ul {
+#nav-menu.collapsed .nav-link:hover ul {
 	display: block !important;
 }
 
@@ -797,7 +796,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 #main-content.shift-left {
 	margin-left: 50px;
-	margin-right: 400px;
+	margin-right: 220px;
 }
 
 #main-content.shift-right {
@@ -805,9 +804,30 @@ STAFF MEMBER NAMED + DROPDOWN
 	margin-right: 0px;
 }
 
+#main-content.middle {
+	margin-left: 240px;
+	margin-right: 220px;
+}
+
+#main-content .shadow {
+	position: absolute;
+	left:0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    box-shadow: inset 20px -10px 7px -20px rgba(0,0,0,.35), 
+    	inset -20px -10px 7px -20px rgba(0,0,0,.35);
+    -moz-box-shadow: inset 20px -10px 7px -20px rgba(0,0,0,.35), 
+    	inset -20px -10px 7px -20px rgba(0,0,0,.35);
+    -webkit-box-shadow: inset 20px -10px 7px -20px rgba(0,0,0,.35), 
+    	inset -20px -10px 7px -20px rgba(0,0,0,.35);
+    pointer-events: none;
+
+}
+
 #main-content.maximized {
 	margin-left: 50px;
-	margin-right: 0px;
+	margin-right: 0;
 }
 
 
@@ -926,47 +946,6 @@ STAFF MEMBER NAMED + DROPDOWN
 	line-height: 30px;
 }
 
-#multi-tabs {
-	height: 50px;
-	width: 100%;
-	margin: 0;
-	background-color: #f1f2f7;
-}
-
-#multi-tabs li {
-	width: 50%;
-	height: 50px;
-	float: left;
-	font-size: 1.2em;
-	line-height: 50px;
-	font-weight: 600;
-	text-align: center;
-	cursor: pointer;
-	color: #aaa;
-	background-color: #f3f4f5; 
-}
-
-#multi-tabs li.selected {
-	color: #2980B9;
-	background-color: #e1e5e7;
-}
-
-#multi-content-wrapper {
-	height: 100%;
-	width: 100%;
-	margin-top: 10px;
-}
-
-#multi-content-wrapper .schedule.active,
-#multi-content-wrapper .checkout.active {
-	display: block;
-}
-
-#multi-content-wrapper .schedule,
-#multi-content-wrapper .checkout {
-	display: none;
-}
-
 #schedule-at-a-glance {
 	margin: 7px;
 	height: 700px;
@@ -984,12 +963,43 @@ STAFF MEMBER NAMED + DROPDOWN
 	transition: all 500ms;
 }
 
+.glance-menu-icon-wrapper {
+	float: right;
+	overflow: hidden;
+	height: 50px;
+	width: 70px;
+	padding-left: 26px;
+	border-left: 1px solid transparent;
+	line-height: 50px;
+	vertical-align: middle;
+	z-index: 999;
+}
+
+.glance-menu-icon-wrapper:hover {
+	background-color: #f8f8f8;
+	border-left: 1px solid #ccc;
+}
+
+.glance-menu-icon-wrapper i {
+	color: #999;
+	vertical-align: 0;
+	line-height: 50px;
+}
+
 #glance-menu {
 	position: fixed;
 	right: 0;
-	width: 200px;
+	width: 220px;
 	height: 100%;
-	background-color: #111;
+	background-color: #e1e5e7;
+}
+
+#glance-menu .close {
+	position: absolute;
+	right: 0;
+	width: 100px;
+	height: 100px;
+	background-color: pink;
 }
 
 #main-wrapper {
@@ -999,6 +1009,70 @@ STAFF MEMBER NAMED + DROPDOWN
 	bottom: 0;
 	left: 0;
 	height: 100%;
+}
+
+header .checkout-icon {
+	float: right;
+	height: 50px;
+	width: 64px;
+	line-height: 50px;
+	padding: 5px 0 0 14px;
+	border-left: 1px solid transparent;
+	background-color: #fff;
+}
+
+header .checkout-icon:hover {
+	border-left: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+
+#checkout-wrapper {
+	pointer-events:none;
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 4;
+}
+
+#checkout-wrapper.active {
+	display: block;
+} 
+
+#checkout-panel {
+	position: fixed;
+	top: 0;
+	right: -30%;
+	bottom: 0;
+	width: 30%;
+	background-color: white;
+	z-index: 5;
+	box-shadow: none;
+	box-shadow: -2px 0 10px 0 rgba(0,0,0,.5);
+	pointer-events: auto;
+}
+
+.section-title {
+	color: #666;
+	text-transform: capitalize;
+	font-size: 1.8em;
+	font-weight: 300;
+	margin: 0 0 0 15px;
+	float: left;
+	line-height: 50px;
+}
+
+.backdrop {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.15);
+	z-index: inherit;
 }
 
 /* Extra small devices (phones, less than 768px) */

@@ -10,64 +10,71 @@
 		<%= csrf_meta_tags %>
 
 		<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,400,600' rel='stylesheet' type='text/css'> 
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
 	</head>
+
 	<body>
 
-	<div id='main-wrapper'>
-		<%= render "layouts/nav_menu" %>
+	<%= render "layouts/nav_menu" %>
 
-		<div id='main-content' class='shift-right'>
-			<header id='top-bar'>  
-				<h2 class='page-title'></h2>         
+	<div id='main-content' class='shift-right'>
+		<header id='top-bar'>  
+			<h2 class='page-title'></h2>         
+	 		
+	 		<!-- Button trigger modal -->
+			<button type="button" class="btn btn-default btn-lg checkout-icon" 
+				data-toggle="modal" data-target="#myModal">
+			  <i class="fa fa-shopping-cart fa-2x"></i>
+			</button>
 
-				<a href='#' class='multi-menu-icon-wrapper'>
-		    		<i class="fa fa-angle-left fa-2x"></i>
-		    	</a>
+	    <div class='vertical-divider'></div> 
 
-		    	<div class='vertical-divider'></div> 
+      <div id='staff-name-wrapper' class=''>
+      <span id='staff-name'>Tony Stark</span>   
 
-			      <div id='staff-name-wrapper' class=''>
-				        <span id='staff-name'>Tony Stark</span>   
+	      <div class='dropdown'>
+					<ul>
+						<li>
+						  <a>Edit Account</a>
+						</li>
+						<li>
+						  <a>My Calendar</a>
+						</li>  
+						<li>
+						  <a>Help Suite</a>
+						</li>              
+						<hr>
+						<li>
+						  <a>Log Out</a>
+						</li>
+					</ul>
+	       </div>
+  		</div>  
+		</header>
 
-				        <div class='dropdown'>
-							<ul>
-								<li>
-								  <a>Edit Account</a>
-								</li>
-								<li>
-								  <a>My Calendar</a>
-								</li>  
-								<li>
-								  <a>Help Suite</a>
-								</li>              
-								<hr>
-								<li>
-								  <a>Log Out</a>
-								</li>
-							</ul>
-			        	</div>
-	      			</div>  
-			</header>
-
-			<div class='container-fluid to-bottom'>
-				<%= yield %>
-			</div>
-
-			<!--The nav toggle icon appears positionally in the nav menu, but 
-					the code is placed in the main-content HTML so that it slides 
-					to and from position when the nav is opened and closed
-			-->
-			<div class='nav-toggle'>
-				<i class="fa fa-bars fa-lg"></i>
-			</div>
+		<div class='shadow'>
 		</div>
-	</div>
 
-	<%= render "layouts/glance_menu" %>
-	<%= render "layouts/multi_menu" %>
+		<div class='container-fluid to-bottom'>
+			<%= yield %>
+		</div>
+
+		<!--The nav toggle icon appears positionally in the nav menu, but 
+				the code is placed in the main-content HTML so that it slides 
+				to and from position when the nav is opened and closed
+		-->
+		<div class='nav-toggle'>
+			<i class="fa fa-bars fa-lg"></i>
+		</div>
+
+	</div>
 	
+	<%= render "layouts/checkout_slider" %>	
+	<%#= render "layouts/glance_menu" %>
+	<%#= render "layouts/multi_menu" %>	
+	
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	</body>
 </html>

@@ -1,10 +1,10 @@
 var navClosed               = false,
     multiMenuClosed         = true,
+    glanceMenuClosed        = true,
     nextEventReady          = true,
     pinNav                  = true,
-    keepNavClosed           = false,
-    expandSpeed             = 350,
-    collapseSpeed           = 350,
+    expandSpeed             = 400,
+    collapseSpeed           = 400,
     easingFunction          = 'easeOutCirc',
     currentlySelectedLink   = '',
     pageState               = '',
@@ -23,14 +23,9 @@ $(document).ready(function() {
         $('#main-content').removeClass().addClass(pageState);
 
         // On page load, assign nav  menu collapsed class
-        if(pageState == 'shift-left' || pageState == 'maximized') {
+        if(pageState == 'left' || pageState == 'maximized') {
             $('#nav-menu').addClass('collapsed');
-            multiMenuIconDirection('right');
             navClosed = true;
-        }
-        if(pageState == 'shift-left') {
-            //$('#multi-menu').addClass('open');
-            multiMenuClosed= false;
         }
     }
 
@@ -163,25 +158,21 @@ $(document).ready(function() {
     // Sidebar open + close functionality
     $('.nav-toggle').on('click', function() { 
 
-        // Nav shown, cart closed
-        if(!navClosed && multiMenuClosed) {
+        // Nav shown, glance menu closed
+        if(!navClosed && glanceMenuClosed) {
             slideMainContent('maximized');
-            keepNavClosed = true;
         }
-        // Nav shown, cart shown
-        else if(!navClosed && !multiMenuClosed) {
+        // Nav shown, glance menu shown
+        else if(!navClosed && !glanceMenuClosed) {
             slideMainContent('left');
-            keepNavClosed = true;
         }
-        // Nav closed, cart closed
+        // Nav closed, glance menu closed
         else if(navClosed && multiMenuClosed) {
             slideMainContent('right');
-            keepNavClosed = false;
         }
-         // Nav closed, cart open
+         // Nav closed, glance menu open
         else if(navClosed && !multiMenuClosed) {
-            slideMainContent('right');
-            keepNavClosed = false;
+            slideMainContent('middle');
         }
     });
 
@@ -197,6 +188,38 @@ $(document).ready(function() {
             $('#multi-content-wrapper .checkout').addClass('active');
             $('#multi-content-wrapper .schedule').removeClass('active');
         }
+    });
+
+    $('.glance-menu-icon-wrapper, #glance-menu .close').on('click', function() {
+        if(glanceMenuClosed) {
+            slideMainContent('middle');
+        }
+        else {
+            slideMainContent('right');
+        }  
+        glanceMenuClosed = !glanceMenuClosed;      
+    });
+
+    $('.checkout-icon').on('click', function() {
+        $('#checkout-wrapper').addClass('active');  
+        $('#checkout-wrapper .backdrop').fadeIn(600);    
+        $('#checkout-panel').animate({
+            right: 0
+        }, 650, 'easeOutExpo', function() {
+            $('#checkout-wrapper').addClass('animation-complete');  
+        }); 
+    });
+
+    $('body').on('click', function() {
+        if($('#checkout-wrapper').hasClass('animation-complete')) {
+            $('#checkout-wrapper .backdrop').fadeOut(600); 
+
+            $('#checkout-panel').animate({
+                right: '-30%'
+            }, 300, 'easeInCubic', function() {
+                $('#checkout-wrapper').removeClass('active animation-complete'); 
+            });  
+        }    
     });
 
     // If pinNav is false, opens/closes sidebar when cursor
@@ -290,11 +313,9 @@ function slideMainContent(orientation) {
         case 'left':
             orientationClass    = 'shift-left';
             marginLeftVal       = '50px';
-            marginRightVal      = '400px';
-            multiMenuClosed         = false;
+            marginRightVal      = '220px';
             navClosed           = true;    
 
-            //$('#nav-menu').addClass('collapsed');
             multiMenuIconDirection('right');
             collapseNavMenus();
 
@@ -304,7 +325,6 @@ function slideMainContent(orientation) {
             orientationClass    = 'shift-right';
             marginLeftVal       = '240px';
             marginRightVal      = '0';
-            multiMenuClosed         = true;
             navClosed           = false;
 
             $('#nav-menu').removeClass('collapsed');
@@ -313,15 +333,25 @@ function slideMainContent(orientation) {
 
             break;
 
-        case 'maximized':
+        case 'middle':
+            orientationClass    = 'middle';
+            marginLeftVal       = '240px';
+            marginRightVal      = '220px';
+            navClosed           = false;
+
+            $('#nav-menu').removeClass('collapsed');
+            multiMenuIconDirection('left');
+            expandNavMenus();
+
+            break;
+
+            case 'maximized':
             orientationClass    = 'maximized';
             marginLeftVal       = '50px';
-            marginRightVal      = '0';
-            multiMenuClosed         = true;
-            navClosed           = true;
+            marginRightVal      = '0px';
+            navClosed           = true;    
 
-            //$('#nav-menu').addClass('collapsed');
-            multiMenuIconDirection('left');
+            multiMenuIconDirection('right');
             collapseNavMenus();
 
             break;
@@ -334,6 +364,7 @@ function slideMainContent(orientation) {
         }, 
 
         expandSpeed, easingFunction, function() {
+
             // Set orientation in local storage for use on page loads
             localStorage.setItem('page-state', orientationClass);
 
@@ -366,12 +397,12 @@ function multiMenuIconDirection(direction) {
 }
 
 function collapseNavMenus() {
-    $('#nav-menu .nav-link.has-sub.active').find('ul').slideUp(
+    $('#nav-menu .nav-link.has-sub.open').find('ul').slideUp(
         {duration:collapseSpeed, easing:easingFunction});
 }
 
 function expandNavMenus() {
-    $('#nav-menu .nav-link.has-sub.active').find('ul').slideDown(
+    $('#nav-menu .nav-link.has-sub.open').find('ul').slideDown(
         {duration:expandSpeed, easing:easingFunction});
 }
 
