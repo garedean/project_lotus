@@ -230,6 +230,23 @@ STAFF USER PANEL
   overflow: hidden;
 }
 
+#nav-menu .nav-link .menu-link {
+	background-color: #e1e5e7;
+}
+
+#nav-menu .nav-link .menu-link:hover {
+	background-color: #D0D5D7;
+}
+
+#nav-menu .nav-link.has-sub.open .menu-link {
+	background-color: #D0D5D7;
+}
+
+#nav-menu .nav-link.has-sub.active .menu-link {
+	background-color: #2980B9;
+}
+
+
 #nav-menu .nav-link.active > a,
 #nav-menu .nav-link.active span,
 #nav-menu .nav-link.active .menu-link {
@@ -238,8 +255,7 @@ STAFF USER PANEL
   background: #2980B9;
 }
 
-#nav-menu .nav-link:hover,
-#nav-menu .nav-link.has-sub.open {
+#nav-menu .nav-link:hover {
   background-color: #D0D5D7;
   text-decoration: none;
 }
@@ -296,7 +312,7 @@ STAFF USER PANEL
    ========================================================================== */
 
 .nav-link ul {
-	display: none;
+	display: block;
 	width: 240px;	
 	background-color: #f1f2f7;
 	line-height: 2em;
@@ -1014,16 +1030,24 @@ STAFF MEMBER NAMED + DROPDOWN
 header .checkout-icon {
 	float: right;
 	height: 50px;
-	width: 64px;
+	width: 70px;
 	line-height: 50px;
-	padding: 5px 0 0 14px;
-	border-left: 1px solid transparent;
+	padding: 5px 0 0 0px;
 	background-color: #fff;
+	border-radius: 0;
+	border: 0;
+	border-left: 1px solid transparent;
 }
 
 header .checkout-icon:hover {
 	border-left: 1px solid #ccc;
 	background-color: #f1f1f1;
+}
+
+.checkout-icon i {
+	position: relative;
+	left: -2px;
+	font-size: 1.8em;
 }
 
 #checkout-wrapper {
@@ -1054,13 +1078,21 @@ header .checkout-icon:hover {
 	pointer-events: auto;
 }
 
+#checkout-panel .collapse-panel-arrow {
+	float: right;
+	padding-left: 22px;
+	width: 70px;
+	color: #999;
+	line-height: 50px;
+	cursor: pointer;
+}
+
 .section-title {
 	color: #666;
 	text-transform: capitalize;
 	font-size: 1.8em;
 	font-weight: 300;
 	margin: 0 0 0 15px;
-	float: left;
 	line-height: 50px;
 }
 
@@ -1071,7 +1103,7 @@ header .checkout-icon:hover {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(0,0,0,.15);
+	background-color: rgba(0,0,0,.2);
 	z-index: inherit;
 }
 

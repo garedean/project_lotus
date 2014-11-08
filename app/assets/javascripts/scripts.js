@@ -10,29 +10,33 @@ var navClosed               = false,
     pageState               = '',
     pinNavCheckbox          = $('#pin-nav'),
     currentPageTitle        = 'Dashboard',
+    staffNotes              = $('#staff-notes'),
     openSubmenuOnLoad       = false;
 
 $(document).ready(function() {
 
-    // Retrieve last page state from local storage. If first page load, 
-    // value is null: page will open with default 'nav open' layout
+    // Retrieve last page state from local storage
     pageState = localStorage.getItem('page-state');
 
+    // If pageState, add the page state as a class to #main-content
+    // If pageState is null, the page will open with nav menu open
     if(pageState) {
-        // Set newly loaded page to the previous panel layout
         $('#main-content').removeClass().addClass(pageState);
 
-        // On page load, assign nav  menu collapsed class
+        // On page load, assign nav menu states
         if(pageState == 'left' || pageState == 'maximized') {
             $('#nav-menu').addClass('collapsed');
             navClosed = true;
         }
     }
 
-    // Set nav menu link states and highlighting
+    // Set nav menu active link states, page titles
     setNavigation();
 
-    var staffNotes = $('#staff-notes');
+    // Nav submenus must be moved out of view on page load using
+    // negative top-margins. Also controls active submenus showing 
+    // as open/closed when page loads or nav toggle is used
+    setSubmenuStyles();
 
     // Dashboard: when user clicks out of staff notes, set localstorage variable
     staffNotes.blur(function() {
@@ -110,33 +114,31 @@ $(document).ready(function() {
 
     $('.page-title').text(currentPageTitle);
 
+
     $('.nav-link').on('click', function() {      
 
-        if($(this).hasClass('has-sub')) {
-            $(this).addClass('open');
+        // If nav is open and the item clicked on is not 
+        // the currently open menu
+        if(!navClosed && !$(this).hasClass('open')) {
 
-            if(!navClosed) {
-                $('.nav-link.has-sub').not(this).removeClass('open')
-                    .find('ul').slideUp({duration:collapseSpeed, 
-                        easing:easingFunction});
+            collapseOpenSubmenus();
 
-                $(this).find('ul').slideDown({duration:expandSpeed, 
-                    easing:easingFunction});
-            }
+            if($(this).hasClass('has-sub')) { 
 
-            // If nav link with sub is clicked, change left 
-            // arrow to a down arrow
-            if( $(this).hasClass('has-sub') ) {
-                $(this).addClass('down-arrow');
+                // For menu item just clicked, slide menu items down
+                $(this).addClass('open').find('.sub-links').animate(
+                    { marginTop: "0px" }, 
+                    700, 'easeOutExpo'
+                );               
+                
+
+                // If nav link with sub is clicked, change left 
+                // arrow to a down arrow
+                if( $(this).hasClass('has-sub') ) {
+                    $(this).addClass('down-arrow');
+                }
             }
-        }
-        else {
-            if(!navClosed) {
-                 $('.nav-link.has-sub.open').removeClass('open')
-                    .find('ul').slideUp({duration:collapseSpeed, 
-                        easing:easingFunction});
-            }
-        }
+        }        
     });
 
     // Clicking on a sublink item assigns it an 'active' class
@@ -160,22 +162,18 @@ $(document).ready(function() {
 
         // Nav shown, glance menu closed
         if(!navClosed && glanceMenuClosed) {
-            alert('1');
             slideMainContent('maximized');
         }
         // Nav shown, glance menu shown
         else if(!navClosed && !glanceMenuClosed) {
-            alert('2');
             slideMainContent('left');
         }
         // Nav closed, glance menu closed
         else if(navClosed && multiMenuClosed) {
-            alert('3');
             slideMainContent('right');
         }
          // Nav closed, glance menu open
         else if(navClosed && !multiMenuClosed) {
-            alert('4');
             slideMainContent('middle');
         }
     });
@@ -209,13 +207,14 @@ $(document).ready(function() {
         $('#checkout-wrapper .backdrop').fadeIn(600);    
         $('#checkout-panel').animate({
             right: 0
-        }, 650, 'easeOutExpo', function() {
+        }, 600, 'easeOutExpo', function() {
             $('#checkout-wrapper').addClass('animation-complete');  
         }); 
     });
 
-    $('body').on('click', function() {
+    $('body, .collapse-panel-arrow').on('click', function() {
         if($('#checkout-wrapper').hasClass('animation-complete')) {
+
             $('#checkout-wrapper .backdrop').fadeOut(600); 
 
             $('#checkout-panel').animate({
@@ -224,6 +223,12 @@ $(document).ready(function() {
                 $('#checkout-wrapper').removeClass('active animation-complete'); 
             });  
         }    
+    });
+
+    // Prevent clicks originating in #checkout-panel from
+    // reaching body element and closing the panel
+    $('#checkout-panel').on('click', function(e) {
+        e.stopPropagation();
     });
 
     // If pinNav is false, opens/closes sidebar when cursor
@@ -317,7 +322,7 @@ function slideMainContent(orientation) {
             navClosed           = true;    
 
             multiMenuIconDirection('right');
-            collapseNavMenus();
+            collapseOpenSubmenus();
 
             break;
 
@@ -329,7 +334,7 @@ function slideMainContent(orientation) {
 
             $('#nav-menu').removeClass('collapsed');
             multiMenuIconDirection('left');
-            expandNavMenus();
+            expandOpenSubmenus();
 
             break;
 
@@ -341,7 +346,7 @@ function slideMainContent(orientation) {
 
             $('#nav-menu').removeClass('collapsed');
             multiMenuIconDirection('left');
-            expandNavMenus();
+            expandOpenSubmenus();
 
             break;
 
@@ -352,7 +357,7 @@ function slideMainContent(orientation) {
             navClosed           = true;    
 
             multiMenuIconDirection('right');
-            collapseNavMenus();
+            collapseOpenSubmenus();
 
             break;
     }
@@ -375,10 +380,17 @@ function slideMainContent(orientation) {
             // When the animation is comlete, add new class assignment to main content
             $('#main-content').addClass(orientationClass);
 
+            // Runs *after* the animation is fully complete
             if(orientation == 'left' || orientation == 'maximized') {
                 $('#nav-menu').addClass('collapsed');
+                setSubmenuStyles();
             }
         });
+
+    // Runs when animation first starts
+    if(orientation == 'right'){
+        setSubmenuStyles();
+    }
 }
 
 function multiMenuIconDirection(direction) {
@@ -396,15 +408,47 @@ function multiMenuIconDirection(direction) {
     }
 }
 
-function collapseNavMenus() {
-    $('#nav-menu .nav-link.has-sub.open').find('ul').slideUp(
-        {duration:collapseSpeed, easing:easingFunction});
+function collapseOpenSubmenus() {
+    // Slide other expanded menus up
+    $('.nav-link.has-sub.open')
+        .find('ul').animate(
+            {
+                marginTop: 
+                (-1 * $('.nav-link.has-sub.open')
+                    .find('.sub-links').height()).toString() + "px"                        
+            }, 
+                700, 'easeOutExpo'
+        ).closest('.nav-link').removeClass('open');
 }
 
-function expandNavMenus() {
-    $('#nav-menu .nav-link.has-sub.open').find('ul').slideDown(
-        {duration:expandSpeed, easing:easingFunction});
-/*    $('#nav-menu .nav-link.has-sub.active').find('ul').slideDown(
-        {duration:expandSpeed, easing:easingFunction});*/
+function expandOpenSubmenus() {
+
+    $('.nav-link.has-sub.active').find('.sub-links').animate(
+            {
+                marginTop: '0px'                        
+            }, 
+                700, 'easeOutExpo'
+    );
 }
 
+function setSubmenuStyles() {
+
+    var elements = $('.nav-link.has-sub .sub-links');
+
+    // At page load, set negative top margins on all Nav menu
+    // ul elements, hiding those menus until activated
+    if(!navClosed) { 
+        $.each(elements, function(i, o){
+            $(o).css("margin-top", (-1 * $(this).height()).toString() + 'px');
+
+            if($(this).closest('.nav-link').hasClass('open')) {
+                $(this).css("margin-top", 0);
+            }
+        });
+    }
+    else {
+        $.each(elements, function(i, o){
+            $(o).css("margin-top", '0px');
+        }); 
+    }
+}
