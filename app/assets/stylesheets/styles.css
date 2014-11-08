@@ -188,7 +188,6 @@ STAFF USER PANEL
    ========================================================================== */
 
 #nav-menu {
-	position: relative;
 	height: 100%;
 	width: 240px;
 	background-color: #e1e5e7;
@@ -1098,7 +1097,7 @@ header .checkout-icon:hover {
 	position: absolute;
 	bottom: 0;
 	height: 36px;
-	width: 100%;
+	width: 240px;
 	padding: 5px 13px;
 	border-top: 1px solid #ccc;
 	opacity: 1;
