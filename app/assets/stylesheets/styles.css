@@ -1087,7 +1087,7 @@ header .glance-schedule-icon {
 	top: 0;
 	right: -30%;
 	bottom: 0;
-	width: 80%;
+	width: 100%;
 	background-color: white;
 	z-index: 5;
 	box-shadow: none;
@@ -1121,7 +1121,7 @@ header .glance-schedule-icon {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(0,0,0,.2);
+	background-color: rgba(0,0,0,.3);
 	z-index: inherit;
 }
 
@@ -1170,7 +1170,7 @@ header .glance-schedule-icon {
 
 .content-frame-wrapper.glance-view-visible 
 .content-frame {
-	right: 238px;
+	right: 240px;
 }
 
 .content-frame-wrapper.glance-view-visible #glance-menu {
@@ -1221,6 +1221,24 @@ button:focus {
 	margin-top: 2px;
 	background-color: #aaa;
 	float: left;
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 5px;
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: #ddd;
 }
 
 /* for debugging purposes */
