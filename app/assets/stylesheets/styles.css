@@ -226,7 +226,7 @@ STAFF USER PANEL
   display: block;
   padding: 7px 15px;
   font-size: 1.1em;
-  line-height: 36px;
+  line-height: 25px;
   overflow: hidden;
 }
 
@@ -570,7 +570,7 @@ BOX CONTENT
 }
 
 .brand-tile {
-	display: none;
+	display: block;
 	position: relative;
 	height: 50px;
 	background-color: #f1f2f7;
@@ -841,7 +841,7 @@ STAFF MEMBER NAMED + DROPDOWN
 }
 
 .nav-toggle {
-	display: none;
+	display: block;
 	position: absolute;
 	height: 50px;
 	width: 50px;
@@ -1070,7 +1070,7 @@ header .glance-schedule-icon {
 #checkout-wrapper {
 	pointer-events:none;
 	display: none;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -1083,11 +1083,11 @@ header .glance-schedule-icon {
 } 
 
 #checkout-panel {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	right: -30%;
 	bottom: 0;
-	width: 30%;
+	width: 80%;
 	background-color: white;
 	z-index: 5;
 	box-shadow: none;
@@ -1237,24 +1237,15 @@ button:focus {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-	#multi-menu {
-		width: 350px;
-	}
-
-	.brand-tile, 
-	.nav-toggle {
-		display: block;
-	}
-
-	.nav-link > a,
-	.nav-link > .menu-link {
-		line-height: 25px;
+	
+	#checkout-panel {
+		width: 60%;
 	}
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	#multi-menu {
-		width: 400px;
+	#checkout-panel {
+		width: 35%;
 	}
 }

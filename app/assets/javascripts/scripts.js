@@ -204,7 +204,7 @@ $(document).ready(function() {
 
     $('.checkout-icon').on('click', function() {
         $('#checkout-wrapper').addClass('active');  
-        $('#checkout-wrapper .backdrop').fadeIn(600);    
+        //$('#checkout-wrapper .backdrop').fadeIn(600);    
         $('#checkout-panel').animate({
             right: 0
         }, 600, 'easeOutExpo', function() {
@@ -215,7 +215,7 @@ $(document).ready(function() {
     $('body, .collapse-panel-arrow').on('click', function() {
         if($('#checkout-wrapper').hasClass('animation-complete')) {
 
-            $('#checkout-wrapper .backdrop').fadeOut(600); 
+            //$('#checkout-wrapper .backdrop').fadeOut(600); 
 
             $('#checkout-panel').animate({
                 right: '-30%'
