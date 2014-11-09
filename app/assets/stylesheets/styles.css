@@ -880,7 +880,6 @@ STAFF MEMBER NAMED + DROPDOWN
 	float: right;
 	position: relative;
 	top: 15px;
-	left: 1px;
 	height: 20px;
 	width: 1px;
 	background-color: #ccc;
@@ -892,6 +891,18 @@ STAFF MEMBER NAMED + DROPDOWN
 
 .schedule-glance .schedule-row * {
 	color: #777;
+}
+
+.glance-schedule-icon.active {
+	border-radius: 1px;
+	box-shadow: inset 0 0 8px 0 rgba(0,0,0,.2);
+	border: 1px solid #ccc;
+}
+
+.glance-schedule-icon:active {
+	border-radius: 1px;
+	box-shadow: inset 0 0 8px 0 rgba(0,0,0,.2);
+	border: 1px solid #ccc;
 }
 
 .box-content .box-content-title {
@@ -942,13 +953,13 @@ STAFF MEMBER NAMED + DROPDOWN
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	line-height: 25px;
-	margin: 7px 0;
+	margin: 8px 0;
 }
 
 .time-row {
 	font-size: .85em;
 	border: 0;
-	margin-bottom: 10px;
+	margin-bottom: 3px;
 	text-align: center;
 	text-decoration: underline;
 }
@@ -982,16 +993,24 @@ STAFF MEMBER NAMED + DROPDOWN
 	right: 0;
 	bottom: 0;
 	width: 240px;
-	height: 100%;
+	margin: 8px 0;
 	background-color: #f1f2f7;
-	border-left: 1px solid #ddd;
+	overflow: hidden;
 }
+
+.day-content {
+	border-left: 1px solid #ddd;
+	padding-bottom: 5px;
+}
+
 #glance-menu .content .date-row {
-	margin: 20px 0 10px 5px;
+	margin: 10px 0 10px 0px;
+	padding-left: 10px;
+	background-color: #ebebeb;
 }
 
 #glance-menu .content .date-row:first-of-type {
-	margin: 10px 0 10px 5px;
+	margin-top: 0;
 }
 
 #main-wrapper {
@@ -1013,13 +1032,28 @@ header .glance-schedule-icon {
 	background-color: #fff;
 	border-radius: 0;
 	border: 0;
-	border-left: 1px solid transparent;
 }
 
 header .checkout-icon:hover,
 header .glance-schedule-icon:hover  {
-	border-left: 1px solid #ccc;
-	background-color: #f1f1f1;
+	border: 0;
+	background-color: #fff;
+}
+
+header .checkout-icon:hover *,
+header .glance-schedule-icon:hover *  {
+	color: #2473a6;
+}
+
+header .checkout-icon:focus,
+header .glance-schedule-icon:focus  {
+	background-color: #fff;
+	border: 0;
+}
+
+header .glance-schedule-icon {
+	height: 26px;
+	margin: 12px 15px;
 }
 
 header .glance-schedule-icon {
@@ -1127,14 +1161,16 @@ header .glance-schedule-icon {
 }
 
 .content-frame-wrapper {
-	position: relative;
-	height: 100%;
-	width: 100%;
+	position: absolute;
+	top: 50px;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .content-frame-wrapper.glance-view-visible 
 .content-frame {
-	padding-right: 248px;
+	right: 238px;
 }
 
 .content-frame-wrapper.glance-view-visible #glance-menu {
@@ -1145,26 +1181,53 @@ button:focus {
 	outline: 0 !important;
 }
 
+.staff-name {
+	font-weight: 600;
+}
 .staff-name, .service, .client-name {
-	font-size: .9em;
 	display: block;
-	text-align: left;
-	width: 32%;
 	float: left;
+	font-size: .88em;
+	color: #2980B9;
+	text-align: left;
+	padding-left: 10px;
 }
 
 .service-row {
 	height: 20px;
 }
 
+.list-row {
+	height: 3px;
+}
+
+.icon-wrapper {
+	margin: 0;
+	padding: 3px 0 5px 6px;
+}
+
+.dot {
+	float: left;
+	height: 1px;
+	width: 9%;
+	margin: 2px 1px 0 0;
+	margin-top: 2px;
+	background-color: #aaa;
+}
+
 .line {
 	height: 1px;
-	width: 60%;
-	margin: auto;
-	margin-top: 4px;
+	width: 51%;
+	margin-top: 2px;
 	background-color: #aaa;
-
+	float: left;
 }
+
+/* for debugging purposes */
+#nav-menu.collapsed .nav-link.has-sub .sub-links {
+	display: block !important;
+}
+
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 

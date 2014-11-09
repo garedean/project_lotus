@@ -227,6 +227,7 @@ $(document).ready(function() {
 
     $('.glance-schedule-icon').on('click', function() {
         $('#main-content .content-frame-wrapper').toggleClass('glance-view-visible');
+        $('.glance-schedule-icon').toggleClass('active');
     });
 
     // Prevent clicks originating in #checkout-panel from
@@ -326,7 +327,6 @@ function slideMainContent(orientation) {
             navClosed           = true; 
             glanceMenuClosed    = false;   
 
-            multiMenuIconDirection('right');
             collapseOpenSubmenus();
 
             break;
@@ -339,7 +339,6 @@ function slideMainContent(orientation) {
             glanceMenuClosed    = true;
 
             $('#nav-menu').removeClass('collapsed');
-            multiMenuIconDirection('left');
             expandOpenSubmenus();
 
             break;
@@ -352,7 +351,6 @@ function slideMainContent(orientation) {
             glanceMenuClosed    = false;
 
             $('#nav-menu').removeClass('collapsed');
-            multiMenuIconDirection('left');
             expandOpenSubmenus();
 
             break;
@@ -364,7 +362,6 @@ function slideMainContent(orientation) {
             navClosed           = true;    
             glanceMenuClosed    = true;
 
-            multiMenuIconDirection('right');
             collapseOpenSubmenus();
 
             break;
@@ -396,27 +393,13 @@ function slideMainContent(orientation) {
         });
 
     // Runs when animation first starts
-    if(orientation == 'right'){
+    if(orientation == 'right' || orientation == 'middle'){
         setSubmenuStyles();
     }
 }
 
-function multiMenuIconDirection(direction) {
-
-    $('.multi-menu-icon-wrapper i').removeClass();
-
-    switch(direction) {
-
-        case 'left':
-            $('.multi-menu-icon-wrapper i').addClass('fa fa-angle-left fa-2x');
-            break;
-        case 'right':
-            $('.multi-menu-icon-wrapper i').addClass('fa fa-angle-right fa-2x');
-            break;
-    }
-}
-
 function collapseOpenSubmenus() {
+    //alert('collapseOpenSubmenus');
     // Slide other expanded menus up
     $('.nav-link.has-sub.open')
         .find('ul').animate(
@@ -440,6 +423,7 @@ function expandOpenSubmenus() {
 }
 
 function setSubmenuStyles() {
+    //alert('setSubmenuStyles');
 
     var elements = $('.nav-link.has-sub .sub-links');
 
@@ -450,7 +434,7 @@ function setSubmenuStyles() {
             $(o).css("margin-top", (-1 * $(this).height()).toString() + 'px');
 
             if($(this).closest('.nav-link').hasClass('open')) {
-                $(this).css("margin-top", 0);
+                $(this).css("margin-top", '0px');
             }
         });
     }
