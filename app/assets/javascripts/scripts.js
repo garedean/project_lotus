@@ -225,6 +225,10 @@ $(document).ready(function() {
         }    
     });
 
+    $('.glance-schedule-icon').on('click', function() {
+        $('#main-content .content-frame-wrapper').toggleClass('glance-view-visible');
+    });
+
     // Prevent clicks originating in #checkout-panel from
     // reaching body element and closing the panel
     $('#checkout-panel').on('click', function(e) {
@@ -318,8 +322,9 @@ function slideMainContent(orientation) {
         case 'left':
             orientationClass    = 'shift-left';
             marginLeftVal       = '50px';
-            marginRightVal      = '220px';
-            navClosed           = true;    
+            marginRightVal      = '240px';
+            navClosed           = true; 
+            glanceMenuClosed    = false;   
 
             multiMenuIconDirection('right');
             collapseOpenSubmenus();
@@ -331,6 +336,7 @@ function slideMainContent(orientation) {
             marginLeftVal       = '240px';
             marginRightVal      = '0';
             navClosed           = false;
+            glanceMenuClosed    = true;
 
             $('#nav-menu').removeClass('collapsed');
             multiMenuIconDirection('left');
@@ -341,8 +347,9 @@ function slideMainContent(orientation) {
         case 'middle':
             orientationClass    = 'middle';
             marginLeftVal       = '240px';
-            marginRightVal      = '220px';
+            marginRightVal      = '240px';
             navClosed           = false;
+            glanceMenuClosed    = false;
 
             $('#nav-menu').removeClass('collapsed');
             multiMenuIconDirection('left');
@@ -350,11 +357,12 @@ function slideMainContent(orientation) {
 
             break;
 
-            case 'maximized':
+        case 'maximized':
             orientationClass    = 'maximized';
             marginLeftVal       = '50px';
             marginRightVal      = '0px';
             navClosed           = true;    
+            glanceMenuClosed    = true;
 
             multiMenuIconDirection('right');
             collapseOpenSubmenus();

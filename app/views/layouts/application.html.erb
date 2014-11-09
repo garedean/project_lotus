@@ -19,13 +19,22 @@
 	<%= render "layouts/nav_menu" %>
 
 	<div id='main-content' class='shift-right'>
+
 		<header id='top-bar'>  
-			<h2 class='page-title'></h2>         
-	 		
-	 		<!-- Button trigger modal -->
-			<button type="button" class="btn btn-default btn-lg checkout-icon" 
-				data-toggle="modal" data-target="#myModal">
+			<h2 class='page-title'></h2>    
+
+			<button type="button" class="btn btn-default btn-lg checkout-icon">
 			  <i class="fa fa-shopping-cart"></i>
+			</button>
+	
+			<div class='vertical-divider'></div>  
+
+			<button type="button" class="btn btn-default btn-lg glance-schedule-icon">
+				<div class='line'></div>
+				<div class='line'></div>
+				<div class='line'></div>
+				<div class='line'></div>
+				<div class='line'></div>
 			</button>
 
 	    <div class='vertical-divider'></div> 
@@ -53,14 +62,20 @@
   		</div>  
 		</header>
 
-		<div class='container-fluid to-bottom'>
-			<%= yield %>
+		<div class='content-frame-wrapper'>
+			<div class='container-fluid to-bottom content-frame'>
+				<%= yield %>
+			</div>
+
+			<%= render "layouts/glance_menu" %>
+
 		</div>
 
 		<!--The nav toggle icon appears positionally in the nav menu, but 
 				the code is placed in the main-content HTML so that it slides 
 				to and from position when the nav is opened and closed
 		-->
+
 		<div class='nav-toggle'>
 			<i class="fa fa-bars fa-lg"></i>
 		</div>

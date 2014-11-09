@@ -804,7 +804,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 .to-bottom {
 	position: absolute;
-	top: 51px;
+	top: 0px;
 	bottom: 20px;
 	left: 0;
 	right: 0;
@@ -812,7 +812,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 #main-content.shift-left {
 	margin-left: 50px;
-	margin-right: 220px;
+	margin-right: 240px;
 }
 
 #main-content.shift-right {
@@ -822,7 +822,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 #main-content.middle {
 	margin-left: 240px;
-	margin-right: 220px;
+	margin-right: 240px;
 }
 
 #main-content.maximized {
@@ -869,6 +869,7 @@ STAFF MEMBER NAMED + DROPDOWN
 #main-content .container-fluid {
 	padding-top: 19px;
 	overflow-y: auto;
+	background-color: #f1f2f7;
 }
 
 #nav-menu.collapsed .nav-link .sub-links.hover {
@@ -934,11 +935,22 @@ STAFF MEMBER NAMED + DROPDOWN
 	padding-left: 15px;
 }
 
-.date-row {
-	line-height: 40px;
+.date-row, .time-row {
 	color: #555;
-	font-size: 1.2em;
-	padding: 0 0 0 12px;
+	font-size: 1em;
+	text-align: left;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	line-height: 25px;
+	margin: 7px 0;
+}
+
+.time-row {
+	font-size: .85em;
+	border: 0;
+	margin-bottom: 10px;
+	text-align: center;
+	text-decoration: underline;
 }
 
 #staff-notes {
@@ -963,55 +975,36 @@ STAFF MEMBER NAMED + DROPDOWN
 	transition: all 500ms;
 }
 
-.glance-menu-icon-wrapper {
-	float: right;
-	overflow: hidden;
-	height: 50px;
-	width: 70px;
-	padding-left: 26px;
-	border-left: 1px solid transparent;
-	line-height: 50px;
-	vertical-align: middle;
-	z-index: 999;
-}
-
-.glance-menu-icon-wrapper:hover {
-	background-color: #f8f8f8;
-	border-left: 1px solid #ccc;
-}
-
-.glance-menu-icon-wrapper i {
-	color: #999;
-	vertical-align: 0;
-	line-height: 50px;
-}
-
 #glance-menu {
-	position: fixed;
+	display: none;
+	position: absolute;
+	top: 0px;
 	right: 0;
-	width: 220px;
+	bottom: 0;
+	width: 240px;
 	height: 100%;
-	background-color: #e1e5e7;
+	background-color: #f1f2f7;
+	border-left: 1px solid #ddd;
+}
+#glance-menu .content .date-row {
+	margin: 20px 0 10px 5px;
 }
 
-#glance-menu .close {
-	position: absolute;
-	right: 0;
-	width: 100px;
-	height: 100px;
-	background-color: pink;
+#glance-menu .content .date-row:first-of-type {
+	margin: 10px 0 10px 5px;
 }
 
 #main-wrapper {
 	position: absolute;
-	top: 0; 
+	top: 50px; 
 	right: 0;
 	bottom: 0;
 	left: 0;
 	height: 100%;
 }
 
-header .checkout-icon {
+header .checkout-icon,
+header .glance-schedule-icon {
 	float: right;
 	height: 50px;
 	width: 70px;
@@ -1023,9 +1016,15 @@ header .checkout-icon {
 	border-left: 1px solid transparent;
 }
 
-header .checkout-icon:hover {
+header .checkout-icon:hover,
+header .glance-schedule-icon:hover  {
 	border-left: 1px solid #ccc;
 	background-color: #f1f1f1;
+}
+
+header .glance-schedule-icon {
+	width: 25px; 
+	padding: 0;
 }
 
 .checkout-icon i {
@@ -1058,7 +1057,7 @@ header .checkout-icon:hover {
 	background-color: white;
 	z-index: 5;
 	box-shadow: none;
-	box-shadow: -2px 0 10px 0 rgba(0,0,0,.5);
+	box-shadow: -1px 0 10px 0 rgba(0,0,0,.4);
 	pointer-events: auto;
 }
 
@@ -1121,6 +1120,51 @@ header .checkout-icon:hover {
 	color: #2980B9;
 }
 
+.panel-title {
+	text-align: left;
+	padding-left: 10px;
+	line-height: 50px;
+}
+
+.content-frame-wrapper {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.content-frame-wrapper.glance-view-visible 
+.content-frame {
+	padding-right: 248px;
+}
+
+.content-frame-wrapper.glance-view-visible #glance-menu {
+	display: block;
+}
+
+button:focus {
+	outline: 0 !important;
+}
+
+.staff-name, .service, .client-name {
+	font-size: .9em;
+	display: block;
+	text-align: left;
+	width: 32%;
+	float: left;
+}
+
+.service-row {
+	height: 20px;
+}
+
+.line {
+	height: 1px;
+	width: 60%;
+	margin: auto;
+	margin-top: 4px;
+	background-color: #aaa;
+
+}
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
