@@ -3,7 +3,7 @@ var navClosed               = false,
     glanceMenuClosed        = true,
     nextEventReady          = true,
     pinNav                  = true,
-    transitionSpeed         = 1000,
+    transitionSpeed         = 800,
     easingFunction          = 'easeOutQuart',
     currentlySelectedLink   = '',
     pageState               = '',
@@ -86,14 +86,14 @@ $(document).ready(function() {
 
         // If nav is open and the item clicked on is not 
         // the currently open menu
-        if(!navClosed && !$(this).hasClass('open')) {
+        if(!navClosed && !$(this).hasClass('highlight')) {
 
             collapseOpenSubmenus();
 
             if($(this).hasClass('has-sub')) { 
 
                 // For menu item just clicked, slide menu items down
-                $(this).addClass('open').find('.sub-links').animate(
+                $(this).addClass('highlight').find('.sub-links').animate(
                     { marginTop: "0px" }, 
                     800, easingFunction
                 );               
@@ -163,10 +163,10 @@ $(document).ready(function() {
 
     $('.checkout-icon').on('click', function() {
         $('#checkout-wrapper').addClass('active');  
-        $('#checkout-wrapper .backdrop').fadeIn(650, 'easeOutExpo');    
+        $('#checkout-wrapper .backdrop').fadeIn(700, 'easeOutExpo');    
         $('#checkout-panel').animate({
             right: 0
-        }, 650, 'easeOutExpo', function() {
+        }, 700, 'easeOutExpo', function() {
             $('#checkout-wrapper').addClass('animation-complete');  
         }); 
     });
@@ -174,11 +174,11 @@ $(document).ready(function() {
     $('body, .collapse-panel-arrow').on('click', function() {
         if($('#checkout-wrapper').hasClass('animation-complete')) {
 
-            $('#checkout-wrapper .backdrop').fadeOut(400, 'easeInCubic'); 
+            $('#checkout-wrapper .backdrop').fadeOut(500, 'easeInCubic'); 
 
             $('#checkout-panel').animate({
                 right: (-1 * $('#checkout-panel').width()).toString() + 'px'
-            }, 400, 'easeInCubic', function() {
+            }, 500, 'easeInCubic', function() {
                 $('#checkout-wrapper').removeClass('active animation-complete'); 
             });  
         }    
@@ -257,7 +257,7 @@ function setNavigation() {
                 $(this).closest('ul.sub-links').show();
             }  
             
-            $('.nav-link.has-sub.active').addClass('open down-arrow');              
+            $('.nav-link.has-sub.active').addClass('highlight down-arrow');              
         }
     });
 
@@ -327,26 +327,28 @@ function setNavMenu(orientation) {
 }
 
 function collapseOpenSubmenus() {
-    //alert('collapseOpenSubmenus');
+
     // Slide other expanded menus up
-    $('.nav-link.has-sub.open')
+    $('.nav-link.has-sub.highlight, .nav-link.has-sub.active')
         .find('ul').animate(
             {
                 marginTop: 
-                (-1 * $('.nav-link.has-sub.open')
+                (-1 * $('.nav-link.has-sub.highlight')
                     .find('.sub-links').height()).toString() + "px"                        
             }, 
-                1000, easingFunction
-        ).closest('.nav-link').removeClass('open');
+                transitionSpeed, easingFunction
+        ).closest('.nav-link').removeClass('highlight');
 }
 
 function expandOpenSubmenus() {
+
+    setSubmenuStyles();
 
     $('.nav-link.has-sub.active').find('.sub-links').animate(
             {
                 marginTop: '0px'                        
             }, 
-                1000, easingFunction
+                transitionSpeed, easingFunction
     );
 }
 
@@ -361,7 +363,7 @@ function setSubmenuStyles() {
         $.each(elements, function(i, o){
             $(o).css("margin-top", (-1 * $(this).height()).toString() + 'px');
 
-            if($(this).closest('.nav-link').hasClass('open')) {
+            if($(this).closest('.nav-link').hasClass('highlight')) {
                 $(this).css("margin-top", '0px');
             }
         });
