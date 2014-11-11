@@ -3,9 +3,8 @@ var navClosed               = false,
     glanceMenuClosed        = true,
     nextEventReady          = true,
     pinNav                  = true,
-    expandSpeed             = 400,
-    collapseSpeed           = 400,
-    easingFunction          = 'easeOutCirc',
+    transitionSpeed         = 1000,
+    easingFunction          = 'easeOutQuart',
     currentlySelectedLink   = '',
     pageState               = '',
     pinNavCheckbox          = $('#pin-nav'),
@@ -24,7 +23,7 @@ $(document).ready(function() {
         $('#main-content').removeClass().addClass(pageState);
 
         // On page load, assign nav menu states
-        if(pageState == 'left' || pageState == 'maximized') {
+        if(pageState == 'nav-closed') {
             $('#nav-menu').addClass('collapsed');
             navClosed = true;
         }
@@ -55,38 +54,6 @@ $(document).ready(function() {
 
     $('#staff-name-wrapper').click('click', function() {
         $(this).find('.dropdown').toggle();
-    });
-
-    // Clicking on the cart icon causes nav 
-    // and cart panels to show or hide 
-    $('.multi-menu-icon-wrapper').on('click', function() {
-
-        // Nav shown, cart closed
-        if(!navClosed && multiMenuClosed) {
-            slideMainContent('left');
-            navClosed = true;
-        }
-        // Nav shown, cart shown
-        else if(!navClosed && !multiMenuClosed) {
-            slideMainContent('right');
-            navClosed = false;
-        }
-        // Nav closed, cart closed
-        else if(navClosed && multiMenuClosed) {
-            slideMainContent('left');
-            navClosed = true;
-        }
-         // Nav closed, cart open
-        else if(navClosed && !multiMenuClosed) {
-            if(keepNavClosed) {
-                slideMainContent('maximized');
-                navClosed = true;
-            }
-            else {
-                slideMainContent('right');
-                navClosed = false;      
-            }
-        }
     });
 
     $('#nav-menu.collapsed .sub-links a').on('click', function() {
@@ -128,7 +95,7 @@ $(document).ready(function() {
                 // For menu item just clicked, slide menu items down
                 $(this).addClass('open').find('.sub-links').animate(
                     { marginTop: "0px" }, 
-                    700, 'easeOutExpo'
+                    800, easingFunction
                 );               
                 
 
@@ -160,21 +127,13 @@ $(document).ready(function() {
     // Sidebar open + close functionality
     $('.nav-toggle').on('click', function() { 
 
-        // Nav shown, glance menu closed
-        if(!navClosed && glanceMenuClosed) {
-            slideMainContent('maximized');
+        // Nav closed, open it
+        if(navClosed) {
+            setNavMenu('nav-open');
         }
-        // Nav shown, glance menu shown
-        else if(!navClosed && !glanceMenuClosed) {
-            slideMainContent('left');
-        }
-        // Nav closed, glance menu closed
-        else if(navClosed && multiMenuClosed) {
-            slideMainContent('right');
-        }
-         // Nav closed, glance menu open
-        else if(navClosed && !multiMenuClosed) {
-            slideMainContent('middle');
+        // Nav open, close it
+        else {
+            setNavMenu('nav-closed');
         }
     });
 
@@ -194,10 +153,10 @@ $(document).ready(function() {
 
     $('.glance-menu-icon-wrapper, #glance-menu .close').on('click', function() {
         if(glanceMenuClosed) {
-            slideMainContent('middle');
+            setNavMenu('middle');
         }
         else {
-            slideMainContent('right');
+            setNavMenu('right');
         }  
         glanceMenuClosed = !glanceMenuClosed;      
     });
@@ -313,87 +272,56 @@ function updateDebugInfo() {
         $('.next-event-ready').html('Next event ready: ' + nextEventReady.toString().toUpperCase());
 }
 
-function slideMainContent(orientation) {  
+function setNavMenu(orientation) {  
     var marginLeftVal, 
         marginRightVal,
         orientationClass;
 
     switch(orientation) {
 
-        case 'left':
-            orientationClass    = 'shift-left';
+        case 'nav-closed':
             marginLeftVal       = '50px';
-            marginRightVal      = '240px';
             navClosed           = true; 
-            glanceMenuClosed    = false;   
-
             collapseOpenSubmenus();
 
             break;
 
-        case 'right':
-            orientationClass    = 'shift-right';
+        case 'nav-open':
             marginLeftVal       = '240px';
-            marginRightVal      = '0';
             navClosed           = false;
-            glanceMenuClosed    = true;
 
             $('#nav-menu').removeClass('collapsed');
             expandOpenSubmenus();
-
-            break;
-
-        case 'middle':
-            orientationClass    = 'middle';
-            marginLeftVal       = '240px';
-            marginRightVal      = '240px';
-            navClosed           = false;
-            glanceMenuClosed    = false;
-
-            $('#nav-menu').removeClass('collapsed');
-            expandOpenSubmenus();
-
-            break;
-
-        case 'maximized':
-            orientationClass    = 'maximized';
-            marginLeftVal       = '50px';
-            marginRightVal      = '0px';
-            navClosed           = true;    
-            glanceMenuClosed    = true;
-
-            collapseOpenSubmenus();
 
             break;
     }
 
     $('#main-content').animate(
         {
-            marginLeft:     marginLeftVal,
-            marginRight:    marginRightVal
+            marginLeft:     marginLeftVal
         }, 
 
-        expandSpeed, easingFunction, function() {
+        transitionSpeed, easingFunction, function() {
 
             // Set orientation in local storage for use on page loads
-            localStorage.setItem('page-state', orientationClass);
+            localStorage.setItem('page-state', orientation);
 
             // Before adding a new class to #main-content, 
             // remove the current class assignment
             $('#main-content').removeClass();
 
             // When the animation is comlete, add new class assignment to main content
-            $('#main-content').addClass(orientationClass);
+            $('#main-content').addClass(orientation);
 
             // Runs *after* the animation is fully complete
-            if(orientation == 'left' || orientation == 'maximized') {
+            if(orientation == 'nav-closed') {
                 $('#nav-menu').addClass('collapsed');
                 setSubmenuStyles();
             }
         });
 
     // Runs when animation first starts
-    if(orientation == 'right' || orientation == 'middle'){
+    if(orientation == 'nav-open'){
         setSubmenuStyles();
     }
 }
@@ -408,7 +336,7 @@ function collapseOpenSubmenus() {
                 (-1 * $('.nav-link.has-sub.open')
                     .find('.sub-links').height()).toString() + "px"                        
             }, 
-                700, 'easeOutExpo'
+                1000, easingFunction
         ).closest('.nav-link').removeClass('open');
 }
 
@@ -418,7 +346,7 @@ function expandOpenSubmenus() {
             {
                 marginTop: '0px'                        
             }, 
-                700, 'easeOutExpo'
+                1000, easingFunction
     );
 }
 
