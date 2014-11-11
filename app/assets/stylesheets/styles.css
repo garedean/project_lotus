@@ -939,8 +939,6 @@ STAFF MEMBER NAMED + DROPDOWN
 	color: #555;
 	font-size: 1em;
 	text-align: left;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
 	line-height: 25px;
 	margin: 8px 0;
 }
@@ -978,24 +976,22 @@ STAFF MEMBER NAMED + DROPDOWN
 #glance-menu {
 	display: none;
 	position: absolute;
-	top: 0px;
-	right: 0;
+	top: 5px;
+	right: 5px;
 	bottom: 0;
-	width: 240px;
-	margin: 8px 0;
-	background-color: #f1f2f7;
+	width: 235px;
+	background-color: #fbfbfb;
 	overflow: hidden;
 }
 
 .day-content {
-	border-left: 1px solid #ddd;
 	padding-bottom: 5px;
 }
 
 #glance-menu .content .date-row {
 	margin: 10px 0 10px 0px;
 	padding-left: 10px;
-	background-color: #ebebeb;
+	background-color: #ddd;
 }
 
 #glance-menu .content .date-row:first-of-type {
@@ -1023,13 +1019,18 @@ header .glance-schedule-icon {
 	border: 0;
 }
 
-header .checkout-icon:hover,
 header .glance-schedule-icon:hover  {
+	border: 1px solid #ccc;
 }
 
-header .checkout-icon:hover *,
-header .glance-schedule-icon:hover *  {
+header .checkout-icon:hover,
+header .glance-schedule-icon:hover {
 	color: #2473a6;
+	background-color: white;
+}
+
+header .checkout-icon:hover i {
+	color: #236AE7;
 }
 
 header .glance-schedule-icon {
@@ -1038,12 +1039,14 @@ header .glance-schedule-icon {
 }
 
 header .glance-schedule-icon {
-	width: 25px; 
+	width: 22px; 
 	padding: 0;
+	border: 1px solid transparent;
 }
 
 .checkout-icon i {
 	position: relative;
+	top: -1px;
 	left: -3px;
 	font-size: 1.7em;
 }
@@ -1078,12 +1081,16 @@ header .glance-schedule-icon {
 
 #checkout-panel .collapse-panel-arrow {
 	float: right;
-	padding-left: 22px;
-	width: 70px;
+	width: 120px;
+	padding-left: 85px;
 	color: #999;
 	line-height: 50px;
 	font-size: 1.3em;
 	cursor: pointer;
+}
+
+#checkout-panel .collapse-panel-arrow:hover {
+	color: #777;
 }
 
 .section-title {
@@ -1197,7 +1204,7 @@ button:focus {
 
 .icon-wrapper {
 	margin: 0;
-	padding: 3px 0 5px 6px;
+	padding: 2px 0 5px 4px;
 }
 
 .dot {
