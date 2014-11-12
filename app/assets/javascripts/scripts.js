@@ -3,7 +3,7 @@ var navClosed               = false,
     glanceMenuClosed        = true,
     nextEventReady          = true,
     pinNav                  = true,
-    transitionSpeed         = 800,
+    transitionSpeed         = 600,
     easingFunction          = 'easeOutQuart',
     currentlySelectedLink   = '',
     pageState               = '',
@@ -86,16 +86,16 @@ $(document).ready(function() {
 
         // If nav is open and the item clicked on is not 
         // the currently open menu
-        if(!navClosed && !$(this).hasClass('highlight')) {
+        if(!navClosed && !$(this).hasClass('view-contents')) {
 
             collapseOpenSubmenus();
 
             if($(this).hasClass('has-sub')) { 
 
                 // For menu item just clicked, slide menu items down
-                $(this).addClass('highlight').find('.sub-links').animate(
+                $(this).addClass('view-contents').find('.sub-links').animate(
                     { marginTop: "0px" }, 
-                    800, easingFunction
+                    transitionSpeed, easingFunction
                 );               
                 
 
@@ -149,16 +149,6 @@ $(document).ready(function() {
             $('#multi-content-wrapper .checkout').addClass('active');
             $('#multi-content-wrapper .schedule').removeClass('active');
         }
-    });
-
-    $('.glance-menu-icon-wrapper, #glance-menu .close').on('click', function() {
-        if(glanceMenuClosed) {
-            setNavMenu('middle');
-        }
-        else {
-            setNavMenu('right');
-        }  
-        glanceMenuClosed = !glanceMenuClosed;      
     });
 
     $('.checkout-icon').on('click', function() {
@@ -257,7 +247,7 @@ function setNavigation() {
                 $(this).closest('ul.sub-links').show();
             }  
             
-            $('.nav-link.has-sub.active').addClass('highlight down-arrow');              
+            $('.nav-link.has-sub.active').addClass('view-contents down-arrow');              
         }
     });
 
@@ -273,9 +263,7 @@ function updateDebugInfo() {
 }
 
 function setNavMenu(orientation) {  
-    var marginLeftVal, 
-        marginRightVal,
-        orientationClass;
+    var marginLeftVal;
 
     switch(orientation) {
 
@@ -320,6 +308,14 @@ function setNavMenu(orientation) {
             }
         });
 
+        // The sole purpose of changing the width of the nav menu and
+        // not covering it up is to change the width of the section 
+        // dividing lines
+        $('#nav-menu').animate(
+        {
+            width: marginLeftVal
+        }, transitionSpeed, easingFunction);
+
     // Runs when animation first starts
     if(orientation == 'nav-open'){
         setSubmenuStyles();
@@ -328,16 +324,26 @@ function setNavMenu(orientation) {
 
 function collapseOpenSubmenus() {
 
+    var openMenu       = $('.nav-link.has-sub.view-contents'),
+        activeMenu     = $('.nav-link.has-sub.active');
+
     // Slide other expanded menus up
-    $('.nav-link.has-sub.highlight, .nav-link.has-sub.active')
-        .find('ul').animate(
+    openMenu.find('ul').animate(
             {
                 marginTop: 
-                (-1 * $('.nav-link.has-sub.highlight')
-                    .find('.sub-links').height()).toString() + "px"                        
+                (-1 * openMenu.find('.sub-links').height()).toString() + "px"                        
             }, 
                 transitionSpeed, easingFunction
-        ).closest('.nav-link').removeClass('highlight');
+        ).closest('.nav-link').removeClass('view-contents');
+
+    // Slide other expanded menus up
+    activeMenu.find('ul').animate(
+            {
+                marginTop: 
+                (-1 * activeMenu.find('.sub-links').height()).toString() + "px"                        
+            }, 
+                transitionSpeed, easingFunction
+        ).closest('.nav-link');
 }
 
 function expandOpenSubmenus() {
@@ -363,7 +369,7 @@ function setSubmenuStyles() {
         $.each(elements, function(i, o){
             $(o).css("margin-top", (-1 * $(this).height()).toString() + 'px');
 
-            if($(this).closest('.nav-link').hasClass('highlight')) {
+            if($(this).closest('.nav-link').hasClass('view-contents')) {
                 $(this).css("margin-top", '0px');
             }
         });

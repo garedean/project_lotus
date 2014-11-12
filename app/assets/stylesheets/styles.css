@@ -17,6 +17,25 @@
    GLOBAL STYLES
    ========================================================================== */
 
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 6px;
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #777;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: #ddd;
+}
+
 html {
 	height: 100%;
 	width: 100%;
@@ -59,7 +78,7 @@ a:hover, a:focus {
 	margin-right: 0px;
 }
 
-#main-content.nav-open{
+#main-content.nav-view-contents{
 	margin-left: 240px;
 	margin-right: 0px;
 }
@@ -248,7 +267,7 @@ STAFF USER PANEL
 	background-color: #D0D5D7;
 }
 
-#nav-menu .nav-link.has-sub.highlight .menu-link {
+#nav-menu .nav-link.has-sub.view-contents .menu-link {
 	background-color: #D0D5D7;
 }
 
@@ -283,8 +302,8 @@ STAFF USER PANEL
 	cursor: inherit;
 }
 
-#link-list .line {
-	margin: 10px 20px;
+#nav-menu .line {
+	margin: 13px 15px;
 	border-top: 1px solid #ccc;
 }
 
@@ -293,7 +312,7 @@ STAFF USER PANEL
 	border-top: 1px solid #ccc;
 }
 
-.nav-link.active .highlight {
+.nav-link.active .view-contents {
 	height: 100%;
 	width: 4px;
 	position: absolute;
@@ -473,7 +492,7 @@ STAFF USER PANEL
 	background-color: #3399FF;
 }
 
-/* Toggle Sidebar Open / Closed
+/* Toggle Sidebar view-contents / Closed
    ========================================================================== */
 
 .has-sub:after {
@@ -815,7 +834,7 @@ STAFF MEMBER NAMED + DROPDOWN
 .to-bottom {
 	position: absolute;
 	top: 0px;
-	bottom: 20px;
+	bottom: 0px;
 	left: 0;
 	right: 0;
 }
@@ -859,6 +878,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	padding-top: 19px;
 	overflow-y: auto;
 	background-color: #f1f2f7;
+	box-shadow: inset 0px 10px 6px -10px rgba(0,0,0,.3);
 }
 
 #nav-menu.collapsed .nav-link .sub-links.hover {
@@ -976,22 +996,28 @@ STAFF MEMBER NAMED + DROPDOWN
 #glance-menu {
 	display: none;
 	position: absolute;
-	top: 5px;
-	right: 5px;
+	top: 0;
+	right: 0;
 	bottom: 0;
-	width: 235px;
+	width: 240px;
 	background-color: #fbfbfb;
-	overflow: hidden;
+	border-top: 1px solid #ccc;
+	overflow-y: scroll;
 }
 
 .day-content {
 	padding-bottom: 5px;
 }
 
+#glance-menu .content .date-row:first-of-type {
+	border-top: 0;
+}	
+
 #glance-menu .content .date-row {
 	margin: 10px 0 10px 0px;
-	padding-left: 10px;
-	background-color: #ddd;
+	padding-left: 8px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 #glance-menu .content .date-row:first-of-type {
@@ -1081,8 +1107,8 @@ header .glance-schedule-icon {
 
 #checkout-panel .collapse-panel-arrow {
 	float: right;
-	width: 120px;
-	padding-left: 85px;
+	width: 60px;
+	padding-left: 25px;
 	color: #999;
 	line-height: 50px;
 	font-size: 1.3em;
@@ -1171,16 +1197,8 @@ button:focus {
 
 .staff-name {
 	font-weight: 600;
-}
-
-.staff-name {
 	width: 70px;
 }
-
-/* 
-.service {
-	width: 80px;
-} */
 
 .client-name {
 	width
@@ -1191,7 +1209,7 @@ button:focus {
 	font-size: .88em;
 	color: #2980B9;
 	text-align: left;
-	padding-left: 5px;
+	padding-left: 8px;
 }
 
 .service-row {
@@ -1216,30 +1234,12 @@ button:focus {
 	background-color: #aaa;
 }
 
-.line {
+.icon-line {
 	height: 1px;
 	width: 51%;
 	margin-top: 2px;
 	background-color: #aaa;
 	float: left;
-}
-
-::-webkit-scrollbar {
-    height: 12px;
-    width: 5px;
-    background: #000;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #bbb;
-}
-
-::-webkit-scrollbar-corner {
-    background: #000;
-}
-
-::-webkit-scrollbar-track-piece {
-	background: #ddd;
 }
 
 /* Extra small devices (phones, less than 768px) */
