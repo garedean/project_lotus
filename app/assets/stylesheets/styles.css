@@ -1156,6 +1156,7 @@ header .glance-schedule-icon {
 	width: 240px;
 	padding: 5px 13px;
 	border-top: 1px solid #ccc;
+	background: #e1e5e7;
 	opacity: 1;
 	font-size: .85em;
 	transition: opacity .3s;
@@ -1254,7 +1255,7 @@ button:focus {
 /* Google Material design toggle */
 
 .wrapper {
-  transition: all 300ms ease-in-out;  
+  transition: all 400ms ease-in-out;  
   padding: 0;
 }
 
@@ -1270,10 +1271,11 @@ button:focus {
   border: none;
   background: none;
   outline: 0;
+  -webkit-transform: scale(.9,.9);
 }
 
 .material-design-hamburger__icon {
-  padding-left: 14px;
+  padding-left: 15px;
   cursor: pointer;
 }
 
@@ -1283,7 +1285,7 @@ button:focus {
   height: 2px;
   background: #aaa;
   position: relative;
-  -webkit-animation-duration: 300ms;
+  -webkit-animation-duration: 400ms;
   -webkit-animation-timing-function: ease-in-out;
 }
 
@@ -1295,7 +1297,7 @@ button:focus {
   background: inherit;
   left: 0;
   content: '';
-  -webkit-animation-duration: 300ms;
+  -webkit-animation-duration: 400ms;
   -webkit-animation-timing-function: ease-in-out;
 }
 
