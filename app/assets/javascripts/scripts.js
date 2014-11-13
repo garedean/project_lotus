@@ -14,6 +14,8 @@ var navClosed               = false,
 
 $(document).ready(function() {
 
+    initiateNavToggle();
+
     // Retrieve last page state from local storage
     pageState = localStorage.getItem('page-state');
 
@@ -379,4 +381,26 @@ function setSubmenuStyles() {
             $(o).css("margin-top", '0px');
         }); 
     }
+}
+
+function initiateNavToggle() {
+    'use strict';
+
+    var icon = $('.material-design-hamburger__icon');
+
+    icon.on('click', function() {
+
+      var child;
+
+      child = this.childNodes[1].classList;
+
+      if (child.contains('material-design-hamburger__icon--to-arrow')) {
+        child.remove('material-design-hamburger__icon--to-arrow');
+        child.add('material-design-hamburger__icon--from-arrow');
+      } else {
+        child.remove('material-design-hamburger__icon--from-arrow');
+        child.add('material-design-hamburger__icon--to-arrow');
+      }
+
+    });
 }

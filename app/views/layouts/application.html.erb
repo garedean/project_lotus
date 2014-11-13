@@ -18,113 +18,110 @@
 
 	<%= render "layouts/nav_menu" %>
 
-	<div id='main-content' class='shift-right'>
+		<div id='main-content' class='shift-right'>
 
-		<header id='top-bar'>  
-			<h2 class='page-title'></h2>    
-			
-			<button type="button" class="btn btn-default btn-lg checkout-icon">
-			  <i class="fa fa-shopping-cart"></i>
-			</button>
+			<header id='top-bar'>  
+				<h2 class='page-title'></h2>    
+				
+				<button type="button" class="btn btn-default btn-lg checkout-icon">
+				  <i class="fa fa-shopping-cart"></i>
+				</button>
 
-	    	<div class='vertical-divider'></div> 
+		    <div class='vertical-divider'></div> 
 
-			<button type="button" class="btn btn-lg glance-schedule-icon active">
-				<ul class='icon-wrapper' title="Schedule at a Glance">
-					<li class='list-row'>
-						<ul>
-							<li class='dot'></li>
-							<li class='icon-line'></li>
-						</ul>
-					</li>
-
-					<li class='list-row'>
-						<ul>
-							<li class='dot'></li>
-							<li class='icon-line'></li>
-						</ul>
-					</li>
-
-					<li class='list-row'>
-						<ul>
-							<li class='dot'></li>
-							<li class='icon-line'></li>
-						</ul>
-					</li>
-
-					<li class='list-row'>
-						<ul>
-							<li class='dot'></li>
-							<li class='icon-line'></li>
-						</ul>
-					</li>
-
-					<li class='list-row'>
-						<ul>
-							<li class='dot'></li>
-							<li class='icon-line'></li>
-						</ul>
-					</li>
-
-					<li class='list-row'>
-						<ul>
-							<li class='dot'></li>
-							<li class='icon-line'></li>
-						</ul>
-					</li>
-				</ul>	
-			</button>  
-			
-			<div class='vertical-divider'></div>
-
-      <div id='staff-name-wrapper' class=''>
-      <span id='staff-name'>Alyx Vance</span>   
-
-	      <div class='dropdown'>
-					<ul>
-						<li>
-						  <a>Edit Account</a>
+				<button type="button" class="btn btn-lg glance-schedule-icon active">
+					<ul class='icon-wrapper' title="Schedule at a Glance">
+						<li class='list-row'>
+							<ul>
+								<li class='dot'></li>
+								<li class='icon-line'></li>
+							</ul>
 						</li>
-						<li>
-						  <a>My Calendar</a>
-						</li>  
-						<li>
-						  <a>Help Suite</a>
-						</li>              
-						<hr>
-						<li>
-						  <a>Log Out</a>
+
+						<li class='list-row'>
+							<ul>
+								<li class='dot'></li>
+								<li class='icon-line'></li>
+							</ul>
 						</li>
-					</ul>
-	       </div>
-  		</div>  
 
-  		<%= render "layouts/checkout_slider" %>	
+						<li class='list-row'>
+							<ul>
+								<li class='dot'></li>
+								<li class='icon-line'></li>
+							</ul>
+						</li>
 
-		</header>
+						<li class='list-row'>
+							<ul>
+								<li class='dot'></li>
+								<li class='icon-line'></li>
+							</ul>
+						</li>
 
-		<div class='content-frame-wrapper glance-view-visible'>
-			<div class='container-fluid to-bottom content-frame'>
-				<%= yield %>
+						<li class='list-row'>
+							<ul>
+								<li class='dot'></li>
+								<li class='icon-line'></li>
+							</ul>
+						</li>
+
+						<li class='list-row'>
+							<ul>
+								<li class='dot'></li>
+								<li class='icon-line'></li>
+							</ul>
+						</li>
+					</ul>	
+				</button>  
+				
+				<div class='vertical-divider'></div>
+
+	      <div id='staff-name-wrapper' class=''>
+	      <span id='staff-name'>Alyx Vance</span>   
+
+		      <div class='dropdown'>
+						<ul>
+							<li>
+							  <a>Edit Account</a>
+							</li>
+							<li>
+							  <a>My Calendar</a>
+							</li>  
+							<li>
+							  <a>Help Suite</a>
+							</li>              
+							<hr>
+							<li>
+							  <a>Log Out</a>
+							</li>
+						</ul>
+		       </div>
+	  		</div>  
+
+	  		<%= render "layouts/checkout_slider" %>	
+
+			</header>
+
+			<div class='content-frame-wrapper glance-view-visible'>
+				<div class='container-fluid to-bottom content-frame'>
+					<%= yield %>
+				</div>
+
+				<%= render "layouts/glance_menu" %>
+
 			</div>
 
-			<%= render "layouts/glance_menu" %>
-
+			<!-- http://codepen.io/swirlycheetah/pen/cFtzb -->
+			<section class="wrapper nav-toggle">
+			  <section class="material-design-hamburger">
+			    <button class="material-design-hamburger__icon">
+			      <span class="material-design-hamburger__layer material-design-hamburger__icon--to-arrow"></span>
+			    </button>
+			  </section>
+			</section>
+		
 		</div>
-
-		<!--The nav toggle icon appears positionally in the nav menu, but 
-				the code is placed in the main-content HTML so that it slides 
-				to and from position when the nav is opened and closed
-		-->
-
-		<div class='nav-toggle'>
-			<i class="fa fa-bars fa-lg"></i>
-		</div>
-	
-	</div>
-
-	<%#= render "layouts/glance_menu" %>
-	<%#= render "layouts/multi_menu" %>	
 	
 	</body>
 </html>
