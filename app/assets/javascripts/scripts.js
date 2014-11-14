@@ -13,28 +13,11 @@ var navClosed               = false,
     openSubmenuOnLoad       = false;
 
 $(document).ready(function() {
+    // The load class is used to prevent CSS animations
+    // from firing on page load
+    $('body').removeClass('load');
 
     initiateNavToggle();
-
-    // Retrieve last page state from local storage
-    pageState = localStorage.getItem('page-state');
-
-    // If pageState, add the page state as a class to #main-content
-    // If pageState is null, the page will open with nav menu open
-    if(pageState) {
-        $('#main-content').removeClass().addClass(pageState);
-
-        // On page load, assign nav menu states
-        if(pageState == 'nav-closed') {
-            $('#nav-menu').addClass('collapsed');
-            $('.material-design-hamburger__layer')
-                .removeClass('material-design-hamburger__icon--to-arrow');
-            $('.material-design-hamburger__layer')
-                .addClass('material-design-hamburger__icon--from-arrow');
-
-            navClosed = true;
-        }
-    }
 
     // Set nav menu active link states, page titles
     setNavigation();
