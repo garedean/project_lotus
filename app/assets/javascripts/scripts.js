@@ -194,13 +194,13 @@ $(document).ready(function() {
 
     // If pinNav is false, opens/closes sidebar when cursor
     // is within 50 pixels of the sidebar leading edge
-    openCloseNav();
+    //openCloseNav();
 });
 
 // Calculates x-axis distance to the #nav-menu sidebar. When the cursor
 // gets within 50 pixels of the sidebar right-side, the navbar opens or 
 // closes. The goal is to anticipate the user's action
-function openCloseNav() {
+/*function openCloseNav() {
     var mX, mY, distanceToTarget,
         $distanceToTarget = $('.menu-debugging .distance-from-target'),
         $element = $('#nav-menu');
@@ -235,7 +235,7 @@ function openCloseNav() {
         
         updateDebugInfo();
     });
-};
+};*/
 
 function setNavigation() {
     var path = window.location.pathname;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lluminaire Salon</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 
+    'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 
+    'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body id='login-page'>
+    <h1 class='login-brand'>
+      <span>nice</span><span class='heavy-weight'>logo</span>
+    </h1>
+    
+    <div id='login-page-wrapper'>
+      <div id='login-wrapper'>
+        <h1>Login</h1>
+        <form>
+          <label>Email</label>
+          <input></input>
+
+          <label>Password</label>
+          <input></input>
+
+          <span class='forgot-password'>Forgot your email or password?</span>
+
+          <!-- This link is masquerading as a button -->
+          <a href='/dashboard'>Sign In</button>
+          <a href='#'>Take me to my online store</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
