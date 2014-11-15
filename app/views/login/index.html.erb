@@ -20,20 +20,30 @@
     
     <div id='login-page-wrapper'>
       <div id='login-wrapper'>
-        <h1>Login</h1>
-        <form>
-          <label>Email</label>
-          <input></input>
+        <h1>Sign In</h1>
 
-          <label>Password</label>
-          <input></input>
+        <form role="form">
+          <div class="form-group">
+            <!-- <label for="exampleInputEmail1">Email</label> -->
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <!-- <label for="exampleInputPassword1">Password</label> -->
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <a href='/dashboard' class="btn btn-default btn-mega login-btn">Sign In</a>
 
-          <span class='forgot-password'>Forgot your email or password?</span>
-
-          <!-- This link is masquerading as a button -->
-          <a href='/dashboard'>Sign In</button>
-          <a href='#'>Show me what my clients see</a>
+          <div class="checkbox remember-me">
+            <label>
+              <input type="checkbox"> Stay signed in
+            </label>
+          </div>
+          
+          <a href='#' class='forgot-login'>Need help?</a>
+  
         </form>
+      
+        <a href='https://clients.mindbodyonline.com/classic/home?studioid=1' class='client-view-link' target='_blank'>Show me what my clients see</a>
       </div>
     </div>
   </body>

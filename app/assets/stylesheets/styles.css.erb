@@ -74,7 +74,7 @@ a:hover, a:focus {
 	right: 0;
 	right
 	height: 100%;
-	min-width: 400px;
+	min-width: 550px;
 	margin-left: 240px;
 	background-color: #f1f2f7;
 	z-index: 2;
@@ -691,15 +691,6 @@ BOX CONTENT
 }
 
 /* 
-HEADER CLIENT LOOKUP
-----------------------------------------------
-*/
-
-input.form-control {
-	width: 300px;
-}
-
-/* 
 STAFF MEMBER NAMED + DROPDOWN
 ---------------------------------------------
 */
@@ -728,7 +719,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	background: white;
 	border: 1px solid #bbb;
 	border-radius: 2px;
-	box-shadow: 0 0 15px 0 #bbb;
+	box-shadow: 0px 0px 6px 0px rgba(0,0,0,.3);
 	z-index: 1001;
 }
 
@@ -754,6 +745,10 @@ STAFF MEMBER NAMED + DROPDOWN
 	right: 15px;
 	border-width: 6px;
 	border-bottom-color: #fff;
+}
+
+.dropdown ul {
+	margin: 0;
 }
 
 #staff-name:after {
@@ -846,7 +841,7 @@ STAFF MEMBER NAMED + DROPDOWN
 }
 
 #nav-menu.collapsed .menu-link.hover {
-	background: #D0D5D7 !important;
+	background: #D0D5D7;
 }
 
 /* ==========================================================================
@@ -1137,7 +1132,8 @@ header .glance-schedule-icon {
 	text-transform: capitalize;
 	font-size: 1.8em;
 	font-weight: 300;
-	margin: 0 0 0 15px;
+	margin: 0;
+	padding-left: 15px;
 	line-height: 50px;
 }
 
@@ -1397,7 +1393,8 @@ button:focus {
 }
 
 #login-page {
-	background: url(<%= asset_path 'login_yoga.jpg' %>) no-repeat center fixed;
+    /* http://snapwiresnaps.tumblr.com/ - https://s3-us-west-1.amazonaws.com/photos.snapwi.re/Week+21/SW_MarkSkovorodko.jpg */
+	background: url(<%= asset_path 'login_sunset.jpg' %>) no-repeat center fixed;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -1410,21 +1407,21 @@ button:focus {
 	left: 20px;
 	text-transform: uppercase;
 	color: white;
-	font-size: 4em;
+	font-size: 3.8em;
 }
 
 #login-wrapper {
 	position: absolute;
-	height: 550px;
-	width: 450px;
-	top: -150px;
+	height: 320px;
+	width: 420px;
+	top: -250px;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	margin: auto;
 	padding: 30px;
-	background: rgba(255,255,255,.9);
-	box-shadow: 0 0 8px 0 rgba(0,0,0,.6);
+	background: rgba(255,255,255,1);
+	-webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,.6), 0 38px 35px -10px rgba(0,0,0,.3);
 }
 
 #login-page h1 {
@@ -1443,6 +1440,64 @@ button:focus {
 	right: 0;
 	min-height: 580px;
 
+}
+
+#login-wrapper h1 {
+	margin-bottom: 30px;
+}
+
+#login-wrapper input.form-control {
+	height: 42px;
+	font-size: 17px;
+	border-radius: 0px;
+}
+
+#login-wrapper .forgot-login {
+	color: #2980B9;
+	float: right;
+}
+
+.btn-mega {
+	width: 100%;
+	height: 42px;
+	padding: 0;
+	border-radius: 3px;
+}
+
+.login-btn {
+	font-size: 23px;
+	margin-bottom: 4px;
+	line-height: 42px;
+	color: white;
+	background-color: #2980B9;
+	border: 0;
+}
+
+.login-btn:hover {
+	color: white;
+	background-color: #2980B9;
+	border: 0;
+}
+
+.remember-me {
+	float: left;
+	margin: 0;
+}
+
+.client-view-link {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -22px;
+	color: white;
+	font-size: 15px;
+	text-align: center;
+}
+
+.client-view-link:hover {
+	color: white;
+	text-decoration: underline;
 }
 
 /* Extra small devices (phones, less than 768px) */
