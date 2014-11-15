@@ -115,7 +115,7 @@ $(document).ready(function() {
     });
 
     // Sidebar open + close functionality
-    $('.nav-toggle').on('click', function() { 
+    $('.material-design-hamburger').on('click', function() { 
 
         // Nav closed, open it
         if(navClosed) {
@@ -162,6 +162,13 @@ $(document).ready(function() {
                 $('#checkout-wrapper').removeClass('active animation-complete'); 
             });  
         }    
+    });
+
+    $('#nav-menu .sub-links').hover(function() {
+        if(navClosed) {
+            $(this).closest('.nav-link').not('.active')
+                .find('.menu-link').toggleClass('hover');
+        }
     });
 
     $('.glance-schedule-icon').on('click', function() {

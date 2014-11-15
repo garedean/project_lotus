@@ -845,6 +845,10 @@ STAFF MEMBER NAMED + DROPDOWN
 	right: 0;
 }
 
+#nav-menu.collapsed .menu-link.hover {
+	background: #D0D5D7 !important;
+}
+
 /* ==========================================================================
    NAV TOGGLED
    ========================================================================== */ 
@@ -858,7 +862,6 @@ STAFF MEMBER NAMED + DROPDOWN
 	top: 0px;
 	left: -50px;
 	margin: auto; 
-	cursor: pointer;
 	background-color: #f1f2f7;
 }
 
@@ -1256,23 +1259,23 @@ button:focus {
 /* Google Material design toggle */
 
 .wrapper {
-  transition: all 400ms ease-in-out;  
-  padding: 0;
+	transition: all 400ms ease-in-out;  
+	padding: 0;
 }
 
 .material-design-hamburger {
 	height: 100%;
 	width: 100%;
+	-webkit-transform: scale(.8,.8);
 }
 
 .material-design-hamburger button {
-  display: block;
-  height: 100%;
-  width: 100%;
-  border: none;
-  background: none;
-  outline: 0;
-  -webkit-transform: scale(.8,.8);
+	display: block;
+	height: 100%;
+	width: 100%;
+	border: none;
+	background: none;
+	outline: 0;
 }
 
 .material-design-hamburger__icon {
