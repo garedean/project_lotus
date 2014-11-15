@@ -3,7 +3,7 @@ var navClosed               = false,
     glanceMenuClosed        = true,
     nextEventReady          = true,
     pinNav                  = true,
-    transitionSpeed         = 600,
+    transitionSpeed         = 700,
     easingFunction          = 'easeOutQuart',
     currentlySelectedLink   = '',
     pageState               = '',
@@ -237,7 +237,12 @@ function setNavigation() {
                 $(this).closest('ul.sub-links').show();
             }  
             
-            $('.nav-link.has-sub.active').addClass('view-contents down-arrow');              
+            if(navClosed) {
+                $('.nav-link.has-sub.active').addClass('down-arrow'); 
+            }
+            else {
+                $('.nav-link.has-sub.active').addClass('view-contents down-arrow');  
+            }             
         }
     });
 
@@ -296,11 +301,14 @@ function setNavMenu(orientation) {
                 $('#nav-menu').addClass('collapsed');
                 setSubmenuStyles();
             }
+            else {
+                $('.nav-link.has-sub.active').addClass('view-contents down-arrow');
+            }
         });
 
-        // The sole purpose of changing the width of the nav menu and
+        // The purpose of changing the width of the nav menu and
         // not covering it up is to change the width of the section 
-        // dividing lines
+        // dividing lines and retain left and right margin
         $('#nav-menu').animate(
         {
             width: marginLeftVal
@@ -314,8 +322,7 @@ function setNavMenu(orientation) {
 
 function collapseOpenSubmenus() {
 
-    var openMenu       = $('.nav-link.has-sub.view-contents'),
-        activeMenu     = $('.nav-link.has-sub.active');
+    var openMenu       = $('.nav-link.has-sub.view-contents');
 
     // Slide other expanded menus up
     openMenu.find('ul').animate(
@@ -324,16 +331,7 @@ function collapseOpenSubmenus() {
                 (-1 * openMenu.find('.sub-links').height()).toString() + "px"                        
             }, 
                 transitionSpeed, easingFunction
-        ).closest('.nav-link').removeClass('view-contents');
-
-    // Slide other expanded menus up
-    activeMenu.find('ul').animate(
-            {
-                marginTop: 
-                (-1 * activeMenu.find('.sub-links').height()).toString() + "px"                        
-            }, 
-                transitionSpeed, easingFunction
-        ).closest('.nav-link');
+        ).closest('.nav-link').removeClass('view-contents down-arrow');
 }
 
 function expandOpenSubmenus() {
@@ -349,7 +347,6 @@ function expandOpenSubmenus() {
 }
 
 function setSubmenuStyles() {
-    //alert('setSubmenuStyles');
 
     var elements = $('.nav-link.has-sub .sub-links');
 
@@ -358,11 +355,9 @@ function setSubmenuStyles() {
     if(!navClosed) { 
         $.each(elements, function(i, o){
             $(o).css("margin-top", (-1 * $(this).height()).toString() + 'px');
-
-            if($(this).closest('.nav-link').hasClass('view-contents')) {
-                $(this).css("margin-top", '0px');
-            }
         });
+
+        $('.nav-link.view-contents').find('.sub-links').css("margin-top", '0px');
     }
     else {
         $.each(elements, function(i, o){
@@ -389,6 +384,5 @@ function initiateNavToggle() {
         child.remove('material-design-hamburger__icon--from-arrow');
         child.add('material-design-hamburger__icon--to-arrow');
       }
-
     });
 }
