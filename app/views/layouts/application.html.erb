@@ -121,28 +121,32 @@
 		
 		</div>
 
-	<script>
-		// Retrieve last page state from local storage
-		pageState = localStorage.getItem('page-state');
+		<script>
+			// Retrieve last page state from local storage
+			pageState = localStorage.getItem('page-state');
 
-		// If pageState, add the page state as a class to #main-content
-		// If pageState is null, the page will open with nav menu open
-		if(pageState) {
-		    $('#main-content').removeClass();
-		    $('#main-content').addClass(pageState);
+			// If pageState, add the page state as a class to #main-content
+			// If pageState is null, the page will open with nav menu open
+			if(pageState) {
+			    $('#main-content').removeClass();
+			    $('#main-content').addClass(pageState);
 
-		    // On page load, assign nav menu states
-		    if(pageState == 'nav-closed') {
-		        $('#nav-menu').addClass('collapsed');
-		        $('.material-design-hamburger__layer')
-		            .removeClass('material-design-hamburger__icon--to-arrow');
-		        $('.material-design-hamburger__layer')
-		            .addClass('material-design-hamburger__icon--from-arrow');
+			    // On page load, assign nav menu states
+			    if(pageState == 'nav-closed') {
+			        $('#nav-menu').addClass('collapsed');
+			        $('.material-design-hamburger__layer')
+			            .removeClass('material-design-hamburger__icon--to-arrow');
+			        $('.material-design-hamburger__layer')
+			            .addClass('material-design-hamburger__icon--from-arrow');
 
-		        navClosed = true;
-		    }
-		}
-	</script>
+			        navClosed = true;
+			    }
+			} else {
+				localStorage.setItem('page-state', 'nav-open');
+				$('body').removeClass('load');
+				$('body').addClass('fade-in');
+			}
+		</script>
 
 	</body>
 </html>

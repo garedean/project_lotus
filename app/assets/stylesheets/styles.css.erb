@@ -1500,6 +1500,16 @@ button:focus {
 	text-decoration: underline;
 }
 
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+	opacity: 0 !important;
+	-webkit-animation:fadeIn ease-in 1;
+	-webkit-animation-fill-mode:forwards;
+	-webkit-animation-duration:2s;
+}
+
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
