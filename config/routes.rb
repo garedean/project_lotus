@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root  'dashboard#index'
+  root  'login#index'
   match 'dashboard',      to: 'dashboard#index',          via: [:get]
   match 'appointments',   to: 'appointments#index',       via: [:get]
   match 'classes',        to: 'classes#index',            via: [:get]
