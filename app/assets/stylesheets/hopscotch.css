@@ -514,3 +514,13 @@ div.hopscotch-bubble .hopscotch-actions {
   margin: 10px 0 0;
   text-align: right;
 }
+div.hopscotch-content blockquote {
+  font-size: 14px;
+  padding: 5px;
+}
+div.hopscotch-content ul {
+  list-style-type: circle;
+}
+div.hopscotch-content ul li{
+  margin-left: 20px;
+}

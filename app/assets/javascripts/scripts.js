@@ -70,6 +70,11 @@ $(document).ready(function() {
 
      });
 
+     $('a.logout-link').click(function() {
+        hopscotch.endTour([true]);
+        localStorage.removeItem('page-state');
+     });
+
     $('.page-title').text(currentPageTitle);
 
 
@@ -183,51 +188,7 @@ $(document).ready(function() {
     $('#checkout-panel').on('click', function(e) {
         e.stopPropagation();
     });
-
-    // If pinNav is false, opens/closes sidebar when cursor
-    // is within 50 pixels of the sidebar leading edge
-    //openCloseNav();
 });
-
-// Calculates x-axis distance to the #nav-menu sidebar. When the cursor
-// gets within 50 pixels of the sidebar right-side, the navbar opens or 
-// closes. The goal is to anticipate the user's action
-/*function openCloseNav() {
-    var mX, mY, distanceToTarget,
-        $distanceToTarget = $('.menu-debugging .distance-from-target'),
-        $element = $('#nav-menu');
-
-    function calculatedistanceToTarget(elem, mouseX) {
-        return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left + (elem.width())), 2)));
-    }
-
-    $(document).mousemove(function(e) {
-        mX = e.pageX;
-
-        distanceToTarget = calculatedistanceToTarget($element, mX);
-        if (distanceToTarget < 50 && nextEventReady && !pinNav) {
-            nextEventReady = false;
-            navClosed = !navClosed;
-            $('#nav-menu').toggleClass('collapsed');           
-
-            $('.nav-toggle').toggleClass('fa-angle-left')
-            .toggleClass('fa-angle-right');
-
-            $('.nav-link.has-sub.active').find('ul').show();
-
-            $('.collapsed .sub-links:visible').hide();
-            $('#main-content').toggleClass('expanded');
-        }
-
-        if (distanceToTarget > 50) {
-            nextEventReady = true;
-        }
-
-        $distanceToTarget.text("Distance to nav: " + distanceToTarget);
-        
-        updateDebugInfo();
-    });
-};*/
 
 function setNavigation() {
     var path = window.location.pathname;
