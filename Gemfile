@@ -39,6 +39,4 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 #gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
-group :production do
-  gem 'rails_12factor'
-end
+gem 'rails_12factor', group: :production
