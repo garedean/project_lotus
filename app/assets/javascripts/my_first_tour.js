@@ -24,7 +24,7 @@
         arrowOffset: 'center',
         multipage: true,
         onNext: function() {
-          window.location = "http://localhost:3000/dashboard";
+          window.location = "http://project-lotus.herokuapp.com/dashboard";
         }
       },
       {
@@ -38,7 +38,7 @@
         xOffset: "center",
         arrowOffset: 'center',
         showPrevButton: false,
-        delay: 500
+        delay: 2500
       },
       {
         target: "nav-menu",
@@ -110,7 +110,7 @@
         multipage: true,
         onNext: function() {
           $(".nav-link.view-contents a[href='/slo'").click();
-          window.location = "http://localhost:3000/slo";
+          //window.location = "http://localhost:3000/slo";
         }
       },
       {
@@ -187,6 +187,3 @@
     ],
     showPrevButton: true
   };
-
-  // Start the tour!
-/*  hopscotch.startTour(tour);*/

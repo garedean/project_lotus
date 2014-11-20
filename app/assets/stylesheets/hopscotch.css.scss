@@ -243,9 +243,9 @@ div.hopscotch-bubble .hopscotch-nav-button {
   overflow: visible;
   text-decoration: none !important;
   width: auto;
-  padding: 0 10px;
-  height: 26px;
-  line-height: 24px;
+  padding: 0 12px;
+  height: 28px;
+  line-height: 28px;
   font-size: 12px;
   *zoom: 1;
   white-space: nowrap;
@@ -266,9 +266,6 @@ div.hopscotch-bubble .hopscotch-nav-button {
 }
 div.hopscotch-bubble .hopscotch-nav-button:hover {
   *zoom: 1;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 div.hopscotch-bubble .hopscotch-nav-button:active {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
@@ -276,48 +273,28 @@ div.hopscotch-bubble .hopscotch-nav-button:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
 }
 div.hopscotch-bubble .hopscotch-nav-button.next {
-  border-color: #1b5480;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 2px solid #1A5175;
   color: #fff;
   margin: 0 0 0 10px;
   /* HS specific*/
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
-  background-color: #287bbc;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#287bbc', endColorstr='#23639a');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #287bbc), color-stop(100%, #23639a));
-  background-image: -webkit-linear-gradient(top, #287bbc 0%, #23639a 100%);
-  background-image: -moz-linear-gradient(top, #287bbc 0%, #23639a 100%);
-  background-image: -o-linear-gradient(top, #287bbc 0%, #23639a 100%);
-  background-image: linear-gradient(top, #287bbc 0%, #23639a 100%);
+  background-color: #2573A7;
 }
 div.hopscotch-bubble .hopscotch-nav-button.next:hover {
-  background-color: #2672ae;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#2672ae', endColorstr='#1e4f7e');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2672ae), color-stop(100%, #1e4f7e));
-  background-image: -webkit-linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
-  background-image: -moz-linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
-  background-image: -o-linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
-  background-image: linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
+  background-color: #287FB8;
 }
 div.hopscotch-bubble .hopscotch-nav-button.prev {
-  border-color: #a7a7a7;
   color: #444;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  background-color: #f2f2f2;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#f2f2f2', endColorstr='#e9e9e9');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f2f2f2), color-stop(100%, #e9e9e9));
-  background-image: -webkit-linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
-  background-image: -moz-linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
-  background-image: -o-linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
-  background-image: linear-gradient(top, #f2f2f2 0%, #e9e9e9 100%);
+  background-color: #e1e1e1;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 2px solid #bbb;
 }
 div.hopscotch-bubble .hopscotch-nav-button.prev:hover {
   background-color: #e8e8e8;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE8E8E8', endColorstr='#FFA9A9A9');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8e8e8), color-stop(13%, #e3e3e3), color-stop(32%, #d7d7d7), color-stop(71%, #b9b9b9), color-stop(100%, #a9a9a9));
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
-  background-image: -moz-linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
-  background-image: -o-linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
-  background-image: linear-gradient(top, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
 }
 div.hopscotch-bubble {
   background-color: #ffffff;
