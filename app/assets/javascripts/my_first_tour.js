@@ -51,7 +51,7 @@
       {
         target: "nav-menu",
         title: "Everything fits better",
-        content: "Links stack neatly on top of each other and take up consistent space.\
+        content: "Links take up consistent space and stack neatly on top of each other.\
                  Related services are grouped together in submenus that slide in and out of \
                  view, simplifying user experience.",
         placement: "right",
