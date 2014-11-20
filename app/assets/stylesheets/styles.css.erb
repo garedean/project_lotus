@@ -534,7 +534,6 @@ BOX CONTENT
 	background-color: white;
 	border-bottom: 2px solid #e5e5e5;
 	border-right: 2px solid #e5e5e5;
-	height: 600px;
 	overflow: hidden;
 	border-radius: 3px;
 }
@@ -975,6 +974,7 @@ STAFF MEMBER NAMED + DROPDOWN
 #staff-notes {
 	font-size: 1.1em;
 	line-height: 30px;
+	height: 100%;
 }
 
 #schedule-at-a-glance {
@@ -1521,6 +1521,36 @@ button:focus {
 	margin-right: 3px;
 }
 
+.nested-column {
+	margin-bottom: 20px;
+}
+
+.dashboard-widgets {
+	height: 850px;
+}
+
+.dashboard-widgets > div {
+	height: 100%;
+}
+
+.dashboard-widgets .box-content {
+	height: 100%;
+}
+
+.dashboard-widgets .message-board {
+	height: 850px;
+}
+
+.dashboard-widgets .to-do,
+.dashboard-widgets .notepad,
+.dashboard-widgets .notifications {
+	height: 415px;
+}
+
+.parent-column {
+	padding-left: 0;
+	padding-right: 0;
+}
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
