@@ -14,10 +14,10 @@
       },
       {
         target: "login-wrapper",
-        title: "Sign In, Simplified",
+        title: "Sign In, simplified",
         content: "The page you're looking at was inspired by the \
                 <a href='https://www.netflix.com/Login?locale=en-US&nextpage=http%3A%2F%2Fwww.netflix.com%2FYourAccount' target='_blank' class='external-link'>Netflix sign in page.</a>\
-                Removing unnecessary content makes everything easier to process.<br><br>\
+                A dedicated sign in page means the page is much simpler and easy to process.<br><br>\
                 Click 'Next' to sign in.",
         placement: "left",
         yOffset: "center",
@@ -43,7 +43,7 @@
       {
         target: "nav-menu",
         title: "Think vertically",
-        content: "A vertical nav menu offers some great benefits",
+        content: "A vertical nav menu has some nice benefits.",
         placement: "right",
         yOffset: "center",
         arrowOffset: 'center',
@@ -51,9 +51,9 @@
       {
         target: "nav-menu",
         title: "Everything fits better",
-        content: "Links take up consistent space and stack neatly on top of each other.\
-                 Related services are grouped together in submenus that slide in and out of \
-                 view, simplifying user experience.",
+        content: "Vertical navigation allows links to take up consistent space and stack neatly on top of each other.\
+                 It allows grouping items where submenus slide in and out of view, simplifying user experience. \
+                 You can fit more links vertically: goodbye, tabs-spilling-off-the-right-side-of-the-page.",
         placement: "right",
         yOffset: "center",
         arrowOffset: 'center',
@@ -61,7 +61,7 @@
       },
       {
         target: "nav-menu",
-        title: "The Sweet Spot",
+        title: "The sweet spot",
         content: "<blockquote>Web users spend <a href='http://www.nngroup.com/articles/horizontal-attention-leans-left/'\
                   target='_blank' class='external-link'>69% of their time</a> viewing the left half of the page...\
                   Keep navigation all the way to the left. This is where people look to \
@@ -77,7 +77,7 @@
       },
       {
         target: "nav-menu",
-        title: "Intuitive workflows",
+        title: "Quick scanning",
         content: "Left side navigation leads to more natural horizontal eye movements\
                   for end users as they scan the page for information.",
         placement: "right",
