@@ -94,17 +94,11 @@
         delay: 200,
         content: "Animations, even something as simple as scrolling a menu into view, help people \
                   understand how software works at a deeper level. If they're implemented\
-                  in a unique and playful way, they can add wonder and curiosity to an interaction.\
-                  <br><br><strong>Click</strong> 'Next' to navigate to the 'SLO Location' page shown above.",
+                  in a unique and playful way, they can add wonder and curiosity to an interaction.",
         placement: "bottom",
         yOffset: -10,
         xOffset: 3,
-        arrowOffset: 70,
-        multipage: true,
-        onNext: function() {
-          $(".nav-link.view-contents a[href='/slo'").click();
-          window.location = "http://projectlotus.herokuapp.com/slo";
-        }
+        arrowOffset: 70
       },
       {
         target: "nav-toggle-button",
@@ -151,8 +145,8 @@
       },
       {
         target: "glance-schedule-tour-stop",
-        content: "You can 'show' or 'hide' upcoming services with the toggle of a button. Feel\
-                  free to give it a toggle.",
+        content: "You can 'show' or 'hide' upcoming services with the toggle of a button. Go ahead,\
+                  give it a toggle.",
         placement: "left",
         yOffset: -10,
         arrowOffset: 1
@@ -160,8 +154,9 @@
       {
         target: "checkout-btn",
         title: "Check, please!",
-        content: "The 'shopping cart' icon in the upper left of a screen is instantly\
-                  recognizable to most users. Click on it to open up the checkout panel.",
+        content: "The 'shopping cart' icon is instantly recognizable to users, signifying the location where transactions\
+                  are completed. It's placement in the upper right of the screen is widespread and equally familiar.\
+                  Click on the 'shopping cart' to open up the checkout panel.",
         placement: "left",
         yOffset: 3,
         xOffset: 15,
@@ -171,8 +166,7 @@
       },
       {
         target: "checkout-panel",
-        content: "The checkout panel slides into view from any page your on, cutting\
-                  down on page loads.",
+        content: "The checkout panel slides in and out of view, reducing page loads.",
         placement: "left",
         yOffset: "center",
         arrowOffset: "center",
