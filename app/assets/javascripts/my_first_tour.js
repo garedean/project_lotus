@@ -126,10 +126,7 @@
         placement: "top",
         yOffset: 3,
         xOffset: 3,
-        arrowOffset: 1,
-        onNext: function() {
-          $('.nav-link.active').find('ul').fadeOut(500);
-        }
+        arrowOffset: 1
       },
       {
         target: "nav-toggle-button",
