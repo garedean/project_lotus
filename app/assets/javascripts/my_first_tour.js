@@ -77,15 +77,6 @@
         arrowOffset: 'center',
       },
       {
-        target: "nav-menu",
-        title: "Quick scanning",
-        content: "Left side navigation leads to more natural horizontal eye movements\
-                  for end users as they scan the page for information.",
-        placement: "right",
-        yOffset: "center",
-        arrowOffset: 'center',
-      },
-      {
         target: "business-tour-stop",
         title: "Peek-a-boo",
         content: "Related services are tucked away under a single menu link.<br><br> \
@@ -112,7 +103,7 @@
         multipage: true,
         onNext: function() {
           $(".nav-link.view-contents a[href='/slo'").click();
-          window.location = "http://localhost:3000/slo";
+          window.location = "http://projectlotus.herokuapp.com/slo";
         }
       },
       {
