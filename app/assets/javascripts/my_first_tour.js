@@ -6,7 +6,7 @@
         target: "login-wrapper",
         title: "Welcome to Project Lotus!",
         content: "This project imagines what a future version of our core software might look\
-                 like. This is a quick tour to show you around.",
+                 like. This quick tour will show you around.",
         placement: "left",
         yOffset: "center",
         arrowOffset: 'center',
@@ -17,7 +17,8 @@
         title: "Sign In, simplified",
         content: "The page you're looking at was inspired by the \
                 <a href='https://www.netflix.com/Login?locale=en-US&nextpage=http%3A%2F%2Fwww.netflix.com%2FYourAccount' target='_blank' class='external-link'>Netflix sign in page.</a>\
-                A dedicated sign in page means the page is much simpler and easy to process.<br><br>\
+                A dedicated sign in page means everything not related to 'signing in' can be removed, resulting\
+                in a more zen-like experience.<br><br>\
                 Click 'Next' to sign in.",
         placement: "left",
         yOffset: "center",
