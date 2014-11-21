@@ -25,7 +25,7 @@
         arrowOffset: 'center',
         multipage: true,
         onNext: function() {
-          window.location = "http://project-lotus.herokuapp.com/dashboard";
+          window.location = "/dashboard";
         }
       },
       {
