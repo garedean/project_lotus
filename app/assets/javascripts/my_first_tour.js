@@ -9,7 +9,7 @@
                  like. This quick tour will show you around.",
         placement: "left",
         yOffset: "center",
-        arrowOffset: 'center',
+        arrowOffset: 'center', 
         delay: 300
       },
       {
