@@ -110,7 +110,7 @@
         nextOnTargetClick: true,
         showNextButton: false,
         onNext: function() {
-          $('.nav-link.active').find('ul').delay(500).fadeIn(600);
+          $('.nav-link').find('.appointments.sub-links').delay(500).fadeIn(600);
         }
       },
       {
