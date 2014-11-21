@@ -15,7 +15,7 @@
       {
         target: "login-wrapper",
         title: "Sign In, simplified",
-        content: "tThe page you're looking at was inspired by the \
+        content: "The page you're looking at was inspired by the \
                 <a href='https://www.netflix.com/Login?locale=en-US&nextpage=http%3A%2F%2Fwww.netflix.com%2FYourAccount' target='_blank' class='external-link'>Netflix sign in page.</a>\
                 A dedicated sign in page means everything not related to 'signing in' can be removed, resulting\
                 in a more zen-like experience.<br><br>\
