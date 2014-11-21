@@ -33,7 +33,7 @@
         title: "Responsive design. So hot right now.",
         content: "Project Lotus is built on Bootstrap 3,\
                   allowing for responsive design from iPad landscape view \
-                  and up. <br><br>Resize your browser window to check it out.",
+                  and up.<br><br>Resize your browser window to check it out.",
         placement: "bottom",
         width: 350,
         xOffset: "center",
@@ -52,9 +52,9 @@
       {
         target: "nav-menu",
         title: "Everything fits better",
-        content: "Vertical navigation allows links to take up consistent space and stack neatly on top of each other.\
-                 It allows grouping items where submenus slide in and out of view, simplifying user experience. \
-                 You can fit more links vertically: goodbye, tabs-spilling-off-the-right-side-of-the-page.",
+        content: "-Links take up consistent space and stack neatly on top of each other.<br><br>\
+                  -Submenus that slide in and out of view group related links, simplifying user experience.<br><br> \
+                  -You can fit more links vertically: goodbye, tabs-spilling-off-the-right-side-of-the-page.",
         placement: "right",
         yOffset: "center",
         arrowOffset: 'center',
@@ -99,9 +99,10 @@
       },
       {
         target: "business-tour-stop",
-        title: "",
+        title: "Catch that?",
         delay: 200,
-        content: "Animations help people understand how things works at a deeper level. If they're implemented\
+        content: "Animations, even something as simple as scrolling a menu into view, help people \
+                  understand how software works at a deeper level. If they're implemented\
                   in a unique and playful way, they can add wonder and curiosity to an interaction.\
                   <br><br><strong>Click</strong> 'Next' to navigate to the 'SLO Location' page shown above.",
         placement: "bottom",
@@ -111,7 +112,7 @@
         multipage: true,
         onNext: function() {
           $(".nav-link.view-contents a[href='/slo'").click();
-          //window.location = "http://localhost:3000/slo";
+          window.location = "http://localhost:3000/slo";
         }
       },
       {
@@ -122,29 +123,47 @@
         yOffset: -10,
         xOffset: -8,
         nextOnTargetClick: true,
-        showNextButton: false
+        showNextButton: false,
+        onNext: function() {
+          $('.nav-link.active').find('ul').delay(500).fadeIn(600);
+        }
       },
       {
         target: "business-tour-stop",
-        title: "Hover to View",
-        content: "With the nav collapsed, hover over a menu item to see its submenu options appear.",
+        title: "Hover-ability",
+        content: "This is what it looks like when you hover over a link when the nav menu is collapsed.",
         placement: "top",
         yOffset: 3,
         xOffset: 3,
-        arrowOffset: 1
+        arrowOffset: 1,
+        onNext: function() {
+          $('.nav-link.active').find('ul').fadeOut(500);
+        }
+      },
+      {
+        target: "nav-toggle-button",
+        title: "Megatron, transform!",
+        content: "<strong>Click</strong> on the 'menu' to the left to expand the nav menu.",
+        placement: "right",
+        yOffset: 5,
+        xOffset: -5,
+        arrowOffset: 1,
+        nextOnTargetClick: true,
+        showNextButton: false
       },
       {
         target: "glance-menu",
-        title: "Upcoming Services",
-        content: "With the 'upcoming services' widget, staff members can easily\
-                  see who's coming in next simply by looking at the top of the list.",
+        title: "People love widgets",
+        content: "With the 'Upcoming Services' widget, staff members can easily\
+                  see what service is coming up. Services get updated every 5 minutes,\
+                  so it's always up to day with the next services appearing at the top. ",
         placement: "left", 
         yOffset: "center",
         arrowOffset: "center"
       },
       {
         target: "glance-schedule-tour-stop",
-        content: "You can 'show' or 'hide' this widget with the toggle of a button. Feel\
+        content: "You can 'show' or 'hide' upcoming services with the toggle of a button. Feel\
                   free to give it a toggle.",
         placement: "left",
         yOffset: -10,
@@ -152,7 +171,7 @@
       },
       {
         target: "checkout-btn",
-        title: "Check, please",
+        title: "Check, please!",
         content: "The 'shopping cart' icon in the upper left of a screen is instantly\
                   recognizable to most users. Click on it to open up the checkout panel.",
         placement: "left",
@@ -174,9 +193,9 @@
       {
         target: "top-bar",
         title: "All done!",
-        content: "Feel free to cruise around and click on things! You can also\
-                  click the staff member's name in the upper right, then click 'Log Out' to\
-                  restart the tour.",
+        content: "Feel free to cruise around and click on things! If you'd like to restart\
+                  the tour, click the staff member's name (Alyx Vance) in the upper right, \
+                  then click 'Log Out'.",
         placement: "bottom",
         width: 350,
         xOffset: "center",
