@@ -6,7 +6,8 @@
         target: "login-wrapper",
         title: "Welcome to Project Lotus!",
         content: "This project imagines what a future version of our core software might look\
-                 like. This quick tour will show you around.",
+                 like. This quick tour will show you around.<br><br>Once logged in, you can restart this tour by clicking\
+                 the staff member's name in the upper right, then 'Log out.'",
         placement: "left",
         yOffset: "center",
         arrowOffset: 'center', 
@@ -137,8 +138,8 @@
         target: "glance-menu",
         title: "People love widgets",
         content: "With the 'Upcoming Services' widget, staff members can easily\
-                  see what service is coming up. Services get updated every 5 minutes,\
-                  so it's always up to day with the next services appearing at the top. ",
+                  see what service is coming up. Services are updated every 5 minutes\
+                  with the next services appearing at top. ",
         placement: "left", 
         yOffset: "center",
         arrowOffset: "center"
@@ -154,9 +155,9 @@
       {
         target: "checkout-btn",
         title: "Check, please!",
-        content: "The 'shopping cart' icon is instantly recognizable to users, signifying the location where transactions\
-                  are completed. It's placement in the upper right of the screen is widespread and equally familiar.\
-                  Click on the 'shopping cart' to open up the checkout panel.",
+        content: "The 'shopping cart' icon is instantly recognizable to users, signifying <em>the location where transactions\
+                  are completed.</em> Its placement in the upper right of the screen is widespread and familiar.\
+                  <br><br><strong>Click</strong> on the 'shopping cart' to open up the checkout panel.",
         placement: "left",
         yOffset: 3,
         xOffset: 15,
