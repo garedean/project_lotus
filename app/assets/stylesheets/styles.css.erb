@@ -835,7 +835,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	top: 0px;
 	bottom: 0px;
 	left: 0;
-	right: 0;
+	right: 18px;
 }
 
 #nav-menu.collapsed .menu-link.hover {
@@ -993,15 +993,13 @@ STAFF MEMBER NAMED + DROPDOWN
 }
 
 #glance-menu {
-	display: none;
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: -222px;
 	bottom: 0;
 	width: 240px;
 	background-color: #fbfbfb;
 	border-top: 1px solid #ccc;
-	overflow-y: scroll;
 }
 
 #glance-menu::-webkit-scrollbar {
@@ -1030,6 +1028,23 @@ STAFF MEMBER NAMED + DROPDOWN
 
 #glance-menu .content .date-row:first-of-type {
 	margin-top: 0;
+}
+
+#glance-menu .content {
+	height: 100%;
+	width: 222px;
+	float: left;
+	overflow-y: scroll;
+}
+
+#glance-menu .toggle-right,
+#glance-menu.open .toggle-left {
+	display: none;
+}
+
+#glance-menu.open .toggle-right,
+#glance-menu .toggle-left {
+	display: block;
 }
 
 #main-wrapper {
@@ -1198,7 +1213,7 @@ header .glance-schedule-icon {
 }
 
 .content-frame-wrapper.glance-view-visible #glance-menu {
-	display: block;
+	right: 0;
 }
 
 button:focus {
@@ -1548,6 +1563,23 @@ button:focus {
 .parent-column {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.glance-view-toggle {
+	height: 100%;
+	float: left;
+	width: 18px;
+	background-color: #e1e1e1;
+	border-top: 0;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	transition: background .15s;
+}
+
+.glance-view-toggle:hover {
+	background-color: #d5d5d5;
+	transition: background .15s;
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }

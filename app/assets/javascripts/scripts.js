@@ -178,9 +178,10 @@ $(document).ready(function() {
         }
     });
 
-    $('.glance-schedule-icon').on('click', function() {
+    $('.glance-schedule-icon, .glance-view-toggle').on('click', function() {
         $('#main-content .content-frame-wrapper').toggleClass('glance-view-visible');
-        $('.glance-schedule-icon').toggleClass('active');
+        $('#glance-menu').toggleClass('open');
+        //$('.glance-schedule-icon').toggleClass('active');
     });
 
     // Prevent clicks originating in #checkout-panel from

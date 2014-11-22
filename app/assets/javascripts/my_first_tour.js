@@ -121,7 +121,10 @@
         placement: "top",
         yOffset: 3,
         xOffset: 3,
-        arrowOffset: 1
+        arrowOffset: 1,
+        onNext: function() {
+          $('.nav-link').find('.appointments.sub-links').delay(500).fadeOut(400);
+        }
       },
       {
         target: "nav-toggle-button",
@@ -136,21 +139,33 @@
       },
       {
         target: "glance-menu",
-        title: "People love widgets",
+        title: "Upcoming Services",
         content: "With the 'Upcoming Services' widget, staff members can easily\
-                  see what service is coming up. Services are updated every 5 minutes\
-                  with the next services appearing at top. ",
+                  see what service is coming up next. Services are updated every 5 minutes\
+                  with the next services appearing at top.",
         placement: "left", 
         yOffset: "center",
         arrowOffset: "center"
       },
       {
-        target: "glance-schedule-tour-stop",
-        content: "You can 'show' or 'hide' upcoming services with the toggle of a button. Go ahead,\
-                  give it a toggle.",
-        placement: "left",
-        yOffset: -10,
-        arrowOffset: 1
+        target: "glance-menu",
+        title: "Hide it",
+        content: "<strong>Click</strong> on the arrow to the right to hide Upcoming Services.",
+        placement: "left", 
+        yOffset: "center",
+        arrowOffset: "center",
+        nextOnTargetClick: true,
+        showNextButton: false
+      },
+      {
+        target: "glance-menu",
+        title: "Show it",
+        content: "<strong>Click</strong> again to open it back up.",
+        placement: "left", 
+        yOffset: "center",
+        arrowOffset: "center",
+        nextOnTargetClick: true,
+        showNextButton: false
       },
       {
         target: "checkout-btn",
@@ -184,9 +199,11 @@
         xOffset: "center",
         arrowOffset: 'center',
         showPrevButton: false,
-        delay: 500
+        delay: 500,
+        onNext: function() {
+          location.reload();
+        }
       },
-
     ],
     showPrevButton: true
   };
