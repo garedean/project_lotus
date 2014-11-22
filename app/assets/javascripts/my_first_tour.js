@@ -18,7 +18,7 @@
         title: "Sign In, simplified",
         content: "The page you're looking at was inspired by the \
                 <a href='https://www.netflix.com/Login?locale=en-US&nextpage=http%3A%2F%2Fwww.netflix.com%2FYourAccount' target='_blank' class='external-link'>Netflix sign in page.</a>\
-                A dedicated sign in page means everything not related to 'signing in' can be removed, resulting\
+                <br><br>A dedicated sign in page means everything not related to 'signing in' can be removed, resulting\
                 in a more zen-like experience.<br><br>\
                 Click 'Next' to sign in.",
         placement: "left",
@@ -45,17 +45,10 @@
       {
         target: "nav-menu",
         title: "Think vertically",
-        content: "A vertical nav menu has some nice benefits.",
-        placement: "right",
-        yOffset: "center",
-        arrowOffset: 'center',
-      },
-      {
-        target: "nav-menu",
-        title: "Everything fits better",
-        content: "-Links take up consistent space and stack neatly on top of each other.<br><br>\
-                  -Submenus that slide in and out of view group related links, simplifying user experience.<br><br> \
-                  -You can fit more links vertically: goodbye, tabs-spilling-off-the-right-side-of-the-page.",
+        content: "A vertical nav menu offers some unique benefits:<br><br>\
+                  <ul><li>Links take up consistent space and stack neatly on top of each other.</li>\
+                  <li>More links fit vertically than horizontally: goodbye, tabs-spilling-off-the-right-side-of-the-page.</li>\
+                  <li>Submenus are implemented in a more intuitive fashion, simplifying user experience.</li>",
         placement: "right",
         yOffset: "center",
         arrowOffset: 'center',
@@ -94,7 +87,7 @@
         title: "Catch that?",
         delay: 200,
         content: "Animations, even something as simple as scrolling a menu into view, help people \
-                  understand how software works at a deeper level. If they're implemented\
+                  understand how software works at a deeper level. <br><br>If they're implemented\
                   in a unique and playful way, they can add wonder and curiosity to an interaction.",
         placement: "bottom",
         yOffset: -10,
@@ -141,8 +134,7 @@
         target: "glance-menu",
         title: "Upcoming Services",
         content: "With the 'Upcoming Services' widget, staff members can easily\
-                  see what service is coming up next. Services are updated every 5 minutes\
-                  with the next services appearing at top.",
+                  see what service is coming up next.",
         placement: "left", 
         yOffset: "center",
         arrowOffset: "center"
@@ -171,7 +163,7 @@
         target: "checkout-btn",
         title: "Check, please!",
         content: "The 'shopping cart' icon is instantly recognizable to users, signifying <em>the location where transactions\
-                  are completed.</em> Its placement in the upper right of the screen is widespread and familiar.\
+                  are completed.</em> The 'upper right' placement is widespread and familiar to users.\
                   <br><br><strong>Click</strong> on the 'shopping cart' to open up the checkout panel.",
         placement: "left",
         yOffset: 3,

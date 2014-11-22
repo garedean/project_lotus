@@ -65,9 +65,6 @@ $(document).ready(function() {
 
         $('.nav-link.active').removeClass('active');
         $(this).closest('.nav-link').addClass('active');
-
-        //$('.nav-link.has-sub').removeClass('down-arrow');
-
      });
 
      $('a.logout-link').click(function() {
@@ -84,7 +81,9 @@ $(document).ready(function() {
         // the currently open menu
         if(!navClosed && !$(this).hasClass('view-contents')) {
 
-            collapseOpenSubmenus();
+            if($(this).hasClass('has-sub')) {
+                collapseOpenSubmenus();
+            }
 
             if($(this).hasClass('has-sub')) { 
 
