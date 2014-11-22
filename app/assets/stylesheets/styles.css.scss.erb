@@ -32,7 +32,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #777;
+    background: #bbb;
 }
 
 ::-webkit-scrollbar-corner {
@@ -1405,7 +1405,6 @@ button:focus {
 }
 
 #login-page {
-    /* http://snapwiresnaps.tumblr.com/ - https://s3-us-west-1.amazonaws.com/photos.snapwi.re/Week+21/SW_MarkSkovorodko.jpg */
 	background: url(<%= asset_path 'login_sunset.jpg' %>) no-repeat center fixed;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -1550,16 +1549,6 @@ button:focus {
 	height: 100%;
 }
 
-.dashboard-widgets .message-board {
-	height: 850px;
-}
-
-.dashboard-widgets .to-do,
-.dashboard-widgets .notepad,
-.dashboard-widgets .notifications {
-	height: 415px;
-}
-
 .parent-column {
 	padding-left: 0;
 	padding-right: 0;
@@ -1574,7 +1563,6 @@ button:focus {
 	border-bottom: 0;
 	border-left: 0;
 	border-right: 0;
-	transition: background .2s;
 }
 
 #glance-menu.open .glance-view-toggle {
@@ -1591,6 +1579,11 @@ button:focus {
 	background-color: #ccc;
 	transition: background .2s;
 }
+
+.widget {
+	height: 250px;
+}
+
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 .fade-in {
@@ -1613,11 +1606,25 @@ button:focus {
 	#checkout-panel {
 		width: 60%;
 	}
+
+	.lg-widget {
+		height: 850px;
+	}
+	
+	.sm-widget,
+	.md-widget {
+		height: 270px;
+	}
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 	#checkout-panel {
 		width: 35%;
+	}
+
+	.sm-widget,
+	.md-widget {
+		height: 415px;
 	}
 }
