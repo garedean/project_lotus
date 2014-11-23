@@ -40,7 +40,7 @@
         xOffset: "center",
         arrowOffset: 'center',
         showPrevButton: false,
-        delay: 2500
+        delay: 2250
       },
       {
         target: "nav-menu",
@@ -48,7 +48,7 @@
         content: "A vertical nav menu offers some unique benefits:<br><br>\
                   <ul><li>Links take up consistent space and stack neatly on top of each other.</li>\
                   <li>More links fit vertically than horizontally: goodbye, tabs-spilling-off-the-right-side-of-the-page.</li>\
-                  <li>Submenus are implemented in a more intuitive fashion, simplifying user experience.</li>",
+                  <li>Submenus group related services, simplifying user experience.</li>",
         placement: "right",
         yOffset: "center",
         arrowOffset: 'center',
@@ -72,9 +72,8 @@
       },
       {
         target: "business-tour-stop",
-        title: "Peek-a-boo",
-        content: "Related services are tucked away under a single menu link.<br><br> \
-                <strong>Click</strong> on 'Appointments' above to see what's inside.",
+        title: "Menus",
+        content: "<strong>Click</strong> on 'Appointments' above to view submenu contents.",
         placement: "bottom",
         yOffset: -5,
         xOffset: 3,
@@ -84,7 +83,7 @@
       },
       {
         target: "business-tour-stop",
-        title: "Catch that?",
+        title: "Peek-a-boo",
         delay: 200,
         content: "Animations, even something as simple as scrolling a menu into view, help people \
                   understand how software works at a deeper level. <br><br>If they're implemented\
@@ -104,7 +103,7 @@
         nextOnTargetClick: true,
         showNextButton: false,
         onNext: function() {
-          $('.nav-link').find('.appointments.sub-links').delay(500).fadeIn(600);
+          $('.nav-link').find('.appointments.sub-links').delay(100).fadeIn(700);
         }
       },
       {
@@ -116,7 +115,7 @@
         xOffset: 3,
         arrowOffset: 1,
         onNext: function() {
-          $('.nav-link').find('.appointments.sub-links').delay(500).fadeOut(400);
+          $('.nav-link').find('.appointments.sub-links').fadeOut(400);
         }
       },
       {
@@ -134,15 +133,8 @@
         target: "glance-menu",
         title: "Upcoming Services",
         content: "With the 'Upcoming Services' widget, staff members can easily\
-                  see what service is coming up next.",
-        placement: "left", 
-        yOffset: "center",
-        arrowOffset: "center"
-      },
-      {
-        target: "glance-menu",
-        title: "Hide it",
-        content: "<strong>Click</strong> on the arrow to the right to hide Upcoming Services.",
+                  see what service is coming up next.<br><br> <strong>Click</strong>\
+                  the little arrow just to the right to hide Upcoming Services.",
         placement: "left", 
         yOffset: "center",
         arrowOffset: "center",
@@ -151,7 +143,6 @@
       },
       {
         target: "glance-menu",
-        title: "Show it",
         content: "<strong>Click</strong> again to open it back up.",
         placement: "left", 
         yOffset: "center",
@@ -162,9 +153,9 @@
       {
         target: "checkout-btn",
         title: "Check, please!",
-        content: "The 'shopping cart' icon is instantly recognizable to users, signifying <em>the location where transactions\
-                  are completed.</em> The 'upper right' placement is widespread and familiar to users.\
-                  <br><br><strong>Click</strong> on the 'shopping cart' to open up the checkout panel.",
+        content: "The 'shopping cart' icon and its placement in the upper right of a web page is instantly \
+                  recognizable to most users, signifying <em>the location where transactions\
+                  are completed.</em><br><br><strong>Click</strong> on the 'shopping cart' to open up the checkout panel.",
         placement: "left",
         yOffset: 3,
         xOffset: 15,
@@ -178,7 +169,7 @@
         placement: "left",
         yOffset: "center",
         arrowOffset: "center",
-        delay: 300
+        delay: 200
       },
       {
         target: "top-bar",
@@ -191,11 +182,12 @@
         xOffset: "center",
         arrowOffset: 'center',
         showPrevButton: false,
-        delay: 500,
-        onNext: function() {
-          location.reload();
-        }
+        delay: 300
       },
     ],
-    showPrevButton: true
+    showPrevButton: true,
+    onEnd: function() {
+          tourCompleted = true;
+          location.reload();
+    }
   };
