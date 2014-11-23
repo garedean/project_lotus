@@ -121,7 +121,7 @@
       {
         target: "nav-toggle-button",
         title: "Megatron, transform!",
-        content: "<strong>Click</strong> on the 'menu' to the left to expand the nav menu.",
+        content: "<strong>Click</strong> on the 'menu icon' to the left to expand the nav menu.",
         placement: "right",
         yOffset: 5,
         xOffset: -5,
@@ -134,7 +134,7 @@
         title: "Upcoming Services",
         content: "With the 'Upcoming Services' widget, staff members can easily\
                   see what service is coming up next.<br><br> <strong>Click</strong>\
-                  the little arrow just to the right to hide Upcoming Services.",
+                  the arrow to the right to hide Upcoming Services.",
         placement: "left", 
         yOffset: "center",
         arrowOffset: "center",
