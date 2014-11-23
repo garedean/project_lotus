@@ -58,7 +58,7 @@ body {
 }
 
 a, span, div {
-	color: #666;
+	color: #555;
 }
 
 a:hover, a:focus {
@@ -224,6 +224,7 @@ STAFF USER PANEL
 #nav-menu {
 	height: 100%;
 	width: 240px;
+	font-family: 'Ubuntu', sans-serif;
 	background-color: #e1e5e7;
 	box-sizing: border-box;
 	z-index: 1;
@@ -287,6 +288,7 @@ STAFF USER PANEL
   color: white;
   box-sizing: border-box;
   background: #2980B9;
+  font-weight: 400;
 }
 
 #nav-menu .nav-link:hover {
@@ -299,7 +301,8 @@ STAFF USER PANEL
 }
 
 #nav-menu .nav-link span {
-	font-size: 1em;
+	font-size: 1.1em;
+	font-weight: 300
 }
 
 #nav-menu #link-list a:hover,
@@ -357,6 +360,7 @@ STAFF USER PANEL
 	padding-left: 51px;
 	line-height: 35px;
 	font-size: 14px;
+	color: #777
 }
 
 .nav-link > ul > li:hover {
@@ -552,26 +556,26 @@ BOX CONTENT
 .sub-links li:first-child {
 	display: none;
 }
+<!-- 
+ .collapsed .sub-links li:first-child {
+ 	display: block;
+ 	background-color: #D0D5D7;
+ 	color: #0173c5;
+ 	font-weight: 400;
+ 	font-size: 1.1em;
+ 	line-height: 40px;
+ 	border-top-right-radius: 2px;
+ 	border-bottom-right-radius: 2px;
+ } --> 
 
-.collapsed .sub-links li:first-child {
+#nav-menu.collapsed .sub-links li:first-child > a,
+#nav-menu.collapsed .sub-links li:first-child > span {
 	display: block;
 	background-color: #D0D5D7;
 	color: #0173c5;
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 1.1em;
-	line-height: 39px;
-	border-top-right-radius: 2px;
-	border-bottom-right-radius: 2px;
-} 
-
-.collapsed .sub-links li:first-child > a,
-.collapsed .sub-links li:first-child > span {
-	display: block;
-	background-color: #D0D5D7;
-	color: #0173c5;
-	font-weight: 600;
-	font-size: 1em;
-	line-height: 39px;
+	line-height: 40px;
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 }
