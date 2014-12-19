@@ -6,7 +6,7 @@
         target: "login-wrapper",
         title: "Welcome to Project Lotus!",
         content: "This project imagines what a future version of our core software might look\
-                 like. This quick tour will show you around.<br><br>Once logged in, you can restart this tour by clicking\
+                 like.<br><br>Once logged in, you can restart this tour by clicking\
                  the staff member's name in the upper right, then 'Log out.'",
         placement: "left",
         yOffset: "center",
@@ -32,11 +32,11 @@
       {
         target: "top-bar",
         title: "Responsive design. So hot right now.",
-        content: "Project Lotus is built on Bootstrap 3,\
-                  allowing for responsive design from iPad landscape view \
-                  and up.<br><br>Resize your browser window to check it out.",
+        content: "Project Lotus is built on Bootstrap 3 and features response design: \
+                 the page layout changes to best fit the user's screen size. \
+                 <br><br>Resize your browser window to check it out.",
         placement: "bottom",
-        width: 350,
+        width: 400,
         xOffset: "center",
         arrowOffset: 'center',
         showPrevButton: false,
@@ -45,7 +45,7 @@
       {
         target: "nav-menu",
         title: "Think vertically",
-        content: "A vertical nav menu offers some unique benefits:<br><br>\
+        content: "A vertical nav menu offers some unique benefits to our users:<br><br>\
                   <ul><li>Links take up consistent space and stack neatly on top of each other.</li>\
                   <li>More links fit vertically than horizontally: goodbye, tabs-spilling-off-the-right-side-of-the-page.</li>\
                   <li>Submenus group related services, simplifying user experience.</li>",
@@ -56,7 +56,7 @@
       },
       {
         target: "nav-menu",
-        title: "The sweet spot",
+        title: "Left side, best side",
         content: "<blockquote>Web users spend <a href='http://www.nngroup.com/articles/horizontal-attention-leans-left/'\
                   target='_blank' class='external-link'>69% of their time</a> viewing the left half of the page...\
                   Keep navigation all the way to the left. This is where people look to \
@@ -73,7 +73,7 @@
       {
         target: "business-tour-stop",
         title: "Menus",
-        content: "<strong>Click</strong> on 'Appointments' above to view submenu contents.",
+        content: "<strong>Click</strong> on the 'Appointments' link above to see what's nested under it.",
         placement: "bottom",
         yOffset: -5,
         xOffset: 3,
@@ -103,7 +103,8 @@
         nextOnTargetClick: true,
         showNextButton: false,
         onNext: function() {
-          $('.nav-link').find('.appointments.sub-links').delay(100).fadeIn(700);
+          $('.nav-link').find('.appointments.sub-links').delay(200).fadeIn();
+          $('#business-tour-stop .menu-link').css("background-color", "#D0D5D7");
         }
       },
       {
@@ -115,7 +116,8 @@
         xOffset: 3,
         arrowOffset: 1,
         onNext: function() {
-          $('.nav-link').find('.appointments.sub-links').fadeOut(400);
+          $('#business-tour-stop .menu-link').css("background-color", "initial");
+          $('.nav-link').find('.appointments.sub-links').fadeOut();
         }
       },
       {
