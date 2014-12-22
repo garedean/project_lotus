@@ -7,16 +7,9 @@
       </div>           
     </li>
 
-    <!--     <li class='nav-link'>
-      <%= link_to 'test', data:{'display-title'=>'Dashboard'}  do %>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
-        <span class='title'>Upcoming Services</span><br>
-      <% end %>
-    </li> -->
-
     <li class='nav-link'>
       <%= link_to dashboard_path, data:{'display-title'=>'Dashboard'}  do %>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <i class='fa fa-tachometer fa-lg nav-icon'></i>
         <span class='title'>dashboard</span>
       <% end %>
       <ul class='sub-links dashboard'>  
@@ -28,7 +21,7 @@
 
     <li class='nav-link'>
       <%= link_to clients_path, data:{'display-title'=>'Clients'}  do %>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <i class='fa fa-search fa-lg nav-icon'></i>
         <span class='title'>clients</span>
       <% end %>
       <ul class='sub-links clients'>  
@@ -40,7 +33,7 @@
 
     <li class='nav-link'>
       <%= link_to classes_path, data:{'display-title'=>'Class Schedule'} do %>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <i class='fa fa-heart fa-lg nav-icon'></i>
         <span class='title'>classes</span>
       <% end %>
       <ul class='sub-links classes'>  
@@ -52,7 +45,7 @@
 
     <li class='nav-link'>
       <%= link_to workshops_path, data:{'display-title'=>'Workshops'}  do %>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <i class='fa fa-graduation-cap fa-lg nav-icon'></i>
         <span class='title'>workshops</span>
       <% end %>
       <ul class='sub-links workshops'>  
@@ -89,7 +82,7 @@
 
     <li class='nav-link'>
       <%= link_to staff_path, data:{'display-title'=>'Staff'}  do %>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <i class='fa fa-users fa-lg nav-icon'></i>
         <span class='title'>staff</span>
       <% end %>
       <ul class='sub-links staff'>  
@@ -101,7 +94,7 @@
 
     <li class='nav-link'>
       <%= link_to services_path, data:{'display-title'=>'Services'}  do %>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <i class='fa fa-rocket fa-lg nav-icon'></i>
         <span class='title'>services</span>
       <% end %>
       <ul class='sub-links services'>  
@@ -113,7 +106,7 @@
 
     <li class='nav-link'>
       <%= link_to products_path, data:{'display-title'=>'Products'}  do %>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <i class="fa fa-tags fa-lg nav-icon"></i>
         <span class='title'>products</span>
       <% end %>
       <ul class='sub-links products'>  
@@ -125,7 +118,7 @@
 
     <li class='nav-link has-sub'>  
       <div class='menu-link'>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
+        <i class='fa fa-home fa-lg nav-icon'></i>
         <span class='title'>my business</span>
       </div>       
       <ul class='sub-links'>
@@ -151,12 +144,12 @@
 
     <li class='nav-link has-sub business'>       
       <div class='menu-link'>
-        <i class='fa fa-calendar fa-lg nav-icon'></i>
-        <span class='title'>MB admin</span>
+        <i class='fa fa-flash fa-lg nav-icon'></i>
+        <span class='title'>Admins Only</span>
       </div>
       <ul class='sub-links'>
         <li>
-          <span class="title">MB admin</span>
+          <span class="title">Admins Only</span>
         </li>
         <li>
           <%= link_to("Payment Processing", admin_payment_processing_path, 
