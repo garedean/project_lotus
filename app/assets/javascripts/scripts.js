@@ -217,7 +217,7 @@ function setNavigation() {
     });
 
     if(navClosed && openSubmenuOnLoad) {
-        $('#nav-menu.collapsed .nav-link.active .sub-links').addClass('hover');     
+        $('#nav-menu.collapsed .nav-link.has-sub.active .sub-links').addClass('hover');     
     }
 }
 

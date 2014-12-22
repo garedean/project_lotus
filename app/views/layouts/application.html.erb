@@ -102,12 +102,13 @@ Hand-crafted quality by
 			// If pageState, add the page state as a class to #main-content
 			// If pageState is null, the page will open with nav menu open
 			if(pageState) {
+				openSubmenuOnLoad = true;
 			    $('#main-content').removeClass();
 			    $('#main-content').addClass(pageState);
 
 			    // On page load, assign nav menu states
 			    if(pageState == 'nav-closed') {
-			        $('#nav-menu').addClass('collapsed');
+			        $('#nav-menu').addClass('collapsed').css("width", "50px")
 			        $('.material-design-hamburger__layer')
 			            .removeClass('material-design-hamburger__icon--to-arrow');
 			        $('.material-design-hamburger__layer')
