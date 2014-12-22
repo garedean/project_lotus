@@ -120,7 +120,7 @@
         target: "glance-menu",
         title: "Upcoming Services",
         content: "The 'Upcoming Services' widget allows staff to quickly and easily see \
-                  what client is coming in next.",
+                  which client is coming in next.",
         placement: "left", 
         yOffset: "center",
         arrowOffset: "center",
