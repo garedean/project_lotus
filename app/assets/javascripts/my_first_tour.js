@@ -15,7 +15,8 @@
       {
         target: "login-wrapper",
         title: "Sign In, simplified",
-        content: "A dedicated sign in page means everything not related to 'signing in' can be removed, resulting\
+        content: "The page you're looking at was inspired by the <a href='https://www.netflix.com/login?locale=en-US' target='_blank' class='standard-link'>Netflix Sign In page.</a>\
+                  <br><br>A dedicated sign in page means everything not related to 'signing in' can be removed, resulting\
                 in a more zen-like experience.<br><br>\
                 Click 'Next' to sign in.",
         placement: "left",
@@ -29,9 +30,9 @@
       {
         target: "top-bar",
         title: "Responsive design. So hot right now.",
-        content: "Project Lotus is built on Bootstrap 3 and features response design, meaning \
-                 the page layout changes to best fit the user's screen size. \
-                 <br><br>Resize your browser window to check it out.",
+        content: "Project Lotus is built around Bootstrap 3 for a responsive layout. This means page\
+                  layouts change to best fit a user's screen size.<br><br>Resize your browser window to\
+                  check it out.",
         placement: "bottom",
         width: 350,
         xOffset: "center",
@@ -48,7 +49,7 @@
                   <li>More links show 'above the fold' compared to our current horizontal nav menu.</li>\
                   <li>Placement on the far left puts navigation in a natural focal area where users spend \
                   <a href='http://www.nngroup.com/articles/horizontal-attention-leans-left/'\
-                  target='_blank' class='external-link'>69% of their time.</a></li>\
+                  target='_blank' class='standard-link'>69% of their time.</a></li>\
                   </ul>",
         placement: "right",
         width: 350,
