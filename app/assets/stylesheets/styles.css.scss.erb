@@ -17,6 +17,10 @@
    GLOBAL STYLES
    ========================================================================== */
 
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
 .load *,
 .load *:before,
 .load *:after {
@@ -67,7 +71,7 @@ a:hover, a:focus {
 }
 
 #main-content {
-	position: absolute; 
+	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -104,7 +108,7 @@ a:hover, a:focus {
 }
 
 ul {
-	padding: 0; 
+	padding: 0;
 	list-style-type: none;
 }
 
@@ -154,11 +158,11 @@ header .brand {
 header .brand .name {
 	display: block;
 	padding: 4px 0 0 10px;
-	color: #4683ea;	
+	color: #4683ea;
 	font-size: 40px;
 }
 
-/* 
+/*
 STAFF USER PANEL
 ----------------------------------------------
 */
@@ -249,7 +253,7 @@ STAFF USER PANEL
   width: 240px;
   position: relative;
   box-sizing: border-box;
-  cursor: pointer;  
+  cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -360,7 +364,7 @@ STAFF USER PANEL
    ========================================================================== */
 
 .nav-link ul {
-	width: 240px;	
+	width: 240px;
 	background-color: #f1f2f7;
 	line-height: 2em;
 	color: #666;
@@ -386,7 +390,7 @@ STAFF USER PANEL
 	display: none;
 	width: 240px;
 	position: absolute;
-	top: 0; 
+	top: 0;
 	left: 50px;
 	line-height: 2em;
 	cursor: pointer;
@@ -491,7 +495,7 @@ STAFF USER PANEL
 .nav-link .fa {
 	font-size: 1.3em;
 	color: rgba(0,0,0,0.65);
-} 
+}
 
 .fa-flash {
 	padding-left: 4px;
@@ -548,7 +552,7 @@ STAFF USER PANEL
 	transform: rotate(-90deg);
 }
 
-/* 
+/*
 BOX CONTENT
 ---------------------------------------------
 */
@@ -577,7 +581,7 @@ BOX CONTENT
 .sub-links li:first-child {
 	display: none;
 }
-<!-- 
+<!--
  .collapsed .sub-links li:first-child {
  	display: block;
  	background-color: #D0D5D7;
@@ -587,7 +591,7 @@ BOX CONTENT
  	line-height: 40px;
  	border-top-right-radius: 2px;
  	border-bottom-right-radius: 2px;
- } --> 
+ } -->
 
 #nav-menu.collapsed .sub-links li:first-child > a,
 #nav-menu.collapsed .sub-links li:first-child > span {
@@ -713,7 +717,7 @@ BOX CONTENT
 	border: 0;
 }
 
-/* 
+/*
 STAFF MEMBER NAMED + DROPDOWN
 ---------------------------------------------
 */
@@ -869,7 +873,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 /* ==========================================================================
    NAV TOGGLED
-   ========================================================================== */ 
+   ========================================================================== */
 
 .nav-toggle {
 	display: block;
@@ -879,7 +883,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	padding: 15px 17px;
 	top: 0px;
 	left: -50px;
-	margin: auto; 
+	margin: auto;
 	background-color: #f1f2f7;
 }
 
@@ -947,7 +951,7 @@ STAFF MEMBER NAMED + DROPDOWN
 	line-height: 40px;
 	padding-left: 10px;
 	font-weight: 300;
-} 
+}
 
 .schedule-row {
 	height: 50px;
@@ -1068,7 +1072,7 @@ STAFF MEMBER NAMED + DROPDOWN
 
 #main-wrapper {
 	position: absolute;
-	top: 50px; 
+	top: 50px;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -1107,7 +1111,7 @@ header .glance-schedule-icon {
 }
 
 header .glance-schedule-icon {
-	width: 22px; 
+	width: 22px;
 	padding: 0;
 	border: 1px solid transparent;
 }
@@ -1132,7 +1136,7 @@ header .glance-schedule-icon {
 
 #checkout-wrapper.active {
 	display: block;
-} 
+}
 
 #checkout-panel {
 	position: absolute;
@@ -1226,7 +1230,7 @@ header .glance-schedule-icon {
 	left: 0;
 }
 
-.content-frame-wrapper.glance-view-visible 
+.content-frame-wrapper.glance-view-visible
 .content-frame {
 	right: 240px;
 }
@@ -1286,7 +1290,7 @@ button:focus {
 /* Google Material design toggle */
 
 .wrapper {
-	transition: all 400ms ease-in-out;  
+	transition: all 400ms ease-in-out;
 	padding: 0;
 }
 
@@ -1604,15 +1608,15 @@ button:focus {
 /* No media query since this is the default in Bootstrap */
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
 	.parent-column {
 		height: 100%;
 	}
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-	
+@media (min-width: 992px) {
+
 	#checkout-panel {
 		width: 60%;
 	}
@@ -1620,7 +1624,7 @@ button:focus {
 	.lg-widget {
 		height: 850px;
 	}
-	
+
 	.sm-widget,
 	.md-widget {
 		height: 270px;
