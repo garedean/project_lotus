@@ -95,7 +95,6 @@ Hand-crafted quality by
 		</div>
 
 		<script>
-
 			// Retrieve last page state from local storage
 			pageState = localStorage.getItem('page-state');
 
@@ -119,7 +118,7 @@ Hand-crafted quality by
 			} else {
 
 				localStorage.setItem('page-state', 'nav-open');
-				$('body').removeClass('load');
+				//$('body').removeClass('load');
 				$('body').addClass('fade-in');
 
 				hopscotch.startTour(tour);
