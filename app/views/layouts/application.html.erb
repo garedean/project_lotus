@@ -118,8 +118,8 @@ Hand-crafted quality by
 			} else {
 
 				localStorage.setItem('page-state', 'nav-open');
-				//$('body').removeClass('load');
-				$('body').addClass('fade-in');
+
+				$('body').css("opacity", "0").addClass('fade-in');
 
 				hopscotch.startTour(tour);
 			}
