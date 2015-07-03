@@ -4,7 +4,7 @@
     <li class='brand-tile'>
       <div id='brand-name'>
         <a href='http://www.bluebirdsalon.com/' target='_blank'>LLUMINAIRE Salon</a>
-      </div>           
+      </div>
     </li>
 
     <li class='nav-link'>
@@ -12,7 +12,7 @@
         <i class='fa fa-tachometer fa-lg nav-icon'></i>
         <span class='title'>dashboard</span>
       <% end %>
-      <ul class='sub-links dashboard'>  
+      <ul class='sub-links dashboard'>
         <li>
           <%= link_to "dashboard", dashboard_path, data:{'display-title'=>'Dashboard'} %>
         </li>
@@ -24,36 +24,36 @@
         <i class='fa fa-search fa-lg nav-icon'></i>
         <span class='title'>clients</span>
       <% end %>
-      <ul class='sub-links clients'>  
+      <ul class='sub-links clients'>
         <li>
           <%= link_to "Clients", clients_path, data:{'display-title'=>'Clients'} %>
         </li>
       </ul>
-    </li>  
+    </li>
 
     <li class='nav-link'>
       <%= link_to classes_path, data:{'display-title'=>'Class Schedule'} do %>
         <i class='fa fa-heart fa-lg nav-icon'></i>
         <span class='title'>classes</span>
       <% end %>
-      <ul class='sub-links classes'>  
+      <ul class='sub-links classes'>
         <li>
           <%= link_to "classes", classes_path, data:{'display-title'=>'Classes'} %>
         </li>
       </ul>
-    </li>    
+    </li>
 
     <li class='nav-link'>
       <%= link_to workshops_path, data:{'display-title'=>'Workshops'}  do %>
         <i class='fa fa-graduation-cap fa-lg nav-icon'></i>
         <span class='title'>workshops</span>
       <% end %>
-      <ul class='sub-links workshops'>  
+      <ul class='sub-links workshops'>
         <li>
           <%= link_to "workshops", workshops_path, data:{'display-title'=>'Workshops'} %>
         </li>
       </ul>
-    </li>   
+    </li>
 
     <li id='business-tour-stop' class='nav-link has-sub'>
       <div class='menu-link'>
@@ -72,10 +72,10 @@
         </li>
         <li>
           <%= link_to("Paso Location", paso_path, data:{'display-title'=>'Appointments > Paso'}) %>
-        </li>    
+        </li>
       </ul>
-    </li>             
-              
+    </li>
+
     <li class='line'></li>
 
     <!--<span>SETTINGS</span>-->
@@ -85,19 +85,19 @@
         <i class='fa fa-users fa-lg nav-icon'></i>
         <span class='title'>staff</span>
       <% end %>
-      <ul class='sub-links staff'>  
+      <ul class='sub-links staff'>
         <li>
           <%= link_to "staff", staff_path, data:{'display-title'=>'Staff'} %>
         </li>
       </ul>
-    </li> 
+    </li>
 
     <li class='nav-link'>
       <%= link_to services_path, data:{'display-title'=>'Services'}  do %>
         <i class='fa fa-rocket fa-lg nav-icon'></i>
         <span class='title'>services</span>
       <% end %>
-      <ul class='sub-links services'>  
+      <ul class='sub-links services'>
         <li>
           <%= link_to "Services", services_path, data:{'display-title'=>'Services'} %>
         </li>
@@ -109,18 +109,18 @@
         <i class="fa fa-tags fa-lg nav-icon"></i>
         <span class='title'>products</span>
       <% end %>
-      <ul class='sub-links products'>  
+      <ul class='sub-links products'>
         <li>
           <%= link_to "products", products_path, data:{'display-title'=>'Products'} %>
         </li>
       </ul>
     </li>
 
-    <li class='nav-link has-sub'>  
+    <li class='nav-link has-sub'>
       <div class='menu-link'>
         <i class='fa fa-home fa-lg nav-icon'></i>
         <span class='title'>my business</span>
-      </div>       
+      </div>
       <ul class='sub-links'>
         <li>
           <span class="title">my business</span>
@@ -136,13 +136,13 @@
         </li>
         <li>
           <%= link_to("Advanced Settings", settings_path, data:{'display-title'=>'Advanced Settings'} ) %>
-        </li>    
+        </li>
       </ul>
     </li>
-    
+
     <li class='line'></li>
 
-    <li class='nav-link has-sub business'>       
+    <li class='nav-link has-sub business'>
       <div class='menu-link'>
         <i class='fa fa-flash fa-lg nav-icon'></i>
         <span class='title'>Admins Only</span>
@@ -152,23 +152,22 @@
           <span class="title">Admins Only</span>
         </li>
         <li>
-          <%= link_to("Payment Processing", admin_payment_processing_path, 
+          <%= link_to("Payment Processing", admin_payment_processing_path,
               data:{'display-title'=>'Payment Processing'}) %>
         </li>
         <li>
           <%= link_to("UX Design Library", admin_design_library_path, data:{'display-title'=>'UX Design Library'}) %>
-        </li>   
+        </li>
       </ul>
-    </li>    
+    </li>
   </ul>
 
   <div class='legal'>
-    <span class='brand-name'>Humble & Helpful Inc© | </span> 
+    <span class='brand-name'>Humble & Helpful Inc. | </span> 
     <a href="#">Privacy</a> & <a href="#">Terms</a>
   </div>
 
-  <!-- <span id='nav-pin' name='nav-pin'></span>   -->          
+  <!-- <span id='nav-pin' name='nav-pin'></span>   -->
 
   <!--   <i class='nav-toggle fa fa-angle-left fa-lg nav-icon'></i>   -->
 </div>
-
