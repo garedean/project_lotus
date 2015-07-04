@@ -3,9 +3,9 @@
   <head>
     <title>Lluminaire Salon</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 
+    <%= stylesheet_link_tag    'application', media: 'all',
     'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 
+    <%= javascript_include_tag 'application',
     'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
@@ -17,7 +17,7 @@
     <h1 class='login-brand'>
       <span>nice</span><span class='heavy-weight'>logo</span>
     </h1>
-    
+
     <div id='login-page-wrapper'>
       <div id='login-wrapper'>
         <h1>Sign In</h1>
@@ -36,17 +36,19 @@
               <input type="checkbox"> Stay signed in
             </label>
           </div>
-          
+
           <a href='#' class='forgot-login'>Need help?</a>
-  
+
         </form>
-      
+
         <a href='https://clients.mindbodyonline.com/classic/home?studioid=1' class='client-view-link' target='_blank'>Show me what my clients see</a>
       </div>
 
       <span class='makers-mark'>Handcrafted quality by Garrett Olson</span>
     </div>
+
     <script>
+      $('body').show();
       localStorage.removeItem('page-state');
       hopscotch.startTour(tour);
     </script>
